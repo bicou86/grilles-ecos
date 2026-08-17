@@ -131,11 +131,7 @@ cssclasses:
 > 	- [ ] Interventions ou hospitalisations *(Infection urinaire (cystite))*
 > 	- [ ] Allergies *(Infection urinaire (cystite))*
 > 	- [ ] Médicaments *(Infection urinaire (cystite))*
-> - [ ] **32. Antécédents chirurgicaux *(Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
-> 	- [ ] Dépistage prostatique *(Urétrite sexuellement transmissible)*
-> 	- [ ] Sondage vésical *(Urétrite sexuellement transmissible)*
-> 	- [ ] Épisodes similaires antérieurs *(Urétrite sexuellement transmissible)*
-> 	- [ ] Anomalies congénitales *(Urétrite sexuellement transmissible)*
+> - [ ] **32. Antécédents chirurgicaux *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **33. Anamnèse médicamenteuse *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **34. Toxiques *(Suspicion d'hyperplasie bénigne de la prostate)***
 > - [ ] **35. Alcool *(Suspicion d'hyperplasie bénigne de la prostate)***
@@ -144,10 +140,7 @@ cssclasses:
 > - [ ] **38. Allergies *(Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
 > - [ ] **39. Antécédents familiaux *(Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
 > - [ ] **40. Profession *(Suspicion d'hyperplasie bénigne de la prostate)***
-> - [ ] **41. Anamnèse sociale *(Infection urinaire (cystite) · Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
-> 	- [ ] Pertes vaginales *(Infection urinaire (cystite))*
-> 	- [ ] Prurit vaginal *(Infection urinaire (cystite))*
-> 	- [ ] Dates des dernières règles *(Infection urinaire (cystite))*
+> - [ ] **41. Anamnèse sociale *(Suspicion d'hyperplasie bénigne de la prostate · Urétrite sexuellement transmissible)***
 > - [ ] **42. Présentation avec nom, fonction et tâche *(Urétrite sexuellement transmissible)***
 > - [ ] **43. Question ouverte d'entrée - Symptôme principal *(Urétrite sexuellement transmissible)***
 > - [ ] **44. Caractérisation de la douleur mictionnelle *(Infection urinaire (cystite) · Urétrite sexuellement transmissible)***
@@ -183,18 +176,23 @@ cssclasses:
 > 	- [ ] Rapports sexuels non protégés
 > 	- [ ] Partenaires
 > 	- [ ] Dernier rapport à risque
-> - [ ] **51. Médicaments actuels *(Urétrite sexuellement transmissible)***
-> - [ ] **52. Habitudes de vie *(Infection à Chlamydia trachomatis · Urétrite sexuellement transmissible)***
+> - [ ] **51. Antécédents urologiques *(Urétrite sexuellement transmissible)***
+> 	- [ ] Dépistage prostatique
+> 	- [ ] Sondage vésical
+> 	- [ ] Épisodes similaires antérieurs
+> 	- [ ] Anomalies congénitales
+> - [ ] **52. Médicaments actuels *(Urétrite sexuellement transmissible)***
+> - [ ] **53. Habitudes de vie *(Infection à Chlamydia trachomatis · Urétrite sexuellement transmissible)***
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
 > 	- [ ] Activité physique *(Infection à Chlamydia trachomatis)*
-> - [ ] **53. Caractérisation du symptôme principal *(Infection à Chlamydia trachomatis)***
+> - [ ] **54. Caractérisation du symptôme principal *(Infection à Chlamydia trachomatis)***
 > 	- [ ] Douleurs à la miction
 > 	- [ ] Intensité
 > 	- [ ] Évolution
 > 	- [ ] Développement
-> - [ ] **54. Anamnèse sexuelle *(Infection urinaire (cystite) · Infection à Chlamydia trachomatis)***
+> - [ ] **55. Anamnèse sexuelle *(Infection urinaire (cystite) · Infection à Chlamydia trachomatis)***
 > 	- [ ] Nouveau partenaire *(Infection à Chlamydia trachomatis)*
 > 	- [ ] Fréquence des rapports *(Infection à Chlamydia trachomatis)*
 > 	- [ ] Protection *(Infection à Chlamydia trachomatis)*
@@ -205,31 +203,36 @@ cssclasses:
 > 	- [ ] Type de protection *(Infection urinaire (cystite))*
 > 	- [ ] Antécédents d'IST *(Infection urinaire (cystite))*
 > 	- [ ] Moyens contraceptifs *(Infection urinaire (cystite))*
-> - [ ] **55. Anamnèse gynécologique *(Infection urinaire (cystite) · Infection à Chlamydia trachomatis)***
-> 	- [ ] Dernières règles *(Infection à Chlamydia trachomatis)*
-> 	- [ ] Contraception *(Infection à Chlamydia trachomatis)*
-> 	- [ ] Antécédents d'IST *(Infection à Chlamydia trachomatis)*
-> 	- [ ] Grossesses antérieures *(Infection à Chlamydia trachomatis)*
-> 	- [ ] Fréquence mictionnelle *(Infection urinaire (cystite))*
-> 	- [ ] Quantité d'urine *(Infection urinaire (cystite))*
-> 	- [ ] Couleur des urines *(Infection urinaire (cystite))*
-> 	- [ ] Présence de sang *(Infection urinaire (cystite))*
-> - [ ] **56. Symptômes urinaires *(Infection à Chlamydia trachomatis)***
+> - [ ] **56. Anamnèse gynécologique *(Infection à Chlamydia trachomatis)***
+> 	- [ ] Dernières règles
+> 	- [ ] Contraception
+> 	- [ ] Antécédents d'IST
+> 	- [ ] Grossesses antérieures
+> - [ ] **57. Symptômes urinaires *(Infection à Chlamydia trachomatis)***
 > 	- [ ] Pollakiurie
 > 	- [ ] Urgenturie
 > 	- [ ] Hématurie
 > 	- [ ] Douleurs lombaires
-> - [ ] **57. Réponse aux symptômes *(Infection à Chlamydia trachomatis)***
+> - [ ] **58. Réponse aux symptômes *(Infection à Chlamydia trachomatis)***
 > 	- [ ] Automédication
 > 	- [ ] Consultation médicale antérieure
-> - [ ] **58. Allergies et médicaments *(Infection à Chlamydia trachomatis)***
+> - [ ] **59. Allergies et médicaments *(Infection à Chlamydia trachomatis)***
 > 	- [ ] Allergies
 > 	- [ ] Médicaments actuels
-> - [ ] **59. Chronologie de la douleur *(Infection urinaire (cystite))***
+> - [ ] **60. Chronologie de la douleur *(Infection urinaire (cystite))***
 > 	- [ ] Début
 > 	- [ ] Circonstance de survenue
 > 	- [ ] Évolution
-> - [ ] **60. Anamnèse générale, présence de *(Infection urinaire (cystite))***
+> - [ ] **61. Anamnèse urologique *(Infection urinaire (cystite))***
+> 	- [ ] Fréquence mictionnelle
+> 	- [ ] Quantité d'urine
+> 	- [ ] Couleur des urines
+> 	- [ ] Présence de sang
+> - [ ] **62. Anamnèse génitale *(Infection urinaire (cystite))***
+> 	- [ ] Pertes vaginales
+> 	- [ ] Prurit vaginal
+> 	- [ ] Dates des dernières règles
+> - [ ] **63. Anamnèse générale, présence de *(Infection urinaire (cystite))***
 > 	- [ ] Fièvre
 > 	- [ ] Transpiration
 > 	- [ ] Perte de poids involontaire

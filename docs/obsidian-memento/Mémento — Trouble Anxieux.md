@@ -115,3 +115,26 @@ cssclasses:
 > 	- [ ] Idées suicidaires exprimées pendant l'entretien : reprendre la gradation complète et évaluer la capacité d'engagement avant la fin de la consultation
 > 	- [ ] Ralentissement psychomoteur massif, désespoir, incurie : une dépression sévère se cache derrière l'anxiété
 > 	- [ ] Absence totale de critique du trouble : elle compromet l'adhésion au traitement et doit être documentée
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Au premier accès — la psychiatrie est ici un diagnostic d'exclusion**
+> 	- [ ] 🚩 ECG systématique : l'attaque de panique est une décharge adrénergique, et sa traduction — tachycardie, sueurs, tremblement, douleur thoracique, dyspnée — est superposable à celle d'un syndrome coronarien aigu ou d'un trouble du rythme ; le tracé précède l'étiquette psychiatrique
+> 	- [ ] Troponine si le doute coronarien persiste malgré un tracé sans particularité
+> 	- [ ] TSH, complétée d'une T4 libre (et d'une T3) si elle est perturbée : l'hyperthyroïdie reproduit le même tableau par le même médiateur — c'est le dosage, pas l'entretien, qui l'écarte
+> 	- [ ] Glycémie pour l'hypoglycémie — capillaire d'emblée si l'accès s'accompagne de sueurs et d'une altération de la vigilance
+> 	- [ ] Ionogramme et calcémie selon le contexte, mais la calcémie totale reste normale pendant la crise : les paresthésies des extrémités et le spasme carpo-pédal viennent de l'hyperventilation (hypocapnie, alcalose respiratoire, chute du calcium ionisé), pas d'une hypocalcémie vraie
+> 	- [ ] Une fois l'origine somatique raisonnablement écartée, le trouble anxieux ne se diagnostique pas par défaut : il se reconnaît sur un tableau typique, faute de quoi le bilan ne s'arrête jamais et la patiente reste sans diagnostic
+> - [ ] **2. Ce que la clinique déclenche en plus**
+> 	- [ ] Devant une consommation suspectée, niée ou une automédication : toxicologie urinaire (cannabis, cocaïne, amphétamines, opiacés, benzodiazépines) — l'anxiété peut être l'effet du produit autant que de son arrêt
+> 	- [ ] Devant des accès avec poussées tensionnelles, céphalées et sueurs profuses : métanéphrines urinaires ou plasmatiques — phéochromocytome
+> 	- [ ] Devant une dyspnée avec douleur du mollet, ou une tachycardie qui persiste en dehors des accès : D-dimères selon la probabilité clinique d'embolie pulmonaire (score de Wells ou de Genève) — négatifs, ils n'écartent qu'à probabilité faible ou intermédiaire
+> 	- [ ] Devant des palpitations persistant hors des crises : Holter ECG
+> 	- [ ] Devant des épisodes stéréotypés avec automatismes ou rupture du contact : EEG — épilepsie temporale ; la conscience conservée pendant l'accès l'éloigne et rend l'examen inutile
+> - [ ] **3. Chiffrer pour pouvoir suivre**
+> 	- [ ] GAD-7 : dépistage et mesure de l'anxiété, à répéter — c'est lui qui objectivera l'effet du traitement là où le récit reste flou
+> 	- [ ] PHQ-9 (ou BDI) : la comorbidité dépressive est le point de vigilance systématique du patient anxieux — elle se dépiste, elle ne se suppose pas
+> 	- [ ] PCL-5 devant un événement traumatique vécu ; MDQ si un épisode d'allure hypomaniaque est rapporté ; questionnaire d'anxiété sociale si la peur porte sur le regard d'autrui
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Le diagnostic tient à des seuils cliniques, jamais à un résultat : au moins 4 symptômes montant en moins de 10 minutes pour l'attaque de panique, plus de 6 mois pour le trouble anxieux généralisé, plus d'un mois après le traumatisme pour l'état de stress post-traumatique
+> 	- [ ] L'ECG déjà réalisé donne le QTc de départ avant un ISRS — escitalopram et citalopram l'allongent de façon dose-dépendante
+> 	- [ ] 🚩 Aucun examen ne mesure le risque suicidaire : il s'évalue à l'entretien, et aucun résultat en attente ne justifie de repousser l'évaluation de la capacité d'engagement

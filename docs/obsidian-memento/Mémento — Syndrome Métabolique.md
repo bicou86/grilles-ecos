@@ -122,3 +122,29 @@ cssclasses:
 > 	- [ ] Turgescence jugulaire, crépitants des bases, œdèmes bilatéraux prenant le godet
 > 	- [ ] Hépatomégalie ferme à bord tranchant, ascite, circulation veineuse collatérale
 > 	- [ ] Ralentissement psychomoteur, affect plat, discours désespéré : reprendre la question du risque suicidaire avant que la personne ne quitte le cabinet
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan sanguin de première intention, devant toute prise de poids**
+> 	- [ ] Glycémie à jeun et HbA1c : diabète si HbA1c ≥ 6,5 % ou glycémie à jeun ≥ 7,0 mmol/L, prédiabète entre 5,7 et 6,4 % — hyperglycémie provoquée si la glycémie à jeun reste dans la zone grise, entre 5,6 et 6,9 mmol/L
+> 	- [ ] Bilan lipidique à jeun : cholestérol total, LDL, HDL, triglycérides, non-HDL
+> 	- [ ] TSH, complétée d'une T4 libre si elle est anormale : l'hypothyroïdie est la cause secondaire la plus fréquente et la plus simple à écarter — TSH élevée avec T4 libre basse, l'affaire est entendue
+> 	- [ ] FSC : anémie derrière une fatigue mise trop vite sur le compte du poids
+> 	- [ ] Électrolytes, calcium et magnésium : une anomalie électrolytique se présente volontiers comme une dépression
+> 	- [ ] Créatinine avec débit de filtration estimé et acide urique : le rein dont on veut la valeur de départ, et l'hyperuricémie qui accompagne le syndrome et prépare la goutte
+> 	- [ ] Transaminases, GGT et phosphatases alcalines : la stéatose est la complication hépatique du syndrome métabolique, et elle est muette
+> 	- [ ] Ces deux tubes portent **trois des cinq critères** du syndrome métabolique : glycémie à jeun ≥ 5,6 mmol/L, triglycérides ≥ 1,7 mmol/L, HDL < 1,0 chez l'homme et < 1,3 chez la femme — les deux autres sont le tour de taille et une tension ≥ 130/85 ; trois sur cinq suffisent
+> - [ ] **2. Le retentissement — chercher ce que le syndrome a déjà abîmé**
+> 	- [ ] Mesure ambulatoire de la tension sur 24 heures : confirme l'hypertension avant qu'on l'étiquette, et l'absence de baisse nocturne oriente vers des apnées du sommeil
+> 	- [ ] Échographie hépatique dans la foulée des enzymes : stéatose ; puis FIB-4 et élastographie si les transaminases sont élevées — c'est la fibrose, et non la stéatose, qui fait le pronostic
+> 	- [ ] Microalbuminurie sur échantillon (rapport albumine/créatinine urinaire) : atteinte rénale débutante, visible bien avant que la créatinine ne bouge
+> 	- [ ] ECG de repos ; épreuve d'effort ou imagerie coronaire si le risque calculé est élevé
+> 	- [ ] Chiffrer le risque plutôt que le décrire : SCORE2 ou AGLA pour le risque cardiovasculaire à 10 ans, FINDRISC pour celui de diabète de type 2
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] Graisse tronculaire avec membres grêles, vergetures pourpres et larges, faciès lunaire, ecchymoses spontanées : cortisol libre urinaire des 24 heures **ou** freinage minute à la dexaméthasone 1 mg — un seul test positif ne fait pas le diagnostic, il en faut deux concordants
+> 	- [ ] Ronflement, pauses respiratoires constatées par l'entourage, somnolence diurne : questionnaire STOP-BANG, et un score ≥ 3 conduit à la polygraphie ou à la polysomnographie, examen de référence
+> 	- [ ] Chez la femme, cycles espacés, hirsutisme, acné : testostérone totale et SHBG (index d'androgènes libres), LH et FSH, prolactine et 17-OH-progestérone pour écarter ce qui l'imite, puis échographie pelvienne — deux critères sur trois font le diagnostic (oligo-anovulation, hyperandrogénie clinique ou biologique, aspect polykystique des ovaires)
+> 	- [ ] Tristesse, perte d'intérêt, réveil précoce : aucun examen ne pose ce diagnostic-là, il reste clinique (SIGECAPS, DSM-5, PHQ-9) — le laboratoire ne sert qu'à écarter ce qui l'imite, la TSH en tête
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 Poids qui se met à baisser, polyurie, polydipsie, soif intense : glycémie capillaire **immédiate** et bandelette urinaire (glycosurie, cétonurie) — un diabète qui décompense ne s'attend pas au laboratoire, et une cétonurie fait faire une gazométrie veineuse sans délai
+> 	- [ ] L'HbA1c est prise en défaut par une anémie, une hémoglobinopathie ou une insuffisance rénale : dans ces situations, c'est la glycémie qui décide
+> 	- [ ] Chez une femme en âge de procréer dont les règles se sont espacées, le test de grossesse passe avant tout le reste — une aménorrhée s'explique par une grossesse avant de s'expliquer par des ovaires polykystiques

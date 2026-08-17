@@ -135,3 +135,34 @@ cssclasses:
 >         anomalie bilatérale ne s'explique pas par une seule racine
 > 	- [ ] Ce qui doit alerter : Babinski présent, réflexes vifs et diffusés, marche instable,
 >         maladresse des deux mains, déficit moteur franc ou en aggravation
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. IRM du rachis cervical — l'examen qui tranche**
+> 	- [ ] Référence du conflit disco-radiculaire : hernie molle, uncodiscarthrose,
+>         rétrécissement foraminal — et surtout l'état de la moelle (hypersignal T2)
+> 	- [ ] Sans injection d'emblée ; le contraste ne sert qu'au doute infectieux ou tumoral,
+>         ou sur un rachis déjà opéré (fibrose contre récidive herniaire)
+> 	- [ ] CT cervical si l'IRM est contre-indiquée ou indisponible : il montre l'os et
+>         l'uncarthrose, mal le disque, pas la moelle
+> 	- [ ] **Corrélation radio-clinique obligatoire** : passé 40 ans, les hernies
+>         asymptomatiques sont banales — l'image ne vaut que si elle explique la racine
+>         trouvée au status (C6 : flexion du coude et extension du poignet faibles, pouce et
+>         bord radial de l'index hypoesthésiques, BRR aboli)
+> - [ ] **2. Le délai tient au degré d'urgence, pas à l'intensité de la douleur**
+> 	- [ ] 🚩 **En urgence** devant tout signe médullaire — Babinski, réflexes vifs et
+>         diffusés, marche instable, maladresse des deux mains, trouble vésico-sphinctérien :
+>         ce n'est plus une racine qu'on cherche, et le délai fait le pronostic
+> 	- [ ] **Rapprochée** si le déficit moteur est franc (MRC ≤ 3/5) ou s'aggrave d'une semaine
+>         à l'autre : c'est la vitesse de progression qui décide
+> 	- [ ] **Différée** dans une radiculopathie isolée non déficitaire : l'imagerie ne se
+>         discute qu'après 4 à 6 semaines d'évolution défavorable
+> 	- [ ] Une IRM normale n'écarte pas la radiculopathie, et une hernie vue du côté opposé ne
+>         l'explique pas : le diagnostic reste clinique, l'imagerie ne fait que le localiser
+> - [ ] **3. 🚩 Quand la cervicalgie n'est pas mécanique**
+> 	- [ ] Traumatisme, même mineur : imagerie décidée par les règles canadiennes du rachis
+>         cervical (CT en première intention chez l'adulte à risque)
+> 	- [ ] Fièvre, immunosuppression, toxicomanie intraveineuse, douleur nocturne : FSC, VS/CRP
+>         et hémocultures avant toute antibiothérapie, puis IRM à la recherche d'une
+>         spondylodiscite ou d'un abcès épidural
+> 	- [ ] Antécédent tumoral, perte de poids, douleur qui ne cède pas au repos : IRM sans
+>         attendre, à la recherche d'une métastase vertébrale

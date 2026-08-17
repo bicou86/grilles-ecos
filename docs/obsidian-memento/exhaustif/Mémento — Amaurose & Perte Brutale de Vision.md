@@ -186,7 +186,7 @@ cssclasses:
 > - [ ] **37. Douleurs ceintures scapulaire / pelvienne *(OACR / Occlusion rétinienne)***
 > - [ ] **38. Symptômes généraux *(OACR / Occlusion rétinienne)***
 > - [ ] **39. Neurologique *(OACR / Occlusion rétinienne)***
-> - [ ] **40. Trouble de la parole *(Décollement de rétine · OACR / Occlusion rétinienne)***
+> - [ ] **40. Trouble du langage *(OACR / Occlusion rétinienne)***
 > - [ ] **41. Paralysie *(OACR / Occlusion rétinienne)***
 > - [ ] **42. Trouble de la sensibilité *(Décollement de rétine · OACR / Occlusion rétinienne)***
 > - [ ] **43. Vertiges *(OACR / Occlusion rétinienne)***
@@ -209,30 +209,31 @@ cssclasses:
 > - [ ] **60. Vision centrale *(Décollement de rétine)***
 > - [ ] **61. Douleurs / Signes d'inflammation *(Décollement de rétine)***
 > - [ ] **62. Symptômes neurologiques *(Décollement de rétine)***
-> - [ ] **63. Déficits moteurs *(Décollement de rétine)***
-> - [ ] **64. Maux de tête / Vertiges *(Décollement de rétine)***
-> - [ ] **65. Ophtalmologiques *(Décollement de rétine)***
-> - [ ] **66. Non ophtalmologiques *(Décollement de rétine)***
-> - [ ] **67. Correction visuelle *(Décollement de rétine)***
-> - [ ] **68. Toxiques *(Décollement de rétine)***
-> - [ ] **69. Facteurs de stress psychosociaux *(Décollement de rétine)***
-> - [ ] **70. Caractérisation cécité *(Horton (artérite à cellules géantes))***
+> - [ ] **63. Trouble de la parole *(Décollement de rétine)***
+> - [ ] **64. Déficits moteurs *(Décollement de rétine)***
+> - [ ] **65. Maux de tête / Vertiges *(Décollement de rétine)***
+> - [ ] **66. Ophtalmologiques *(Décollement de rétine)***
+> - [ ] **67. Non ophtalmologiques *(Décollement de rétine)***
+> - [ ] **68. Correction visuelle *(Décollement de rétine)***
+> - [ ] **69. Toxiques *(Décollement de rétine)***
+> - [ ] **70. Facteurs de stress psychosociaux *(Décollement de rétine)***
+> - [ ] **71. Caractérisation cécité *(Horton (artérite à cellules géantes))***
 > 	- [ ] Localisation
 > 	- [ ] Chronologie
 > 	- [ ] Développement (subit / progressif)
 > 	- [ ] Circonstance de survenue
 > 	- [ ] Perte de connaissance associée
-> - [ ] **71. Anamnèse par système - générale *(Horton (artérite à cellules géantes))***
+> - [ ] **72. Anamnèse par système - générale *(Horton (artérite à cellules géantes))***
 > 	- [ ] Fièvre
 > 	- [ ] Sudation nocturne
 > 	- [ ] Perte de poids
-> - [ ] **72. Anamnèse par système - neurologique *(Horton (artérite à cellules géantes))***
+> - [ ] **73. Anamnèse par système - neurologique *(Horton (artérite à cellules géantes))***
 > 	- [ ] Diplopie
 > 	- [ ] Perte de force
 > 	- [ ] Perte de sensibilité
 > 	- [ ] Paresthésies
 > 	- [ ] Vertiges
-> - [ ] **73. Antécédents et comorbidités *(Horton (artérite à cellules géantes))***
+> - [ ] **74. Antécédents et comorbidités *(Horton (artérite à cellules géantes))***
 > 	- [ ] Maladies actuelles
 > 	- [ ] Antécédents médico-chirurgicaux
 > 	- [ ] Allergies
@@ -249,9 +250,9 @@ cssclasses:
 > 	- [ ] Examen du champ visuel
 > - [ ] **3. Examen du cou *(AVC)***
 > 	- [ ] Auscultation des artères carotides
-> - [ ] **4. Examen cardiovasculaire *(AVC · Décollement de rétine)***
-> 	- [ ] Palpation du pouls radial *(AVC)*
-> 	- [ ] Auscultation du cœur *(AVC)*
+> - [ ] **4. Examen cardiovasculaire *(AVC)***
+> 	- [ ] Palpation du pouls radial
+> 	- [ ] Auscultation du cœur
 > - [ ] **5. Examen thoracique *(AVC)***
 > 	- [ ] Auscultation des poumons
 > - [ ] **6. Examen neurologique *(AVC)***
@@ -288,44 +289,45 @@ cssclasses:
 > - [ ] **22. Central *(Décollement de rétine)***
 > - [ ] **23. Moyennement périphérique *(Décollement de rétine)***
 > - [ ] **24. Périphérique *(Décollement de rétine)***
-> - [ ] **25. Examen par quadrants *(Décollement de rétine)***
-> - [ ] **26. Évaluation de la pupille *(Décollement de rétine)***
-> - [ ] **27. Réaction pupillaire à la lumière *(Décollement de rétine)***
-> - [ ] **28. Test de l'éclairement alterné (Swinging-flashlight test) *(Décollement de rétine)***
-> - [ ] **29. Motilité *(Décollement de rétine)***
-> - [ ] **30. Segments externes de l'œil *(Décollement de rétine)***
-> - [ ] **31. Vitré antérieur *(Décollement de rétine)***
-> - [ ] **32. Fond d'œil droit *(Décollement de rétine)***
-> - [ ] **33. Fond d'œil gauche *(Décollement de rétine)***
-> - [ ] **34. Ophtalmologique - observation *(Horton (artérite à cellules géantes))***
+> - [ ] **25. Examen monoculaire *(Décollement de rétine)***
+> - [ ] **26. Examen par quadrants *(Décollement de rétine)***
+> - [ ] **27. Évaluation de la pupille *(Décollement de rétine)***
+> - [ ] **28. Réaction pupillaire à la lumière *(Décollement de rétine)***
+> - [ ] **29. Test de l'éclairement alterné (Swinging-flashlight test) *(Décollement de rétine)***
+> - [ ] **30. Motilité *(Décollement de rétine)***
+> - [ ] **31. Segments externes de l'œil *(Décollement de rétine)***
+> - [ ] **32. Vitré antérieur *(Décollement de rétine)***
+> - [ ] **33. Fond d'œil droit *(Décollement de rétine)***
+> - [ ] **34. Fond d'œil gauche *(Décollement de rétine)***
+> - [ ] **35. Ophtalmologique - observation *(Horton (artérite à cellules géantes))***
 > 	- [ ] Sclère
 > 	- [ ] Paupière
-> - [ ] **35. Ophtalmologique - acuité visuelle *(Horton (artérite à cellules géantes))***
+> - [ ] **36. Ophtalmologique - acuité visuelle *(Horton (artérite à cellules géantes))***
 > 	- [ ] Œil droit
 > 	- [ ] Œil gauche
-> - [ ] **36. Ophtalmologique - fond d'œil *(Horton (artérite à cellules géantes))***
-> - [ ] **37. Neuro-ophtalmologique *(Horton (artérite à cellules géantes))***
+> - [ ] **37. Ophtalmologique - fond d'œil *(Horton (artérite à cellules géantes))***
+> - [ ] **38. Neuro-ophtalmologique *(Horton (artérite à cellules géantes))***
 > 	- [ ] Champs visuels
 > 	- [ ] Poursuite oculaire / oculomotricité
-> - [ ] **38. Neuro-ophtalmologique - réflexes pupillaires *(Horton (artérite à cellules géantes))***
+> - [ ] **39. Neuro-ophtalmologique - réflexes pupillaires *(Horton (artérite à cellules géantes))***
 > 	- [ ] Direct
 > 	- [ ] Croisé
-> - [ ] **39. Neurologique - orientation aux 4 modes *(Horton (artérite à cellules géantes))***
+> - [ ] **40. Neurologique - orientation aux 4 modes *(Horton (artérite à cellules géantes))***
 > 	- [ ] Temps
 > 	- [ ] Localisation
 > 	- [ ] Personne
 > 	- [ ] Situation
-> - [ ] **40. Neurologique - motricité & sensibilité grossière *(Horton (artérite à cellules géantes))***
+> - [ ] **41. Neurologique - motricité & sensibilité grossière *(Horton (artérite à cellules géantes))***
 > 	- [ ] Motricité
 > 	- [ ] Sensibilité
-> - [ ] **41. DD AVC - Test de Cincinnati (Stroke Scale) *(Horton (artérite à cellules géantes))***
+> - [ ] **42. DD AVC - Test de Cincinnati (Stroke Scale) *(Horton (artérite à cellules géantes))***
 > 	- [ ] Motricité de la face (NC VII)
 > 	- [ ] Épreuve des bras tendus
 > 	- [ ] Répétition d'une phrase
-> - [ ] **42. DD artérite de Horton *(Horton (artérite à cellules géantes))***
+> - [ ] **43. DD artérite de Horton *(Horton (artérite à cellules géantes))***
 > 	- [ ] Percussion de l'artère temporale
 > 	- [ ] Palpation de la mâchoire
-> - [ ] **43. Cardiaque *(Horton (artérite à cellules géantes))***
+> - [ ] **44. Cardiaque *(Horton (artérite à cellules géantes))***
 > 	- [ ] Auscultation des 4 foyers
 > 	- [ ] Auscultation des carotides des deux côtés
 
@@ -334,7 +336,7 @@ cssclasses:
 
 > [!success] 💊 Management — si AVC
 > - [ ] **1. Hypothèses diagnostiques**
-> - [ ] **2. Examens diagnostiques complémentaires**
+> - [ ] **2. Examens complémentaires urgents**
 > 	- [ ] Oxymétrie de pouls
 > 	- [ ] ECG et monitoring cardiaque
 > 	- [ ] FSC
@@ -359,11 +361,11 @@ cssclasses:
 > 	- [ ] Crise hypertensive
 
 > [!success] 💊 Management — si Décollement de rétine
-> - [ ] **1. Examens diagnostiques complémentaires**
-> - [ ] **2. OCT**
-> - [ ] **3. Échographie oculaire**
-> - [ ] **4. Information sur le diagnostic de travail**
-> - [ ] **5. Contacter la chirurgie vitréo-rétinienne**
+> - [ ] **1. OCT**
+> - [ ] **2. Échographie oculaire**
+> - [ ] **3. Information sur le diagnostic de travail**
+> - [ ] **4. Contacter la chirurgie vitréo-rétinienne**
+> - [ ] **5. Examens diagnostiques complémentaires**
 > - [ ] **6. Consignes préopératoires**
 
 > [!success] 💊 Management — si DMLA
@@ -386,14 +388,14 @@ cssclasses:
 > - [ ] **7. Propose une hospitalisation**
 
 > [!success] 💊 Management — si OACR / Occlusion rétinienne
-> - [ ] **1. Examens diagnostiques complémentaires**
-> - [ ] **2. Imagerie cérébrale**
-> - [ ] **3. Laboratoire**
-> - [ ] **4. Hémogramme**
-> - [ ] **5. Paramètres inflammatoires**
-> - [ ] **6. ECG**
-> - [ ] **7. Pas de thérapie fondée sur des preuves**
-> - [ ] **8. Adressage Stroke Center**
+> - [ ] **1. Imagerie cérébrale**
+> - [ ] **2. Laboratoire**
+> - [ ] **3. Hémogramme**
+> - [ ] **4. Paramètres inflammatoires**
+> - [ ] **5. ECG**
+> - [ ] **6. Pas de thérapie fondée sur des preuves**
+> - [ ] **7. Adressage Stroke Center**
+> - [ ] **8. Investigations complémentaires**
 > - [ ] **9. Échocardiographie**
 > - [ ] **10. Doppler des carotides**
 > - [ ] **11. ECG de longue durée**

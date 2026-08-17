@@ -127,3 +127,57 @@ cssclasses:
 > 	- [ ] Percussion lombaire franchement douloureuse d'un seul côté
 > 	- [ ] Amaigrissement visible, fonte des temporaux, haleine cétonique
 > 	- [ ] Trouble de la vigilance, confusion, désorientation
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant des vomissements qui durent**
+> 	- [ ] β-hCG — urinaire pour aller vite, sérique quantitatif plus sensible
+>         (positif 6 à 9 jours après la fécondation) : chez toute femme en âge de
+>         procréer il précède l'imagerie et toute conclusion, et ni un implant en
+>         place, ni des cycles jugés réguliers, ni « je n'ai jamais été enceinte »
+>         ne l'en dispensent
+> 	- [ ] FSC et VS : hyperleucocytose et VS élevée orientent vers une cause
+>         infectieuse ; l'hémoglobine chiffre la spoliation — normale dans les
+>         premières heures d'un saignement aigu, elle ne rassure pas encore
+> 	- [ ] Ionogramme, créatinine et urée : des vomissements répétés imposent le
+>         bilan électrolytique — hypokaliémie, hypochlorémie et réserve alcaline
+>         élevée de la perte d'acide gastrique, insuffisance rénale fonctionnelle
+>         de la déshydratation
+> 	- [ ] Analyse d'urine — bandelette d'abord, sédiment et culture si elle est
+>         anormale : leucocytes et nitrites d'une infection urinaire qui se donne
+>         des airs de nausées, hématurie ; la cétonurie de la même bandelette
+>         chiffre le jeûne, et avec une perte de poids ≥ 5 % elle fait basculer
+>         vers l'hospitalisation
+> - [ ] **2. Situer la grossesse, chercher l'infection génitale haute**
+> 	- [ ] Échographie abdominale puis transvaginale : sac intra-utérin, masse
+>         latéro-utérine, épanchement du Douglas — et du même coup abcès,
+>         appendicite et autres causes de douleur pelvienne basse
+> 	- [ ] β-hCG au-dessus de la zone discriminatoire (1500 à 3500 UI/L selon les
+>         centres) sans sac intra-utérin visible : grossesse extra-utérine jusqu'à
+>         preuve du contraire — un dosage isolé ne conclut pas, c'est la cinétique
+>         à 48 h qui tranche
+> 	- [ ] Prélèvements cervicaux et urétraux avec PCR gonocoque et Chlamydia :
+>         les deux germes de l'infection génitale haute, à demander devant des
+>         leucorrhées, une dyspareunie ou des partenaires multiples
+> - [ ] **3. Ce que la sémiologie déclenche en plus**
+> 	- [ ] 🚩 Sang rouge, marc de café ou selles noires : gastroscopie en urgence,
+>         geste diagnostique et hémostatique — et avant elle hémoglobine, groupe
+>         sanguin, RAI et crase, les examens qu'on ne rattrape pas
+> 	- [ ] 🚩 Vomissements fécaloïdes, arrêt des matières et des gaz, abdomen
+>         distendu : ASP debout ou CT abdominal — niveaux hydro-aériques, siège et
+>         cause de l'obstacle
+> 	- [ ] 🚩 Haleine cétonique, polyurie et polydipsie, trouble de la vigilance :
+>         glycémie capillaire immédiate, cétonurie ou cétonémie, gazométrie —
+>         l'acidocétose diabétique se présente par des vomissements et des
+>         douleurs abdominales
+> 	- [ ] Douleur de la fosse iliaque droite, McBurney, psoas ou Rovsing positifs :
+>         échographie d'abord, CT si elle n'est pas concluante
+> 	- [ ] Percussion lombaire douloureuse d'un seul côté avec fièvre : sédiment et
+>         culture urinaire avant tout antibiotique — la pyélonéphrite vomit souvent
+>         plus fort qu'elle ne brûle
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] ECG avant l'ondansétron ou le métoclopramide : les deux allongent le QT,
+>         que l'hypokaliémie des vomissements a déjà commencé à allonger
+> 	- [ ] Sans signe d'alarme, tout tient dans le β-hCG, un laboratoire de base et
+>         l'échographie : ni endoscopie ni imagerie en coupe en routine — s'arrêter
+>         là est une décision à énoncer, pas un oubli, et aucune grille de cette SSP
+>         n'en cote davantage

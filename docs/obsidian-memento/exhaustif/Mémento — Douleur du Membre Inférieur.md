@@ -214,16 +214,11 @@ cssclasses:
 > - [ ] **1. Signes vitaux *(1 grille sur 3)***
 > 	- [ ] TA droite 152/88 mmHg
 > 	- [ ] TA gauche 150/86 mmHg
-> - [ ] **2. Inspection et palpation membre inférieur gauche *(2 grilles sur 3)***
-> 	- [ ] Téguments, ongles et pilosité *(1 grille sur 3)*
-> 	- [ ] Symétrie *(1 grille sur 3)*
-> 	- [ ] Coloration cutanée *(1 grille sur 3)*
-> 	- [ ] Température *(1 grille sur 3)*
-> 	- [ ] Œdème unilatéral *(Embolie pulmonaire)*
-> 	- [ ] Rougeur *(Embolie pulmonaire)*
-> 	- [ ] Chaleur locale *(Embolie pulmonaire)*
-> 	- [ ] Douleur à la palpation du mollet *(Embolie pulmonaire)*
-> 	- [ ] Cyanose déclive *(Embolie pulmonaire)*
+> - [ ] **2. Inspection des membres inférieurs *(1 grille sur 3)***
+> 	- [ ] Téguments, ongles et pilosité
+> 	- [ ] Symétrie
+> 	- [ ] Coloration cutanée
+> 	- [ ] Température
 > - [ ] **3. Palpation des pouls périphériques - membres inférieurs *(AOMI)***
 > 	- [ ] Artères fémorales *(1 grille sur 3)*
 > 	- [ ] Artères poplitées *(1 grille sur 3)*
@@ -234,19 +229,15 @@ cssclasses:
 > 	- [ ] Pouls poplité *(1 grille sur 3)*
 > 	- [ ] Pouls pédieux *(1 grille sur 3)*
 > 	- [ ] Comparaison droite/gauche systématique *(1 grille sur 3)*
-> - [ ] **4. Auscultation vasculaire**
+> - [ ] **4. Auscultation vasculaire *(AOMI)***
 > 	- [ ] Souffle inguinal gauche *(1 grille sur 3)*
 > 	- [ ] Râpeux et irradiant jusqu'à mi-cuisse *(1 grille sur 3)*
-> 	- [ ] Artères carotides *(AOMI)*
-> 	- [ ] Aorte abdominale *(AOMI)*
+> 	- [ ] Artères carotides
+> 	- [ ] Aorte abdominale
 > 	- [ ] Artères fémorales *(1 grille sur 3)*
 > 	- [ ] Artères rénales *(1 grille sur 3)*
 > 	- [ ] Artères sous-clavières *(1 grille sur 3)*
 > 	- [ ] Comparaison bilatérale *(1 grille sur 3)*
-> 	- [ ] Frottement pleural *(Embolie pulmonaire)*
-> 	- [ ] Épanchement pleural *(Embolie pulmonaire)*
-> 	- [ ] Fréquence respiratoire *(Embolie pulmonaire)*
-> 	- [ ] Pas de râles *(Embolie pulmonaire)*
 > - [ ] **5. Test d'Allen (perméabilité artères radiale, cubitale, arcade palmaire) *(1 grille sur 3)***
 > - [ ] **6. Mesure de l'index de pression systolique (IPS/ABI) *(1 grille sur 3)***
 > 	- [ ] Rapport pression cheville/bras
@@ -295,12 +286,23 @@ cssclasses:
 > 	- [ ] Cheville gauche > droite
 > 	- [ ] Mollet gauche > droit
 > 	- [ ] Cuisse gauche > droite
-> - [ ] **14. Signes cliniques spécifiques de TVP *(Embolie pulmonaire)***
+> - [ ] **14. Inspection et palpation membre inférieur gauche *(Embolie pulmonaire)***
+> 	- [ ] Œdème unilatéral
+> 	- [ ] Rougeur
+> 	- [ ] Chaleur locale
+> 	- [ ] Douleur à la palpation du mollet
+> 	- [ ] Cyanose déclive
+> - [ ] **15. Signes cliniques spécifiques de TVP *(Embolie pulmonaire)***
 > 	- [ ] Signe de Homans
 > 	- [ ] Ballant du mollet
 > 	- [ ] Turgescence veines superficielles
 > 	- [ ] Circulation collatérale visible
-> - [ ] **15. Examen cardiovasculaire *(Embolie pulmonaire)***
+> - [ ] **16. Auscultation pulmonaire *(Embolie pulmonaire)***
+> 	- [ ] Frottement pleural
+> 	- [ ] Épanchement pleural
+> 	- [ ] Fréquence respiratoire
+> 	- [ ] Pas de râles
+> - [ ] **17. Examen cardiovasculaire *(Embolie pulmonaire)***
 > 	- [ ] Tachycardie
 > 	- [ ] Tachyarythmie
 > 	- [ ] Éclat B2 pulmonaire
@@ -373,7 +375,12 @@ cssclasses:
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Embolie pulmonaire
-> - [ ] **1. Examens complémentaires de première intention**
+> - [ ] **1. Stratégie diagnostique selon probabilité clinique**
+> 	- [ ] Probabilité forte (Wells ≥ 2): Echo-Doppler d'emblée
+> 	- [ ] Si écho négatif mais forte suspicion: répéter à J7
+> 	- [ ] D-dimères: peu utiles si probabilité forte
+> 	- [ ] Si dyspnée: angio-CT thoracique ou scintigraphie V/Q
+> - [ ] **2. Examens complémentaires urgents**
 > 	- [ ] Echo-Doppler veineux membres inférieurs
 > 	- [ ] D-dimères (si probabilité faible/intermédiaire)
 > 	- [ ] Angio-CT thoracique (si dyspnée)
@@ -381,11 +388,6 @@ cssclasses:
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] Bilan de coagulation (TP, TCA)
 > 	- [ ] FSC, plaquettes, créatinine
-> - [ ] **2. Stratégie diagnostique selon probabilité clinique**
-> 	- [ ] Probabilité forte (Wells ≥ 2): Echo-Doppler d'emblée
-> 	- [ ] Si écho négatif mais forte suspicion: répéter à J7
-> 	- [ ] D-dimères: peu utiles si probabilité forte
-> 	- [ ] Si dyspnée: angio-CT thoracique ou scintigraphie V/Q
 > - [ ] **3. Traitement anticoagulant**
 > - [ ] **4. Critères d'hospitalisation**
 > 	- [ ] Embolie pulmonaire associée

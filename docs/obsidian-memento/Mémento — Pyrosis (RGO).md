@@ -131,3 +131,55 @@ cssclasses:
 >         digestif d'une œsophagite ou d'un ulcère
 > 	- [ ] Un examen cardiaque normal n'écarte rien : dans l'angor stable, l'ECG de repos
 >         lui-même est normal une fois sur deux
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. D'emblée, devant une brûlure rétrosternale — le cœur avant l'estomac**
+> 	- [ ] 🚩 **ECG 12 dérivations dans les 10 minutes**, avant toute exploration digestive et
+>         avant d'attribuer la douleur au reflux : sus- ou sous-décalage ST, ondes T
+>         inversées ; à refaire dès que la douleur revient ou change — normal une fois sur
+>         deux dans l'angor stable, il n'écarte rien
+> 	- [ ] **Troponine ultrasensible à l'admission puis à 1-3 heures**, CK et CK-MB avec elle :
+>         c'est la cinétique qui tranche, jamais le chiffre isolé — négative, elle exclut la
+>         nécrose, pas l'ischémie, et l'angor stable a des troponines normales
+> 	- [ ] FSC : le même résultat se lit dans les deux sens — une anémie aggrave un angor, et
+>         elle signe aussi le saignement d'une œsophagite ou d'un ulcère
+> 	- [ ] Bilan biologique complet — glycémie (± HbA1c), bilan lipidique, ionogramme, urée et
+>         créatinine : le diabète et la dyslipidémie que personne n'a traités, et la
+>         **créatinine connue avant** le produit de contraste de la coronarographie
+> 	- [ ] Radiographie thoracique devant une dyspnée ou une suspicion d'œdème pulmonaire
+> 	- [ ] Score HEART ou GRACE si un syndrome coronarien sans sus-décalage se discute : il ne
+>         fait pas le diagnostic, il décide de la suite
+> - [ ] **2. Objectiver l'ischémie quand l'ECG et les troponines sont normaux**
+> 	- [ ] La **probabilité pré-test** choisit l'examen — âge, sexe, type de douleur, facteurs
+>         de risque : basse, on s'arrête ; intermédiaire (15-85 %), test fonctionnel ;
+>         au-delà de 85 %, coronarographie d'emblée
+> 	- [ ] **Test d'effort** (Se 68 %, Sp 77 %) : c'est l'objectivation de l'ischémie, non la
+>         description de la douleur, qui tranche quand le doute persiste
+> 	- [ ] **Chez la femme, le test d'effort est moins sensible** — lui préférer une imagerie
+>         de stress : échocardiographie de stress à la dobutamine, scintigraphie myocardique,
+>         IRM de stress (gold standard non invasif)
+> 	- [ ] Échocardiographie transthoracique de repos : trouble de la cinétique segmentaire,
+>         fraction d'éjection ; score calcique coronaire ou coroscanner si le doute persiste
+>         au risque intermédiaire
+> 	- [ ] **Coronarographie**, gold standard : elle diagnostique et revascularise dans le même
+>         temps ; FFR pour juger une sténose intermédiaire
+> - [ ] **3. Ce que les autres pistes déclenchent**
+> 	- [ ] Palpitations rapides avec vertiges ou malaise → **Holter des 24 heures** quand
+>         l'ECG de repos est normal ; le monitoring continu surveille, il ne diagnostique pas
+> 	- [ ] Dyspnée d'effort, orthopnée, œdèmes prenant le godet, B3 → **NT-proBNP et
+>         échocardiographie**, sans délai si l'insuffisance cardiaque est aiguë
+> 	- [ ] Cause cardiaque écartée, pyrosis ancien de plus de 10 ans après 50 ans →
+>         **gastroscopie avec biopsies** : ce sont l'ancienneté et l'âge qui posent
+>         l'indication, pas l'intensité du pyrosis — on y cherche un œsophage de Barrett
+> 	- [ ] 🚩 Dysphagie, odynophagie, vomissements répétés, amaigrissement chiffré, anémie,
+>         hématémèse ou méléna → **gastroscopie d'emblée**, sans attendre l'échec d'un
+>         traitement d'épreuve
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Aucun test thérapeutique ne sépare le cœur de l'œsophage : les nitrés soulagent
+>         aussi le spasme œsophagien, un angor peut céder à un antiacide, et 30 % des
+>         coronariens ont un RGO — trouver l'un n'exclut pas l'autre
+> 	- [ ] Un premier bilan normal ne clôt pas le raisonnement : l'ECG et les troponines
+>         excluent la nécrose, pas la coronaropathie — c'est le test fonctionnel qui décide
+>         de la suite
+> 	- [ ] Les questionnaires d'anxiété ne se remplissent qu'**après** l'exclusion cardiaque,
+>         jamais à sa place

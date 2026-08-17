@@ -119,3 +119,24 @@ cssclasses:
 > 	- [ ] Splénomégalie, circulation collatérale, gynécomastie, atrophie testiculaire : hypertension portale
 > 	- [ ] Purpura, ecchymoses, saignement prolongé au point de ponction : effondrement des facteurs vitamine K-dépendants
 > 	- [ ] Défense ou détente : irritation péritonéale — on n'est plus dans le seul prurit
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention — confirmer la cholestase et la typer**
+> 	- [ ] Bilirubine **totale et conjuguée** : une hyperbilirubinémie à prédominance conjuguée signe la cholestase et écarte d'emblée l'hémolyse et le Gilbert
+> 	- [ ] Cholestase : **PAL et GGT**, très augmentées — c'est le couple qui redirige vers l'imagerie biliaire ; les transaminases (ASAT, ALAT) ne s'élèvent que modérément dans l'obstacle, une cytolyse franche déplace l'hypothèse vers le foie lui-même
+> 	- [ ] **TP/INR et albumine** : un TP abaissé qui **se corrige après vitamine K parentérale** signe la malabsorption des vitamines liposolubles, non l'insuffisance hépatocellulaire — s'il ne se corrige pas, l'atteinte est hépatocytaire ; c'est aussi lui qui conditionne la faisabilité d'un geste endoscopique
+> 	- [ ] FSC : anémie, hyperleucocytose ; créatinine — néphropathie aux sels biliaires et syndrome hépatorénal de la cholestase prolongée
+> 	- [ ] **Lipase** : pancréatite obstructive, sur obstacle ampullaire
+> - [ ] **2. Imagerie biliaire, dans cet ordre**
+> 	- [ ] **Échographie abdominale en première intention** : dilatation des voies biliaires intra- **et** extra-hépatiques, calcul résiduel du cholédoque, masse pancréatique ou péri-hilaire, état du parenchyme — **normale, elle n'écarte pas l'obstacle** : le bas cholédoque y est mal vu par interposition gazeuse, et un obstacle récent n'a pas encore eu le temps de dilater les voies
+> 	- [ ] **CT abdominal (ou TAP) injecté** : ce que l'échographie ne montre pas — masse, compression, bilan d'extension si néoplasie
+> 	- [ ] **Cholangio-IRM** : cartographie non invasive de l'arbre biliaire, elle localise l'obstacle et son niveau
+> 	- [ ] **Écho-endoscopie**, avec ponction pour l'histologie : petite tumeur ampullaire ou pancréatique, calcul du bas cholédoque ; duodénoscopie devant une suspicion d'ampullome
+> 	- [ ] **CPRE** : à ne proposer qu'après l'imagerie non invasive, et pour le geste — son apport diagnostique se limite aux **biopsies et au brossage cytologique**, au prix d'un risque de pancréatite post-CPRE
+> - [ ] **3. Selon l'orientation**
+> 	- [ ] Ictère indolore avec amaigrissement chiffré après 50 ans, ou masse à l'imagerie → **CA 19-9** (pancréas, cholangiocarcinome), ACE (métastases hépatiques), α-fœtoprotéine (carcinome hépatocellulaire) — le CA 19-9 ne s'interprète **qu'après levée de l'obstacle**, la cholestase l'élevant à elle seule, et un taux normal n'écarte pas la néoplasie
+> 	- [ ] 🚩 Fièvre avec frissons **+** douleur de l'hypochondre droit **+** ictère (triade de Charcot) → **hémocultures**, prélevées avant toute antibiothérapie et sans la retarder : c'est l'angiocholite
+> 	- [ ] Début brutal, syndrome grippal ou fébrile, sans prurit inaugural → **sérologies virales VHA, VHB, VHC, VHE**
+> 	- [ ] Cholestase sans obstacle visible à l'imagerie → **anticorps anti-mitochondries** (cholangite biliaire primitive), **IgG4** (pancréatite auto-immune)
+> 	- [ ] Ascite, splénomégalie ou signes cutanés d'hépatopathie chronique → bilan hépatique complet et **échographie avec Doppler**, perméabilité portale
+> 	- [ ] 🚩 Prurit sur lésions urticariennes **fixes plus de 24 h**, purpuriques ou laissant une pigmentation → **biopsie cutanée** : ce n'est plus une urticaire banale (vasculite urticarienne)

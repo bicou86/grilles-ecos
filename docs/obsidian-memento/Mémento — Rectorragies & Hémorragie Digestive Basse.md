@@ -128,3 +128,64 @@ cssclasses:
 > 	- [ ] Adénopathie sus-claviculaire gauche, hépatomégalie nodulaire
 > 	- [ ] Défense ou détente : irritation péritonéale — on n'est plus dans la seule
 >         hémorragie
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le laboratoire de première intention — devant toute rectorragie**
+> 	- [ ] FSC : hémoglobine et hématocrite, VGM, plaquettes, leucocytes — un saignement
+>         chronique donne une anémie **microcytaire** avec thrombocytose réactionnelle
+>         (Hb 92 g/L, Ht 28 %, VGM 72 fL, plaquettes 450 G/L : le tableau à reconnaître)
+> 	- [ ] 🚩 L'hémoglobine **initiale** ne gradue pas une hémorragie aiguë : l'hémodilution
+>         demande plusieurs heures. Normale chez un patient tachycarde, elle ne rassure pas —
+>         c'est le chiffre **répété** qui compte
+> 	- [ ] Crase : TP/INR, TCA, fibrinogène — coagulopathie comme cause ou comme facteur
+>         aggravant, d'autant qu'AINS, aspirine et anticoagulants sont souvent sur l'ordonnance
+> 	- [ ] Groupe sanguin, phénotype et RAI, compatibilité croisée : se demandent **avant** que
+>         la transfusion soit décidée, pas pendant
+> 	- [ ] Ionogramme, urée et créatinine — et surtout **leur rapport** : une urée élevée à
+>         créatinine normale trahit la digestion du sang dans le grêle, donc une source
+>         **haute**
+> 	- [ ] Tests hépatiques et albumine (cirrhose, extension hépatique) ; bilan martial (fer,
+>         ferritine, transferrine) : une anémie ferriprive signe une spoliation **ancienne** et
+>         impose à elle seule l'exploration du côlon
+> - [ ] **2. L'endoscopie — l'examen de référence**
+> 	- [ ] Coloscopie totale avec biopsies : elle fait le diagnostic — masse polypoïde
+>         bourgeonnante et friable — et se veut **totale**, 70 % seulement des cancers
+>         siégeant sur le rectosigmoïde. Dans les 24 à 48 h, après préparation colique, si
+>         l'hémorragie est sévère ou persistante ; en électif au-delà de 50 ans ou devant un
+>         drapeau rouge
+> 	- [ ] 🚩 Gastroscopie **d'abord** devant un patient instable, une urée disproportionnée ou
+>         un antécédent d'ulcère sous AINS ou aspirine : 10 à 15 % des « hémorragies basses
+>         sévères » sont en réalité hautes
+> 	- [ ] Rectosigmoïdoscopie ou anuscopie quand la lésion est basse ou la préparation
+>         impossible ; capsule endoscopique quand le haut et le bas sont revenus négatifs
+> 	- [ ] Recherche d'*H. pylori* par antigène fécal ou test respiratoire à l'urée : préférés
+>         à la sérologie, qui ne sépare pas l'infection en cours de l'infection guérie — les
+>         biopsies endoscopiques la cherchent aussi
+> - [ ] **3. L'imagerie**
+> 	- [ ] CT abdominal : il vient **à côté** de l'endoscopie, jamais à sa place — proposé
+>         seul devant une rectorragie, il ne remplace pas la coloscopie
+> 	- [ ] Angioscanner devant un saignement actif : il localise l'hémorragie là où
+>         l'endoscopie ne voit qu'un côlon plein de sang
+> 	- [ ] CT colonographie si la coloscopie reste incomplète ; CT thoraco-abdomino-pelvien
+>         pour le bilan d'extension **une fois** la tumeur prouvée, jamais avant
+> - [ ] **4. Selon l'orientation clinique**
+> 	- [ ] Selles noires collantes ou vomissements en marc de café : recherche de sang occulte
+>         dans les selles pour confirmer le méléna, puis gastroscopie — et non coloscopie
+> 	- [ ] Sang rouge vif sur le papier, indolore, sans masse au toucher : l'anuscopie suffit à
+>         voir hémorroïdes et fissure
+> 	- [ ] Saignement abondant et indolore après 60 ans : diverticulose — coloscopie, ou CT
+>         abdominal quand elle ne conclut pas
+> 	- [ ] Douleur brutale du flanc gauche **puis** diarrhée sanglante après 60 ans : colite
+>         ischémique — CT injecté
+> - [ ] **5. À ne pas oublier**
+> 	- [ ] Statut du dépistage colorectal, à demander systématiquement : en Suisse, test
+>         immunologique fécal tous les 2 ans ou coloscopie tous les 10 ans entre 50 et 69 ans —
+>         mais un test fécal négatif est un outil de dépistage **chez l'asymptomatique**, il
+>         n'écarte pas un cancer et ne dispense jamais de la coloscopie devant une rectorragie
+> 	- [ ] Stratification du risque : score d'Oakland (≤ 8 : faible risque),
+>         Glasgow-Blatchford (0-1 écarte une origine haute), index de choc
+>         FC/TAS > 1 = choc débutant
+> 	- [ ] ACE : marqueur de référence et de suivi une fois le cancer prouvé — il ne fait
+>         jamais le diagnostic, et normal il n'écarte rien
+> 	- [ ] Test de grossesse chez toute femme en âge de procréer, avant toute imagerie
+>         irradiante

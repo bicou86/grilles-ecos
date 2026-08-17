@@ -120,3 +120,30 @@ cssclasses:
 > 	- [ ] Foie dur et nodulaire, masse épigastrique, adénopathie sus-claviculaire gauche (Troisier) : néoplasie évoluée
 > 	- [ ] Ascite tendue, œdèmes, dénutrition : décompensation hépatique
 > 	- [ ] Défense ou détente : irritation péritonéale — on n'est plus dans le seul ictère
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention — le bilan de tout ictère**
+> 	- [ ] Bilirubine **totale et fractionnée** (conjuguée / non conjuguée) : le seul examen qui trie entre pré-, intra- et post-hépatique, et qui commande tout le reste du bilan
+> 	- [ ] Cytolyse : ASAT, ALAT — au-delà de **1000 U/L**, origine ischémique, virale aiguë ou toxique, et rien d'autre ; un rapport **ASAT/ALAT > 2** oriente vers l'alcool
+> 	- [ ] Cholestase : PAL, GGT, 5'-nucléotidase — leur élévation redirige d'emblée vers l'imagerie des voies biliaires
+> 	- [ ] 🚩 Crase et fonction de synthèse : **TP/INR, TCA, facteur V**, albumine — à demander systématiquement ; c'est le marqueur qui bouge en premier, celui qui chiffre la gravité et qui conditionne la faisabilité d'un geste de drainage. **TP < 50 % + INR ≥ 1,5 + encéphalopathie = hépatite fulminante**. Le facteur V sépare l'insuffisance hépatocellulaire de la carence en vitamine K
+> 	- [ ] FSC avec plaquettes ; créatinine et ionogramme
+> 	- [ ] Ne jamais juger la gravité sur les transaminases : elles **baissent** quand le foie achève de se nécroser, faute d'hépatocytes pour en libérer — le couple qui suit réellement l'évolution est TP-facteur V d'un côté, état de conscience de l'autre
+> - [ ] **2. Selon l'orientation — ce que le triplet urines-selles-prurit déclenche**
+> 	- [ ] Urines foncées **+** selles normales **+** pas de prurit (atteinte hépatocellulaire) → **sérologies virales**, toutes dans le même temps : IgM anti-VHA, Ag HBs et Ac anti-HBc IgM, Ac anti-VHC, IgM anti-VHE — l'hépatite E est cliniquement indiscernable de l'A, seule la sérologie les sépare ; EBV, CMV, HSV si le premier train revient négatif
+> 	- [ ] Selles décolorées **+** prurit, ou ictère indolore avec perte de poids (obstacle) → **échographie abdominale** en première intention : dilatation des voies biliaires (**cholédoque > 7 mm**), lithiase, masse pancréatique, structure du parenchyme, ascite, splénomégalie, perméabilité portale au Doppler
+> 	- [ ] Ictère **acholurique** — urines claires, bilirubine non conjuguée isolée → bilan d'hémolyse : réticulocytes, frottis, LDH, haptoglobine, test de Coombs direct
+> 	- [ ] 🚩 Fièvre avec frissons **+** douleur de l'hypochondre droit (angiocholite) → **hémocultures avant toute antibiothérapie**, CRP, leucocytes, lipase, lactate
+> 	- [ ] Automédication ou exposition toxique → **paracétamolémie** reportée sur le **nomogramme de Rumack-Matthew** — un dosage sans heure d'ingestion ne s'interprète pas ; alcoolémie, toxiques urinaires
+> - [ ] **3. Deuxième ligne, quand le premier bilan ne tranche pas**
+> 	- [ ] Auto-immun : ANA, anti-muscle lisse, anti-LKM1, AMA, p-ANCA, électrophorèse avec IgG, IgM et IgA
+> 	- [ ] Métabolique : ferritine et **saturation de la transferrine > 45 %** (hémochromatose), céruloplasmine et cuprurie des 24 h, α1-antitrypsine
+> 	- [ ] **CT abdominal injecté**, TAP pour le bilan d'extension ; **cholangio-IRM**, exploration non invasive de référence des voies biliaires
+> 	- [ ] **Échoendoscopie avec biopsie** — la confirmation histologique est indispensable avant tout traitement oncologique ; FibroScan, biopsie hépatique si l'étiologie reste indéterminée
+> 	- [ ] **CA 19-9** : marqueur tumoral non spécifique, utile au suivi et non au diagnostic — un taux normal n'écarte pas la néoplasie
+> 	- [ ] **CPRE** : réservée à l'obstacle déjà confirmé ou à l'angiocholite — interventionnelle et non dénuée de risque (pancréatite post-CPRE), elle vient après la cholangio-IRM et jamais en débrouillage
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] **β-hCG** chez toute femme en âge de procréer
+> 	- [ ] Une échographie normale n'écarte pas l'obstacle : elle cherche la **dilatation**, qu'un obstacle récent ou intermittent n'a pas encore eu le temps de créer
+> 	- [ ] Chiffrer la gravité une fois le cadre posé — **Maddrey > 32** (hépatite alcoolique sévère), **Child-Pugh** et **MELD** pour la cirrhose, **West Haven** pour l'encéphalopathie : Maddrey et MELD se lisent sur le bilan déjà demandé, Child-Pugh et West Haven y ajoutent l'examen clinique (ascite, encéphalopathie)
+> 	- [ ] 🚩 Foie dur et nodulaire, ou hépatopathie chronique connue → **α-fœtoprotéine** et **imagerie en coupes injectée** (CT ou IRM) : c'est le carcinome hépatocellulaire qu'on cherche, et aucun bilan standard ne le débusque

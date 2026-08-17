@@ -136,3 +136,43 @@ cssclasses:
 > 	- [ ] Hépatomégalie, hépatalgie, ascite
 > 	- [ ] 🚩 Mollets : douleur provoquée, œdème unilatéral, chaleur, perte du ballant
 > 	- [ ] Pouls périphériques aux quatre membres, symétrie
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan que toute hémoptysie déclenche**
+> 	- [ ] **FSC et plaquettes** : anémie et son degré — c'est le retentissement du saignement,
+>         jamais sa cause ; hyperleucocytose, thrombopénie
+> 	- [ ] **Crase, TP et TCA** : d'autant plus impérative sous anticoagulant ou antiagrégant,
+>         et de toute façon avant toute biopsie
+> 	- [ ] **Gazométrie artérielle** : la saturation ne dit rien de la capnie ni du pH —
+>         hypoxémie, hypercapnie, acidose
+> 	- [ ] CRP et VS, ionogramme, **créatinine** — elle se connaît **avant l'injection de
+>         produit de contraste**, et c'est elle qui débusque le syndrome pneumo-rénal
+>         (Goodpasture, vascularite), que complète un sédiment urinaire hématurique
+> 	- [ ] **Radiographie thoracique face et profil**, immédiate et systématique : masse,
+>         condensation, caverne, épanchement, atélectasie — mais **normale, elle n'écarte
+>         rien**, sa sensibilité est faible et le scanner reste dû
+> - [ ] **2. L'imagerie, puis l'endoscopie — l'ordre compte**
+> 	- [ ] **CT thoracique avec produit de contraste** : la référence, celui qui localise le
+>         saignement et en montre la cause quand la radiographie n'a rien vu
+> 	- [ ] **Angio-CT** devant un facteur de risque thrombo-embolique, un mollet douloureux ou
+>         une douleur qui augmente à l'inspiration profonde
+> 	- [ ] **Bronchoscopie avec lavage broncho-alvéolaire et biopsies bronchiques** : c'est elle
+>         qui donne le diagnostic histologique, et elle vient **après le scanner, jamais
+>         avant** — c'est lui qui désigne le territoire à explorer
+> - [ ] **3. Devant fièvre, sueurs nocturnes, amaigrissement ou toux qui a changé**
+> 	- [ ] **Recherche de BK sur trois échantillons** d'expectorations : la tuberculose partage
+>         mot pour mot ce tableau avec le cancer et se cherche même sans contage ni voyage
+> 	- [ ] **Recherche de cellules malignes** dans les expectorations : positive elle affirme,
+>         négative elle n'écarte pas — c'est la bronchoscopie qui tranchera
+> 	- [ ] Examen direct et **culture des expectorations** quand elles sont purulentes
+> 	- [ ] **Hémocultures** si fièvre, prélevées avant la première dose d'antibiotique
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 **Hémoptysie massive** (> 200 mL/24 h ou > 100 mL/h) : le bilan change de nature —
+>         angio-CT en urgence pour localiser le saignement, puis **artériographie bronchique**,
+>         diagnostique et thérapeutique dans le même temps par l'embolisation. La seule grille
+>         de cette SSP ne documente qu'une hémoptysie non massive
+> 	- [ ] 🚩 **Échocardiographie** devant une orthopnée, des œdèmes ou un roulement diastolique
+>         de la pointe : la sténose mitrale et l'insuffisance cardiaque gauche font cracher du
+>         sang, et aucune grille de cette SSP ne demande d'examen cardiaque
+> 	- [ ] **β-hCG chez toute femme en âge de procréer avant d'irradier** — la radiographie puis
+>         le scanner thoracique sont ici systématiques, et l'un suit l'autre de près

@@ -106,3 +106,21 @@ cssclasses:
 > 	- [ ] Aggravation d'un jour à l'autre malgré antalgiques et antipyrétiques correctement donnés
 > 	- [ ] Point osseux électif douloureux, ou tuméfaction des parties molles en regard de l'os
 > 	- [ ] Toute boiterie fébrile de l'enfant reste une urgence tant qu'un autre mécanisme n'est pas démontré
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Bilan sanguin — d'emblée devant une boiterie fébrile, sans attendre l'imagerie**
+> 	- [ ] FSC avec formule : hyperleucocytose à polynucléaires — le seuil qui compte est 12 G/L
+> 	- [ ] CRP : élevée au-delà de 20 mg/L — elle s'élève en quelques heures, bien avant la VS
+> 	- [ ] VS : accélérée, le seuil qui compte étant 40 mm/h — plus inerte que la CRP, elle monte et redescend plus lentement
+> 	- [ ] 🚩 Hémocultures, prélevées **avant** la première dose d'antibiotique : positives dans 30 à 60 % des cas seulement, mais c'est l'unique fenêtre pour les obtenir — les oublier est le piège classique de la station
+> 	- [ ] Les quatre critères de Kocher se lisent ensemble, deux au lit de l'enfant et deux au laboratoire : fièvre > 38,5 °C, refus d'appui, VS > 40 mm/h, leucocytes > 12 G/L — trois ou quatre rendent l'arthrite septique très probable
+> - [ ] **2. Imagerie de première intention — la radiographie élimine, l'échographie tranche**
+> 	- [ ] Radiographie du bassin de face et hanche axiale : elle sert à écarter les autres causes — Legg-Calvé-Perthes, fracture, lésion osseuse — mais reste normale au début d'une arthrite septique ; normale, elle n'écarte rien et ne doit pas retarder la suite
+> 	- [ ] Échographie de hanche : cherche l'épanchement intra-articulaire, c'est-à-dire le décollement de la capsule — non invasive, immédiate, c'est l'examen de triage
+> - [ ] **3. Ponction articulaire — le geste qui fait le diagnostic**
+> 	- [ ] 🚩 Devant un épanchement échographique chez un enfant fébrile, ponction articulaire écho-guidée, prélevée avant toute antibiothérapie au même titre que les hémocultures : c'est le gold standard, et ni le bilan sanguin ni l'imagerie ne concluent à eux seuls
+> 	- [ ] Sur le liquide synovial : cellularité, Gram, culture avec antibiogramme, PCR
+> - [ ] **4. Selon l'orientation — ce que la clinique ajoute au bilan de base**
+> 	- [ ] Devant un point osseux électif douloureux ou une tuméfaction des parties molles : IRM, ou CT à défaut, pour chercher l'ostéomyélite associée ou l'abcès
+> 	- [ ] Chez le petit enfant, frottis de gorge avec PCR Kingella kingae : premier germe avant 4 ans, et il échappe volontiers à la culture standard
+> 	- [ ] Devant une atteinte articulaire avec piqûre de tique ou érythème migrant dans l'histoire : sérologie de Lyme

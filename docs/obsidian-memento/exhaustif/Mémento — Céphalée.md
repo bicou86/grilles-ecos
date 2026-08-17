@@ -197,7 +197,7 @@ cssclasses:
 > - [ ] **27. Nausées / vomissements *(1 grille sur 6)***
 > - [ ] **28. Photophobie *(1 grille sur 6)***
 > - [ ] **29. Phonophobie *(1 grille sur 6)***
-> - [ ] **30. Symptômes d'aura *(2 grilles sur 6)***
+> - [ ] **30. Symptômes d'aura *(1 grille sur 6)***
 > - [ ] **31. Symptômes autonomes *(1 grille sur 6)***
 > - [ ] **32. Anamnèse des déclencheurs *(1 grille sur 6)***
 > - [ ] **33. Sommeil *(1 grille sur 6)***
@@ -251,32 +251,33 @@ cssclasses:
 > 	- [ ] Alcool
 > 	- [ ] Tabac
 > 	- [ ] Drogues
-> - [ ] **74. Questions sur infections herpétiques *(Méningite)***
+> - [ ] **74. Symptômes B *(Méningite)***
+> - [ ] **75. Questions sur infections herpétiques *(Méningite)***
 > 	- [ ] Herpès
 > 	- [ ] Varicelle-zona (VZV)
-> - [ ] **75. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
+> - [ ] **76. Drapeaux rouges - céphalée *(Thrombose veineuse cérébrale)***
 > 	- [ ] Céphalée nouvelle/différente
 > 	- [ ] Céphalée décrite comme la pire
 > 	- [ ] Céphalée en coup de tonnerre
 > 	- [ ] Céphalée déclenchée par effort/exercice/activité sexuelle
 > 	- [ ] Céphalée déclenchée/aggravée par Valsalva ou position
-> - [ ] **76. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
+> - [ ] **77. Antécédents neurologiques *(Thrombose veineuse cérébrale)***
 > 	- [ ] Migraines chroniques
 > 	- [ ] Caractéristiques des migraines habituelles
 > 	- [ ] Traitement habituel
 > 	- [ ] Efficacité du traitement actuel
-> - [ ] **77. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
+> - [ ] **78. Facteurs de risque vasculaire *(Thrombose veineuse cérébrale)***
 > 	- [ ] Contraception orale
 > 	- [ ] Tabagisme
 > 	- [ ] Antécédents familiaux vasculaires
 > 	- [ ] HTA/diabète/dyslipidémie
-> - [ ] **78. Contexte *(Thrombose veineuse cérébrale)***
+> - [ ] **79. Contexte *(Thrombose veineuse cérébrale)***
 > 	- [ ] Grossesse/post-partum
 > 	- [ ] Immunosuppression/cancer
 > 	- [ ] Traumatisme crânien récent
 > 	- [ ] Voyage/contage
 > 	- [ ] Vaccins
-> - [ ] **79. Anamnèse par système *(Thrombose veineuse cérébrale)***
+> - [ ] **80. Anamnèse par système *(Thrombose veineuse cérébrale)***
 > 	- [ ] État général
 > 	- [ ] Système digestif
 > 	- [ ] Système gynécologique
@@ -311,11 +312,8 @@ cssclasses:
 > 	- [ ] Méningisme *(Hémorragie sous-arachnoïdienne)*
 > 	- [ ] Signe de Kernig *(Hémorragie sous-arachnoïdienne)*
 > 	- [ ] Signe de Brudzinski *(Hémorragie sous-arachnoïdienne)*
-> - [ ] **5. Examen cardiovasculaire *(Hémorragie sous-arachnoïdienne · Thrombose veineuse cérébrale)***
-> 	- [ ] Auscultation cardiaque *(Hémorragie sous-arachnoïdienne)*
-> 	- [ ] Palpation artères temporales *(Thrombose veineuse cérébrale)*
-> 	- [ ] Auscultation carotidienne *(Thrombose veineuse cérébrale)*
-> 	- [ ] Recherche de souffle vasculaire *(Thrombose veineuse cérébrale)*
+> - [ ] **5. Examen cardiovasculaire *(Hémorragie sous-arachnoïdienne)***
+> 	- [ ] Auscultation cardiaque
 > - [ ] **6. Méningisme *(2 grilles sur 6)***
 > - [ ] **7. Pupilles *(1 grille sur 6)***
 > - [ ] **8. Oculomotricité *(1 grille sur 6)***
@@ -367,13 +365,18 @@ cssclasses:
 > 	- [ ] Raideur de nuque
 > 	- [ ] Signe de Kernig
 > 	- [ ] Signe de Brudzinski
-> - [ ] **37. Autres examens pertinents *(Thrombose veineuse cérébrale)***
+> - [ ] **37. Examen vasculaire *(Thrombose veineuse cérébrale)***
+> 	- [ ] Palpation artères temporales
+> 	- [ ] Auscultation carotidienne
+> 	- [ ] Recherche de souffle vasculaire
+> - [ ] **38. Autres examens pertinents *(Thrombose veineuse cérébrale)***
 > 	- [ ] Fond d'œil/œdème papillaire
 > 	- [ ] Démarche et épreuves cérébelleuses
 > 	- [ ] Recherche d'un rash cutané
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Diagnostic de suspicion *(2 grilles sur 6)* — *Céphalée du restaurant chinois · Méningite***
+> - [ ] **1. Hypothèses diagnostiques *(2 grilles sur 6)* — *Hémorragie sous-arachnoïdienne · Migraine***
+> - [ ] **2. Diagnostic de suspicion *(2 grilles sur 6)* — *Céphalée du restaurant chinois · Méningite***
 
 > [!success] 💊 Management — si Algie vasculaire (cluster)
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
@@ -389,32 +392,31 @@ cssclasses:
 > - [ ] **4. CT cérébral**
 
 > [!success] 💊 Management — si Hémorragie sous-arachnoïdienne
-> - [ ] **1. Hypothèse diagnostique principale**
-> - [ ] **2. Communication avec la patiente**
+> - [ ] **1. Communication avec la patiente**
 > 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions de la patiente
 > 	- [ ] Ne pas répéter les manœuvres douloureuses pendant l'examen physique
-> - [ ] **3. Conseil et soutien**
-> 	- [ ] Réaction appropriée au défi concernant l'entretien d'embauche
+> - [ ] **2. Conseil et soutien**
 > 	- [ ] Proposer d'aider la patiente à s'allonger
 > 	- [ ] Proposer de diminuer l'éclairage dans la salle d'examen
+> 	- [ ] Réaction appropriée au défi concernant le mari
 > 	- [ ] Soutien émotionnel face à la gravité
 > 	- [ ] Information sur l'urgence de la situation
 > 	- [ ] Dégradation neurologique
 > 	- [ ] Signes d'engagement cérébral
 > 	- [ ] Hydrocéphalie aiguë
 > 	- [ ] Vasospasme (J4-14)
-> - [ ] **4. Examens complémentaires - imagerie**
+> - [ ] **3. Examens complémentaires urgents**
 > 	- [ ] CT cérébral sans contraste
 > 	- [ ] FSC
 > 	- [ ] Glucose, électrolytes
-> - [ ] **5. Examens complémentaires biologiques et microbiologiques**
+> - [ ] **4. Examens complémentaires biologiques et microbiologiques**
 > 	- [ ] TP, TCA
 > 	- [ ] Hémocultures
-> - [ ] **6. Ponction lombaire et imagerie spécialisée**
+> - [ ] **5. Ponction lombaire et imagerie spécialisée**
 > 	- [ ] Ponction lombaire avec analyse du LCR
 > 	- [ ] Angiographie
 
@@ -434,8 +436,7 @@ cssclasses:
 > - [ ] **4. Traitement**
 
 > [!success] 💊 Management — si Migraine
-> - [ ] **1. Hypothèse diagnostique principale *(1 grille sur 2)***
-> - [ ] **2. Drapeaux rouges à rechercher *(1 grille sur 2)***
+> - [ ] **1. Drapeaux rouges à rechercher *(1 grille sur 2)***
 > 	- [ ] Céphalée sévère implacable
 > 	- [ ] Fièvre
 > 	- [ ] Déficits neurologiques focaux
@@ -451,65 +452,65 @@ cssclasses:
 > 	- [ ] Céphalée positionnelle
 > 	- [ ] Immunodépression
 > 	- [ ] Déficit neurologique
-> - [ ] **3. Traitement/Prise en charge *(1 grille sur 2)***
+> - [ ] **2. Traitement/Prise en charge *(1 grille sur 2)***
 > 	- [ ] Migraine, céphalée de tension et algie vasculaire = diagnostics cliniques basés sur l'histoire et l'examen physique
 > 	- [ ] Ne pas faire d'examens diagnostiques sauf si drapeaux rouges présents
 > 	- [ ] Proposer au patient de s'allonger et tamiser la lumière
-> - [ ] **4. Communication avec la patiente *(1 grille sur 2)***
+> - [ ] **3. Communication avec la patiente *(1 grille sur 2)***
 > 	- [ ] Explications à la patiente des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord de la patiente avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions de la patiente
-> - [ ] **5. Conseil et soutien *(1 grille sur 2)***
+> - [ ] **4. Conseil et soutien *(1 grille sur 2)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Donner l'option de s'allonger et proposer de tamiser la lumière
 > 	- [ ] Réaction appropriée au défi concernant l'entretien d'embauche
 > 	- [ ] Éducation sur les facteurs déclenchants
 > 	- [ ] Conseils hygiène de vie
-> - [ ] **6. Pas d'imagerie *(1 grille sur 2)***
-> - [ ] **7. Diagnostic de travail *(1 grille sur 2)***
-> - [ ] **8. Information sur le diagnostic *(1 grille sur 2)***
-> - [ ] **9. Traitement de la crise par AINS *(1 grille sur 2)***
-> - [ ] **10. Traitement de la crise par triptan *(1 grille sur 2)***
-> - [ ] **11. Mesures non médicamenteuses *(1 grille sur 2)***
-> - [ ] **12. Filet de sécurité *(1 grille sur 2)***
-> - [ ] **13. Journal des migraines *(1 grille sur 2)***
-> - [ ] **14. Conseils sur le mode de vie *(1 grille sur 2)***
-> - [ ] **15. Information sur la contraception *(1 grille sur 2)***
-> - [ ] **16. Contrôle de suivi *(1 grille sur 2)***
-> - [ ] **17. Évaluer l'indication à une prophylaxie *(1 grille sur 2)***
-> - [ ] **18. Orientation vers la neurologie *(1 grille sur 2)***
+> - [ ] **5. Pas d'imagerie *(1 grille sur 2)***
+> - [ ] **6. Diagnostic de travail *(1 grille sur 2)***
+> - [ ] **7. Information sur le diagnostic *(1 grille sur 2)***
+> - [ ] **8. Traitement de la crise par AINS *(1 grille sur 2)***
+> - [ ] **9. Traitement de la crise par triptan *(1 grille sur 2)***
+> - [ ] **10. Mesures non médicamenteuses *(1 grille sur 2)***
+> - [ ] **11. Filet de sécurité *(1 grille sur 2)***
+> - [ ] **12. Journal des migraines *(1 grille sur 2)***
+> - [ ] **13. Conseils sur le mode de vie *(1 grille sur 2)***
+> - [ ] **14. Information sur la contraception *(1 grille sur 2)***
+> - [ ] **15. Contrôle de suivi *(1 grille sur 2)***
+> - [ ] **16. Évaluer l'indication à une prophylaxie *(1 grille sur 2)***
+> - [ ] **17. Orientation vers la neurologie *(1 grille sur 2)***
 
 > [!success] 💊 Management — si Prééclampsie
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**
 
 > [!success] 💊 Management — si Thrombose veineuse cérébrale
-> - [ ] **1. Hypothèse diagnostique principale**
-> 	- [ ] Thrombose veineuse cérébrale
-> - [ ] **2. Traitement/Prise en charge**
-> 	- [ ] Voie veineuse périphérique
-> 	- [ ] Analgésie adaptée
-> 	- [ ] Antiémétiques si nécessaire
-> 	- [ ] Surveillance neurologique
-> - [ ] **3. Examens complémentaires - imagerie**
-> 	- [ ] CT cérébral en urgence
-> 	- [ ] CT avec temps veineux/angio-CT
-> 	- [ ] IRM cérébrale si disponible
-> 	- [ ] Veinographie par résonance magnétique
-> - [ ] **4. Diagnostics différentiels**
+> - [ ] **1. Diagnostics différentiels**
 > 	- [ ] AVC ischémique/hémorragique
 > 	- [ ] Migraine avec aura
 > 	- [ ] Méningite/encéphalite
 > 	- [ ] Hémorragie sous-arachnoïdienne
 > 	- [ ] Dissection artérielle
 > 	- [ ] Hypertension intracrânienne
-> - [ ] **5. Examens complémentaires - laboratoire**
+> - [ ] **2. Hypothèse diagnostique principale**
+> 	- [ ] Thrombose veineuse cérébrale
+> - [ ] **3. Examens complémentaires - laboratoire**
 > 	- [ ] FSC, CRP/VS
 > 	- [ ] Coagulation (TP, PTT)
 > 	- [ ] D-dimères
 > 	- [ ] Fonction rénale, ionogramme
 > 	- [ ] Test de grossesse si doute
+> - [ ] **4. Examens complémentaires - imagerie**
+> 	- [ ] CT cérébral en urgence
+> 	- [ ] CT avec temps veineux/angio-CT
+> 	- [ ] IRM cérébrale si disponible
+> 	- [ ] Veinographie par résonance magnétique
+> - [ ] **5. Prise en charge immédiate**
+> 	- [ ] Voie veineuse périphérique
+> 	- [ ] Analgésie adaptée
+> 	- [ ] Antiémétiques si nécessaire
+> 	- [ ] Surveillance neurologique
 > - [ ] **6. Traitement spécifique si thrombose confirmée**
 > 	- [ ] Anticoagulation par HBPM dose thérapeutique
 > 	- [ ] Même si lésion hémorragique

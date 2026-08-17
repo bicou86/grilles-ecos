@@ -72,3 +72,24 @@ cssclasses:
 > 	- [ ] Faisabilité, à vérifier avant de le laisser partir : peut-il se rendre à la structure aujourd'hui, comment le traitement sera-t-il payé, où prendra-t-il ses comprimés, son logement et son travail le permettent-ils
 > 	- [ ] 🚩 Ne pas le laisser repartir sans lui avoir fait reformuler : le délai, la première dose, les 28 jours, la date du contrôle et le numéro à appeler en cas de problème
 > 	- [ ] Résumer, laisser un temps pour les questions et rappeler comment reprendre contact avant le prochain rendez-vous
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan du jour même — il se prélève avant la première dose, et il ne se rattrape pas après**
+> 	- [ ] Sérologie VIH combinée antigène p24 / anticorps (4e génération), après consentement explicite : elle documente le statut d'AVANT l'exposition et écarte une infection déjà installée — une prophylaxie posée sur un VIH méconnu revient à traiter une infection avec un schéma incomplet
+> 	- [ ] Sérologies hépatite B (AgHBs, anti-HBc, anti-HBs) et hépatite C, sérologie syphilis (test tréponémique et VDRL) : les IST voyagent ensemble, et c'est l'anti-HBs qui décide le jour même entre rien, un rappel et les immunoglobulines
+> 	- [ ] PCR gonocoque et chlamydia sur **chacun** des sites exposés — premier jet d'urine, gorge, anus : un prélèvement urinaire isolé rate les portages pharyngés et anaux, presque toujours asymptomatiques
+> 	- [ ] Test de grossesse chez toute femme en âge de procréer : il commande le choix des molécules et l'indication d'une contraception d'urgence
+> 	- [ ] Créatinine avec clairance et tests hépatiques (ASAT, ALAT, bilirubine) : bilan de tolérance avant ténofovir et antirétroviraux, à demander avec le reste et non après
+> - [ ] **2. La personne source — le seul examen capable d'annuler l'indication**
+> 	- [ ] Source joignable : sérologie VIH en urgence, avec son propre consentement — un test rapide rendu en une heure vaut mieux qu'une sérologie de laboratoire rendue demain, car c'est le délai qui décide
+> 	- [ ] Source connue positive : charge virale plutôt que sérologie — indétectable sous traitement, elle ne transmet pas, et l'indication à la prophylaxie tombe
+> - [ ] **3. Ce que l'exposition et la clinique ajoutent**
+> 	- [ ] 🚩 Fièvre, pharyngite, éruption ou adénopathies 2 à 4 semaines après un rapport : c'est une primo-infection jusqu'à preuve du contraire — test combiné **et** charge virale (ARN VIH), positive une à deux semaines avant les anticorps
+> 	- [ ] Ulcération ou plaie génitale, buccale ou anale : prélèvement de la lésion en plus des sérologies — l'effraction muqueuse est à la fois ce qui a majoré le risque et le siège d'une IST à documenter
+> 	- [ ] Partage de matériel d'injection, piqûre accidentelle, tatouage ou piercing : sérologie VHC complétée d'une PCR si l'exposition est récente — les anticorps anti-VHC n'apparaissent qu'après plusieurs semaines
+> 	- [ ] PrEP en cours et prises irrégulières : le signaler au laboratoire — une exposition sous PrEP partielle retarde et atténue la séroconversion, et rend la sérologie plus difficile à lire
+> 	- [ ] 🚩 Rapport non consenti ou souvenir manquant : prélèvements médico-légaux avant toute toilette, et recherche de toxiques dans le sang et les urines — leur fenêtre de détection va de quelques heures à quelques jours, aucun de ces prélèvements ne se rattrape
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Le bilan du jour ne répond pas à la question posée : sérologie VIH de contrôle à 6 semaines puis à 3 mois, hépatite C comprise — c'est elle qui conclut, et cela se dit en prescrivant, pas en rendant le résultat
+> 	- [ ] Un bilan IST normal aujourd'hui n'écarte rien de l'exposition d'hier : gonocoque et chlamydia ne sont détectables qu'après quelques jours, la syphilis après 2 à 6 semaines
+> 	- [ ] Une source négative fait tomber la prophylaxie, pas le bilan : l'exposition reste l'occasion d'un dépistage complet, et c'est souvent lui qui trouve l'IST antérieure restée muette

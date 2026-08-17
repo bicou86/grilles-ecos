@@ -260,16 +260,12 @@ cssclasses:
 > 	- [ ] Attention et concentration
 > 	- [ ] Langage
 > 	- [ ] Reconnaissance visuelle et négligence
-> - [ ] **10. Examen des autres paires crâniennes *(2 grilles sur 4)***
-> 	- [ ] Nerf facial (VII) *(AVC)*
-> 	- [ ] Nerfs oculomoteurs (III, IV, VI) *(AVC)*
-> 	- [ ] Nerf trijumeau (V) *(AVC)*
-> 	- [ ] Nerfs bulbaires (IX, X, XII) *(AVC)*
-> 	- [ ] Champ visuel *(AVC)*
-> 	- [ ] II — acuité visuelle et champ visuel par confrontation *(1 grille sur 4)*
-> 	- [ ] III, IV, VI — oculomotricité et réflexe photomoteur *(1 grille sur 4)*
-> 	- [ ] V — sensibilité faciale et masséters *(1 grille sur 4)*
-> 	- [ ] VIII à XII — audition, voile, déglutition, langue *(1 grille sur 4)*
+> - [ ] **10. Examen des nerfs crâniens *(AVC)***
+> 	- [ ] Nerf facial (VII)
+> 	- [ ] Nerfs oculomoteurs (III, IV, VI)
+> 	- [ ] Nerf trijumeau (V)
+> 	- [ ] Nerfs bulbaires (IX, X, XII)
+> 	- [ ] Champ visuel
 > - [ ] **11. Examen de la motricité *(AVC)***
 > 	- [ ] Testing musculaire analytique
 > 	- [ ] Manœuvre de Barré
@@ -307,46 +303,51 @@ cssclasses:
 > 	- [ ] Sourire / montrer les dents
 > 	- [ ] Gonfler les joues
 > 	- [ ] Plisser les lèvres (siffler)
-> - [ ] **20. Examen ophtalmologique ciblé *(1 grille sur 4)***
+> - [ ] **20. Examen des autres paires crâniennes *(1 grille sur 4)***
+> 	- [ ] II — acuité visuelle et champ visuel par confrontation
+> 	- [ ] III, IV, VI — oculomotricité et réflexe photomoteur
+> 	- [ ] V — sensibilité faciale et masséters
+> 	- [ ] VIII à XII — audition, voile, déglutition, langue
+> - [ ] **21. Examen ophtalmologique ciblé *(1 grille sur 4)***
 > 	- [ ] Acuité visuelle
 > 	- [ ] Inspection de la cornée et de la conjonctive
 > 	- [ ] Réflexe cornéen
 > 	- [ ] Recherche de kératite (fluorescéine)
-> - [ ] **21. Otoscopie et inspection du pavillon *(1 grille sur 4)***
-> - [ ] **22. Palpation de la loge parotidienne et des aires ganglionnaires *(1 grille sur 4)***
-> - [ ] **23. Examen neurologique des membres et de la coordination *(1 grille sur 4)***
+> - [ ] **22. Otoscopie et inspection du pavillon *(1 grille sur 4)***
+> - [ ] **23. Palpation de la loge parotidienne et des aires ganglionnaires *(1 grille sur 4)***
+> - [ ] **24. Examen neurologique des membres et de la coordination *(1 grille sur 4)***
 > 	- [ ] Force segmentaire des quatre membres
 > 	- [ ] Sensibilité
 > 	- [ ] Coordination et marche
-> - [ ] **24. Paramètres vitaux et état général *(1 grille sur 4)***
-> - [ ] **25. Envisage examen de l'acuité visuelle *(1 grille sur 4)***
-> - [ ] **26. Inspection des paupières et de la fermeture palpébrale (lagophtalmie, signe de Charles Bell) *(1 grille sur 4)***
-> - [ ] **27. Inspection de la conjonctive et de la cornée (signes d'exposition : rougeur, sécheresse) et évaluation du larmoiement *(1 grille sur 4)***
+> - [ ] **25. Paramètres vitaux et état général *(1 grille sur 4)***
+> - [ ] **26. Envisage examen de l'acuité visuelle *(1 grille sur 4)***
+> - [ ] **27. Inspection des paupières et de la fermeture palpébrale (lagophtalmie, signe de Charles Bell) *(1 grille sur 4)***
+> - [ ] **28. Inspection de la conjonctive et de la cornée (signes d'exposition : rougeur, sécheresse) et évaluation du larmoiement *(1 grille sur 4)***
 > 	- [ ] Inspection de la conjonctive et de la cornée
 > 	- [ ] Évaluation du larmoiement
-> - [ ] **28. Réaction pupillaire *(1 grille sur 4)***
-> - [ ] **29. Champs visuels par confrontation *(1 grille sur 4)***
-> - [ ] **30. Motilité oculaire (6 directions) *(1 grille sur 4)***
+> - [ ] **29. Réaction pupillaire *(1 grille sur 4)***
+> - [ ] **30. Champs visuels par confrontation *(1 grille sur 4)***
+> - [ ] **31. Motilité oculaire (6 directions) *(1 grille sur 4)***
 > 	- [ ] Horizontal
 > 	- [ ] Vertical
-> - [ ] **31. Fond d'œil à l'ophtalmoscope (intention) *(1 grille sur 4)***
-> - [ ] **32. Réflexe cornéen (intention) *(1 grille sur 4)***
-> - [ ] **33. Sensibilité des territoires du V DES DEUX CÔTÉS *(1 grille sur 4)***
+> - [ ] **32. Fond d'œil à l'ophtalmoscope (intention) *(1 grille sur 4)***
+> - [ ] **33. Réflexe cornéen (intention) *(1 grille sur 4)***
+> - [ ] **34. Sensibilité des territoires du V DES DEUX CÔTÉS *(1 grille sur 4)***
 > 	- [ ] Front
 > 	- [ ] Joues
 > 	- [ ] Mandibules
-> - [ ] **34. NC VII — inspection du visage (recherche d'asymétrie) *(1 grille sur 4)***
-> - [ ] **35. NC VII — motilité des sourcils *(1 grille sur 4)***
+> - [ ] **35. NC VII — inspection du visage (recherche d'asymétrie) *(1 grille sur 4)***
+> - [ ] **36. NC VII — motilité des sourcils *(1 grille sur 4)***
 > 	- [ ] Lever les sourcils
 > 	- [ ] Froncer les sourcils
-> - [ ] **36. NC VII — yeux *(1 grille sur 4)***
+> - [ ] **37. NC VII — yeux *(1 grille sur 4)***
 > 	- [ ] Fermer fortement
 > 	- [ ] Ouverture contre résistance
-> - [ ] **37. NC VII — bouche *(1 grille sur 4)***
+> - [ ] **38. NC VII — bouche *(1 grille sur 4)***
 > 	- [ ] Découvrir les dents / sourire
 > 	- [ ] Gonfler les joues
-> - [ ] **38. Envisage de tester la force ou les réflexes aux extrémités (exclusion atteinte centrale) *(1 grille sur 4)***
-> - [ ] **39. Envisage de tester la sensibilité aux extrémités *(1 grille sur 4)***
+> - [ ] **39. Envisage de tester la force ou les réflexes aux extrémités (exclusion atteinte centrale) *(1 grille sur 4)***
+> - [ ] **40. Envisage de tester la sensibilité aux extrémités *(1 grille sur 4)***
 
 > [!success] 💊 Management — si AIT
 > - [ ] **1. Évoque le diagnostic principal d'accident ischémique transitoire (AIT)**

@@ -96,3 +96,24 @@ cssclasses:
 > 	- [ ] Attention, éveil, qualité du regard et du contact
 > 	- [ ] Motricité globale : tenue assise, retournement, ramper ou quatre pattes ; motricité fine : préhension, pince pouce-index, transfert d'un objet d'une main à l'autre
 > 	- [ ] Langage et social : vocalisation, babillage, « mama / papa », sourire-réponse, jeu avec l'examinateur — une stagnation ou une régression des acquis 🚩
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Bilan de base — le laboratoire que réclame toute cassure de courbe, avant de spécialiser**
+> 	- [ ] Anticorps anti-transglutaminase IgA **avec dosage des IgA totales**, devant toute cassure de croissance, symptômes digestifs ou non — le retard staturo-pondéral est une manifestation extra-digestive de la maladie et peut en être le premier et le seul signe ; les IgA totales ne sont pas un supplément, elles rendent le premier interprétable — un déficit en IgA, fréquent chez le cœliaque, donne un anticorps faussement négatif ; à prélever avant toute éviction du gluten, quelques semaines de régime suffisant à les négativer
+> 	- [ ] TSH et T4 libre : l'hypothyroïdie casse la croissance, et c'est la cause traitable de la liste
+> 	- [ ] IGF-1 et IGFBP-3 : déficit en hormone de croissance — ils remplacent le dosage direct de GH, pulsatile et ininterprétable sur un prélèvement isolé
+> 	- [ ] FSC, VS et CRP : anémie carentielle, inflammation chronique d'une MICI ou d'une maladie de système
+> 	- [ ] Ferritine et fer sérique, vitamine D, calcium, albumine : les carences de la malabsorption — l'albumine basse dit ce que l'intestin n'absorbe plus
+> 	- [ ] Créatinine, urée, ionogramme et analyse d'urine : insuffisance rénale chronique et tubulopathies freinent la croissance sans autre signe qu'elle
+> - [ ] **2. Âge osseux — la radiographie qui précède le bilan extensif, pas celle qui le conclut**
+> 	- [ ] Radiographie de la main et du poignet **gauches**, lue selon Greulich-Pyle et comparée à l'âge chronologique
+> 	- [ ] Retardé avec taille basse : cause hormonale, nutritionnelle, ou retard constitutionnel — normal avec taille basse : cause génétique ou petite taille familiale — avancé avec taille basse : puberté précoce
+> 	- [ ] Avec la taille cible parentale, c'est le calcul à poser avant d'ouvrir un bilan large : les causes constitutionnelles font environ 80 % des retards de croissance
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] Sérologie cœliaque positive : endoscopie haute avec biopsies duodénales, à la recherche de l'atrophie villositaire et de l'hyperplasie cryptique — elle doit précéder le régime sans gluten, qui efface les lésions et rend le diagnostic impossible à établir
+> 	- [ ] Aucun signe pubertaire à 14 ans chez le garçon, à 13 ans chez la fille : LH, FSH et testostérone ou estradiol — gonadotrophines basses dans le retard constitutionnel comme dans l'hypogonadisme hypogonadotrope (Kallmann), élevées dans l'atteinte gonadique (Turner, Klinefelter)
+> 	- [ ] Infections respiratoires à répétition, toux chronique, selles grasses et flottantes : test de la sueur (mucoviscidose)
+> 	- [ ] 🚩 Cassure brutale franchissant plus de deux couloirs, céphalées, vomissements matinaux ou troubles visuels : IRM cérébrale et hypophysaire — tumeur intracrânienne ou hypophysaire, qu'aucun laboratoire n'écarte
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Caryotype chez **toute fille** de petite taille, même sans dysmorphie : les stigmates du syndrome de Turner peuvent être discrets, et c'est le seul examen qui les rattrape
+> 	- [ ] Un laboratoire normal n'écarte rien chez un enfant qui décroche : c'est la courbe reportée sur le carnet, non la prise de sang, qui sépare l'enfant petit de l'enfant malade

@@ -117,3 +117,24 @@ cssclasses:
 > 	- [ ] Ralentissement psychomoteur massif, incurie, désespoir exprimé : une dépression sévère se cache derrière la plainte de sommeil
 > 	- [ ] Idées suicidaires exprimées pendant l'examen : reprendre l'évaluation du risque et obtenir un engagement avant la fin de la consultation
 > 	- [ ] Somnolence franche, obésité et cou épais : évoquer un syndrome d'apnées et interroger sur la conduite automobile
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant toute plainte de sommeil**
+> 	- [ ] Agenda du sommeil sur deux semaines : heure du coucher et du lever, délai d'endormissement, réveils, siestes, sensation au réveil — c'est lui qui chiffre l'insomnie et qui met l'écart entre temps passé au lit et temps dormi sous les yeux de la patiente
+> 	- [ ] TSH, avec T3 libre et T4 libre d'emblée : c'est le dosage qui sépare la plainte psychiatrique de la plainte endocrinienne — une TSH normale écarte l'hyperthyroïdie et l'hypothyroïdie manifestes ; à l'inverse, seule une TSH effondrée AVEC T4 et T3 libres élevées affirme la thyrotoxicose, la TSH seule ne fait que la suspecter
+> 	- [ ] FSC (anémie, cause banale et corrigible de fatigue), ionogramme, glycémie et fonction hépatique — ils cherchent une cause métabolique et donnent les valeurs de référence avant un antithyroïdien de synthèse, qui expose à l'agranulocytose et à l'hépatite
+> 	- [ ] ECG : devant les serrements thoraciques il écarte l'ischémie, et devant un pouls irrégulier il cherche la fibrillation auriculaire 🚩 que la thyrotoxicose déclenche et qui change à elle seule la prise en charge
+> 	- [ ] Toxicologie urinaire : amphétamines, cocaïne — la consommation de stimulants est niée plus souvent qu'elle n'est absente, et la caféine seule ne rend pas compte de tout
+> - [ ] **2. Devant un amaigrissement malgré un appétit augmenté, des palpitations et un tremblement**
+> 	- [ ] Anticorps anti-récepteurs de la TSH (TRAK) : ils signent la maladie de Basedow et dispensent souvent d'aller plus loin
+> 	- [ ] Anticorps anti-TPO : marqueurs des thyroïdites auto-immunes, ils peuvent rester négatifs alors que le Basedow est bien là — leur négativité n'écarte rien
+> 	- [ ] Échographie thyroïdienne : volume, nodules, et surtout hypervascularisation diffuse — l'équivalent échographique du souffle cherché à l'auscultation du cou
+> 	- [ ] Scintigraphie thyroïdienne : fixation diffuse et homogène = Basedow ; nodule chaud unique = adénome toxique ; fixation effondrée = thyroïdite ou hormones prises en cachette
+> - [ ] **3. Les autres pistes, selon ce que l'anamnèse a trouvé**
+> 	- [ ] 🚩 Ronflement, pauses respiratoires constatées par l'entourage, nycturie, céphalées matinales et endormissements involontaires — au volant surtout : polygraphie nocturne ambulatoire d'abord, recommandée en premier parce que moins coûteuse, polysomnographie si elle ne tranche pas
+> 	- [ ] Tension artérielle normale-haute au cabinet avec pression différentielle élargie : mesure ambulatoire sur 24 heures — une hypertension ne se diagnostique jamais sur une seule mesure au cabinet (seuil 140/90)
+> 	- [ ] Humeur triste, ou inquiétudes permanentes et incontrôlables : PHQ-9 et GAD-7 — des échelles qui chiffrent et qui suivent, elles ne remplacent ni l'entretien ni l'évaluation du risque suicidaire
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Test de grossesse chez une femme en âge de procréer : la scintigraphie thyroïdienne lui est contre-indiquée, et une TSH basse au premier trimestre n'affirme pas la thyrotoxicose — l'hCG freine la TSH
+> 	- [ ] L'insomnie est un diagnostic d'exclusion : aucun examen ne la confirme — le bilan sert à écarter la thyrotoxicose, l'anémie, les stimulants et le trouble psychiatrique, l'agenda du sommeil à la mesurer
+> 	- [ ] Un bilan entièrement normal ne clôt pas la consultation : caféine, alcool pris pour dormir, écrans au lit, horaires irréguliers et médicaments éveillants ne se voient sur aucun examen — ils ne se trouvent qu'à l'anamnèse

@@ -119,3 +119,65 @@ cssclasses:
 > 	- [ ] Extrapyramidal : rigidité en roue dentée, tremblement de repos, bradykinésie,
 >         hypomimie, micrographie (faire écrire une phrase)
 > 	- [ ] Proprioceptif : pseudo-athétose (bras tendus, doigts écartés, yeux fermés)
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Ce que le lit du malade tranche avant tout examen**
+> 	- [ ] **HINTS devant tout vertige aigu persistant** : c'est lui qui trie périphérique et
+>         central, et aucune imagerie ne le remplace — un head impulse **pathologique**
+>         rassure ; head impulse normal, nystagmus changeant de sens ou skew deviation =
+>         **IRM cérébrale avec séquences de diffusion en urgence**, car le CT natif ne voit
+>         pas la fosse postérieure et, normal, il n'écarte pas l'AVC cérébelleux 🚩
+> 	- [ ] **Dix-Hallpike** positif (nystagmus retardé, qui s'épuise) = VPPB : diagnostic
+>         clinique, il n'y a rien de plus à demander
+> 	- [ ] **TA couchée puis debout à 1 et 3 minutes** : l'hypotension orthostatique est
+>         attendue de cette SSP, ne se lit sur aucun laboratoire, et c'est la première cause
+>         de « vertige » sous antihypertenseur, psychotrope ou diurétique
+> 	- [ ] **Test chronométré lever-marcher (TUG)**, station unipodale, marche en tandem :
+>         ils mettent un chiffre sur l'instabilité — au-delà de 20 secondes au TUG, le risque
+>         de chute est établi
+> 	- [ ] Des vésicules du conduit ou du pavillon avec vertige et hypoacousie font le zona
+>         auriculaire à l'œil nu : les examens qui suivent mesurent l'atteinte du VIII, ils ne
+>         portent pas le diagnostic
+> - [ ] **2. Le bilan cochléo-vestibulaire — dès qu'un signe auriculaire accompagne le vertige**
+> 	- [ ] **Audiométrie tonale et vocale** aux deux oreilles, complétée d'une
+>         **impédancemétrie** (oreille moyenne, réflexe stapédien) : elle chiffre l'hypoacousie
+>         et sépare transmission et perception — perception unilatérale quand le VIII est
+>         atteint, perte **fluctuante des basses fréquences** dans la maladie de Ménière
+> 	- [ ] **Potentiels évoqués auditifs du tronc cérébral** : ils explorent la voie
+>         rétrocochléaire et écartent une lésion centrale, mais ne remplacent pas l'IRM
+> 	- [ ] **Vidéonystagmographie** et **test calorique** : ils caractérisent le nystagmus et
+>         chiffrent le déficit vestibulaire côté par côté — c'est le calorique qui objective
+>         une névrite vestibulaire, dont le diagnostic reste clinique
+> 	- [ ] 🚩 **Surdité de perception unilatérale, acouphène unilatéral, ou neurofibromatose
+>         familiale** : IRM des conduits auditifs internes injectée, systématique dès
+>         l'antécédent familial — un schwannome vestibulaire **bilatéral** est
+>         pathognomonique de la NF2
+> 	- [ ] **Électroneuronographie**, seulement s'il existe une paralysie faciale : au-delà de
+>         90 % de dégénérescence, la récupération est compromise
+> - [ ] **3. Devant une instabilité chronique et progressive — la piste n'est plus l'oreille**
+> 	- [ ] **IRM cérébrale** : lésions cérébelleuses, métastases, leucoaraïose — et
+>         **dilatation ventriculaire disproportionnée à l'atrophie**, qui signe l'hydrocéphalie
+>         à pression normale, la seule cause curable de la liste
+> 	- [ ] **Électroneuromyographie** quand la marche est talonnante et le Romberg franchement
+>         positif : elle sépare une atteinte des cordons postérieurs d'une atteinte du nerf
+>         lui-même
+> 	- [ ] **Laboratoire métabolique et carentiel** : vitamine B12 et folates (acide
+>         méthylmalonique si la B12 est limite), TSH et T4 libre, glycémie — trois ataxies qui
+>         se corrigent
+> 	- [ ] **Amaigrissement involontaire chiffré associé au déséquilibre** : VS, CRP et
+>         électrophorèse des protéines, endoscopies digestives (FOGD, coloscopie), TEP-scan et
+>         marqueurs tumoraux — c'est ce couple-là qui impose le bilan oncologique, pas l'âge
+> 	- [ ] **Ataxie cérébelleuse subaiguë** : anticorps onconeuronaux (anti-Yo, anti-Hu,
+>         anti-Ri) et ponction lombaire (syndrome inflammatoire ou infectieux) — le syndrome
+>         paranéoplasique précède souvent le cancer, un bilan d'extension normal ne l'écarte pas
+> 	- [ ] **Syndrome parkinsonien dont la nature est douteuse** : DaTscan, et scintigraphie
+>         cardiaque à la MIBG si dysautonomie ou signes pyramidaux associés (atrophie
+>         multisystémique)
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 **Céphalée et raideur de nuque au décours d'un zona auriculaire** : ponction
+>         lombaire — l'extension méningée est la complication qu'aucun bilan auditif ne verra
+> 	- [ ] Chez le sujet âgé instable, **mesurer l'acuité visuelle et l'audition** fait partie
+>         du bilan : un déficit sensoriel non corrigé entretient l'instabilité autant qu'une
+>         lésion, et ne se voit sur aucune imagerie
+> 	- [ ] Un vertige aigu isolé, sans signe cochléaire ni signe central, n'appelle ni imagerie
+>         ni laboratoire de routine : ne rien demander est alors une décision, pas un oubli

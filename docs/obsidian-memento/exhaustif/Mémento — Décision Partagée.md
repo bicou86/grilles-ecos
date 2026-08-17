@@ -176,7 +176,7 @@ cssclasses:
 > 	- [ ] Focus sur le confort
 
 > [!success] 💊 Management — si Hypercholestérolémie
-> - [ ] **1. Explorer les préférences pour chaque option (Decision Talk)**
+> - [ ] **1. Explorer valeurs et préférences (Decision Talk)**
 > 	- [ ] Qu'est-ce qui compte le plus pour vous?
 > 	- [ ] Préférence médicaments vs changements mode de vie
 > 	- [ ] Impact sur activités quotidiennes
@@ -208,18 +208,18 @@ cssclasses:
 > 	- [ ] Documentation remise au patient
 
 > [!success] 💊 Management — si Iléus sur carcinose péritonéale
-> - [ ] **1. Explorer les préférences pour chaque option (Decision Talk)**
-> 	- [ ] Comment voyez-vous chaque option?
-> 	- [ ] Laquelle correspond le mieux à vos valeurs?
-> 	- [ ] Impact sur autonomie et mobilité
-> 	- [ ] Possibilité de rentrer à domicile
-> 	- [ ] Charge des soins pour les proches
-> - [ ] **2. Accompagner la décision**
+> - [ ] **1. Accompagner la décision**
 > 	- [ ] Proposer un temps de réflexion si besoin
 > 	- [ ] Résumer les préférences exprimées
 > 	- [ ] Valider le choix de la patiente
 > 	- [ ] Impliquer les proches si souhaité
 > 	- [ ] Assurer la réversibilité du choix
+> - [ ] **2. Explorer les préférences pour chaque option (Decision Talk)**
+> 	- [ ] Comment voyez-vous chaque option?
+> 	- [ ] Laquelle correspond le mieux à vos valeurs?
+> 	- [ ] Impact sur autonomie et mobilité
+> 	- [ ] Possibilité de rentrer à domicile
+> 	- [ ] Charge des soins pour les proches
 > - [ ] **3. Considérations pratiques**
 > 	- [ ] Faisabilité à domicile de chaque option
 > 	- [ ] Soutien des proches disponible

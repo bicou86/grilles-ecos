@@ -117,3 +117,26 @@ cssclasses:
 > 	- [ ] Goitre, peau sèche, réflexes à décontraction lente, bradycardie
 > 	- [ ] Pâleur cutanéo-muqueuse avec troubles de la sensibilité profonde
 > 	- [ ] Dénutrition, incurie, plaies négligées : l'autonomie est déjà perdue, la sécurité du maintien à domicile se rediscute le jour même
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan de toute plainte cognitive — d'abord les causes qui se corrigent**
+> 	- [ ] FSC : anémie — mégaloblastique dans la carence en B12, parfois accompagnée d'une thrombopénie ou d'une leucopénie ; une anémie à elle seule fatigue et ralentit
+> 	- [ ] TSH : l'hypothyroïdie donne fatigue et troubles mnésiques sans toujours l'intolérance au froid ni les cheveux secs — elle se dose, elle ne se déduit pas de l'absence de signes
+> 	- [ ] Vitamine B12 sérique, et folates : carence = troubles cognitifs réversibles et atteinte des cordons postérieurs — à demander même sans anémie, l'atteinte neurologique peut la précéder
+> 	- [ ] Glycémie et électrolytes, natrémie et calcémie comprises : hypoglycémie, hyponatrémie et hypercalcémie donnent des troubles cognitifs, et le sujet âgé sous diurétique y est exposé
+> 	- [ ] Ce bilan est le premier temps, non le dernier : un bilan entièrement normal n'écarte pas la démence, mais un bilan non fait laisse passer la seule cause qui se traite
+> - [ ] **2. L'imagerie cérébrale — devant tout déclin cognitif nouveau**
+> 	- [ ] IRM cérébrale, l'examen de référence : atrophie hippocampique bilatérale et atrophie corticale (Alzheimer), lésions lacunaires et leucoaraïose (démence vasculaire), tumeur, hématome
+> 	- [ ] CT cérébral quand l'IRM n'est pas disponible ou pas réalisable : il montre l'hémorragie, l'hématome sous-dural, l'hydrocéphalie et la microangiopathie, mais lit mal l'atrophie hippocampique
+> 	- [ ] 🚩 CT cérébral natif sans attendre devant un déficit focal, une asymétrie franche des réflexes, un Babinski, un traumatisme crânien même ancien ou des chutes répétées
+> 	- [ ] Devant marche à petits pas, incontinence et déclin réunis : chercher nommément une dilatation ventriculaire disproportionnée à l'atrophie et un angle calleux fermé (normal 100-120°)
+> 	- [ ] L'imagerie n'affirme pas l'Alzheimer, elle écarte ce qui se traite — l'atrophie hippocampique est un argument, pas une preuve, et le diagnostic reste clinique
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] Sur cette même triade marche-miction-cognition, après l'imagerie : ponction lombaire soustractive de 30 à 50 mL — c'est l'amélioration de la marche après soustraction qui fait le diagnostic d'hydrocéphalie à pression normale, donc chronométrer le lever-marche avant et après
+> 	- [ ] Devant humeur triste, anhédonie, réveil précoce et perte d'appétit : échelle de dépression gériatrique (GDS-15) — la pseudo-démence dépressive se traite ; et la trouver n'exclut pas la démence, les deux coexistent souvent
+> 	- [ ] Devant une fluctuation installée avec hallucinations visuelles et syndrome extrapyramidal : DaTSCAN, en cas de doute seulement
+> 	- [ ] Devant un doute persistant, un tableau atypique ou un patient jeune : évaluation neuropsychologique détaillée, puis biomarqueurs du LCR à la ponction lombaire — bêta-amyloïde Aβ42 abaissée, tau et tau phosphorylée élevées ; TEP amyloïde ou tau en dernier recours
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 L'état confusionnel aigu passe avant tout diagnostic de démence : glycémie capillaire immédiate devant une vigilance qui fluctue, ionogramme dans la foulée — le reste se cherche au lit du malade et à l'ordonnance, pas au laboratoire
+> 	- [ ] Le MMSE du status est un test de dépistage, pas un examen de laboratoire : 20-24 stade léger, 10-19 modéré, seuil à déplacer avec le niveau de formation et la langue de scolarisation — et normal chez un patient très scolarisé dont la plainte persiste, il n'écarte rien : le MoCA est plus sensible aux troubles exécutifs précoces
+> 	- [ ] Échelles fonctionnelles ADL et IADL, chiffrées au même titre que le reste du bilan : c'est la perte d'autonomie, et non le score cognitif, qui sépare le trouble cognitif léger de la démence — un même MMSE ne dit pas la même chose chez qui gère encore seul ses factures et ses médicaments

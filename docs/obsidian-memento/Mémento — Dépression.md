@@ -119,3 +119,19 @@ cssclasses:
 > 	- [ ] Antécédent d'exaltation ou d'irritabilité inhabituelle : le tableau n'est pas unipolaire
 > 	- [ ] Trouble de la vigilance, désorientation, hallucinations visuelles : chercher une cause organique ou toxique avant de conclure à une dépression
 > 	- [ ] Sevrage chez un consommateur quotidien : tremblement, sueurs, tachycardie, anxiété croissante
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan d'une première évaluation — aucun examen ne confirme la dépression, ils écartent ce qui la mime**
+> 	- [ ] TSH, complétée d'une T4 libre si elle est perturbée : l'hypothyroïdie donne la même asthénie, le même ralentissement, la même prise de poids — c'est le dosage qui, à lui seul, change le diagnostic
+> 	- [ ] FSC, ferritine, vitamine B12 et folates devant une asthénie avec des apports réduits depuis des semaines
+> 	- [ ] Ionogramme, créatinine, calcémie et glycémie veineuse : hyponatrémie et hypercalcémie donnent apathie et ralentissement — et la natrémie de départ sert de référence avant tout ISRS
+> 	- [ ] Tests hépatiques, GGT et VGM quand la consommation d'alcool a augmenté récemment
+> - [ ] **2. Devant une consommation de substances — c'est un différentiel attendu, pas une question de moralité**
+> 	- [ ] Toxicologie urinaire dès qu'une consommation est suspectée ou tue : cannabis, cocaïne, amphétamines, opiacés, benzodiazépines
+> 	- [ ] Alcoolémie devant une haleine, des sueurs ou un tremblement fin — elle date la dernière prise et annonce l'heure du sevrage
+> 	- [ ] Un dépistage positif n'écarte pas l'épisode dépressif, un dépistage négatif n'écarte pas la consommation : la fenêtre de détection est de quelques heures pour la cocaïne, de plusieurs semaines pour le cannabis
+> - [ ] **3. À ne pas oublier**
+> 	- [ ] ECG avant un antidépresseur : il donne le QTc de départ, sur lequel se lira l'allongement dose-dépendant du citalopram et de l'escitalopram, et il contre-indique un tricyclique s'il est déjà long — le même tracé répond à la douleur thoracique rapportée au lieu de la renvoyer au stress
+> 	- [ ] 🚩 Glycémie capillaire immédiate devant toute somnolence, sueurs ou confusion chez un patient dont le moyen envisagé est l'insuline : l'hypoglycémie par insuline rapide tue en quelques heures et la capillaire tranche au lit du malade, là où la veineuse revient trop tard — sous 3.9 mmol/L, elle explique le tableau jusqu'à preuve du contraire
+> 	- [ ] Imagerie cérébrale non systématique : elle se justifie devant un déficit focal, une altération de la vigilance ou des hallucinations visuelles, pas devant une tristesse
+> 	- [ ] Un bilan entièrement normal ne rassure sur rien : le risque suicidaire s'évalue à l'entretien, aucun examen ne le mesure et aucun résultat en attente ne justifie de retarder la mise en sécurité

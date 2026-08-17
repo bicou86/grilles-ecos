@@ -124,3 +124,37 @@ cssclasses:
 > 	- [ ] Sang au toucher rectal ou méléna : hémorragie digestive
 > 	- [ ] Fièvre + ictère + douleur de l'hypochondre droit : triade de Charcot, angiocholite
 > 	- [ ] Douleur de fosse iliaque chez une femme en âge de procréer : test de grossesse avant tout, penser grossesse extra-utérine et torsion ovarienne
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan de base, quelle que soit l'hypothèse**
+> 	- [ ] FSC avec formule : hyperleucocytose à déviation gauche de l'inflammation aiguë, hémoconcentration de la déshydratation, anémie d'un saignement ou d'une néoplasie
+> 	- [ ] CRP et VS : le syndrome inflammatoire manque encore dans les premières heures — normales, elles n'écartent ni appendicite ni diverticulite
+> 	- [ ] Ionogramme, calcium, urée, créatinine : pertes digestives, insuffisance rénale fonctionnelle
+> 	- [ ] Bilan hépatique complet — ASAT, ALAT, PAL, GGT, bilirubine : séparer la cytolyse (transaminases) de la cholestase (PAL, GGT, bilirubine)
+> 	- [ ] Lipase, ± amylase : la pancréatite ne se voit sur aucun autre examen de première ligne, et un repas gras, un calcul ou l'alcool suffisent à l'évoquer
+> 	- [ ] Bandelette urinaire d'emblée ; sédiment et ECBU si elle est positive ou si la plainte est urinaire : leucocytes, nitrites, hématurie
+> 	- [ ] Lactate, LDH, CK devant une douleur disproportionnée à l'examen ; groupe sanguin, RAI et crase (TP, TCA) dès qu'une chirurgie ou une transfusion se profile
+> - [ ] **2. L'imagerie — laquelle, devant quelle piste**
+> 	- [ ] **Hypochondre droit, Murphy positif, douleur qui dure plus de 6 h → échographie abdominale de première intention** : calculs déclives et paroi vésiculaire épaissie et dédoublée confirment ; le CT ou l'IRM bilio-pancréatique ne viennent qu'ensuite, et la CPRE devant une cholédocholithiase ou une angiocholite
+> 	- [ ] **Douleur pelvienne ou de fosse iliaque chez la femme → échographie transvaginale complétée par la transabdominale** : appendice, liquide libre, kyste rompu, masse annexielle ; Doppler pelvien en urgence si torsion ovarienne ; CT si l'US n'est pas concluante
+> 	- [ ] **Fosse iliaque gauche fébrile → CT abdominal avec contraste, gold standard de la diverticulite** : il pose le diagnostic et cherche l'abcès et la perforation ; l'échographie montre les diverticules enflammés et l'épaississement pariétal ; IRM si le contraste est contre-indiqué
+> 	- [ ] **Colique lombaire irradiant aux organes génitaux → CT abdominal sans contraste**, ou US selon la disponibilité — l'imagerie sert ici à décider de la prise en charge, pas seulement à nommer
+> 	- [ ] 🚩 **Ventre de bois, disparition de la matité pré-hépatique → ASP ou thorax debout de face** : croissant gazeux sous les coupoles, signe de Rigler (double contour des anses), ligament falciforme visible, air péri-hépatique — le CT reste le plus sensible pour l'air libre et montre le siège de la perforation
+> 	- [ ] 🚩 **Douleur intense contrastant avec un abdomen souple, sur terrain vasculaire → imagerie vasculaire sans attendre** (Doppler couleur, angio-IRM, angiographie) : l'intestin ne tolère pas plus de 6 heures d'ischémie ; l'ASP montre des niveaux hydro-aériques et des anses dilatées, l'US du liquide libre et des anses immobiles, et la coloscopie expose à la perforation
+> 	- [ ] Radiographie thoracique, et Doppler ou angio-CT de l'aorte, quand la douleur pourrait ne pas venir du ventre
+> - [ ] **3. Ce que la sémiologie déclenche en plus**
+> 	- [ ] Diarrhée fébrile, voyage récent, contage → coproculture et recherche de parasites ; si la diarrhée se prolonge ou devient sanglante, calprotectine fécale puis iléo-coloscopie
+> 	- [ ] Diarrhée chronique du sujet jeune, aphtes, œil rouge, arthralgies → analyses sanguines avec GGT et PAL (exclure une cholangite sclérosante), examen bactériologique des selles, et l'iléo-coloscopie avec biopsies étagées qui fait seule le diagnostic de MICI
+> 	- [ ] Pertes vaginales, dyspareunie, nouveau partenaire → prélèvement vaginal et cervical avec recherche de Chlamydia et de gonocoque, prélèvements urétraux ; échographie pelvienne
+> 	- [ ] Dysménorrhée, dyspareunie profonde, infertilité → échographie vaginale, puis laparoscopie diagnostique : seule méthode qui confirme l'endométriose
+> 	- [ ] Masse pelvienne, ballonnement, prise de poids, antécédents familiaux → CA-125, laparoscopie pour l'histologie, test génétique BRCA
+> 	- [ ] Pyrosis, dysphagie, épigastralgie rythmée par les repas → gastroscopie (biopsies étagées si suspicion néoplasique), pH-métrie œsophagienne, test à l'uréase sur biopsie pour H. pylori ; gastrine, vitamine B12, auto-anticorps ; radiographie ou CT si hernie para-œsophagienne
+> 	- [ ] Ictère, urines foncées, selles décolorées → transaminases et sérologies des hépatites, hémocultures **prélevées avant le premier antibiotique** ; CA 19-9 et IRM bilio-pancréatique si l'ictère est progressif chez un sujet âgé
+> 	- [ ] Enfant : douleurs chroniques, diarrhée, stagnation pondérale → anticorps anti-transglutaminase IgA (tTG) **avec IgA quantitatives** — 3 % des patients sont déficitaires en IgA et rendent le tTG faussement négatif, chez eux ce sont les IgG anti-gliadine déamidée ; FSC, VGM, TCMH pour l'anémie ferriprive ; panel IgE si allergie alimentaire discutée
+> 	- [ ] Enfant : purpura des membres inférieurs, arthralgies, douleur abdominale → hémogramme, CRP, créatinine et **status urinaire** (hématurie et protéinurie signent l'atteinte rénale) ; échographie abdominale à la recherche d'une complication digestive
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 **β-hCG chez toute femme en âge de procréer, avant l'imagerie et avant toute décision** — urinaire pour aller vite, sérique plus sensible (positif 6 à 9 jours après la fécondation) : des règles récentes n'écartent pas la grossesse extra-utérine, une patiente sur quatre les juge normales, et une contraception ne protège pas
+> 	- [ ] ECG, et troponines si le doute persiste, devant une douleur épigastrique avec nausées et sueurs ou sur terrain cardiovasculaire : l'infarctus inférieur ou postérieur se présente par le ventre
+> 	- [ ] Gazométrie artérielle dès qu'un choc se dessine : l'acidose métabolique dit la gravité avant la tension artérielle
+> 	- [ ] L'endoscopie différée n'est pas un contrôle de suivi : coloscopie 6 à 8 semaines après une diverticulite, gastroscopie avec biopsies après un ulcère perforé — c'est là qu'on exclut le cancer, et elle est contre-indiquée en phase aiguë
+> 	- [ ] Douleur non spécifique chez un sujet jeune, sans drapeau rouge et avec un examen clinique normal : tout se joue sur l'anamnèse et le raisonnement différentiel — dire qu'on n'investigue pas est une décision à énoncer, pas un oubli

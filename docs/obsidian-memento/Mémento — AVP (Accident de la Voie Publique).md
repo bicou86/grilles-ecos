@@ -118,3 +118,25 @@ cssclasses:
 > 	- [ ] Agitation ou somnolence nouvelle : hypoxie ou choc jusqu'à preuve du contraire — jamais l'alcool ni le cannabis avant d'avoir écarté la lésion
 > 	- [ ] Constantes reprises à intervalle rapproché : un premier bilan normal n'autorise pas à quitter le patient, la fracture du bassin se démasque en quinze minutes
 > 	- [ ] Céphalée nouvelle ou différente, vomissements, déficit installé à distance du choc : le saignement intracrânien peut se révéler des heures ou des jours plus tard
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Au déchoc — le bilan sanguin part avant que le patient bouge**
+> 	- [ ] Groupe sanguin et RAI : à demander d'emblée, c'est lui qui conditionne la transfusion — demandé tard, il fait transfuser en O négatif
+> 	- [ ] FSC : hémoglobine de départ — une valeur normale à la première heure n'écarte rien, l'hémodilution met du temps à se faire
+> 	- [ ] Crase complète : la coagulopathie du traumatisé s'installe avec l'hypothermie et l'acidose, et le chiffre initial sert de repère
+> 	- [ ] Gazométrie artérielle : lactates et déficit de base chiffrent l'hypoperfusion avant que la tension ne décroche
+> 	- [ ] Ionogramme et fonction rénale : retentissement du choc, et terrain avant l'injection de produit de contraste
+> - [ ] **2. Imagerie du polytraumatisé — au lit d'abord, le scanner ensuite**
+> 	- [ ] Radiographie du bassin de face au déchoc : premier examen devant une douleur pelvienne après haute cinétique, et elle n'exige aucune remobilisation
+> 	- [ ] Radiographie du segment traumatisé — ici l'épaule — et radiographie du thorax pour les lésions associées
+> 	- [ ] e-FAST au lit : récessus hépato-rénal (Morison), récessus spléno-rénal, cul-de-sac de Douglas, péricarde, plèvre — 🚩 négative, elle n'écarte pas l'hémorragie : le saignement de la fracture du bassin est rétropéritonéal, et le rétropéritoine ne se voit pas à l'échographie
+> 	- [ ] CT corps entier (pan-scan) avec temps artériel : bilan lésionnel complet et recherche d'un saignement actif — **après** stabilisation hémodynamique, un patient qui ne tient pas sa tension ne traverse pas le scanner
+> - [ ] **3. Rachis cervical — c'est une règle qui décide de l'imagerie, pas l'impression clinique**
+> 	- [ ] Clearance clinique par la règle canadienne du rachis cervical ou par NEXUS — nommer celle qu'on a appliquée fait partie de ce qui est coté
+> 	- [ ] Choc à faible cinétique, patient ambulant, douleur retardée, pas d'impact crânien direct, céphalée ni inhabituelle ni d'un type nouveau, examen neurologique normal : ni radiographie ni IRM en première intention, et c'est cette justification qui est attendue, pas l'abstention seule
+> 	- [ ] CT du rachis cervical dès que la clearance échoue : ≥ 65 ans, mécanisme dangereux, paresthésies des extrémités, douleur médiane à la palpation, ou patient qu'on ne peut pas évaluer (intoxication, vigilance altérée, lésion distractive)
+> 	- [ ] IRM cervicale devant un déficit neurologique, ou devant une douleur qui ne cède toujours pas au-delà de deux semaines
+> - [ ] **4. 🚩 Ce qui fait changer d'examen**
+> 	- [ ] Céphalée avec trouble visuel, vertige ou syndrome de Horner au décours d'un coup du lapin : angio-IRM ou angio-CT des vaisseaux du cou — dissection artérielle vertébrale
+> 	- [ ] Perte de connaissance, vomissements répétés, Glasgow < 15, ou patient sous anticoagulant : CT cérébral sans injection, sans attendre la réévaluation
+> 	- [ ] Urétrorragie, hématome périnéal ou scrotal, impossibilité d'uriner : urétrographie rétrograde avant tout sondage — sonder un urètre rompu transforme une lésion partielle en lésion complète

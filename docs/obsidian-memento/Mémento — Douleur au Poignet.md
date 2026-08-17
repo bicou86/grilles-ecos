@@ -111,3 +111,28 @@ cssclasses:
 > 	- [ ] Peau ouverte ou menacée en regard du foyer, mobilité anormale, crépitation osseuse
 > 	- [ ] Poignet ou doigt rouge, chaud, tendu, avec fièvre et impotence complète
 > 	- [ ] Après un traumatisme, ne pas s'arrêter au poignet : coude, épaule, autres membres, et examen sommaire du reste du corps
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Après une chute sur la main : la radiographie d'abord, en sachant ce qu'elle ne montre pas**
+> 	- [ ] **Radiographie du poignet du côté douloureux, face et profil, avec les incidences scaphoïde** (oblique et poing fermé en inclinaison ulnaire) — les deux clichés standard seuls font manquer le trait
+> 	- [ ] Y lire aussi le radius distal, l'articulation radio-ulnaire distale et l'espace scapho-lunaire (au-delà de 3 mm, dissociation) ; élargir à l'avant-bras et au coude si la palpation y réveille une douleur
+> 	- [ ] **Une radiographie normale n'écarte pas la fracture** : jusqu'à une fracture du scaphoïde sur quatre est invisible sur les premiers clichés, le trait n'apparaissant qu'à 10-14 jours quand la résorption osseuse l'ouvre — **triade du scaphoïde positive après une chute sur la main = fracture jusqu'à preuve du contraire**, c'est la clinique et non l'image qui commande la suite
+> - [ ] **2. Radiographie normale mais suspicion clinique : trois voies, à choisir avec le patient**
+> 	- [ ] **CT du poignet d'emblée** : tranche le jour même et évite des semaines d'immobilisation inutile — la voie de qui ne peut ni revenir ni rester plâtré (métier manuel, sport de compétition)
+> 	- [ ] **Contrôle clinique à 10-14 jours** sous immobilisation, puis CT si la douleur du scaphoïde persiste
+> 	- [ ] **Radiographie de contrôle à 10-14 jours** sous immobilisation, puis CT si le doute persiste malgré des clichés encore normaux
+> 	- [ ] Aucune des trois n'est supérieure : ce que chacune coûte (irradiation du CT, semaines d'attelle, délai avant reprise) décide plus que l'algorithme — le choix de l'examen se fait avec le patient
+> 	- [ ] L'IRM voit le trait et l'œdème osseux dès les premières heures : alternative quand le CT manque, ou quand une lésion ligamentaire s'ajoute au doute
+> - [ ] **3. Poignet non traumatique, paresthésies du territoire médian**
+> 	- [ ] **ENMG du nerf médian (électromyographie et conduction nerveuse)** : l'examen de référence — il confirme la compression au canal carpien, la gradue, et sépare la radiculopathie C6-C7, le syndrome du rond pronateur et la polyneuropathie diabétique ; ralentissement des conductions sensitives d'abord, motrices ensuite
+> 	- [ ] Il ne conditionne pas l'essai d'attelle, mais **il précède toute chirurgie** ; un ENMG normal devant un tableau clinique typique n'écarte pas le diagnostic (environ un cas sur dix)
+> 	- [ ] **Radiographie du poignet** : arthrose radio-carpienne ou trapézo-métacarpienne, séquelle de fracture, anomalie osseuse du carpe — les différentiels que l'examen clinique ne tranche pas
+> 	- [ ] **Échographie du canal carpien**, optionnelle : épaississement du nerf médian à l'entrée du canal, ténosynovite des fléchisseurs, kyste ou masse compressive
+> - [ ] **4. Chercher ce qui entretient la compression — le bilan biologique**
+> 	- [ ] **Glycémie (± HbA1c) et TSH** : diabète et hypothyroïdie, les deux causes secondaires à ne pas manquer — traiter le canal carpien sans les chercher, c'est traiter la conséquence
+> 	- [ ] Créatinine chez l'insuffisant rénal ou le dialysé ; VS/CRP et facteur rhumatoïde devant des articulations gonflées et une raideur matinale de plus de 30 minutes (polyarthrite)
+> 	- [ ] Le terrain oriente le bilan, pas l'inverse : travail répétitif, grossesse en cours et alcool n'appellent aucun examen, seulement d'être demandés à l'anamnèse
+> - [ ] **5. À ne pas oublier, et ce qui passe avant l'imagerie**
+> 	- [ ] **Test de grossesse chez toute femme en âge de procréer avant radiographie ou CT** — et la grossesse est elle-même une cause classique de canal carpien, souvent régressive après l'accouchement
+> 	- [ ] 🚩 Poignet ou doigt rouge, chaud, tendu avec fièvre : FSC, CRP, hémocultures et **ponction articulaire avant la première dose d'antibiotique** (Gram, culture, recherche de cristaux) — une arthrite septique ne se traite pas sans avoir été prélevée
+> 	- [ ] 🚩 Main froide, pâle ou insensible, avant-bras tendu douloureux à l'extension passive des doigts : **aucun examen ne doit retarder l'avis chirurgical** — ischémie et syndrome des loges sont des diagnostics cliniques, la mesure des pressions intra-loges ne sert qu'au doute

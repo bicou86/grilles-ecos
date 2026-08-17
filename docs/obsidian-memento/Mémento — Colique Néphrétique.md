@@ -122,3 +122,25 @@ cssclasses:
 > 	- [ ] Testicule ascensionné et horizontalisé, crémastérien aboli, douleur non soulagée par la surélévation : torsion, bloc opératoire sans attendre l'imagerie
 > 	- [ ] Prostate exquisément douloureuse et chaude : prostatite aiguë — ne pas masser, risque de bactériémie
 > 	- [ ] Femme en âge de procréer : test de grossesse avant toute imagerie et tout traitement
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Bilan de première intention, devant toute douleur du flanc**
+> 	- [ ] Bandelette urinaire : sang, leucocytes, nitrites — l'hématurie microscopique accompagne la plupart des calculs mais manque dans 10 à 15 % des cas, en particulier sur obstruction complète : une bandelette propre n'écarte pas la colique
+> 	- [ ] ECBU avec antibiogramme, prélevé **avant la première dose d'antibiotique** — la bandelette ne le remplace pas, il se demande en toutes lettres
+> 	- [ ] FSC et CRP : hyperleucocytose, syndrome inflammatoire — une hyperleucocytose modérée existe dans la colique non infectée et ne suffit pas à affirmer l'infection
+> 	- [ ] Créatinine, urée, électrolytes : insuffisance rénale obstructive (obstacle bilatéral ou sur rein unique), déshydratation des vomissements — chiffres à connaître avant les AINS et avant tout produit de contraste
+> 	- [ ] Acide urique : terrain goutteux, calcul d'urate — radio-transparent, invisible sur une radiographie d'abdomen, visible au CT
+> - [ ] **2. Imagerie**
+> 	- [ ] Échographie des reins et des voies urinaires, en première intention : dilatation pyélocalicielle, calcul, parenchyme ; sur la vessie, globe et rétention. Non irradiante — c'est l'examen de la femme enceinte. Des cavités encore fines dans les premières heures n'écartent pas l'obstacle
+> 	- [ ] CT abdomino-pelvien low-dose **sans injection**, examen de référence : le calcul est spontanément dense, l'injection n'ajoute rien — il donne le siège et la taille, qui décident (en dessous de 5 mm le calcul s'expulse le plus souvent seul, au-delà de 10 mm presque jamais)
+> 	- [ ] Scanner abdomino-pelvien **injecté** si doute diagnostique ou forme compliquée : abcès rénal, pyélonéphrite emphysémateuse, absence d'amélioration après 48 à 72 h ; UIV ou uro-scanner à froid quand l'anatomie des voies urinaires reste à préciser
+> - [ ] **3. Selon l'orientation**
+> 	- [ ] Fièvre au-delà de 38,5 °C ou frissons solennels : hémocultures (deux paires) avant l'antibiotique, et échographie sans attendre — la dilatation des cavités signe l'obstacle et fait basculer la pyélonéphrite de la forme simple à la forme obstructive
+> 	- [ ] Homme de plus de 50 ans, jet faible et vidange incomplète : mesure du résidu post-mictionnel (bladder-scan ou échographie), échographie vésico-prostatique par voie sus-pubienne, débitmétrie à distance une fois l'infection traitée
+> 	- [ ] PSA : ne pas le doser pendant l'épisode — infection, rétention et toucher rectal l'élèvent faussement ; à distance, à 3 mois, puis IRM prostatique s'il reste élevé
+> 	- [ ] Douleur de l'hypochondre droit fébrile : y ajouter les tests hépatiques (ASAT, ALAT, phosphatase alcaline, γ-GT, bilirubine) et faire regarder vésicule et voies biliaires à l'échographie — une cholécystite ou une angiocholite se déguise en douleur du flanc droit
+> 	- [ ] Calcul récupéré (faire tamiser les urines) : analyse de composition — c'est le seul examen qui donne la nature du calcul, et donc la prophylaxie des récidives
+> - [ ] **4. 🚩 À ne pas oublier**
+> 	- [ ] Test de grossesse chez toute femme en âge de procréer, avant l'imagerie et avant les AINS ; positif devant une douleur de la fosse iliaque, il fait faire l'échographie pelvienne à la recherche d'une grossesse extra-utérine
+> 	- [ ] Première « colique néphrétique » après 50 ans, douleur déchirante, masse abdominale battante : angio-CT de l'aorte, précédé de l'échographie de l'aorte au lit du malade si le patient est instable — on n'envoie pas un anévrisme fissuré au CT low-dose
+> 	- [ ] Douleur scrotale brutale : l'écho-doppler testiculaire ne se justifie que s'il ne retarde pas le bloc — une torsion suspectée s'opère, elle ne s'image pas

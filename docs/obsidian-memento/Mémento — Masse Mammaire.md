@@ -135,3 +135,45 @@ cssclasses:
 > 	- [ ] Sein rouge, chaud, œdématié hors allaitement — ou une mastite qui ne cède pas en
 >         48 à 72 h : ce n'est pas une infection tant qu'on ne l'a pas prouvé
 > 	- [ ] Hépatomégalie nodulaire, douleur exquise à la percussion d'un os
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. La triple évaluation — clinique, imagerie, histologie, dans cet ordre**
+> 	- [ ] Toute masse persistante après 30 ans réclame les trois volets : chacun a son taux
+>         d'erreur propre, et ce sont des erreurs de sens contraire
+> 	- [ ] Imager avant de biopsier — l'imagerie guide l'aiguille, mesure l'étendue et cherche
+>         une seconde lésion ou une atteinte controlatérale que la biopsie ne verrait pas
+> 	- [ ] La clinique prime sur une image rassurante : l'imagerie laisse environ 5 % de faux
+>         négatifs, et une masse cliniquement suspecte se biopsie malgré un classement bas
+> - [ ] **2. Imagerie — le choix se fait sur l'âge**
+> 	- [ ] Avant 30 ans : échographie seule — le sein est dense et l'irradiation inutile
+> 	- [ ] De 30 à 40 ans : échographie, plus une mammographie ciblée si la masse persiste
+> 	- [ ] Après 40 ans : mammographie bilatérale **et** échographie, systématiquement
+> 	- [ ] Grossesse ou allaitement : échographie en première ligne
+> 	- [ ] Ce que chacune apporte : la mammographie voit les microcalcifications et donne la vue
+>         d'ensemble des deux seins, mais perd en sensibilité sur un sein dense ; l'échographie
+>         répond à « liquidien ou solide » — un kyste est anéchogène et se reconnaît d'emblée
+> 	- [ ] IRM mammaire : mutation connue, sein dense, suspicion de multifocalité, doute
+>         persistant, ou bilan pré-opératoire
+> - [ ] **3. Histologie — le prélèvement qui tranche**
+> 	- [ ] Microbiopsie sous contrôle échographique : c'est le standard
+> 	- [ ] Macrobiopsie sous vide quand ce sont des microcalcifications qui sont en cause
+> 	- [ ] Réclamer sur le prélèvement récepteurs hormonaux, HER2 et Ki67 — sans eux aucun
+>         traitement adjuvant ne se choisit
+> - [ ] **4. Selon l'orientation**
+> 	- [ ] Masse tendue, fluctuante et douloureuse : cytoponction — cytologie du liquide s'il
+>         revient sanglant
+> 	- [ ] Écoulement unilatéral et unipore : galactographie ; érosion, croûte ou eczéma
+>         persistant d'un seul mamelon : biopsie cutanée
+> 	- [ ] 🚩 Sein rouge, chaud et œdématié hors allaitement, ou mastite qui ne cède pas en 48 à
+>         72 h : biopsie — c'est un cancer inflammatoire jusqu'à preuve du contraire
+> 	- [ ] Analyse BRCA1/2, en consultation onco-génétique : cancer avant 50 ans, bilatéral,
+>         chez un homme, histoire familiale multiple, ou risque vie entière > 20 % au score
+>         de Tyrer-Cuzick
+> - [ ] **5. Lire le résultat, et ne pas se tromper d'examen**
+> 	- [ ] BI-RADS n'est pas une description mais une décision : 3 probablement bénin, contrôle
+>         d'imagerie à 6 mois (VPP < 2 %) · 4 suspect, biopsie (2 à 95 %) · 5 très évocateur,
+>         biopsie (> 95 %) · 6 malignité prouvée
+> 	- [ ] Bilan d'extension — CT thoraco-abdomino-pelvien, scintigraphie osseuse, TEP selon le
+>         stade — **seulement après** confirmation histologique : l'imager d'emblée expose la
+>         patiente sans changer la décision
+> 	- [ ] CEA et CA 15-3 servent au suivi, jamais au diagnostic

@@ -215,23 +215,23 @@ cssclasses:
 > 	- [ ] Ganglions sus-claviculaires
 
 > [!success] 💊 Management — si Carcinome vésical
-> - [ ] **1. Examens d'imagerie et explorations**
-> 	- [ ] Échographie vésicale et rénale (US)
-> 	- [ ] Mesure du résidu post-mictionnel
-> 	- [ ] Cystoscopie
-> 	- [ ] Uro-CT si nécessaire
-> - [ ] **2. Diagnostic de suspicion principal**
-> - [ ] **3. Diagnostics différentiels**
-> - [ ] **4. Examens biologiques**
+> - [ ] **1. Diagnostic de suspicion principal**
+> - [ ] **2. Diagnostics différentiels**
+> - [ ] **3. Examens biologiques**
 > 	- [ ] FSC (hémoglobine)
 > 	- [ ] Créatinine
 > 	- [ ] Marqueurs inflammatoires (CRP)
 > 	- [ ] PSA (si homme > 50 ans)
-> - [ ] **5. Analyses urinaires**
+> - [ ] **4. Analyses urinaires**
 > 	- [ ] Bandelette urinaire
 > 	- [ ] Sédiment urinaire
 > 	- [ ] Cytologie urinaire
 > 	- [ ] Culture urinaire (ECBU)
+> - [ ] **5. Examens d'imagerie et explorations**
+> 	- [ ] Échographie vésicale et rénale (US)
+> 	- [ ] Mesure du résidu post-mictionnel
+> 	- [ ] Cystoscopie
+> 	- [ ] Uro-CT si nécessaire
 > - [ ] **6. Traitement et conseils**
 > - [ ] **7. Orientation spécialisée**
 > - [ ] **8. Facteurs de risque à modifier**
@@ -248,7 +248,7 @@ cssclasses:
 > 	- [ ] Urée, créatinine
 > 	- [ ] Titre antistreptolysine, niveaux de complément
 > 	- [ ] C-ANCA
-> - [ ] **3. Examens d'imagerie et explorations**
+> - [ ] **3. Examens d'imagerie et biopsie**
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Biopsie rénale
 > - [ ] **4. Communication avec le patient**

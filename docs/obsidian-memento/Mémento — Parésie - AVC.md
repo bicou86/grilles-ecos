@@ -126,3 +126,27 @@ cssclasses:
 > 	- [ ] Signes végétatifs d'hypertension intracrânienne : bradycardie, poussée hypertensive, irrégularité respiratoire
 > 	- [ ] Otoscopie et inspection du pavillon : chercher **explicitement** les vésicules zostériennes de la conque et du conduit
 > 	- [ ] Palpation de la loge parotidienne et des aires ganglionnaires cervicales
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Devant un déficit brutal — ce qui part avant tout le reste**
+> 	- [ ] 🚩 **Glycémie capillaire, avant toute conclusion** : l'hypoglycémie est le mimic n° 1 de l'AVC — sous 3.9 mmol/L, aucune conclusion neurologique ne tient tant qu'elle n'est pas corrigée
+> 	- [ ] **CT cérébral natif en urgence** : il ne cherche pas l'ischémie, il **élimine l'hémorragie** — c'est lui qui ouvre ou ferme la thrombolyse ; dédifférenciation substance grise/blanche, effacement des sillons et refoulement de la ligne médiane signent au contraire un infarctus **déjà constitué**, donc hors fenêtre
+> 	- [ ] **IRM cérébrale avec séquences de diffusion**, examen de référence : elle voit l'ischémie aiguë que le CT ne montre pas encore, et c'est elle qui tranche entre AIT et AVC — la définition de l'AIT est **tissulaire** (déficit entièrement régressif *sans* lésion en diffusion), non plus temporelle ; devant un déficit régressif, elle se demande **dans les 24 h**, pas à froid
+> 	- [ ] **ECG 12 dérivations** : fibrillation auriculaire, trouble du rythme, ischémie myocardique associée
+> 	- [ ] **Bilan biologique** : glycémie veineuse, FSC, **crase — TP, TCA, INR : une anticoagulation efficace exclut la thrombolyse**, créatinine, électrolytes ; lipides et HbA1c pour la prévention qui suivra
+> - [ ] **2. D'où vient l'embole — le bilan étiologique**
+> 	- [ ] **Angio-CT ou angio-IRM des vaisseaux du cou et du cerveau** : elle n'attend pas l'urgence passée, c'est elle qui montre l'occlusion proximale accessible à la thrombectomie
+> 	- [ ] **Écho-Doppler des troncs supra-aortiques** : sténose carotidienne, qui relève de la chirurgie au-delà de 70 %
+> 	- [ ] **Échocardiographie** : source embolique cardiaque, valvulopathie, endocardite
+> 	- [ ] **Holter ECG** : la fibrillation auriculaire paroxystique est par définition absente de l'ECG d'admission — un tracé en rythme sinusal ne l'écarte pas
+> 	- [ ] Bilan de thrombophilie chez le sujet jeune sans facteur de risque vasculaire
+> - [ ] **3. Devant une atteinte faciale isolée, front compris — le bilan se réduit**
+> 	- [ ] **Ni imagerie ni laboratoire de routine dans la forme typique** : la paralysie de Bell est un diagnostic clinique d'exclusion, et demander une imagerie ne fait que retarder la corticothérapie, dont toute la valeur tient à la fenêtre des **72 h**
+> 	- [ ] **Glycémie** : le diabète est à la fois facteur de risque et ce qui conditionne la surveillance sous corticoïdes
+> 	- [ ] **Sérologie de Lyme** selon l'exposition — morsure de tique, forêt, randonnée : en Suisse, la paralysie faciale est la manifestation neurologique la plus fréquente de la borréliose
+> 	- [ ] **Sérologies VIH et syphilis** selon l'anamnèse sexuelle
+> 	- [ ] **IRM cérébrale** dès que le tableau sort du typique : signe central associé, installation progressive, récidive, ou absence de récupération à trois mois
+> 	- [ ] Radiographie du thorax et enzyme de conversion de l'angiotensine devant une atteinte bilatérale ou récidivante (sarcoïdose)
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 Déficit d'installation subaiguë chez l'adulte jeune, névrite optique, ophtalmoplégie internucléaire, épisodes dissociés dans le temps et dans l'espace → **IRM cérébrale et médullaire avec gadolinium** et **ponction lombaire à la recherche de bandes oligoclonales** — la sclérose en plaques est attendue de cette SSP et aucune grille du corpus ne la documente
+> 	- [ ] Céphalée explosive associée au déficit et CT natif normal → **ponction lombaire** ; déficit d'installation progressive avec céphalées croissantes → **IRM avec gadolinium** à la recherche d'un processus expansif — ce sont les deux hypothèses que le CT natif seul ne referme pas

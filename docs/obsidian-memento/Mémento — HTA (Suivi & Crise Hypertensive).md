@@ -111,3 +111,36 @@ cssclasses:
 > 	- [ ] Œdème papillaire au fond d'œil : rétinopathie stade IV, HTA maligne
 > 	- [ ] Déficit neurologique focal, confusion ou convulsion au-delà de 180/120 : atteinte d'organe aiguë, l'examen s'arrête là
 > 	- [ ] Faciès cushingoïde, vergetures pourpres, souffle du flanc, gros reins : la cause n'est pas essentielle, elle est secondaire
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Confirmer avant de traiter — la mesure hors cabinet est le premier des examens**
+> 	- [ ] **MAPA sur 24 heures**, étalon de référence : elle seule donne le profil nocturne — le patient dont la tension ne descend pas la nuit (**non-dipper**) n'est repérable par aucune automesure
+> 	- [ ] **Automesure (HBPM)** sur un appareil validé, conduite selon la **règle 3-3-3** : l'alternative quand la MAPA manque, et le seul moyen de démasquer une HTA blouse blanche ou une HTA masquée
+> 	- [ ] Le seuil suit la méthode : cabinet **≥ 140/90** · HBPM et MAPA diurne ≥ 135/85 · MAPA sur 24 h ≥ 130/80 · MAPA nocturne ≥ 120/70 — il s'abaisse à mesure que la mesure s'éloigne de la consultation, et appliquer celui du cabinet à une automesure surdiagnostiquerait
+> 	- [ ] Ce qui dispense d'attendre la confirmation : grade 3, HTA symptomatique, atteinte d'organe constituée, maladie cardiovasculaire ou insuffisance rénale chronique de stade 3 — le diagnostic est alors posé d'emblée ; sans eux, un grade 1 ou 2 asymptomatique passe par un contrôle ambulatoire à **quatre semaines au moins** avant tout traitement
+> - [ ] **2. Le bilan de base — initial, puis annuel**
+> 	- [ ] **Sodium, potassium, créatinine et DFG estimé (CKD-EPI)** : le point de départ rénal **avant** toute prescription — sans valeur initiale, une dégradation ultérieure sous IEC est ininterprétable ; et une **kaliémie basse sans diurétique** n'est pas un chiffre de suivi, c'est le signe d'appel du Conn
+> 	- [ ] **FSC, glycémie à jeun et HbA1c, bilan lipidique complet, uricémie** : ils ne cherchent pas une cause, ils chiffrent le risque global au **SCORE2** (40 à 69 ans) ou au **SCORE2-OP** (dès 70 ans), **dont dépend la cible tensionnelle** ; l'uricémie repère en plus le terrain goutteux qu'un thiazidique aggraverait
+> 	- [ ] **TSH** : la dysthyroïdie est la cause secondaire la plus simple à écarter — T4 libre ajoutée si elle est perturbée
+> 	- [ ] **Urines : sédiment et rapport albumine/créatinine** — **≥ 3 mg/mmol** signe l'atteinte rénale, le seul examen qui l'objective **avant que la créatinine ne bouge**, d'où son seuil bas ; la bandelette du cabinet (protéinurie, hématurie) oriente, elle ne le remplace pas
+> - [ ] **3. Chercher l'atteinte des organes cibles — à toute consultation d'HTA**
+> 	- [ ] **ECG 12 dérivations** : **hypertrophie ventriculaire gauche** aux indices de **Sokolow-Lyon** (SV1 + RV5 ou V6 > 35 mm) et de **Cornell** (RaVL > 11 mm) — le témoin le plus accessible de l'ancienneté réelle de l'hypertension ; troubles du rythme et ischémie dans le même temps
+> 	- [ ] **Échocardiographie** dès qu'une HVG est suspectée, qu'un souffle est ausculté ou qu'une insuffisance cardiaque est évoquée : elle nomme la cardiopathie, mesure la fonction et confirme l'hypertrophie que l'ECG ne fait que suggérer
+> 	- [ ] **NT-proBNP (ou BNP)** devant une dyspnée d'effort, des crépitants ou des œdèmes : il tranche la part cardiaque de la dyspnée
+> 	- [ ] **Radiographie thoracique** : cardiomégalie, redistribution vasculaire vers les sommets, lignes de Kerley, épanchement — la surcharge quand elle existe
+> 	- [ ] **Index de pression systolique** devant une claudication intermittente ou des pouls distaux diminués : l'artère du membre inférieur est un organe cible comme les autres
+> 	- [ ] **Fond d'œil**, à demander nommément quand on ne le pratique pas soi-même — et normal, il n'écarte rien ailleurs : cœur, cerveau, rein et œil se cherchent chacun avec son examen
+> - [ ] **4. Chercher une cause secondaire — au signal, pas chez tout hypertendu**
+> 	- [ ] Les signaux qui ouvrent le bilan étiologique : âge sous 30 ans, HTA résistante, aggravation brutale, hypokaliémie spontanée, fonction rénale qui se dégrade sous IEC ou ARA2, souffle du flanc, symptômes par accès — sans eux, le bilan de base suffit
+> 	- [ ] Créatinine élevée, sédiment pathologique ou microalbuminurie → **protéinurie des 24 h et échographie rénale** : atteinte rénale parenchymateuse, la plus fréquente des causes secondaires (5 %)
+> 	- [ ] Souffle du flanc ou sous-costal, créatinine qui se dégrade dès les premières prises d'IEC, œdème pulmonaire récidivant, petit rein unilatéral → **écho-Doppler des artères rénales**, puis angio-CT ou angio-IRM : sténose (3 %), athéromateuse chez le sujet âgé, par dysplasie fibromusculaire chez la femme jeune
+> 	- [ ] Kaliémie basse sans diurétique, faiblesse musculaire, polyuro-polydipsie → kaliurie puis **ratio aldostérone/rénine** : hyperaldostéronisme primaire (1 %)
+> 	- [ ] Céphalées, sueurs et palpitations **par accès** (triade de Ménard) → **métanéphrines libres et totales** : phéochromocytome (moins de 1 %)
+> 	- [ ] Ronflements, apnées rapportées par l'entourage, somnolence diurne chiffrée à l'**Epworth** → **polysomnographie** : le SAOS est la cause classique de l'hypertension qui résiste
+> 	- [ ] Obésité tronculaire, vergetures pourpres, faciès lunaire → **cortisol libre urinaire des 24 h**, puis test de freinage à la dexaméthasone : Cushing
+> 	- [ ] Pouls fémoraux faibles ou retardés, tension basse aux membres inférieurs alors qu'elle est haute aux bras → tension aux quatre membres, puis imagerie de l'aorte : coarctation
+> - [ ] **5. À ne pas oublier**
+> 	- [ ] 🚩 **Au-delà de 180/120 avec une atteinte d'organe aiguë** — douleur thoracique, déficit neurologique, confusion, dyspnée aiguë : le bilan est celui de l'organe touché — ECG et **troponine**, radiographie thoracique, ionogramme et créatinine, fond d'œil, **CT cérébral** devant tout signe neurologique, **angio-CT de l'aorte** devant une douleur déchirante ; il se fait sous monitoring et **ne retarde pas** le traitement intraveineux
+> 	- [ ] Les mêmes chiffres **sans** atteinte aiguë ne sont qu'une poussée : c'est l'organe, jamais le chiffre seul, qui déclenche un bilan en urgence
+> 	- [ ] Chez la femme en âge de procréer : **IEC et ARA2 sont tératogènes** — statut contraceptif et test de grossesse **avant** la première ordonnance, et non après
+> 	- [ ] Avant de demander le bilan d'une hypertension « résistante », rouvrir l'ordonnance et compter les oublis : l'observance imparfaite et les **AINS** font la pseudo-résistance, qu'aucun examen ne montrera — la résistance vraie, c'est trois classes dont un diurétique, à doses optimales

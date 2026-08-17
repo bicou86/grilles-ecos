@@ -134,3 +134,51 @@ cssclasses:
 > 	- [ ] Douleur à l'ébranlement d'une loge lombaire, avec fièvre
 > 	- [ ] Anesthésie en selle, hypotonie anale, déficit ou aréflexie des membres inférieurs
 > 	- [ ] Prolapsus extériorisé, atrophie vulvo-vaginale marquée
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant toute fuite**
+> 	- [ ] Bandelette urinaire, puis ECBU si elle est positive : nitrites et leucocytes = infection
+>         urinaire, fréquemment associée — elle aggrave la fuite plus qu'elle ne l'explique, et la
+>         fuite persiste une fois le germe éliminé
+> 	- [ ] La même bandelette lit le sang et le glucose : une hématurie microscopique ne s'attribue
+>         ni à l'âge ni à l'infection, une glycosurie ouvre le versant diabétique
+> 	- [ ] Résidu post-mictionnel au bladder-scan ou à l'échographie sus-pubienne, mesuré **juste
+>         après une miction** : élevé, il signe la rétention chronique et l'incontinence par
+>         regorgement — atonie vésicale du diabète, obstacle, anticholinergiques
+> 	- [ ] Laboratoire : glycémie à jeun et HbA1c — le diabète donne à la fois la polyurie osmotique
+>         et la neuropathie vésicale ; créatinine et urée ; calcémie, dont l'élévation fait la
+>         polyurie ; vitamine B12 devant des signes neurologiques
+> - [ ] **2. Chiffrer la fuite — ce que l'anamnèse seule ne donne pas**
+> 	- [ ] Calendrier mictionnel sur 3 jours, tenu par la patiente : heures et volumes des mictions,
+>         boissons, fuites et leurs circonstances — il sépare l'effort de l'urgenturie quand
+>         l'interrogatoire hésite, et démasque la polyurie ou l'excès de boissons du soir
+> 	- [ ] Pad-test : pesée des protections sur 1 h ou 24 h — il convertit « seulement un peu » en
+>         grammes, seule quantification objective de la fuite
+> 	- [ ] Questionnaire validé de qualité de vie, ICIQ-SF : c'est le degré de gêne, et non le volume
+>         perdu, qui décide du traitement — encore faut-il l'avoir chiffré une première fois
+> - [ ] **3. Selon l'orientation**
+> 	- [ ] Bilan urodynamique — débitmétrie, cystomanométrie, VLPP : fuite à l'effort qui résiste à
+>         une rééducation bien conduite ou avant toute chirurgie, incontinence mixte, trouble de la
+>         vidange, maladie neurologique, chirurgie ou radiothérapie pelvienne antérieure,
+>         infections urinaires récidivantes ; un VLPP < 60 cmH₂O signe l'insuffisance
+>         sphinctérienne intrinsèque, un VLPP > 90 cmH₂O l'hypermobilité urétrale — deux
+>         mécanismes qui ne relèvent pas du même geste
+> 	- [ ] Urgenturie récente, avec pollakiurie, brûlures ou hématurie : ECBU, puis échographie
+>         vésico-rénale et cystoscopie — une vessie hyperactive d'apparition brutale est secondaire
+>         jusqu'à preuve du contraire (infection, calcul, tumeur)
+> 	- [ ] Jet faible, poussée abdominale, vidange incomplète : débitmétrie couplée au résidu
+>         post-mictionnel, qui mesure ce que l'interrogatoire ne fait qu'évoquer
+> 	- [ ] Patiente âgée qui n'atteint pas les toilettes faute d'y arriver à temps — canne, douleurs,
+>         toilettes éloignées : évaluation fonctionnelle (Timed Up and Go, actes de la vie
+>         quotidienne) ; l'incontinence fonctionnelle ne se voit sur aucun examen d'organe
+> 	- [ ] 🚩 Fuite permanente, jour et nuit, après hystérectomie ou chirurgie pelvienne : test au
+>         bleu de méthylène — tampon vaginal, vessie remplie de bleu — et cystoscopie : c'est le
+>         geste qui affirme la fistule vésico-vaginale
+> - [ ] **4. 🚩 À ne pas rater**
+> 	- [ ] Hématurie macroscopique, a fortiori chez une fumeuse de plus de 50 ans : cytologie
+>         urinaire, cystoscopie et uro-CT — cancer urothélial jusqu'à preuve du contraire, et un
+>         ECBU normal ne dispense pas de l'explorer
+> 	- [ ] Anesthésie en selle, déficit des membres inférieurs, rétention d'installation brutale :
+>         IRM lombo-sacrée en urgence, avant et non après le reste du bilan — queue de cheval
+> 	- [ ] Fièvre avec douleur à l'ébranlement d'une loge lombaire : hémocultures avant la première
+>         dose d'antibiotique, et échographie des voies urinaires à la recherche d'un obstacle

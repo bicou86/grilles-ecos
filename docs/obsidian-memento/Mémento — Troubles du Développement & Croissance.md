@@ -116,3 +116,22 @@ cssclasses:
 > 	- [ ] Goitre, tachycardie de repos, tremblement
 > 	- [ ] Ronflement avec pauses respiratoires rapportées par les parents
 > 	- [ ] Enfant qui se dévalorise, se dit « nul », ou exprime des idées noires
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan biologique — un bilan d'exclusion, jamais de confirmation**
+> 	- [ ] TSH au sein d'un bilan biologique, T4 libre ajoutée si la TSH est perturbée — l'hyperthyroïdie est la seule cause endocrinienne qui reproduit la triade entière, agitation, inattention et impulsivité
+> 	- [ ] Ferritine, lue avec la FSC : une carence martiale entretient l'inattention et la fatigabilité avant même d'abaisser l'hémoglobine — une ferritine basse sur un hémogramme normal compte quand même
+> 	- [ ] Glycémie, à interpréter avec le petit-déjeuner sauté et les canettes de la journée ; un diabète qui débute se dit d'abord par la fatigue et la chute des résultats scolaires, bien avant que la polyurie ne soit signalée
+> 	- [ ] Aucun de ces dosages ne pose le diagnostic — ils retirent des causes. Un bilan entièrement normal ne fragilise pas l'hypothèse, il la rend recevable : le TDAH reste un diagnostic clinique
+> - [ ] **2. Les instruments du diagnostic proprement dit**
+> 	- [ ] Questionnaires standardisés — Conners, SNAP-IV — remplis par les parents **et** par l'enseignant : l'école et la maison sont deux critères cotés distincts, et un questionnaire rempli d'un seul côté ne documente pas le trouble
+> 	- [ ] Évaluation psychométrique si elle est indiquée, et bilan cognitif par le psychologue : ils cherchent ce qui expliquerait l'échec scolaire à la place du TDAH — déficit intellectuel, haut potentiel, trouble spécifique des apprentissages
+> 	- [ ] Ces échelles chiffrent, elles ne tranchent pas : les critères restent cliniques — symptômes installés depuis plus de six mois, débutés avant 12 ans, présents dans les deux milieux, avec retentissement
+> - [ ] **3. Selon l'orientation — la piste clinique qui déclenche l'examen**
+> 	- [ ] Devant un doute au dépistage fait au cabinet, ou un dépistage sensoriel jamais refait depuis la naissance : audiogramme et bilan ophtalmologique avec réfraction — un dépistage néonatal normal n'exclut ni une surdité acquise ni une surdité progressive, et c'est le seul bilan qui puisse à lui seul faire tomber le diagnostic
+> 	- [ ] Devant un ronflement avec pauses respiratoires ou une respiration bouche ouverte : 🚩 oxymétrie nocturne ou polysomnographie, avec examen ORL des amygdales et des végétations — un sommeil fragmenté produit le jour exactement la même agitation et la même inattention
+> 	- [ ] Devant des ruptures de contact brèves et répétées avec arrêt de l'activité en cours : 🚩 EEG avec épreuve d'hyperpnée — l'absence épileptique se donne à voir comme de la distractibilité, et ne se traite pas du tout de la même façon
+> 	- [ ] Devant une difficulté qui reste circonscrite à la lecture, à l'écriture ou au calcul : bilan logopédique — c'est lui qui sépare le trouble spécifique des apprentissages du trouble attentionnel qui déborde sur tous les milieux
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Avant tout psychostimulant, ECG non systématique : réservé à un antécédent cardiaque personnel ou familial, une mort subite précoce dans la famille, un souffle, des palpitations ou une syncope d'effort
+> 	- [ ] Pas d'imagerie cérébrale dans un tableau typique : l'IRM ne se justifie que devant un signe neurologique focal, une régression d'acquis déjà obtenus ou un périmètre crânien qui décroche de son couloir

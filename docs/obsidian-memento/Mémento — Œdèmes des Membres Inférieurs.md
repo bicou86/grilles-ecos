@@ -123,3 +123,35 @@ cssclasses:
 > 	- [ ] Bruits du cœur assourdis avec turgescence jugulaire et hypotension
 > 	- [ ] Tension artérielle élevée chez un patient œdématié qui n'urine plus
 > 	- [ ] Hypotension, tachycardie et pli cutané sous diurétique : la rétention a basculé en hypovolémie
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant tout œdème des membres inférieurs**
+> 	- [ ] **Bandelette urinaire**, au cabinet, avant tout le reste : une protéinurie massive **isolée** — hématies, leucocytes et nitrites négatifs — c'est cette dissociation qui envoie sur la piste rénale ; la bandelette ne détecte que l'albumine, pas les chaînes légères
+> 	- [ ] Laboratoire de base : FSC (anémie, hyperleucocytose), ionogramme, urée et **créatinine avec DFG**, glycémie, **albuminémie**
+> 	- [ ] Bilan hépatique et crase : la cirrhose fabrique le même œdème par le même mécanisme, l'hypoalbuminémie — **une albumine basse sans protéinurie renvoie au foie ou à la dénutrition, pas au rein** ; échographie abdominale devant un ictère, une hépatomégalie ou une circulation collatérale
+> 	- [ ] ECG : fibrillation auriculaire, séquelle d'infarctus, troubles de la repolarisation, microvoltage d'un épanchement péricardique
+> 	- [ ] Radiographie thoracique : cardiomégalie (index cardiothoracique > 0.5), redistribution vasculaire vers les sommets, épaississement de la trame interstitielle, épanchements pleuraux — cardiomégalie et œdème pulmonaire sont deux critères majeurs de Framingham
+> - [ ] **2. Œdèmes blancs, mous, symétriques avec urines mousseuses — chiffrer la protéinurie, puis lui trouver une cause**
+> 	- [ ] **Protéinurie des 24 h, ou ratio protéinurie/créatininurie** sur un échantillon, qui remplace un recueil que presque personne ne fait bien. Le syndrome néphrotique se définit par **protéinurie > 3 g/24 h (ou 3 g/g de créatinine) + albuminémie < 30 g/L** ; les œdèmes cliniques et l'hyperlipidémie complètent le tableau sans être exigés
+> 	- [ ] Bilan lipidique : cholestérol total et triglycérides très élevés, hyperlipidémie réactionnelle à la chute de la pression oncotique — ce n'est pas une comorbidité découverte au passage, c'est une pièce du syndrome
+> 	- [ ] Sédiment urinaire : cylindres, hématies dysmorphiques — leur présence fait quitter le néphrotique pur pour un syndrome néphritique et change tout le bilan qui suit
+> 	- [ ] Électrophorèse des protéines sériques **et urinaires** : c'est elle qui débusque le pic monoclonal et les chaînes légères du myélome ou de l'amylose, que la bandelette laisse passer
+> 	- [ ] Complément C3 et C4 (abaissés dans le lupus, la GN post-infectieuse, la GN membranoproliférative) et anticorps anti-nucléaires devant une femme jeune ; ASLO et ANCA si le sédiment est néphritique
+> 	- [ ] Sérologies VHB, VHC et VIH, glycémie à jeun et HbA1c : devant une cause secondaire c'est elle qu'on traite d'abord, et les sérologies se connaissent **avant** toute immunosuppression
+> 	- [ ] Échographie rénale et des voies urinaires : reins augmentés de taille et hyperéchogènes dans le syndrome néphrotique ; de petits reins signent la chronicité et contre-indiquent la biopsie — l'échographie précède donc toujours la biopsie
+> 	- [ ] **Biopsie rénale**, l'examen qui tranche : indiquée chez **tout adulte** en syndrome néphrotique, car c'est l'histologie qui choisit le traitement ; chez l'enfant seulement si le tableau est atypique. Aussi devant une insuffisance rénale associée, une hématurie macroscopique, une HTA sévère ou des signes extra-rénaux de maladie systémique
+> - [ ] **3. Dyspnée d'effort, orthopnée, nycturie, râles des bases, pouls irrégulier — la piste cardiaque**
+> 	- [ ] **NT-proBNP ou BNP** : le seuil monte avec l'âge — **> 900 ng/L après 75 ans** ; l'obésité l'abaisse, la fibrillation auriculaire et l'insuffisance rénale l'élèvent. Sa valeur est surtout négative : normal, il rend l'insuffisance cardiaque très improbable
+> 	- [ ] **Échocardiographie transthoracique** : FEVG, cinétique segmentaire (séquelle d'infarctus), valvulopathie derrière un souffle holosystolique, pressions de remplissage, épanchement péricardique — l'insuffisance cardiaque ne se confirme pas sur la clinique seule
+> 	- [ ] **TSH**, T4 libre si elle est anormale : l'hypothyroïdie gonfle les jambes et décompense un cœur — mais le myxœdème, lui, ne prend pas le godet
+> 	- [ ] Fer sérique, **ferritine et coefficient de saturation de la transferrine** : la carence martiale de l'insuffisance cardiaque est fréquente et se corrige même sans anémie — ferritine < 100 μg/L, ou < 300 μg/L avec saturation < 20 % ; la ferritine étant un marqueur inflammatoire, elle peut être faussement rassurante
+> - [ ] **4. Œdème d'un seul côté, mollet douloureux, circonférence augmentée — écarter avant de comprimer**
+> 	- [ ] **Écho-Doppler veineux des membres inférieurs** : sensibilité 95 % sur les thromboses proximales, bien moindre sur les distales ; c'est aussi lui qui sépare l'insuffisance veineuse chronique de la thrombose surajoutée
+> 	- [ ] **D-dimères** d'abord si la probabilité clinique est faible, seuil ajusté à l'âge après 50 ans (âge × 10) : très sensibles, peu spécifiques — chez le sujet âgé hospitalisé ils seront positifs de toute façon, et l'écho-Doppler se demande alors d'emblée
+> 	- [ ] Placard rouge, chaud, à bord net avec fièvre et porte d'entrée : l'érysipèle est un **diagnostic clinique** — FSC, CRP et hémocultures mesurent le retentissement, aucun laboratoire normal ne l'écarte
+> 	- [ ] **Index de pression systolique cheville-bras** avant de proposer une contention, dès que les pouls distaux ne sont pas franchement perçus : sous 0.9 l'artériopathie est là, et une contention posée dessus fait la nécrose
+> - [ ] **5. À ne pas oublier**
+> 	- [ ] 🚩 **β-hCG chez toute femme en âge de procréer** : œdèmes, hypertension et protéinurie chez une femme jeune, c'est une pré-éclampsie jusqu'à preuve du contraire — aucune grille du corpus ne la documente, et le résultat commande aussi l'irradiation et l'introduction d'un IEC ou d'un sartan
+> 	- [ ] 🚩 Le syndrome néphrotique est **prothrombotique**, par fuite urinaire d'antithrombine III : douleur lombaire brutale avec hématurie → écho-Doppler ou angio-CT des veines rénales ; dyspnée brutale avec douleur thoracique → angio-CT pulmonaire
+> 	- [ ] 🚩 Fièvre et douleur abdominale sur un abdomen ascitique : **ponction d'ascite** avec cytologie et culture — plus de 250 polynucléaires par mm³ signent la péritonite bactérienne spontanée, que la perte urinaire d'immunoglobulines rend fréquente
+> 	- [ ] Créatinine connue **avant** toute injection de produit de contraste et avant la biopsie ; et un bilan complet n'écarte pas la cause la plus simple — un médicament introduit récemment (AINS, anticalcique, corticoïde) ne se voit sur aucun examen

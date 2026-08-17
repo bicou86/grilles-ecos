@@ -131,3 +131,33 @@ cssclasses:
 > 	- [ ] Masse médiane battante et expansive : anévrisme de l'aorte abdominale
 > 	- [ ] Ganglion inguinal dur, fixé, indolore ; hépatomégalie nodulaire
 > 	- [ ] Hernie crurale : petite, sous l'arcade, facile à manquer, la plus exposée à l'étranglement
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention : l'échographie inguinale**
+> 	- [ ] **Échographie inguinale** — confirme le diagnostic, précise le **contenu du sac**
+>         (anse digestive, épiploon) et cherche les signes de complication
+> 	- [ ] C'est elle qui tranche les différentiels palpables : adénopathie, lipome, tumeur des
+>         tissus mous, hydrocèle, varicocèle
+> 	- [ ] **Une échographie normale n'écarte pas une hernie** : la demander debout et en Valsalva,
+>         comme l'examen clinique — couché et au repos, le sac peut être vide
+> - [ ] **2. Laboratoire : orientation et terrain opératoire**
+> 	- [ ] **FSC** : anémie — une hernie ne saigne pas, une anémie renvoie ailleurs ; hyperleucocytose
+> 	- [ ] **CRP** devant une masse inguinale inflammatoire ou une porte d'entrée au membre inférieur
+>         (plaie, ulcère, érysipèle) : adénopathie plutôt que hernie
+> 	- [ ] **Crase** en vue du bloc ; **glycémie** et **fonction rénale** au titre du terrain opératoire
+> 	- [ ] **Tests hépatiques** — la consommation quotidienne d'alcool les justifie à elle seule, et
+>         l'hépatopathie chronique est l'autre grand pourvoyeur de gros ventre
+> - [ ] **3. Selon l'orientation**
+> 	- [ ] Masse d'évolution lente, ganglion dur et fixé, symptômes B : **CT abdominal** en complément
+>         de l'échographie — tumeur des tissus mous, adénopathie profonde
+> 	- [ ] 🚩 Ventre globalement distendu, matité déclive et signe du flot, ou masse médiane battante :
+>         **échographie abdominale** — ascite, hépatopathie, anévrisme de l'aorte abdominale
+> 	- [ ] 🚩 Changement récent du transit, sang dans les selles, perte de poids : **endoscopie
+>         digestive** — le ballonnement peut être le premier signe d'un cancer colique
+> - [ ] **4. 🚩 Devant des signes d'étranglement**
+> 	- [ ] Tuméfaction dure, douloureuse, irréductible, vomissements, arrêt des matières et des gaz :
+>         **abdomen sans préparation debout** ou **CT abdominal** — anses dilatées, niveaux
+>         hydro-aériques
+> 	- [ ] Niveaux larges et centraux : grêle ; niveaux périphériques, plus hauts que larges : côlon
+> 	- [ ] Le cliché montre l'occlusion, **pas sa cause** — et aucune imagerie ne doit retarder la
+>         prise en charge quand l'aine a déjà donné la réponse

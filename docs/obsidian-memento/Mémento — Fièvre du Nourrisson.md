@@ -122,3 +122,47 @@ cssclasses:
 > 	- [ ] Reformuler : résumé structuré des symptômes, validation avec le parent, points restés flous
 > 	- [ ] Conclure par une stratification explicite : déshydratation estimée, état neurologique,
 >         signes de gravité présents ou absents
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. L'âge fixe le bilan avant même qu'un diagnostic soit posé**
+> 	- [ ] Moins de 1 mois : bilan septique complet d'emblée — FSC et CRP, hémocultures, urines,
+>         ponction lombaire — quel que soit l'aspect de l'enfant 🚩
+> 	- [ ] 1 à 3 mois : FSC, CRP et bandelette urinaire ; ponction lombaire si l'aspect est toxique
+>         ou le bilan perturbé
+> 	- [ ] Plus de 3 mois : aucun bilan systématique — l'état clinique et le foyer identifié décident
+> 	- [ ] Scores d'aide à la décision : Rochester, step-by-step européen, feux tricolores du NICE
+> 	- [ ] Au téléphone, aucun examen à distance : nommer l'examen physique comme le premier temps
+>         du bilan, l'appel ne le remplace pas
+> - [ ] **2. Fièvre sans foyer — chercher avant d'accepter la cause virale**
+> 	- [ ] Bandelette urinaire systématique dès qu'aucun foyer n'apparaît : l'infection urinaire rend
+>         compte d'environ 15 % des fièvres sans foyer et se présente par une fièvre nue, aucun signe
+>         urinaire n'étant exprimable à cet âge
+> 	- [ ] Bandelette positive : confirmer par une culture prélevée proprement — un sachet collecteur
+>         se contamine et ne conclut rien
+> 	- [ ] Tableau typique chez un enfant qui joue, mange et boit : aucun examen biologique — 85 % des
+>         fièvres de l'enfant sont virales et le diagnostic reste clinique
+> 	- [ ] FSC avec formule et CRP (± procalcitonine) si le doute persiste ou si l'état général se
+>         dégrade : leucocytose à polynucléaires et CRP élevée orientent vers le bactérien sans trancher
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] Devant une tachypnée fébrile : saturation en air ambiant et radiographie thoracique
+>         (infiltrats, condensation, distension) — la radiographie confirme le foyer mais ne sépare
+>         pas le viral du bactérien
+> 	- [ ] Les deux seuils de saturation à ne pas confondre : sous 95 %, signe d'alerte qui fait
+>         chercher une pneumonie ; sous 92 %, hypoxémie franche, seuil de gravité et non plus d'alerte
+> 	- [ ] Gazométrie devant une détresse respiratoire sévère ou une diarrhée profuse — troubles
+>         acido-basiques
+> 	- [ ] Devant une diarrhée ou une déshydratation : ionogramme et glycémie (pertes électrolytiques,
+>         hypoglycémie) ; l'hématocrite s'élève avec la déshydratation
+> 	- [ ] Panel viral respiratoire ou test rapide grippe en période épidémique — seulement si
+>         documenter le virus change la prise en charge ; coproculture si diarrhée sanglante ou traînante
+> 	- [ ] Devant une angine fébrile avec langue framboisée et éruption rugueuse : test rapide du
+>         streptocoque A — la seule hypothèse qu'un test tranche dans la journée
+> 	- [ ] Devant une éruption fébrile atypique et un doute qui persiste : sérologies virales
+> - [ ] **4. 🚩 Ce qui impose un bilan sans attendre**
+> 	- [ ] Aspect toxique, léthargie ou purpura fébrile : bilan septique immédiat quel que soit l'âge
+>         — hémocultures prélevées avant toute antibiothérapie, mais sans jamais la retarder
+> 	- [ ] Ponction lombaire devant une fontanelle bombée, une convulsion fébrile complexe (focale,
+>         au-delà de 15 minutes, ou récidivante en 24 heures) ou un premier épisode avant 18 mois —
+>         les signes méningés sont peu fiables à cet âge, leur absence ne dispense pas
+> 	- [ ] Glycémie capillaire devant toute convulsion ou tout trouble de la conscience
+> 	- [ ] Convulsion fébrile simple chez un enfant redevenu normal : pas de bilan neurologique

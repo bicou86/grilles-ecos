@@ -123,3 +123,26 @@ cssclasses:
 > 	- [ ] Raideur de nuque avec fièvre
 > 	- [ ] Glycémie capillaire basse — resucrer avant de poursuivre l'examen
 > 	- [ ] Traumatisme crânien chez un patient sous anticoagulant ou antiagrégant
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Au lit du malade, avant tout laboratoire**
+> 	- [ ] **Glycémie capillaire** : elle se mesure d'emblée devant toute perte de connaissance et reste le geste le plus souvent oublié — sous 3.9 mmol/L elle explique à elle seule le malaise, et une valeur à 2.5 mmol/L le coma
+> 	- [ ] **ECG 12 dérivations en urgence**, lu ligne par ligne : fréquence, pauses et régularité ; intervalle PR et degré du bloc auriculo-ventriculaire (Mobitz) ; QT long, bloc de branche, sus-décalage en dôme de V1-V2 (Brugada), signes d'ischémie ou de cœur droit
+> 	- [ ] **Test de Schellong standardisé** : c'est un examen coté, pas seulement un geste de status — couché dix minutes, puis mesures debout immédiate, à une, trois et cinq minutes, symptômes documentés à chaque temps ; la seule mesure immédiate manque la défaillance lente
+> - [ ] **2. Le laboratoire de première intention**
+> 	- [ ] FSC : anémie — chez le sujet jeune elle suffit à faire tomber la tension au lever, et une anémie déjà connue et traitée ne dispense pas de redoser l'hémoglobine
+> 	- [ ] Ionogramme, fonction rénale, glycémie veineuse qui confirme la capillaire — déshydratation, iatrogénie diurétique ; gazométrie si la vigilance est altérée
+> 	- [ ] Troponine hypersensible et BNP/NT-proBNP dès qu'une cause cardiaque est envisagée : ischémie, insuffisance cardiaque — négatives, elles n'écartent pas le trouble du rythme
+> 	- [ ] TSH : l'hypothyroïdie entretient la bradycardie et le trouble de conduction, et se cherche aussi devant une intolérance au froid et un transit ralenti
+> - [ ] **3. Selon l'orientation**
+> 	- [ ] 🚩 Devant une syncope à l'effort ou en position couchée, une chute sans aucun prodrome, ou un souffle systolique râpeux irradiant aux carotides : **échocardiographie** — sténose aortique, cardiomyopathie, séquelle d'infarctus ; complétée d'une radiographie thoracique devant des signes de stase
+> 	- [ ] Devant des épisodes qui récidivent et se rapprochent, des palpitations ou une bradycardie : documenter le rythme — **monitoring ECG continu** aux urgences, **Holter 24 h** si le patient sort, **test d'effort différé** quand l'épisode est lié à l'effort ; un ECG d'une minute ne voit pas l'arythmie intermittente
+> 	- [ ] Devant des malaises exclusivement positionnels : mesure de la TA sur trois jours différents, **Holter tensionnel 24 h**, **tilt-test** si le Schellong reste normal malgré une histoire évocatrice
+> 	- [ ] Devant une asthénie profonde avec hypotension : **cortisol** — l'insuffisance surrénalienne se révèle par des malaises à répétition
+> 	- [ ] Devant une morsure du bord latéral de la langue, une confusion post-critique ou un déficit focal : **CT cérébral** natif puis **perfusion CT**, **IRM cérébrale** si le CT est normal et le déficit persiste, **EEG**, échographie des carotides ; et la biologie de la crise — calcium, CK, bilan hépatique (transaminases, gamma-GT, phosphatases alcalines, albumine, crase), alcoolémie et dépistage toxicologique
+> 	- [ ] 🚩 Devant une immobilisation, un long voyage, un cancer actif ou un mollet douloureux : **D-dimères et angio-CT thoracique** — l'embolie pulmonaire se présente en syncope isolée
+> 	- [ ] 🚩 Devant une fièvre avec céphalée et raideur de nuque : **ponction lombaire**, toujours précédée du CT cérébral
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Un ECG et un status normaux n'écartent rien chez un patient sans prodrome dont les épisodes se rapprochent : c'est l'enregistrement prolongé qui fait le diagnostic
+> 	- [ ] La fièvre démasque le syndrome de Brugada — l'ECG mérite d'être relu une fois le patient apyrétique
+> 	- [ ] Sous anticoagulant ou antiagrégant, un choc à la tête impose le CT cérébral même sans déficit

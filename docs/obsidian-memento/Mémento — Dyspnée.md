@@ -116,3 +116,26 @@ cssclasses:
 > 	- [ ] Peau : inspection et palpation ; contrôle d'une plaie ou d'un hématome
 > 	- [ ] Examen ORL succinct : gorge, nez, oreilles, état des muqueuses
 > 	- [ ] Enchaînement : séquence qui limite les changements de position et évite les répétitions inutiles
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan que toute dyspnée déclenche**
+> 	- [ ] **ECG 12 dérivations** : séquelles d'infarctus, hypertrophie ventriculaire gauche, trouble du rythme, QRS large
+> 	- [ ] **Radiographie du thorax** de face — **AP au lit** si le patient ne supporte pas la position assise
+> 	- [ ] **Gazométrie artérielle** : la SpO2 ne dit rien de la capnie ni du pH — hypoxémie, hypercapnie, acidose
+> 	- [ ] Laboratoire : **FSC** (anémie, hyperleucocytose), ionogramme, créatinine
+> - [ ] **2. Devant orthopnée, œdèmes bilatéraux et crépitants des bases**
+> 	- [ ] **BNP ou NT-proBNP** : BNP > 100 pg/ml, NT-proBNP > 300 pg/ml — un dosage normal rend l'insuffisance cardiaque très improbable
+> 	- [ ] **Échocardiographie transthoracique** : FEVG, troubles de la cinétique segmentaire, valvulopathies, pressions de remplissage — puis **cathétérisme cardiaque droit** devant des œdèmes prédominant à droite et une turgescence jugulaire chez un tabagique (cœur pulmonaire)
+> 	- [ ] Sur le cliché de thorax : cardiomégalie, redistribution vasculaire vers les sommets, **lignes de Kerley B** (œdème interstitiel, signe précoce), épanchement pleural
+> 	- [ ] **Troponines** devant une douleur thoracique ou des modifications ECG 🚩
+> 	- [ ] Coronarographie si une cardiopathie ischémique est suspectée ou si un remplacement valvulaire est envisagé
+> - [ ] **3. Devant un tabagisme, des sibilances ou une toux chronique**
+> 	- [ ] **Spirométrie avec test de réversibilité aux bêta-2 mimétiques** : VEMS/CVF < 70 % sans réversibilité = obstruction fixée (BPCO — GOLD I si VEMS ≥ 80 % de la valeur prédite) ; réversibilité significative = asthme
+> 	- [ ] **Test de provocation** et **peak-flow en ambulatoire** : une spirométrie de repos normale n'écarte pas un asthme d'effort
+> 	- [ ] Test de marche de 6 minutes : capacité fonctionnelle et désaturation à l'effort
+> 	- [ ] Culture des crachats (ECBC) si l'expectoration est purulente ; scanner thoracique si le cliché standard ne tranche pas
+> 	- [ ] Bilan allergologique : FSC avec **éosinophiles**, IgE totales et spécifiques, tests cutanés
+> - [ ] **4. Ce que l'orientation déclenche, à ne pas oublier**
+> 	- [ ] Facteur de risque thromboembolique, mollet douloureux ou douleur dépendante de la respiration : **D-dimères puis angio-CT thoracique** 🚩
+> 	- [ ] Ronflement avec somnolence diurne : polysomnographie
+> 	- [ ] Œdèmes sans argument cardiaque : protéinurie et albuminémie (syndrome néphrotique), créatinine et DFG (insuffisance rénale)

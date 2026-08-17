@@ -134,3 +134,68 @@ cssclasses:
 > 	- [ ] Craquement laryngé aboli, larynx peu mobile sur le rachis
 > 	- [ ] Stase salivaire dans un sinus piriforme
 > 	- [ ] Trismus, ou otalgie unilatérale avec otoscopie normale
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Voir le larynx — l'examen que rien ne remplace**
+> 	- [ ] **Vidéolaryngoscopie** au fauteuil, nasofibroscopie souple ou optique
+>         rigide : elle montre ce que le miroir manque — base de langue, sinus
+>         piriformes, sous-glotte — et reste faisable malgré un réflexe nauséeux
+> 	- [ ] Décrire le siège (sus-glottique, glottique, sous-glottique), l'aspect
+>         (bourgeonnant, ulcéré, plaque blanche), l'extension à la commissure
+>         antérieure et **la mobilité de chaque corde** — c'est elle qui fait le T
+> 	- [ ] **Stroboscopie** : une onde muqueuse abolie signe une lésion
+>         infiltrante, et non une simple anomalie de surface
+> 	- [ ] 🚩 **Dysphonie de plus de trois semaines, a fortiori chez un fumeur** :
+>         le larynx se regarde sans attendre — IPP, corticoïdes, repos vocal ou
+>         logopédie ne sont pas un traitement d'épreuve qui autorise à différer
+> - [ ] **2. Devant une lésion suspecte — confirmer et classer**
+> 	- [ ] **Microlaryngoscopie en suspension sous anesthésie générale avec
+>         biopsies** : l'examen de référence — seule l'histologie affirme le
+>         carcinome épidermoïde ; elle permet aussi le test de mobilité passive
+>         de l'aryténoïde, qui sépare fixation tumorale, ankylose et paralysie
+> 	- [ ] **CT cervico-thoracique injecté** : lyse cartilagineuse, extension
+>         sous-glottique, adénopathies cervicales et médiastinales, et second
+>         primitif bronchique chez le fumeur
+> 	- [ ] **IRM cervicale** : meilleure résolution des parties molles — espace
+>         paraglottique, loge hyo-thyro-épiglottique, cartilage envahi au début
+> 	- [ ] **Panendoscopie** des voies aérodigestives supérieures avec
+>         œso-gastroscopie : une **deuxième localisation synchrone** existe dans
+>         10 à 15 % des cas sur terrain alcoolo-tabagique — l'oublier est un piège
+> 	- [ ] PET-CT si stade avancé ou adénopathie : métastases à distance
+> 	- [ ] **Bilan biologique du terrain** : FSC, crase, tests hépatiques, glycémie
+>         et **albumine** (dénutrition, imprégnation alcoolique) ; ionogramme et
+>         créatinine, valeur de référence avant tout produit de contraste
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] **Corde immobile sans lésion visible, voix bitonale** : CT couvrant
+>         tout le trajet du récurrent, **de la base du crâne à la fenêtre
+>         aorto-pulmonaire** — thyroïde, médiastin, apex pulmonaire
+> 	- [ ] **Tuméfaction cervicale** : échographie cervicale, cytoponction à
+>         l'aiguille fine si elle est nécessaire ; **jamais de biopsie-exérèse
+>         ganglionnaire avant d'avoir cherché le primitif**, elle compromet le
+>         curage ultérieur
+> 	- [ ] **Pyrosis, régurgitations, raclements, toux nocturne** : pH-métrie
+>         (± impédancemétrie) sur 24 h et gastroscopie — après avoir vu le
+>         larynx, jamais à sa place
+> 	- [ ] **Voix voilée avec frilosité, prise de poids, transit ralenti** : TSH,
+>         puis T4 libre si la TSH est perturbée
+> 	- [ ] 🚩 **Fausses routes ou dysphagie progressive** : évaluation
+>         instrumentale de la déglutition — nasofibroscopie de déglutition,
+>         transit pharyngo-œsophagien dynamique
+> 	- [ ] **Voix fatigable en fin de journée et larynx normal** : bilan
+>         phoniatrique — analyse perceptive (GRBAS : grade, raucité, souffle,
+>         asthénie, forçage) et analyse acoustique (fréquence fondamentale,
+>         jitter, shimmer) — la dysphonie fonctionnelle reste un diagnostic
+>         d'exclusion
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Un larynx d'aspect normal au miroir n'écarte ni une lésion de la base
+>         de langue ou du sinus piriforme, ni un cancer sous-glottique : devant
+>         des signes d'alarme, la clinique l'emporte sur un examen rassurant
+> 	- [ ] Il n'existe pas de marqueur sanguin du cancer du larynx : le
+>         laboratoire renseigne le terrain, jamais le diagnostic — un bilan
+>         normal n'écarte rien, seule l'histologie tranche
+> 	- [ ] Un reflux authentique n'explique pas tout — il coexiste volontiers
+>         avec la tumeur chez le même fumeur, et le traiter ne dispense pas de
+>         la biopsie
+> 	- [ ] Une paralysie récurrentielle ancienne et connue ne protège pas d'un
+>         cancer controlatéral : toute aggravation de la voix impose de revoir
+>         les deux cordes

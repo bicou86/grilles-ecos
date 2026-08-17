@@ -136,3 +136,54 @@ cssclasses:
 > 	- [ ] Auscultation cardiaque aux quatre foyers ; pouls radial : rythme irrégulier
 > 	- [ ] Auscultation pulmonaire
 > 	- [ ] Tension artérielle prise **aux deux bras**, et comparée
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention — devant toute perte de vision brutale**
+> 	- [ ] **ECG**, avec monitoring cardiaque : fibrillation auriculaire, la source
+>         embolique commune à l'AVC et à l'occlusion de l'artère centrale de la
+>         rétine ; cherche aussi une ischémie myocardique aiguë
+> 	- [ ] **FSC** : anémie et thrombocytose de l'artérite à cellules géantes,
+>         thrombopénie, hyperleucocytose d'une infection systémique
+> 	- [ ] **VS et CRP chez tout patient de plus de 50 ans**, avant même que
+>         l'artérite soit évoquée — une **VS > 50 mm/h** est l'un des cinq critères
+>         diagnostiques, dont trois suffisent
+> 	- [ ] **Électrolytes et glycémie** : une hypoglycémie ou un trouble
+>         électrolytique mime à lui seul un déficit neurologique focal
+> 	- [ ] **Crase — TP, TCA** : conditionne l'éligibilité à la thrombolyse et pèse
+>         sur la probabilité d'un AVC hémorragique
+> 	- [ ] Oxymétrie de pouls ; troponine, de valeur pronostique dans l'AVC
+> - [ ] **2. Selon l'orientation clinique**
+> 	- [ ] **Déficit neurologique associé, ou déficit du même côté aux deux yeux —
+>         imagerie cérébrale en urgence** 🚩
+> 		- [ ] **CT cérébral sans contraste** en premier : il exclut l'hémorragie ;
+>             un CT normal n'écarte pas l'ischémie, les premières heures d'un
+>             infarctus y sont muettes
+> 		- [ ] **IRM cérébrale** ensuite : elle voit l'ischémie plus tôt que le CT,
+>             et avec contraste c'est la meilleure imagerie d'une lésion tumorale
+> 	- [ ] **Rideau qui monte ou descend, pluie de suie, phosphènes récents — OCT et
+>         échographie oculaire** : elles montrent le décollement quand le fond d'œil
+>         est inaccessible, vitré trouble ou hémorragie
+> 	- [ ] **Artère temporale indurée ou peu battante, claudication de la mâchoire,
+>         céphalée nouvelle après 50 ans**
+> 		- [ ] **Écho-Doppler de l'artère temporale** : signe du halo — non invasif
+>             et rapide
+> 		- [ ] **Biopsie de l'artère temporale** : examen de référence, infiltrat et
+>             cellules géantes ; elle reste interprétable **jusqu'à deux semaines**
+>             après le début des corticoïdes
+> 	- [ ] **Asymétrie tensionnelle aux deux bras — imagerie aortique**, pour
+>         exclure une dissection
+> 	- [ ] **Scotome central brutal avec déformation des lignes droites — OCT
+>         maculaire**, complété d'une angiographie à la fluorescéine : DMLA
+>         exsudative, qu'aucune grille du corpus ne documente 🚩
+> - [ ] **3. Chercher la source de l'embole — devant une amaurose monoculaire indolore**
+> 	- [ ] **Écho-Doppler des carotides** : sténose ou plaque emboligène homolatérale
+> 	- [ ] **Échocardiographie** : source cardiaque d'embolie
+> 	- [ ] **ECG de longue durée (Holter)** : une fibrillation auriculaire
+>         paroxystique échappe à l'ECG de repos
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] **Une VS et une CRP normales n'écartent pas l'artérite à cellules
+>         géantes** — ni la corticothérapie ni la biopsie ne se suspendent à un
+>         résultat de laboratoire 🚩
+> 	- [ ] Aucune imagerie oculaire ne remplace le **fond d'œil**, le champ visuel
+>         par confrontation et le tonus oculaire : les demander ne dispense pas de
+>         les faire, et ne justifie pas de les différer

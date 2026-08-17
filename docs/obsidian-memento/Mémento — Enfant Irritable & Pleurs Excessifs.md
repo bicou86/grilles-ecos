@@ -113,3 +113,26 @@ cssclasses:
 > 	- [ ] Langage sans jargon, phrases courtes, vérifier qu'elle suit
 > 	- [ ] Laisser l'enfant sur elle chaque fois que c'est possible, et lui demander de le tenir
 > 	- [ ] Conclure en disant ce qui a été examiné, ce qui a été trouvé, et ce qui reste à surveiller
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le principe — aucun examen n'est systématique, c'est l'examen clinique qui les déclenche**
+> 	- [ ] Chez un nourrisson entièrement déshabillé, examiné de la tête aux pieds, aux paramètres normaux : la poussée dentaire et les coliques du nourrisson se posent sans aucun examen complémentaire — ce sont des diagnostics d'exclusion, qui ne se posent qu'une fois cet examen clinique complet et normal
+> 	- [ ] Fièvre et diarrhée sont volontiers mises par les parents sur le compte de la poussée dentaire : au-delà de 38,5 °C, ou devant une diarrhée franche, ce sont exactement les deux éléments qui interdisent de s'arrêter au diagnostic bénin
+> 	- [ ] 🚩 Moins de 28 jours avec une température ≥ 38 °C : bilan septique complet d'emblée — FSC, CRP, hémocultures, analyse d'urine et ECBU, ponction lombaire — quelle que soit l'apparence de l'enfant
+> - [ ] **2. Devant une fièvre sans foyer ou une irritabilité inexpliquée — les urines d'abord**
+> 	- [ ] Bandelette urinaire (leucocytes, nitrites) puis ECBU : chez le nourrisson, l'infection urinaire n'a souvent aucune autre expression que des pleurs et une fièvre isolée — c'est l'examen que cette situation impose
+> 	- [ ] Le mode de prélèvement décide du résultat : sondage ou ponction sus-pubienne pour la culture ; un sac collecteur se contamine et ne permet jamais d'affirmer l'infection
+> 	- [ ] Des nitrites négatifs n'écartent rien à cet âge — la vessie ne garde pas l'urine assez longtemps pour que les nitrates y soient réduits
+> 	- [ ] FSC, CRP et hémocultures si l'état général est altéré ou si la fièvre sans foyer persiste ; les hémocultures se prélèvent avant la première dose d'antibiotique, c'est l'unique fenêtre pour les obtenir
+> 	- [ ] Échographie rénale et des voies urinaires après une première infection urinaire du nourrisson : elle cherche l'uropathie malformative sous-jacente
+> - [ ] **3. Devant des crises douloureuses à intervalles libres ou des vomissements — l'abdomen sans attendre**
+> 	- [ ] Échographie abdominale en urgence devant des accès douloureux toutes les 10 à 15 minutes avec pâleur, vomissements ou rectorragies : on y cherche l'image en cocarde de l'invagination
+> 	- [ ] Une première échographie normale n'écarte pas l'invagination si les crises se répètent : c'est l'examen qu'il faut refaire, pas le diagnostic qu'il faut abandonner
+> 	- [ ] 🚩 Vomissements bilieux : imagerie abdominale en urgence — échographie doppler des vaisseaux mésentériques, transit œso-gastro-duodénal — sans attendre aucun autre examen ; la malrotation avec volvulus se compte en heures d'intestin viable
+> - [ ] **4. Devant des signes neuro-méningés, une léthargie ou une lésion sans explication**
+> 	- [ ] Fièvre avec fontanelle bombée, léthargie ou irritabilité paradoxale : bilan septique complet et ponction lombaire — la raideur de nuque est peu fiable à cet âge et son absence ne dispense pas du geste
+> 	- [ ] Glycémie capillaire devant tout nourrisson léthargique ou difficile à réveiller : c'est le premier geste au lit, pas un résultat qu'on attend du laboratoire
+> 	- [ ] Suspicion de maltraitance : fond d'œil à la recherche d'hémorragies rétiniennes, imagerie cérébrale, radiographies du squelette entier, et FSC avec crase — pour ne pas prendre un trouble de l'hémostase pour des coups, ni l'inverse
+> - [ ] **5. À ne pas oublier**
+> 	- [ ] Les causes les plus souvent manquées ne se trouvent qu'à l'examen : l'otite à l'otoscopie, le cheveu tourniquet aux doigts, aux orteils et au pénis, la hernie étranglée aux orifices, le purpura à la vitropression — aucun bilan ne les cherchera à la place du status
+> 	- [ ] Un bilan entièrement normal chez un enfant qui reste inconsolable n'autorise pas à conclure au bénin : c'est le résultat qui est normal, pas l'enfant

@@ -128,3 +128,67 @@ cssclasses:
 > 		- [ ] Masse ou empâtement annexiel, douleur des culs-de-sac
 > 	- [ ] Prélèvements : PCR sur prélèvement cervical, ou premier jet d'urine chez
 >         l'homme ; frottis si indiqué
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant toute dysurie**
+> 	- [ ] Bandelette urinaire : leucocytes et nitrites. Des nitrites positifs emportent la
+>         décision (spécificité > 90 %), mais leur sensibilité plafonne à 19-45 % — négatifs,
+>         ils n'excluent rien ; l'estérase leucocytaire est faussement positive par
+>         contamination avec les sécrétions vaginales
+> 	- [ ] Analyse d'urine avec sédiment (status urinaire) : leucocyturie, érythrocyturie,
+>         bactériurie — et la glycosurie qui découvrirait un diabète
+> 	- [ ] ECBU sur le **milieu de jet**, avec antibiogramme, prélevé **avant la première dose
+>         d'antibiotique** — systématique chez l'homme, où toute infection urinaire est une
+>         forme compliquée ; chez la femme jeune sans comorbidité la bandelette suffit à la
+>         cystite simple, et l'ECBU se réserve à l'échec, à la récidive rapide, à la grossesse
+>         et au terrain particulier (diabète, immunosuppression, uropathie connue)
+> 	- [ ] FSC, CRP et créatinine : syndrome inflammatoire d'une atteinte haute ou
+>         prostatique, fonction rénale avant l'antibiotique
+> - [ ] **2. Nommer le germe d'une IST — et les chercher toutes**
+> 	- [ ] PCR Chlamydia **et** gonocoque, en test combiné : sur le **premier jet** d'urine
+>         chez l'homme — c'est lui qui lave l'urètre, là où est le matériel — sur prélèvement
+>         endocervical ou vaginal chez la femme ; multisite (pharynx, anus) selon les pratiques
+> 	- [ ] Prélèvement de l'écoulement urétral, extériorisé en pressant l'urètre : examen
+>         direct et culture pour le gonocoque, PCR pour Chlamydia — avec la PCR, les seuls
+>         examens qui **nomment** le germe
+> 	- [ ] La sérologie Chlamydia ne sert à rien en pratique courante : le diagnostic est
+>         moléculaire, pas sérologique
+> 	- [ ] Écoulement qui persiste malgré un traitement bien conduit : PCR multiplex
+>         Mycoplasma / Ureaplasma, examen direct et culture pour Trichomonas
+> 	- [ ] Une IST avérée signe une exposition et impose de chercher les autres : sérologie
+>         VIH de 4e génération — **obligatoire dans ce contexte**, après information du
+>         patient — TPPA et VDRL pour la syphilis, sérologies hépatites B et C. Un test VIH
+>         négatif dans la fenêtre sérologique n'écarte rien : il se refait à 3 mois
+> 	- [ ] Frottis cervical si l'âge et le suivi gynécologique l'indiquent
+> - [ ] **3. Selon l'orientation**
+> 	- [ ] 🚩 **Dysurie fébrile** — ce n'est plus une cystite : hémocultures (deux paires) et
+>         ECBU **avant la première dose d'antibiotique**, avec FSC, CRP et créatinine
+> 	- [ ] Fièvre, douleur périnéale, prostate douloureuse et bombée au toucher rectal
+>         (prostatite) : y ajouter une échographie au moindre doute d'obstacle ou de rétention
+> 	- [ ] Fièvre, douleur lombaire ou Giordano positif (pyélonéphrite) : échographie des reins
+>         et des voies urinaires — c'est elle qui montre l'obstacle à drainer
+> 	- [ ] Homme après 50 ans, jet faible, vidange incomplète, nycturie : échographie vésicale
+>         avec **mesure du résidu post-mictionnel** et échographie des reins et des voies
+>         urinaires supérieures — une dilatation signe le retentissement sur le haut appareil ;
+>         valeurs de rétention rénale (créatinine, urée) ; calendrier mictionnel et débitmétrie
+>         chiffrent la gêne quand la clinique ne suffit pas
+> 	- [ ] PSA : ni pendant l'épisode, ni au décours d'un toucher rectal — infection, rétention
+>         et palpation l'élèvent faussement ; à distance, et d'autant plus que la prostate est
+>         dure, irrégulière ou nodulaire
+> 	- [ ] Femme avec douleur à la mobilisation du col, masse annexielle ou douleur de
+>         l'hypochondre droit (Fitz-Hugh-Curtis) : échographie pelvienne, à la recherche d'une
+>         infection génitale haute
+> 	- [ ] Topographie incertaine le long des voies urinaires : test des 3 ou 4 verres, qui
+>         situe le niveau de l'infection
+> 	- [ ] Jet faible ancien, antécédent de sondage ou de geste endoscopique : débitmétrie et
+>         urétrocystographie (sténose urétrale) ; radiographie et échographie devant une
+>         suspicion de calcul ou de corps étranger
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Test de grossesse chez toute femme en âge de procréer, avant de traiter : il
+>         conditionne le choix de l'antibiotique (doxycycline contre-indiquée) autant que le
+>         seuil d'exploration
+> 	- [ ] Le bon jet pour le bon examen : **premier jet = urètre** (PCR), **milieu de jet =
+>         vessie** (ECBU) ; ne pas uriner dans les 2 h qui précèdent le prélèvement pour PCR
+> 	- [ ] Une bandelette propre n'écarte ni l'urétrite ni la cervicite : leur siège est en
+>         amont de la vessie, et la dysurie d'une cervicite à Chlamydia s'accompagne volontiers
+>         d'une bandelette négative

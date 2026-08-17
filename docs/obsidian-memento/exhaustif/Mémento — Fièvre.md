@@ -96,7 +96,7 @@ cssclasses:
 > - [ ] **5. Épisode antérieur *(Pyélonéphrite)***
 > - [ ] **6. Intensité / Sévérité *(Pyélonéphrite)***
 > - [ ] **7. Facteurs atténuants *(Pyélonéphrite)***
-> - [ ] **8. Symptômes associés à la fièvre**
+> - [ ] **8. Symptômes associés à la fièvre *(Endocardite infectieuse · Pyélonéphrite)***
 > 	- [ ] Frissons *(Endocardite infectieuse)*
 > 	- [ ] Transpiration *(Endocardite infectieuse)*
 > 	- [ ] Toux *(Endocardite infectieuse)*
@@ -111,11 +111,7 @@ cssclasses:
 > - [ ] **15. Gastro-intestinal *(Pyélonéphrite)***
 > - [ ] **16. Peau *(Pyélonéphrite)***
 > - [ ] **17. Convulsion *(Pyélonéphrite)***
-> - [ ] **18. Antécédents médicaux *(Endocardite infectieuse · Pyélonéphrite)***
-> 	- [ ] Maladies *(Endocardite infectieuse)*
-> 	- [ ] Opérations/hospitalisations *(Endocardite infectieuse)*
-> 	- [ ] Vaccins *(Endocardite infectieuse)*
-> 	- [ ] Perte de poids récente *(Endocardite infectieuse)*
+> - [ ] **18. Antécédents médicaux *(Pyélonéphrite)***
 > - [ ] **19. Antécédents chirurgicaux *(Pyélonéphrite)***
 > - [ ] **20. Médicaments *(Pyélonéphrite)***
 > - [ ] **21. Allergies *(Pyélonéphrite)***
@@ -136,44 +132,50 @@ cssclasses:
 > - [ ] **36. Mesures déjà prises *(Fuite anastomotique)***
 > - [ ] **37. Facteurs aggravants *(Fuite anastomotique)***
 > - [ ] **38. Frissons / sensation de fièvre *(Fuite anastomotique)***
-> - [ ] **39. Nausées / vomissements *(Fuite anastomotique)***
-> - [ ] **40. Sensation de tension / ballonnement *(Fuite anastomotique)***
-> - [ ] **41. Selles *(Fuite anastomotique)***
-> - [ ] **42. Flatulences *(Fuite anastomotique)***
-> - [ ] **43. DD Wind | Poumon *(Fuite anastomotique)***
-> - [ ] **44. Toux *(Fuite anastomotique)***
-> - [ ] **45. Dyspnée *(Fuite anastomotique)***
-> - [ ] **46. DD Water | Voies urinaires *(Fuite anastomotique)***
-> - [ ] **47. Troubles mictionnels *(Fuite anastomotique)***
-> - [ ] **48. DD Walking | Thrombose / embolie *(Fuite anastomotique)***
-> - [ ] **49. Symptômes des membres / œdème de jambe *(Fuite anastomotique)***
-> - [ ] **50. Douleurs thoraciques *(Fuite anastomotique)***
-> - [ ] **51. DD Wound | Plaie *(Fuite anastomotique)***
-> - [ ] **52. Anomalies plaie OP (douleur, rougeur, écoulement) *(Fuite anastomotique)***
-> - [ ] **53. DD « What did we do? » | Dispositifs, médicaments, etc. *(Fuite anastomotique)***
-> - [ ] **54. Douleur / rougeur à la voie veineuse *(Fuite anastomotique)***
-> - [ ] **55. Niveau fonctionnel antérieur *(Fuite anastomotique)***
-> - [ ] **56. Caractérisation de la fièvre *(Endocardite infectieuse)***
+> - [ ] **39. Symptômes abdominaux associés *(Fuite anastomotique)***
+> - [ ] **40. Nausées / vomissements *(Fuite anastomotique)***
+> - [ ] **41. Sensation de tension / ballonnement *(Fuite anastomotique)***
+> - [ ] **42. Selles *(Fuite anastomotique)***
+> - [ ] **43. Flatulences *(Fuite anastomotique)***
+> - [ ] **44. DD Wind | Poumon *(Fuite anastomotique)***
+> - [ ] **45. Toux *(Fuite anastomotique)***
+> - [ ] **46. Dyspnée *(Fuite anastomotique)***
+> - [ ] **47. DD Water | Voies urinaires *(Fuite anastomotique)***
+> - [ ] **48. Troubles mictionnels *(Fuite anastomotique)***
+> - [ ] **49. DD Walking | Thrombose / embolie *(Fuite anastomotique)***
+> - [ ] **50. Symptômes des membres / œdème de jambe *(Fuite anastomotique)***
+> - [ ] **51. Douleurs thoraciques *(Fuite anastomotique)***
+> - [ ] **52. DD Wound | Plaie *(Fuite anastomotique)***
+> - [ ] **53. Anomalies plaie OP (douleur, rougeur, écoulement) *(Fuite anastomotique)***
+> - [ ] **54. DD « What did we do? » | Dispositifs, médicaments, etc. *(Fuite anastomotique)***
+> - [ ] **55. Douleur / rougeur à la voie veineuse *(Fuite anastomotique)***
+> - [ ] **56. Niveau fonctionnel antérieur *(Fuite anastomotique)***
+> - [ ] **57. Caractérisation de la fièvre *(Endocardite infectieuse)***
 > 	- [ ] Début/durée
 > 	- [ ] Intensité
 > 	- [ ] Évolution
 > 	- [ ] Fluctuation
 > 	- [ ] Facteurs soulageants
-> - [ ] **57. Présence de douleurs (tous types) *(Endocardite infectieuse)***
+> - [ ] **58. Présence de douleurs (tous types) *(Endocardite infectieuse)***
 > 	- [ ] Pas de douleur thoracique, pas de céphalée, pas de douleur nucale
-> - [ ] **58. Caractérisation de la toux *(Endocardite infectieuse)***
+> - [ ] **59. Caractérisation de la toux *(Endocardite infectieuse)***
 > 	- [ ] Chronologie (durée)
 > 	- [ ] Fréquence
 > 	- [ ] Qualité (sèche/grasse)
 > 	- [ ] Expectorations
 > 	- [ ] Couleur des expectorations
 > 	- [ ] Présence de sang dans les expectorations
-> - [ ] **59. Anamnèse par système *(Endocardite infectieuse)***
+> - [ ] **60. Anamnèse par système *(Endocardite infectieuse)***
 > 	- [ ] Éruptions cutanées
 > 	- [ ] Douleurs articulaires
 > 	- [ ] Symptômes digestifs
 > 	- [ ] Symptômes urinaires
-> - [ ] **60. Habitudes *(Endocardite infectieuse)***
+> - [ ] **61. Antécédents personnels *(Endocardite infectieuse)***
+> 	- [ ] Maladies
+> 	- [ ] Opérations/hospitalisations
+> 	- [ ] Vaccins
+> 	- [ ] Perte de poids récente
+> - [ ] **62. Habitudes *(Endocardite infectieuse)***
 > 	- [ ] Médicaments
 > 	- [ ] Tabac
 > 	- [ ] Voyages
@@ -183,9 +185,7 @@ cssclasses:
 > [!tip] 🩺 Status
 > - [ ] **1. État général *(Pyélonéphrite)***
 > - [ ] **2. Temps de recoloration capillaire *(Fuite anastomotique · Pyélonéphrite)***
-> - [ ] **3. Inspection cutanée *(Endocardite infectieuse · Pyélonéphrite)***
-> 	- [ ] Recherche d'affection/éruption cutanées (point d'entrée infectieux) *(Endocardite infectieuse)*
-> 	- [ ] Recherche systématique sur tout le corps (sauf zones intimes) *(Endocardite infectieuse)*
+> - [ ] **3. Coloration cutanée *(Pyélonéphrite)***
 > - [ ] **4. Hydratation *(Pyélonéphrite)***
 > - [ ] **5. Muqueuses *(Pyélonéphrite)***
 > - [ ] **6. Turgescence cutanée *(Pyélonéphrite)***
@@ -239,7 +239,10 @@ cssclasses:
 > 	- [ ] Amplitude
 > - [ ] **41. Inspection de la cavité buccale *(Endocardite infectieuse)***
 > - [ ] **42. Rigidité nucale (méningisme) *(Endocardite infectieuse)***
-> - [ ] **43. Palpations des aires ganglionnaires *(Endocardite infectieuse)***
+> - [ ] **43. Inspection cutanée *(Endocardite infectieuse)***
+> 	- [ ] Recherche d'affection/éruption cutanées (point d'entrée infectieux)
+> 	- [ ] Recherche systématique sur tout le corps (sauf zones intimes)
+> - [ ] **44. Palpations des aires ganglionnaires *(Endocardite infectieuse)***
 > 	- [ ] Cervicales
 > 	- [ ] Axillaires
 > 	- [ ] Inguinales

@@ -128,3 +128,73 @@ cssclasses:
 > 	- [ ] Loge de jambe dure et tendue, douleur à l'étirement passif des orteils, déficit sensitif
 > 	- [ ] Déformation, raccourcissement ou rotation du membre, appui impossible
 > 	- [ ] Abolition unilatérale des pouls distaux avec souffle fémoral homolatéral : la lésion est en amont
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant toute douleur du membre inférieur**
+> 	- [ ] FSC et plaquettes : anémie, hyperleucocytose — et le chiffre plaquettaire de référence, à
+>         connaître avant la première dose d'héparine
+> 	- [ ] Créatinine et DFG : ils commandent l'injection de produit de contraste comme la dose
+>         d'anticoagulant — à demander avant l'imagerie, pas avec le compte rendu
+> 	- [ ] Crase : TP, TCA — préalable à toute anticoagulation curative, à joindre à la première prise de sang
+> 	- [ ] ECG de repos : coronaropathie silencieuse du terrain athéromateux ; devant une jambe gonflée
+>         et dyspnéique, il cherche la tachycardie sinusale, le S1Q3T3 et le bloc de branche droit —
+>         normal, il n'écarte aucune embolie
+> - [ ] **2. Douleur de marche qui cède à l'arrêt : chiffrer la perfusion, puis cartographier**
+> 	- [ ] Index de pression systolique cheville-bras au Doppler de poche : examen de première intention
+>         de l'artériopathie, mesuré au status (seuils plus haut) — il se demande en toutes lettres
+> 	- [ ] Épreuve de marche sur tapis roulant avec index mesuré après l'effort : elle démasque
+>         l'artériopathie dont l'index de repos est normal, et elle chiffre un périmètre de marche que
+>         le patient estime mal
+> 	- [ ] Écho-Doppler artériel des membres inférieurs : première imagerie, elle situe l'obstacle et
+>         gradue les sténoses
+> 	- [ ] Angio-CT des membres inférieurs quand la revascularisation se discute ; angio-IRM si le
+>         produit de contraste est contre-indiqué ; artériographie seulement si le geste endovasculaire
+>         est envisagé dans le même temps
+> 	- [ ] Bilan lipidique complet, glycémie à jeun et HbA1c : un index abaissé n'est pas un chiffre de
+>         jambe, c'est un marqueur de risque cardiovasculaire global
+> 	- [ ] Recherche des autres localisations athéromateuses : écho-Doppler des troncs supra-aortiques,
+>         dépistage coronarien — l'athérome ne s'arrête pas au membre douloureux
+> - [ ] **3. Jambe gonflée et douloureuse au repos : calculer avant de prescrire**
+> 	- [ ] Le score de Wells passe avant le laboratoire — c'est lui qui choisit l'examen suivant, et il
+>         se totalise à l'anamnèse
+> 	- [ ] Probabilité faible ou intermédiaire (Wells < 2) : D-dimères — négatifs ils écartent la
+>         thrombose, positifs ils ne prouvent rien (âge, cancer, chirurgie, grossesse, inflammation les
+>         élèvent tous)
+> 	- [ ] Probabilité élevée (Wells ≥ 2) : écho-Doppler veineux des membres inférieurs d'emblée, les
+>         D-dimères ne servent plus. Négatif malgré une forte suspicion, il se répète à J7 — une
+>         thrombose distale s'étend
+> 	- [ ] Dyspnée, tachypnée ou douleur thoracique associées : angioscanner thoracique, scintigraphie
+>         de ventilation-perfusion si le contraste est contre-indiqué. Chercher la dyspnée devant une
+>         thrombose, c'est chercher l'embolie
+> 	- [ ] Gazométrie artérielle et radiographie du thorax : hypoxémie avec hypocapnie, et surtout les
+>         autres causes de dyspnée — une radiographie normale devant une dyspnée franche plaide pour
+>         l'embolie
+> 	- [ ] Épisode non provoqué : bilan étiologique de la maladie thromboembolique — cancer occulte
+>         au-delà de 50 ans ; avant 50 ans ou en cas de récidive, thrombophilie (facteur V Leiden,
+>         mutation du facteur II, déficits en protéines C et S et en antithrombine) et anticorps
+>         antiphospholipides, à distance car l'anticoagulation fausse les dosages
+> - [ ] **4. Quand la piste vasculaire ne tient pas : l'examen qui tranche chaque piège**
+> 	- [ ] Douleur soulagée en se penchant en avant ou en s'asseyant, bilatérale, pouls conservés :
+>         IRM lombaire — c'est la claudication du canal lombaire étroit
+> 	- [ ] Sujet jeune et sportif, loge tendue à l'effort et pouls normaux : mesure des pressions
+>         intracompartimentales avant et après effort
+> 	- [ ] Douleur mécanique articulaire, sans crampe ni soulagement complet à l'arrêt : radiographies
+>         de la hanche et du genou, en charge
+> 	- [ ] Paresthésies permanentes et déficit sensitif en chaussette, indépendants de l'effort : EMG
+> 	- [ ] Douleur brutale du mollet avec tuméfaction du creux poplité : échographie — un kyste de Baker
+>         rompu mime la thrombose trait pour trait
+> 	- [ ] Œdème indolore, d'installation progressive, de tout le membre après curage ganglionnaire :
+>         lymphoscintigraphie
+> - [ ] **5. 🚩 Ce qui ne s'attend pas**
+> 	- [ ] Membre brutalement froid, pâle et sans pouls : aucun examen ne conditionne l'appel du
+>         chirurgien vasculaire, la fenêtre se compte en heures — crase, kaliémie, CPK et créatinine
+>         partent pendant qu'on organise la revascularisation, et ce sont eux qui encadreront le
+>         syndrome de reperfusion
+> 	- [ ] Loge de jambe dure et tendue, douleur disproportionnée à l'étirement passif des orteils : le
+>         syndrome des loges aigu se diagnostique au lit du malade ; la mesure de pression confirme sans
+>         jamais retarder l'aponévrotomie, les CPK chiffrent la rhabdomyolyse
+> 	- [ ] Traumatisme, même minime, avec impotence et appui impossible : radiographies de face et de
+>         profil du segment douloureux, articulations sus- et sous-jacentes comprises
+> 	- [ ] Fièvre avec placard rouge, chaud, à bord net et extensif sur porte d'entrée cutanée : FSC et
+>         CRP chiffrent, hémocultures avant la première dose d'antibiotique si frissons — mais le
+>         diagnostic est clinique et l'antibiotique n'attend pas le laboratoire

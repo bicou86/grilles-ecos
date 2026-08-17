@@ -119,3 +119,29 @@ cssclasses:
 > 	- [ ] Abolition d'un pouls, membre froid ou pâle
 > 	- [ ] Adénopathies inguinales, fièvre, altération de l'état général
 > 	- [ ] Chez le patient immunosupprimé ou sous corticothérapie, un examen local pauvre n'exclut rien
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Radiographie du bassin — le premier examen, quelle que soit l'hypothèse**
+> 	- [ ] Bassin de face **debout, en charge**, complété par la hanche de face et de profil (faux profil de Lequesne) : un seul cliché donne les deux hanches, la symphyse et la charnière lombo-sacrée
+> 	- [ ] Les quatre signes d'arthrose à y chercher : pincement de l'interligne, ostéophytes, sclérose sous-chondrale, géodes — gradués par Kellgren-Lawrence, du stade 1 (ostéophytes débutants) au stade 4 (interligne disparu, déformation)
+> 	- [ ] Elle sert autant à éliminer qu'à confirmer : fracture, lésion lytique ou condensante, ostéonécrose évoluée, matériel prothétique en place
+> 	- [ ] **Une radiographie normale n'écarte rien** : ostéonécrose débutante, fracture de contrainte et fracture occulte y restent muettes pendant des semaines — devant une clinique franche, c'est l'IRM qui prend le relais
+> - [ ] **2. L'imagerie de deuxième ligne se choisit sur la localisation de la douleur**
+> 	- [ ] Douleur inguinale progressive avec rotation interne limitée, sur corticothérapie prolongée, alcool, transplantation ou drépanocytose : **IRM de hanche**, examen de référence de l'ostéonécrose au stade précoce — œdème médullaire et ligne de démarcation bien avant toute image radiographique (stades de Ficat et Arlet, étendue de la nécrose, atteinte ou non de la surface portante)
+> 	- [ ] L'IRM explore **les deux hanches** : l'atteinte est bilatérale dans 40 à 70 % des cas et longtemps silencieuse du côté opposé
+> 	- [ ] Douleur latérale reproduite à la palpation du grand trochanter : **échographie** — tendinopathie du moyen fessier, bourse trochantérienne. Devant un tableau typique, **renoncer explicitement à l'IRM** fait partie de la réponse attendue : elle ne changerait pas la prise en charge
+> 	- [ ] Douleur inguinale du sujet jeune sportif, FADIR positif : arthro-IRM ou arthro-CT, à la recherche d'une lésion du labrum et d'un conflit fémoro-acétabulaire
+> 	- [ ] Douleur en bande à la face antérieure de la cuisse, réflexe rotulien aboli, hanche libre en mobilisation passive : IRM lombaire — c'est une cruralgie L3-L4, pas une hanche
+> 	- [ ] Scintigraphie osseuse quand l'IRM est contre-indiquée, et devant une suspicion de lésion tumorale ou métastatique multifocale
+> - [ ] **3. La biologie est normale dans l'arthrose : elle ne se demande que sur un doute**
+> 	- [ ] L'absence de syndrome inflammatoire est en soi un argument — un bilan normal sépare la coxarthrose d'une coxite inflammatoire
+> 	- [ ] FSC, VS et CRP dès qu'un élément inflammatoire apparaît : raideur matinale de plus de 30 minutes, douleur nocturne ou de repos, fièvre, altération de l'état général
+> 	- [ ] Facteur rhumatoïde et anticorps anti-CCP si l'atteinte est polyarticulaire ou franchement inflammatoire
+> 	- [ ] Bilan phosphocalcique et électrophorèse des protéines sériques devant une douleur osseuse permanente ou un terrain néoplasique — c'est là que se cherche le myélome
+> 	- [ ] Créatinine : avant toute injection de produit de contraste, avant tout AINS, et d'emblée chez le transplanté rénal, chez qui elle commande tout le reste
+> - [ ] **4. 🚩 Ce qui ne peut pas attendre le rendez-vous d'imagerie**
+> 	- [ ] Chute avec membre raccourci en rotation externe et impotence totale : radiographie de hanche de face et axiale sans délai ; si elle est normale et que l'appui reste impossible, CT ou IRM à la recherche d'une fracture occulte
+> 	- [ ] Hanche fébrile : **deux paires d'hémocultures avant la première dose d'antibiotique** — après, elles ne diront plus rien
+> 	- [ ] **Ponction articulaire** devant un épanchement chez un patient fébrile, échoguidée : Gram, culture, cytologie, recherche de cristaux — c'est le geste qui fait le diagnostic d'arthrite septique, et aucun bilan sanguin ne le remplace
+> 	- [ ] L'échographie est ici l'examen de triage : la hanche est profonde, elle ne montre ni rougeur ni chaleur, et c'est l'épanchement échographique qui désigne l'articulation à ponctionner
+> 	- [ ] Chez l'immunosupprimé, la biologie est émoussée : une CRP peu élevée et une formule normale n'écartent pas l'infection

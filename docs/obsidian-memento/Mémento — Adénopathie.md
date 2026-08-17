@@ -135,3 +135,56 @@ cssclasses:
 > 	- [ ] Compression médullaire : déficit neurologique des membres, troubles sphinctériens
 > 	- [ ] Splénomégalie ou hépatomégalie associée à une polyadénopathie
 > 	- [ ] Pâleur franche et purpura chez le même patient : atteinte médullaire
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Bilan de première intention, devant toute adénopathie**
+> 	- [ ] FSC avec plaquettes **et frottis sanguin** : cytopénies, hyperlymphocytose,
+>         lymphocytes atypiques ou blastes — le frottis est ce qui sépare le syndrome
+>         mononucléosique de l'hémopathie
+> 	- [ ] LDH et β2-microglobuline : reflet de la masse tumorale et du renouvellement
+>         cellulaire, élevées dans les lymphomes, et de valeur pronostique
+> 	- [ ] VS et CRP : syndrome inflammatoire — élevé dans l'infection comme dans le
+>         lymphome, il ne tranche pas entre les deux
+> 	- [ ] Ionogramme et créatinine : fonction rénale, valeur de référence avant tout
+>         produit de contraste
+> 	- [ ] Bilan hépatique (ASAT, ALAT, PAL, GGT, bilirubine) : envahissement hépatique,
+>         cholestase
+> 	- [ ] Protéinogramme : pic monoclonal, hypergammaglobulinémie polyclonale
+> 	- [ ] Radiographie thoracique, face **et** profil : élargissement médiastinal, masse
+>         hilaire — un médiastin large chez un sujet jeune fait craindre le lymphome
+> - [ ] **2. Selon l'orientation clinique**
+> 	- [ ] 🚩 Sus-claviculaire gauche avec lourdeur épigastrique, dysphagie ou méléna :
+>         **fibroscopie œso-gastro-duodénale avec biopsies** en premier, puis CT
+>         thoraco-abdomino-pelvien avec contraste
+> 	- [ ] Douleur épigastrique transfixiante, ictère, amaigrissement massif : CT abdominal
+>         et marqueurs tumoraux orientés (CA 19-9)
+> 	- [ ] Toux, dyspnée, hémoptysie ou tabagisme : **CT thoracique**, à la recherche d'une
+>         tumeur bronchique ou d'adénopathies médiastinales
+> 	- [ ] Fièvre, angine, polyadénopathie ou contage : sérologies EBV (MNI test), CMV,
+>         toxoplasmose, hépatites
+> 	- [ ] Anamnèse sexuelle à risque, drogues intraveineuses, polyadénopathie inexpliquée :
+>         sérologie VIH, **après information et accord du patient**
+> 	- [ ] Contage tuberculeux, voyage en zone endémique, ganglion inflammatoire ou
+>         fistulisé : IDR ou Quantiféron Gold, et prélèvement envoyé en **PCR et culture**
+>         en plus de l'histologie
+> 	- [ ] Splénomégalie, hépatomégalie ou polyadénopathie palpée : échographie abdominale
+>         et cervicale — organomégalies, ganglions profonds, structure et vascularisation
+>         des aires accessibles
+> - [ ] **3. La biopsie ganglionnaire — l'examen qui tranche**
+> 	- [ ] Indication : adénopathie **> 2 cm** ou persistante au-delà de 4 à 6 semaines ;
+>         d'emblée devant un ganglion sus-claviculaire
+> 	- [ ] **Biopsie-exérèse chirurgicale** du ganglion entier : c'est son architecture qui
+>         porte le diagnostic
+> 	- [ ] La cytoponction à l'aiguille fine **ne suffit pas** : elle ne montre pas
+>         l'architecture, et son résultat négatif n'écarte pas un lymphome
+> 	- [ ] Sur la pièce : histologie, immunohistochimie, immunophénotypage, et cytogénétique
+>         si lymphome
+> 	- [ ] PET-scan si suspicion de lymphome ; ponction-biopsie ostéo-médullaire si une
+>         atteinte médullaire est suspectée (cytopénies au frottis)
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 Devant une masse tumorale volumineuse, chercher un **syndrome de lyse** :
+>         acide urique, potassium, phosphate, calcium, créatinine
+> 	- [ ] Une sérologie VIH négative dans les six semaines qui suivent une exposition
+>         n'écarte rien : elle est à refaire passé la fenêtre
+> 	- [ ] Une radiographie thoracique normale n'exclut ni adénopathie médiastinale ni masse
+>         rétrocardiaque : si la suspicion tient, le CT reste nécessaire

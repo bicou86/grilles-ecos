@@ -114,3 +114,28 @@ cssclasses:
 > 	- [ ] Devant un mollet douloureux ou gonflé : auscultation cardiaque et pulmonaire, turgescence jugulaire, œdème déclive des deux côtés
 > 	- [ ] Reconnaître le genou chaud, rouge, tendu et fébrile : mono-arthrite aiguë, arthrite septique jusqu'à preuve du contraire
 > 	- [ ] Ne pas répéter les manœuvres douloureuses ; remettre le bandage et rhabiller le patient
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Devant le genou traumatique — c'est une règle qui décide de la radiographie, pas l'impression clinique**
+> 	- [ ] Règles d'Ottawa du genou : un seul critère suffit à l'imposer, et c'est d'avoir appliqué la règle qui est coté — ni irradier par précaution, ni s'abstenir sans l'avoir dit
+> 	- [ ] Radiographie du genou face et profil : elle cherche la fracture et la lésion osseuse — face en charge si la question est la gonarthrose, défilé fémoro-patellaire et incidence en schuss selon la piste ; le CT prend le relais quand une fracture articulaire doit être cartographiée
+> 	- [ ] Une radiographie normale n'écarte que l'os : ménisque, ligaments et cartilage lui échappent entièrement, et c'est là que se trouve l'essentiel des lésions du genou
+> 	- [ ] IRM du genou : lésions méniscales, ligamentaires, ostéochondrales et synoviales — c'est elle qui tranche entre conservateur et chirurgical, donc elle vient **avant** la décision thérapeutique et non après
+> 	- [ ] Échographie du genou : épanchement, kyste de Baker, tendinopathies, et guidage de la ponction
+> 	- [ ] Arthroscopie, diagnostique et thérapeutique dans le même temps : le recours quand l'IRM ne conclut pas, jamais un examen de première intention
+> - [ ] **2. Devant un mollet douloureux ou gonflé — la thrombose se cherche dans un ordre fixe**
+> 	- [ ] Score de Wells d'abord : c'est la probabilité pré-test qui décide si les D-dimères ont un sens, et le nommer fait partie de la réponse — un Wells bas ne dispense pas de l'écho-Doppler quand la clinique inquiète
+> 	- [ ] D-dimères : toute leur valeur tient à leur négativité — négatifs avec une probabilité faible, ils écartent la thrombose ; positifs, ils ne prouvent rien, car le traumatisme récent, l'immobilisation, la chirurgie, la grossesse, l'âge et l'inflammation les élèvent tous
+> 	- [ ] Échographie de compression avec Doppler veineux : le test de choix — veine non compressible, thrombus hyperéchogène, flux absent ou anormal. C'est elle qui conclut ; le signe de Homans, ni sensible ni spécifique, ne conclut jamais
+> 	- [ ] Échographie des parties molles du creux poplité et du mollet : kyste de Baker rompu — il mime exactement la thrombose et rien ne les sépare cliniquement —, déchirure du gastrocnémien, hématome post-traumatique ; ce que l'échographie veineuse ne cherche pas
+> 	- [ ] 🚩 Douleur thoracique, dyspnée, toux ou syncope dans la foulée : angio-CT thoracique sans attendre la confirmation de la thrombose — c'est l'embolie pulmonaire qui fait de la thrombose une urgence diagnostique
+> - [ ] **3. 🚩 Devant un genou chaud, rouge, tendu ou fébrile — rien ne se conclut avant la ponction**
+> 	- [ ] Ponction articulaire en asepsie stricte devant toute mono-arthrite chaude : c'est le geste diagnostique, et il se fait avant la première dose d'antibiotique — après, les cultures se négativent
+> 	- [ ] Sur le liquide synovial : aspect, cellularité, recherche de cristaux en lumière polarisée, Gram et culture — le seul examen qui sépare l'arthrite septique de la goutte et de la chondrocalcinose
+> 	- [ ] FSC, CRP et VS devant toute suspicion infectieuse ou inflammatoire ; hémocultures avant l'antibiotique, au même titre que la ponction
+> 	- [ ] Selon l'orientation : uricémie, facteur rhumatoïde, anti-CCP, ANA, HLA-B27 ; sérologie de Lyme devant une morsure de tique, un érythème migrant ou un séjour en zone d'endémie — une uricémie normale pendant l'accès n'écarte pas la goutte
+> 	- [ ] 🚩 IRM devant une douleur osseuse fébrile à radiographie normale : c'est l'ostéomyélite qu'on cherche, et la radiographie reste muette les dix à quatorze premiers jours
+> - [ ] **4. Ce qu'on ne quitte pas la station sans avoir demandé**
+> 	- [ ] Angio-CT devant une luxation du genou ou tout déficit vasculaire distal : c'est la lésion de l'artère poplitée qu'on ne peut pas se permettre de manquer
+> 	- [ ] Mesure de la pression des loges devant une douleur disproportionnée avec un compartiment tendu : syndrome des loges
+> 	- [ ] Radiographie de la hanche du même côté quand l'examen du genou est normal : épiphysiolyse fémorale supérieure chez l'adolescent, coxarthrose ou fracture chez le sujet âgé

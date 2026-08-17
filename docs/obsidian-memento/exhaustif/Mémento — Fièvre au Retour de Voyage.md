@@ -89,16 +89,12 @@ cssclasses:
 > 	- [ ] Carnet de vaccination à jour *(1 grille sur 2)*
 > 	- [ ] Vaccinations spécifiques voyages antérieures *(1 grille sur 2)*
 > 	- [ ] Date du dernier rappel tétanos *(1 grille sur 2)*
-> - [ ] **5. Antécédents médicaux et état de santé**
-> 	- [ ] Maladies chroniques *(1 grille sur 2)*
-> 	- [ ] Allergies médicamenteuses *(1 grille sur 2)*
+> - [ ] **5. Antécédents médicaux et état de santé *(1 grille sur 2)***
+> 	- [ ] Maladies chroniques
+> 	- [ ] Allergies médicamenteuses
 > 	- [ ] Médicaments actuels
-> 	- [ ] Contraception *(1 grille sur 2)*
-> 	- [ ] Antécédents chirurgicaux *(1 grille sur 2)*
-> 	- [ ] Maladies chroniques père *(1 grille sur 2)*
-> 	- [ ] Maladies chroniques fils *(1 grille sur 2)*
-> 	- [ ] Allergies père *(1 grille sur 2)*
-> 	- [ ] Allergies fils *(1 grille sur 2)*
+> 	- [ ] Contraception
+> 	- [ ] Antécédents chirurgicaux
 > - [ ] **6. Expériences de voyages internationaux antérieurs**
 > 	- [ ] Voyages précédents *(1 grille sur 2)*
 > 	- [ ] Premier grand voyage *(1 grille sur 2)*
@@ -131,17 +127,23 @@ cssclasses:
 > 	- [ ] Destination et durée
 > 	- [ ] Délai avant le départ
 > 	- [ ] Nombre et âge des voyageurs
-> - [ ] **11. Type et conditions du voyage planifié *(1 grille sur 2)***
+> - [ ] **11. Antécédents médicaux et allergies *(1 grille sur 2)***
+> 	- [ ] Maladies chroniques père
+> 	- [ ] Maladies chroniques fils
+> 	- [ ] Allergies père
+> 	- [ ] Allergies fils
+> 	- [ ] Médicaments réguliers
+> - [ ] **12. Type et conditions du voyage planifié *(1 grille sur 2)***
 > 	- [ ] Activités prévues
 > 	- [ ] Type d'hébergement
 > 	- [ ] Zones visitées (urbaines/rurales)
 > 	- [ ] Altitude des destinations
 > 	- [ ] Contact avec animaux prévu
-> - [ ] **12. Durée et période du voyage *(1 grille sur 2)***
+> - [ ] **13. Durée et période du voyage *(1 grille sur 2)***
 > 	- [ ] Saison à Madagascar
 > 	- [ ] Durée totale
 > 	- [ ] Itinéraire prévu
-> - [ ] **13. État de santé actuel des voyageurs *(1 grille sur 2)***
+> - [ ] **14. État de santé actuel des voyageurs *(1 grille sur 2)***
 > 	- [ ] Symptômes actuels
 > 	- [ ] Capacité physique pour les activités prévues
 > 	- [ ] Grossesse (non applicable ici)
@@ -276,16 +278,12 @@ cssclasses:
 > 	- [ ] Contacts d'urgence locaux
 > 	- [ ] Comportement en soirée
 > 	- [ ] Transport sécurisé (Uber vs taxi)
-> - [ ] **4. Documentation et ressources**
-> 	- [ ] Assurance voyage complète obligatoire *(1 grille sur 2)*
-> 	- [ ] Assistance rapatriement incluse *(1 grille sur 2)*
-> 	- [ ] Couverture activités à risque *(1 grille sur 2)*
-> 	- [ ] Copie documents importants *(1 grille sur 2)*
-> 	- [ ] Coordonnées ambassade/consulat
-> 	- [ ] Brochures d'information sur Madagascar *(1 grille sur 2)*
-> 	- [ ] Assurance voyage et rapatriement *(1 grille sur 2)*
-> 	- [ ] Centres médicaux sur place *(1 grille sur 2)*
-> 	- [ ] Application mobile conseils voyageurs *(1 grille sur 2)*
+> - [ ] **4. Documentation et assurances *(1 grille sur 2)***
+> 	- [ ] Assurance voyage complète obligatoire
+> 	- [ ] Assistance rapatriement incluse
+> 	- [ ] Couverture activités à risque
+> 	- [ ] Copie documents importants
+> 	- [ ] Contacts ambassade/consulat
 > - [ ] **5. Conduite à tenir en cas de problème *(1 grille sur 2)***
 > 	- [ ] Fièvre au retour = consultation urgente
 > 	- [ ] Diarrhée persistante
@@ -318,7 +316,13 @@ cssclasses:
 > 	- [ ] Surveillance état général
 > 	- [ ] Activités adaptées à l'âge
 > 	- [ ] Gestion du décalage horaire
-> - [ ] **10. Plan d'urgence et conduite à tenir *(1 grille sur 2)***
+> - [ ] **10. Documentation et ressources *(1 grille sur 2)***
+> 	- [ ] Brochures d'information sur Madagascar
+> 	- [ ] Coordonnées ambassade/consulat
+> 	- [ ] Assurance voyage et rapatriement
+> 	- [ ] Centres médicaux sur place
+> 	- [ ] Application mobile conseils voyageurs
+> - [ ] **11. Plan d'urgence et conduite à tenir *(1 grille sur 2)***
 > 	- [ ] Signes d'alerte nécessitant consultation
 > 	- [ ] Conduite en cas de fièvre au retour
 > 	- [ ] Numéros d'urgence locaux

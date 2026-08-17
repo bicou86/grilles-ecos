@@ -146,14 +146,11 @@ cssclasses:
 > 	- [ ] Air frais *(BPCO)*
 > 	- [ ] Repos *(BPCO)*
 > 	- [ ] Médicaments éventuels *(BPCO)*
-> - [ ] **30. Caractéristiques de l'expectoration *(Asthme · BPCO)***
-> 	- [ ] Type de toux *(Asthme)*
+> - [ ] **30. Caractéristiques de la toux *(Asthme)***
+> 	- [ ] Type de toux
 > 	- [ ] Hémoptysie
-> 	- [ ] Moment de survenue *(Asthme)*
-> 	- [ ] Association avec la dyspnée *(Asthme)*
-> 	- [ ] Aspect *(BPCO)*
-> 	- [ ] Quantité *(BPCO)*
-> 	- [ ] Odeur *(BPCO)*
+> 	- [ ] Moment de survenue
+> 	- [ ] Association avec la dyspnée
 > - [ ] **31. Symptômes nocturnes et sommeil *(Asthme)***
 > 	- [ ] Réveils nocturnes
 > 	- [ ] Dyspnée nocturne
@@ -174,19 +171,12 @@ cssclasses:
 > 	- [ ] Appétit
 > 	- [ ] Évolution pondérale
 > 	- [ ] Fatigue inhabituelle
-> - [ ] **34. Symptômes associés cardiovasculaires *(3 grilles sur 5)***
-> 	- [ ] Sensation de corps étranger *(Asthme)*
-> 	- [ ] Dysphagie *(Asthme)*
-> 	- [ ] Ronflement *(Asthme)*
-> 	- [ ] Douleurs thoraciques *(2 grilles sur 5)*
-> 	- [ ] Bruits respiratoires *(Asthme)*
-> 	- [ ] Fatigue importante *(1 grille sur 5)*
-> 	- [ ] Toux sèche nocturne *(1 grille sur 5)*
-> 	- [ ] Palpitations *(2 grilles sur 5)*
-> 	- [ ] Nycturie *(1 grille sur 5)*
-> 	- [ ] Syncopes ou lipothymies *(1 grille sur 5)*
-> 	- [ ] Claudication intermittente *(1 grille sur 5)*
-> 	- [ ] Œdèmes membres inférieurs *(1 grille sur 5)*
+> - [ ] **34. Symptômes associés - Autres *(Asthme)***
+> 	- [ ] Sensation de corps étranger
+> 	- [ ] Dysphagie
+> 	- [ ] Ronflement
+> 	- [ ] Douleurs thoraciques
+> 	- [ ] Bruits respiratoires
 > - [ ] **35. Facteurs de risque thromboemboliques *(Asthme)***
 > 	- [ ] Vol long récent
 > 	- [ ] Immobilisation prolongée
@@ -260,38 +250,43 @@ cssclasses:
 > 	- [ ] Caractère
 > 	- [ ] Moment privilégié
 > 	- [ ] Évolution récente
-> - [ ] **46. Facteurs déclenchants et aggravants *(BPCO)***
+> - [ ] **46. Caractéristiques de l'expectoration *(BPCO)***
+> 	- [ ] Aspect
+> 	- [ ] Quantité
+> 	- [ ] Odeur
+> 	- [ ] Hémoptysie
+> - [ ] **47. Facteurs déclenchants et aggravants *(BPCO)***
 > 	- [ ] Temps froid
 > 	- [ ] Tabagisme passif
 > 	- [ ] Après refroidissements
 > 	- [ ] Effort physique
 > 	- [ ] Position couchée
-> - [ ] **47. Impact fonctionnel *(BPCO)***
+> - [ ] **48. Impact fonctionnel *(BPCO)***
 > 	- [ ] Performance physique
 > 	- [ ] Activités quotidiennes limitées
 > 	- [ ] Qualité de vie
 > 	- [ ] Activités abandonnées
-> - [ ] **48. Exacerbations et hospitalisations *(BPCO)***
+> - [ ] **49. Exacerbations et hospitalisations *(BPCO)***
 > 	- [ ] Épisodes de bronchite
 > 	- [ ] Prise d'antibiotiques
 > 	- [ ] Hospitalisations
 > 	- [ ] Recours aux urgences
-> - [ ] **49. Activités physiques et loisirs *(BPCO)***
+> - [ ] **50. Activités physiques et loisirs *(BPCO)***
 > 	- [ ] Sport actuel
 > 	- [ ] Activités antérieures
 > 	- [ ] Limitations progressives
 > 	- [ ] Sédentarité
-> - [ ] **50. Habitudes et toxiques *(BPCO)***
+> - [ ] **51. Habitudes et toxiques *(BPCO)***
 > 	- [ ] Tabagisme actif
 > 	- [ ] Tentatives d'arrêt
 > 	- [ ] Consommation d'alcool
 > 	- [ ] Toxicomanie
-> - [ ] **51. Allergies et traitements actuels *(BPCO)***
+> - [ ] **52. Allergies et traitements actuels *(BPCO)***
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Intolérances
 > 	- [ ] Médicaments actuels
 > 	- [ ] Observance thérapeutique
-> - [ ] **52. Facteurs de risque cardiovasculaire *(3 grilles sur 5)***
+> - [ ] **53. Facteurs de risque cardiovasculaire *(3 grilles sur 5)***
 > 	- [ ] Hypertension artérielle *(2 grilles sur 5)*
 > 	- [ ] Diabète *(2 grilles sur 5)*
 > 	- [ ] Dyslipidémie *(2 grilles sur 5)*
@@ -301,49 +296,58 @@ cssclasses:
 > 	- [ ] Surpoids *(1 grille sur 5)*
 > 	- [ ] Stress professionnel *(1 grille sur 5)*
 > 	- [ ] Antécédents familiaux *(1 grille sur 5)*
-> - [ ] **53. Symptômes d'insuffisance cardiaque *(BPCO)***
+> - [ ] **54. Symptômes d'insuffisance cardiaque *(BPCO)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Prise de poids récente
 > 	- [ ] Nycturie
 > 	- [ ] Fatigue inhabituelle
-> - [ ] **54. Motif de consultation *(1 grille sur 5)***
-> - [ ] **55. Œdèmes des membres inférieurs *(1 grille sur 5)***
+> - [ ] **55. Motif de consultation *(1 grille sur 5)***
+> - [ ] **56. Œdèmes des membres inférieurs *(1 grille sur 5)***
 > 	- [ ] Apparition progressive
 > 	- [ ] Bilatéraux et symétriques
 > 	- [ ] Prennent le godet
 > 	- [ ] Plus importants le soir
 > 	- [ ] Diminution le matin
 > 	- [ ] Prise de poids
-> - [ ] **56. Classification NYHA *(1 grille sur 5)***
+> - [ ] **57. Symptômes associés cardiovasculaires *(2 grilles sur 5)***
+> 	- [ ] Fatigue importante *(1 grille sur 5)*
+> 	- [ ] Toux sèche nocturne *(1 grille sur 5)*
+> 	- [ ] Palpitations
+> 	- [ ] Nycturie *(1 grille sur 5)*
+> 	- [ ] Douleurs thoraciques *(1 grille sur 5)*
+> 	- [ ] Syncopes ou lipothymies *(1 grille sur 5)*
+> 	- [ ] Claudication intermittente *(1 grille sur 5)*
+> 	- [ ] Œdèmes membres inférieurs *(1 grille sur 5)*
+> - [ ] **58. Classification NYHA *(1 grille sur 5)***
 > 	- [ ] Classe I: Pas de limitation
 > 	- [ ] Classe II: Limitation légère
 > 	- [ ] Classe III: Limitation marquée
 > 	- [ ] Classe IV: Symptômes au repos
-> - [ ] **57. Antécédents cardiovasculaires *(1 grille sur 5)***
+> - [ ] **59. Antécédents cardiovasculaires *(1 grille sur 5)***
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] Angioplastie coronaire
 > 	- [ ] Dyslipidémie
 > 	- [ ] Diabète type 2
-> - [ ] **58. Recherche d'éléments discriminants cardiaques vs respiratoires *(1 grille sur 5)***
+> - [ ] **60. Recherche d'éléments discriminants cardiaques vs respiratoires *(1 grille sur 5)***
 > 	- [ ] Éléments cardiaques
 > 	- [ ] Éléments respiratoires
 > 	- [ ] Prise de poids récente
 > 	- [ ] Position de sommeil
 > 	- [ ] Tolérance à l'effort antérieure
-> - [ ] **59. Habitudes et mode de vie *(1 grille sur 5)***
+> - [ ] **61. Habitudes et mode de vie *(1 grille sur 5)***
 > 	- [ ] Tabac
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
 > 	- [ ] Médicaments actuels
 > 	- [ ] Expositions professionnelles
-> - [ ] **60. Contexte psychosocial *(1 grille sur 5)***
+> - [ ] **62. Contexte psychosocial *(1 grille sur 5)***
 > 	- [ ] Situation professionnelle
 > 	- [ ] Situation financière
 > 	- [ ] Isolement social
 > 	- [ ] Stress et anxiété
 > 	- [ ] Observance thérapeutique potentielle
-> - [ ] **61. Intégration anamnèse cardio-respiratoire *(1 grille sur 5)***
+> - [ ] **63. Intégration anamnèse cardio-respiratoire *(1 grille sur 5)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Palpation *(1 grille sur 5)***
@@ -504,7 +508,7 @@ cssclasses:
 > 	- [ ] Éléments cliniques en faveur
 > 	- [ ] Terrain atopique
 > - [ ] **2. Examens complémentaires - Fonction respiratoire**
-> 	- [ ] Spirométrie
+> 	- [ ] Spirométrie de base
 > 	- [ ] Test de réversibilité aux bêta-2 mimétiques
 > 	- [ ] Test de provocation si nécessaire
 > 	- [ ] Peak-flow en ambulatoire
@@ -513,7 +517,7 @@ cssclasses:
 > 	- [ ] FSC avec éosinophiles
 > 	- [ ] IgE totales et spécifiques
 > 	- [ ] Tests cutanés allergologiques
-> - [ ] **4. Traitement médicamenteux proposé**
+> - [ ] **4. Traitement aigu proposé**
 > 	- [ ] Bêta-2 mimétiques à courte durée d'action à la demande
 > 	- [ ] Technique d'inhalation
 > 	- [ ] Utilisation avant l'effort
@@ -545,31 +549,31 @@ cssclasses:
 > 	- [ ] Spirométrie complète
 > 	- [ ] Gazométrie artérielle
 > 	- [ ] Test de marche de 6 minutes
-> - [ ] **3. Traitement médicamenteux proposé**
-> 	- [ ] Technique d'inhalation
-> 	- [ ] Bêta-2 agoniste de courte durée d'action (SABA)
-> 	- [ ] Anticholinergique de courte durée d'action (SAMA)
-> 	- [ ] Association éventuelle
-> - [ ] **4. Mesures non médicamenteuses**
+> - [ ] **3. Mesures non médicamenteuses**
 > 	- [ ] Sevrage tabagique (priorité absolue)
 > 	- [ ] Vaccination antigrippale et antipneumococcique
 > 	- [ ] Réhabilitation respiratoire
 > 	- [ ] Activité physique adaptée
-> - [ ] **5. Planification du suivi**
+> - [ ] **4. Planification du suivi**
 > 	- [ ] Consultation de contrôle
 > 	- [ ] Surveillance spirométrique
 > 	- [ ] Éducation thérapeutique
 > 	- [ ] Plan d'action en cas d'exacerbation
-> - [ ] **6. Examens complémentaires - Microbiologie et imagerie**
+> - [ ] **5. Examens complémentaires - Microbiologie et imagerie**
 > 	- [ ] Culture des crachats (ECBC)
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Scanner thoracique si indiqué
 > 	- [ ] ECG
-> - [ ] **7. Interprétation correcte de la spirométrie**
+> - [ ] **6. Interprétation correcte de la spirométrie**
 > 	- [ ] Classification GOLD stade I
 > 	- [ ] VEMS < 80% de la valeur prédite
 > 	- [ ] VEMS/CVF < 70%
 > 	- [ ] Absence de réversibilité significative
+> - [ ] **7. Traitement médicamenteux proposé**
+> 	- [ ] Bêta-2 agoniste de courte durée d'action (SABA)
+> 	- [ ] Anticholinergique de courte durée d'action (SAMA)
+> 	- [ ] Association éventuelle
+> 	- [ ] Technique d'inhalation
 > - [ ] **8. Prise en charge des comorbidités**
 > 	- [ ] Suivi du programme méthadone
 > 	- [ ] Dépistage des complications
@@ -603,24 +607,15 @@ cssclasses:
 > 	- [ ] Insuffisance mitrale modérée
 > 	- [ ] Dysfonction VG sévère
 > 	- [ ] Possible syndrome obstructif associé
-> - [ ] **16. Examens complémentaires - Fonction respiratoire *(1 grille sur 3)***
-> 	- [ ] Spirométrie
-> 	- [ ] Gazométrie artérielle
-> 	- [ ] Test de marche de 6 minutes
-> 	- [ ] Scanner thoracique si indication
-> 	- [ ] Polysomnographie si suspicion SAOS
-> - [ ] **17. Examens complémentaires cardiaques *(2 grilles sur 3)***
-> 	- [ ] ECG 12 dérivations *(1 grille sur 3)*
+> - [ ] **16. Examens complémentaires urgents *(1 grille sur 3)***
+> 	- [ ] ECG 12 dérivations
 > 	- [ ] Radiographie thoracique
 > 	- [ ] BNP ou NT-proBNP
-> 	- [ ] Échocardiographie transthoracique *(1 grille sur 3)*
-> 	- [ ] Bilan biologique: FSC, ionogramme, créatinine, BNP *(1 grille sur 3)*
-> 	- [ ] Troponines si suspicion de SCA *(1 grille sur 3)*
-> 	- [ ] Gazométrie artérielle si dyspnée sévère *(1 grille sur 3)*
-> 	- [ ] ECG *(1 grille sur 3)*
-> 	- [ ] Échocardiographie *(1 grille sur 3)*
-> 	- [ ] Coronarographie si chirurgie envisagée *(1 grille sur 3)*
-> - [ ] **18. Critères diagnostiques d'insuffisance cardiaque *(1 grille sur 3)***
+> 	- [ ] Échocardiographie transthoracique
+> 	- [ ] Bilan biologique: FSC, ionogramme, créatinine, BNP
+> 	- [ ] Troponines si suspicion de SCA
+> 	- [ ] Gazométrie artérielle si dyspnée sévère
+> - [ ] **17. Critères diagnostiques d'insuffisance cardiaque *(1 grille sur 3)***
 > 	- [ ] Critères de Framingham majeurs
 > 	- [ ] Dyspnée paroxystique nocturne
 > 	- [ ] Turgescence jugulaire
@@ -629,40 +624,52 @@ cssclasses:
 > 	- [ ] Œdème aigu du poumon
 > 	- [ ] Galop B3
 > 	- [ ] Reflux hépato-jugulaire
-> - [ ] **19. Prise en charge de l'insuffisance cardiaque *(2 grilles sur 3)***
-> - [ ] **20. Signes d'alarme (red flags) *(1 grille sur 3)***
+> - [ ] **18. Prise en charge de l'insuffisance cardiaque *(2 grilles sur 3)***
+> - [ ] **19. Signes d'alarme (red flags) *(1 grille sur 3)***
 > 	- [ ] Œdème aigu du poumon
 > 	- [ ] Choc cardiogénique
 > 	- [ ] Syndrome coronarien aigu
 > 	- [ ] Arythmie ventriculaire
 > 	- [ ] Insuffisance rénale aiguë
-> - [ ] **21. Éducation thérapeutique *(1 grille sur 3)***
+> - [ ] **20. Éducation thérapeutique *(1 grille sur 3)***
 > 	- [ ] Reconnaissance des signes d'alarme
 > 	- [ ] Importance de l'observance thérapeutique
 > 	- [ ] Auto-surveillance du poids
 > 	- [ ] Régime pauvre en sel
 > 	- [ ] Limitation des apports hydriques
 > 	- [ ] Activité physique régulière adaptée
-> - [ ] **22. Diagnostic différentiel dyspnée cardio-pulmonaire *(1 grille sur 3)***
-> - [ ] **23. Prise en charge respiratoire *(1 grille sur 3)***
+> - [ ] **21. Diagnostic différentiel dyspnée cardio-pulmonaire *(1 grille sur 3)***
+> - [ ] **22. Examens complémentaires cardiaques *(1 grille sur 3)***
+> 	- [ ] ECG
+> 	- [ ] Radiographie thorax
+> 	- [ ] Échocardiographie
+> 	- [ ] BNP ou NT-proBNP
+> 	- [ ] Coronarographie si chirurgie envisagée
+> - [ ] **23. Examens complémentaires respiratoires *(1 grille sur 3)***
+> 	- [ ] Spirométrie
+> 	- [ ] Gazométrie artérielle
+> 	- [ ] Test de marche 6 minutes
+> 	- [ ] Scanner thoracique si indication
+> 	- [ ] Polysomnographie si suspicion SAOS
+> - [ ] **24. Prise en charge respiratoire *(1 grille sur 3)***
 > 	- [ ] Oxygénothérapie si hypoxémie
 > 	- [ ] Bronchodilatateurs si obstruction
 > 	- [ ] Sevrage tabagique impératif
 > 	- [ ] Kinésithérapie respiratoire
 > 	- [ ] Vaccination grippe/pneumocoque
-> - [ ] **24. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
+> - [ ] **25. Surveillance et critères d'hospitalisation *(1 grille sur 3)***
 > 	- [ ] Hospitalisation pour décompensation aiguë
 > 	- [ ] Monitoring poids quotidien
 > 	- [ ] Surveillance diurèse et ionogramme
 > 	- [ ] Évaluation pré-opératoire si chirurgie
 > 	- [ ] Suivi multidisciplinaire cardio-pneumo
-> - [ ] **25. Aspects psychosociaux et éducation *(1 grille sur 3)***
+> - [ ] **26. Aspects psychosociaux et éducation *(1 grille sur 3)***
 > 	- [ ] Soutien psychologique
 > 	- [ ] Aide sociale
 > 	- [ ] Éducation thérapeutique
 > 	- [ ] Aménagement domicile si besoin
 > 	- [ ] Coordination avec médecin traitant
-> - [ ] **26. Management intégré cardio-respiratoire *(1 grille sur 3)***
+> - [ ] **27. Management intégré cardio-respiratoire *(1 grille sur 3)***
 
 > [!success] 💊 Management — si Tachycardie supraventriculaire (TSV/WPW)
 > *Aucune grille du corpus ne documente ce diagnostic* — il est pourtant attendu de cette SSP. **Trou de révision à combler ailleurs.**

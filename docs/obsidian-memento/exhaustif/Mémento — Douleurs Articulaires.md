@@ -327,8 +327,7 @@ cssclasses:
 > 	- [ ] Évaluation fonctionnelle globale
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Traitement de la polyarthrite rhumatoïde *(2 grilles sur 4)* — *Polyarthrite rhumatoïde · Polymyalgia rheumatica***
-> - [ ] **2. Diagnostics différentiels des polyarthrites *(3 grilles sur 4)* — *Polyarthrite rhumatoïde · Tendinopathie d'insertion du tendon d'Achille · Épicondylite latérale***
+> - [ ] **1. Diagnostics différentiels des polyarthrites *(2 grilles sur 4)* — *Polyarthrite rhumatoïde · Épicondylite latérale***
 
 > [!success] 💊 Management — si Épicondylite latérale
 > - [ ] **1. Diagnostic suspecté**
@@ -360,14 +359,15 @@ cssclasses:
 > 	- [ ] Bilan hépatique et rénal (pré-thérapeutique)
 > 	- [ ] Radiographies mains/poignets face et pieds face
 > 	- [ ] Radiographie thorax (bilan pré-thérapeutique)
-> - [ ] **3. Surveillance et suivi**
+> - [ ] **3. Traitement de la polyarthrite rhumatoïde**
+> - [ ] **4. Surveillance et suivi**
 > 	- [ ] Score d'activité DAS28 tous les 3 mois
 > 	- [ ] Objectif: rémission (DAS28 < 2.6)
 > 	- [ ] Surveillance tolérance traitement
 > 	- [ ] FSC, bilan hépatique sous méthotrexate
 > 	- [ ] Radiographies annuelles (progression structurale)
 > 	- [ ] Dépistage complications: ostéoporose, infections
-> - [ ] **4. Pronostic et complications**
+> - [ ] **5. Pronostic et complications**
 > 	- [ ] Évolution par poussées-rémissions
 > 	- [ ] Destruction articulaire progressive sans traitement
 > 	- [ ] Déformations: déviation cubitale, col de cygne
@@ -381,25 +381,26 @@ cssclasses:
 > - [ ] **2. Indices anamnestiques**
 > - [ ] **3. Âge typique**
 > - [ ] **4. Douleur à la pression des ceintures scapulaire et pelvienne**
-> - [ ] **5. Arguments pour mentionnés**
-> - [ ] **6. Arguments contre mentionnés**
-> - [ ] **7. Pathologie dégénérative de l'épaule ou de la hanche**
-> - [ ] **8. Maladie dégénérative**
-> - [ ] **9. Myopathie inflammatoire (polymyosite ou dermatomyosite)**
-> - [ ] **10. Myopathie inflammatoire**
-> - [ ] **11. Myopathie associée aux statines**
-> - [ ] **12. Myopathie aux statines**
-> - [ ] **13. Hypothyroïdie**
-> - [ ] **14. Laboratoire**
-> - [ ] **15. CRP demandée**
-> - [ ] **16. CK demandée**
-> - [ ] **17. Échographie épaule / hanche**
-> - [ ] **18. Corticothérapie**
-> - [ ] **19. Suivi**
-> - [ ] **20. Prophylaxie et surveillance des effets secondaires des glucocorticoïdes**
-> - [ ] **21. Orientation rhumatologique**
-> - [ ] **22. Artérite à cellules géantes concomitante**
-> - [ ] **23. Céphalées**
+> - [ ] **5. Polyarthrite rhumatoïde**
+> - [ ] **6. Arguments pour mentionnés**
+> - [ ] **7. Arguments contre mentionnés**
+> - [ ] **8. Pathologie dégénérative de l'épaule ou de la hanche**
+> - [ ] **9. Maladie dégénérative**
+> - [ ] **10. Myopathie inflammatoire (polymyosite ou dermatomyosite)**
+> - [ ] **11. Myopathie inflammatoire**
+> - [ ] **12. Myopathie associée aux statines**
+> - [ ] **13. Myopathie aux statines**
+> - [ ] **14. Hypothyroïdie**
+> - [ ] **15. Laboratoire**
+> - [ ] **16. CRP demandée**
+> - [ ] **17. CK demandée**
+> - [ ] **18. Échographie épaule / hanche**
+> - [ ] **19. Corticothérapie**
+> - [ ] **20. Suivi**
+> - [ ] **21. Prophylaxie et surveillance des effets secondaires des glucocorticoïdes**
+> - [ ] **22. Orientation rhumatologique**
+> - [ ] **23. Artérite à cellules géantes concomitante**
+> - [ ] **24. Céphalées**
 
 > [!success] 💊 Management — si Tendinopathie d'insertion du tendon d'Achille
 > - [ ] **1. Suivi**
@@ -407,30 +408,31 @@ cssclasses:
 > 	- [ ] Évaluation de l'efficacité du traitement
 > 	- [ ] Orientation vers spécialiste si échec du traitement conservateur
 > - [ ] **2. Diagnostic principal**
-> - [ ] **3. Examens complémentaires**
+> - [ ] **3. Diagnostics différentiels (au moins 2)**
+> - [ ] **4. Examens complémentaires**
 > 	- [ ] Radiographie du talon (profil et face) pour exclure fracture ou calcifications
 > 	- [ ] Échographie du tendon d'Achille
 > 	- [ ] IRM si suspicion de rupture partielle ou si échec du traitement conservateur
-> - [ ] **4. Traitement médicamenteux**
+> - [ ] **5. Traitement médicamenteux**
 > 	- [ ] AINS (ex: ibuprofène 600mg 3x/jour ou diclofénac)
 > 	- [ ] Antalgiques si nécessaire
 > 	- [ ] Application locale d'anti-inflammatoires
-> - [ ] **5. Traitement non médicamenteux**
+> - [ ] **6. Traitement non médicamenteux**
 > 	- [ ] Repos relatif et arrêt temporaire du sport
 > 	- [ ] Adaptation des chaussures (éviter talons hauts, semelles amortissantes)
 > 	- [ ] Talonnette de décharge
 > 	- [ ] Application de glace (cryothérapie)
 > 	- [ ] Étirements progressifs du triceps sural
-> - [ ] **6. Mesures socio-professionnelles**
+> - [ ] **7. Mesures socio-professionnelles**
 > 	- [ ] Arrêt de travail temporaire
 > 	- [ ] Interdiction de sport pendant 4-6 semaines
 > 	- [ ] Adaptation du poste de travail (éviter station debout prolongée)
-> - [ ] **7. Prise en charge à moyen terme**
+> - [ ] **8. Prise en charge à moyen terme**
 > 	- [ ] Physiothérapie (renforcement excentrique, ondes de choc)
 > 	- [ ] Rééducation progressive
 > 	- [ ] Correction des troubles statiques du pied si nécessaire
 > 	- [ ] Infiltration de corticoïdes péri-tendineuse (pas intra-tendineuse)
-> - [ ] **8. Information et conseils au patient**
+> - [ ] **9. Information et conseils au patient**
 > 	- [ ] Explication du diagnostic et du mécanisme lésionnel
 > 	- [ ] Importance du repos et du traitement
 > 	- [ ] Évolution généralement favorable en 6-12 semaines

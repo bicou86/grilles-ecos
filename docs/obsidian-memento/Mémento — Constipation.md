@@ -131,3 +131,48 @@ cssclasses:
 > 	- [ ] Hépatomégalie nodulaire, adénopathie sus-claviculaire gauche
 > 	- [ ] Pâleur cutanéo-muqueuse franche : anémie sur saignement chronique
 > 	- [ ] Amaigrissement visible, fonte musculaire, altération de l'état général
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention — le laboratoire va chercher la cause seconde**
+> 	- [ ] FSC et ferritine : une anémie microcytaire ferriprive signe un saignement digestif occulte
+>         jusqu'à preuve du contraire, même si le patient n'a jamais vu de sang
+> 	- [ ] TSH : une substitution déjà en cours ne garantit pas l'euthyroïdie ; le dosage n'est
+>         interprétable qu'à distance — au moins 6 semaines — d'un changement de dose
+> 	- [ ] Électrolytes — calcium corrigé sur l'albumine, potassium, sodium : hypercalcémie et hypokaliémie
+>         ralentissent le transit à elles seules, et une hypercalcémie peut être paranéoplasique
+> 	- [ ] Glycémie (neuropathie autonome du diabète) et créatinine (insuffisance rénale)
+> 	- [ ] CRP et leucocytes : inflammation, MICI, foyer intercurrent
+> - [ ] **2. Devant une constipation nouvelle après 50 ans, du sang, une anémie ou un amaigrissement**
+> 	- [ ] **Coloscopie totale avec biopsies** — l'examen qui tranche. L'indiquer devant : début après
+>         50 ans sans dépistage à jour, drapeau rouge, anémie ferriprive inexpliquée, transit
+>         durablement modifié
+> 	- [ ] Test FIT (sang occulte fécal) : outil du **dépistage chez l'asymptomatique**. Négatif, il
+>         n'écarte pas un cancer et ne dispense jamais de la coloscopie devant un drapeau rouge
+> 	- [ ] US abdominale, ou CT abdominal devant une masse palpée, un doute ou une complication ; CT
+>         thoraco-abdomino-pelvien pour le bilan d'extension une fois la lésion trouvée
+> 	- [ ] Transaminases, gamma-GT, PAL, albumine et crase (Quick/aPTT) quand une extension hépatique
+>         ou un geste s'annoncent ; marqueurs tumoraux en valeur de référence, jamais pour le diagnostic
+> - [ ] **3. 🚩 Devant un arrêt des gaz et des matières, ou un abdomen qui se défend**
+> 	- [ ] Radiographie d'abdomen couché **et** debout : niveaux hydro-aériques, distension, croissant
+>         gazeux sous les coupoles (pneumopéritoine)
+> 	- [ ] CT abdominal injecté : il donne le siège, la cause et la souffrance digestive, là où la
+>         radiographie ne dit que « occlusion »
+> 	- [ ] Le bilan de l'urgence chirurgicale : FSC, CRP, lactate, gazométrie, créatinine et
+>         électrolytes, crase et groupe sanguin
+> 	- [ ] Le fécalome, lui, se diagnostique au doigt : l'imagerie sert à sa complication (occlusion,
+>         perforation stercorale), pas à sa reconnaissance
+> - [ ] **4. Devant des efforts de poussée sans résultat, des manœuvres digitales, une coloscopie normale**
+> 	- [ ] Manométrie ano-rectale : dyssynergie, c'est-à-dire contraction paradoxale du sphincter au
+>         moment de la poussée ; tonus de repos
+> 	- [ ] Test d'expulsion du ballonnet : confirme simplement, au lit du malade, un trouble de l'évacuation
+> 	- [ ] Temps de transit colique aux marqueurs radio-opaques : sépare le transit lent de l'obstacle
+>         à l'évacuation
+> 	- [ ] Ces trois tests viennent en dernier — constipation chronique réfractaire, cause organique
+>         déjà écartée
+> - [ ] **5. À ne pas oublier**
+> 	- [ ] Test de grossesse chez toute femme en âge de procréer : avant toute imagerie irradiante, et
+>         parce que la grossesse constipe à elle seule
+> 	- [ ] La date de la dernière coloscopie et du dernier dépistage colorectal : elle change
+>         l'indication de la suivante, jamais la décision devant un drapeau rouge
+> 	- [ ] Un laboratoire entièrement normal ne rassure pas quand le transit a changé après 50 ans :
+>         c'est la coloscopie, pas la prise de sang, qui écarte l'obstacle

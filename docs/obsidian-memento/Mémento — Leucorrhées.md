@@ -165,3 +165,59 @@ cssclasses:
 > 	- [ ] Col friable qui saigne au moindre contact
 > 	- [ ] Un examen normal n'écarte pas une IST : chlamydia et gonocoque sont le plus souvent
 >         muets à l'examen — les prélèvements se décident sur le risque, pas sur les signes
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Les prélèvements, faits pendant l'examen au spéculum**
+> 	- [ ] État frais au sérum physiologique : clue cells d'une vaginose, trichomonas mobiles,
+>         levures et filaments mycéliens d'une candidose — la lame se lit tout de suite, sèche
+>         elle ne dit plus rien
+> 	- [ ] Test à la potasse (KOH 10 %) : odeur d'amines libérée sur-le-champ (sniff test), et
+>         filaments mycéliens dégagés par la lyse des cellules
+> 	- [ ] pH vaginal, prélevé sur la paroi latérale et non dans le cul-de-sac : > 4,5 dans la
+>         vaginose et la trichomonase, ≤ 4,5 dans la candidose — avec des leucorrhées
+>         homogènes, un sniff test positif et des clue cells, il forme les critères d'Amsel,
+>         dont trois sur quatre suffisent
+> 	- [ ] PCR (TAAN) chlamydia **et** gonocoque en test combiné : écouvillon endocervical, ou
+>         auto-prélèvement vaginal qui le vaut ; le premier jet d'urine dépanne mais rend moins
+>         chez la femme
+> 	- [ ] Prélèvements pharyngé et anal selon les pratiques déclarées : ces sites sont muets,
+>         et un prélèvement génital seul les manque
+> 	- [ ] Culture du gonocoque, prélevée avant la première dose : la PCR dit qu'il est là,
+>         seule la culture donne l'antibiogramme ; culture mycologique devant des mycoses qui
+>         récidivent ou un examen direct négatif (*Candida* non-albicans)
+> - [ ] **2. Le sang et les urines**
+> 	- [ ] 🚩 Test de grossesse chez toute femme en âge de procréer : un retard de règles ou un
+>         rapport non protégé récent suffit à le demander, et il conditionne l'exploration
+>         comme la prescription
+> 	- [ ] Sérologie VIH de 4e génération (antigène p24 et anticorps), après un consentement
+>         demandé explicitement : négative dans les six premières semaines elle n'écarte rien,
+>         et se refait à trois mois
+> 	- [ ] Syphilis : RPR ou VDRL doublé d'un test tréponémique (TPPA) — le test non
+>         tréponémique ne se positive que 1 à 4 semaines après le chancre, et reste négatif
+>         devant une syphilis primaire récente
+> 	- [ ] Sérologies hépatites B et C : une IST avérée signe une exposition et impose de
+>         chercher les autres
+> 	- [ ] Bandelette urinaire, complétée d'une analyse d'urine et d'un ECBU si elle est
+>         positive : une leucocyturie sans nitrites ni germe chez une femme qui a des
+>         leucorrhées et des brûlures mictionnelles est une urétrite ou une cervicite, pas une
+>         cystite — premier jet pour la PCR, milieu de jet pour l'ECBU
+> - [ ] **3. Selon ce que l'inspection a trouvé**
+> 	- [ ] Ulcération : sérosité de la lésion au microscope à fond noir, lue immédiatement —
+>         elle montre les tréponèmes mobiles avant que la sérologie ne se positive ; PCR HSV
+>         sur le plancher d'une vésicule décapée quand les lésions sont groupées et douloureuses
+> 	- [ ] Végétations en chou-fleur : les condylomes se diagnostiquent à l'œil, sans typage
+>         viral — colposcopie s'ils gagnent le col, biopsie devant une lésion atypique,
+>         pigmentée, indurée, saignante ou qui résiste au traitement
+> 	- [ ] Frottis cervical : dépistage du col à sa date propre, dès 21 ans, et non au titre de
+>         l'épisode — il ne diagnostique ni les condylomes ni une cervicite
+> - [ ] **4. 🚩 Quand le tableau dépasse la vaginite**
+> 	- [ ] Fièvre, douleur hypogastrique et douleur à la mobilisation du col : FSC, CRP,
+>         hémocultures si frissons, et échographie pelvienne à la recherche d'un abcès
+>         tubo-ovarien — l'infection génitale haute reste un diagnostic clinique, qu'un bilan
+>         normal n'écarte pas
+> 	- [ ] Douleur de l'hypochondre droit chez une femme suspecte d'IST : les tests hépatiques
+>         sont le plus souvent normaux, c'est le CT injecté qui montre le rehaussement
+>         capsulaire d'une périhépatite de Fitz-Hugh-Curtis
+> 	- [ ] Adénopathie inguinale volumineuse ou fluctuante, rectite : PCR chlamydia avec
+>         génotypage L1-L3 sur le prélèvement anal ou la ponction du bubon — c'est ainsi que se
+>         nomme un lymphogranulome vénérien

@@ -130,3 +130,22 @@ cssclasses:
 > 	- [ ] **Déficit neurologique focal** : asymétrie faciale front compris, hémiparésie, aphasie, amputation du champ visuel
 > 	- [ ] **Anneau cornéen brun-verdâtre** chez le patient jeune — regarder le limbe en lumière tangentielle
 > 	- [ ] **Tremblement rapide et fin** avec tachycardie, peau moite et chaude, exophtalmie, goitre ou perte de poids
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention — écarter d'abord ce qui est réversible**
+> 	- [ ] **TSH devant tout tremblement**, avec T4 libre si elle est modifiée : l'hyperthyroïdie donne un tremblement postural fin, et c'est une cause entièrement réversible qu'aucune imagerie ne rattrapera si on ne l'a pas cherchée ; anticorps anti-récepteur de la TSH une fois la thyrotoxicose confirmée
+> 	- [ ] Biologie de base : FSC, ionogramme, glycémie, calcémie et magnésémie, fonction rénale — le tremblement physiologique exagéré est métabolique avant d'être neurologique
+> 	- [ ] Bilan hépatique, d'autant plus chez le consommateur d'alcool chronique et systématiquement avant 50 ans
+> - [ ] **2. Selon l'orientation clinique**
+> 	- [ ] 🚩 **Avant 50 ans**, ou devant une hépatopathie, un fléchissement du comportement, une dysarthrie, un anneau cornéen : **cuprémie, céruloplasmine, cuprurie des 24 heures et lampe à fente** — la maladie de Wilson est rare, curable, et la manquer est une faute
+> 	- [ ] Tremblement atypique ou focal, symétrique d'emblée, d'installation brutale, prédominant aux membres inférieurs, ou associé à un déficit neurologique → **IRM cérébrale**, séquences T2 et FLAIR : lésions vasculaires, atrophies, hydrocéphalie, lésion intracrânienne
+> 	- [ ] Dysautonomie, ataxie cérébelleuse ou syndrome pyramidal → **scintigraphie cardiaque à la MIBG** : la fixation du traceur est abolie dans la maladie de Parkinson — dénervation sympathique cardiaque — et conservée dans l'atrophie multisystématisée
+> 	- [ ] Gesticulation, cris ou chutes du lit pendant les rêves, rapportés par le conjoint → **polysomnographie** : le trouble comportemental du sommeil paradoxal précède les signes moteurs de 10 à 15 ans
+> 	- [ ] Ralentissement de la pensée, plainte mnésique, désorganisation des tâches → **évaluation neuropsychologique** : troubles exécutifs et mémoire
+> - [ ] **3. Quand le doute persiste entre syndrome parkinsonien et tremblement essentiel**
+> 	- [ ] **DaTscan**, scintigraphie SPECT du transporteur de la dopamine à l'ioflupane, en centre spécialisé : anormal dans tout syndrome parkinsonien dégénératif, **normal dans le tremblement essentiel et dans le parkinsonisme médicamenteux** — il ne sépare pas la maladie de Parkinson des syndromes atypiques
+> 	- [ ] **Test thérapeutique à la L-DOPA** : une amélioration de plus de 30 % est un argument fort pour la maladie de Parkinson idiopathique ; la réponse est pauvre dans les syndromes atypiques
+> 	- [ ] **Test olfactif** : hyposmie chez près de 90 % des Parkinson, absente dans le tremblement essentiel
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] **Le diagnostic de maladie de Parkinson est clinique** — critères MDS : bradykinésie associée à un tremblement de repos ou à une rigidité. Les examens ne le posent pas, ils écartent ce qui l'imite ; un bilan entièrement normal ne l'écarte donc pas
+> 	- [ ] **ECG et bilan cardiaque avant d'introduire un bêta-bloquant** pour un tremblement essentiel gênant : on y cherche la bradycardie sévère et le bloc auriculo-ventriculaire

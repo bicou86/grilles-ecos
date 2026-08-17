@@ -133,3 +133,28 @@ cssclasses:
 > 	- [ ] **Compression médullaire ou de la queue de cheval** : sensibilité péri-anale et tonus sphinctérien au toucher rectal, globe vésical, Babinski bilatéral, réflexes cutanés abdominaux, niveau sensitif
 > 	- [ ] **Dysautonomie** : chute d'au moins 20 mmHg de systolique au passage debout, tension qui varie d'un contrôle à l'autre, pouls irrégulier
 > 	- [ ] **Pied à risque** : plaie indolore sur un point d'appui, monofilament aboli et pouls absents — ce pied-là ne prévient pas
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention — devant des troubles sensitifs distaux, bilatéraux et symétriques**
+> 	- [ ] **Glycémie à jeun et HbA1c** : le diabète est la première cause, et la neuropathie le révèle souvent — le chercher même chez un patient qui se dit non diabétique ; chez le diabétique connu, l'HbA1c chiffre les trois derniers mois, que l'interrogatoire minimise
+> 	- [ ] **Vitamine B12, folates et thiamine (B1)**, les trois ensemble : la carence en B12 s'accompagne volontiers d'une carence en folates, et la thiamine porte à elle seule la polyneuropathie alcoolique — prélever **avant** toute supplémentation, qui rend le dosage ininterprétable
+> 	- [ ] **FSC** : macrocytose et anémie mégaloblastique de la carence en B12 — mais l'hémogramme est normal chez près d'un tiers des atteintes neurologiques de la B12, et sa normalité n'écarte pas la carence
+> 	- [ ] **Créatinine, urée et DFG** (neuropathie urémique) · **tests hépatiques** (hépatopathie alcoolique) · **TSH**, avec T4 libre (hypothyroïdie) · **bilan lipidique**
+> 	- [ ] **Études de conduction nerveuse (ENMG)** : elles disent le type d'atteinte bien plus que sa cause — axonale ou démyélinisante, longueur-dépendante, multifocale ou radiculaire. Un ENMG normal n'écarte rien devant une atteinte des petites fibres : piqûre et sensibilité thermique altérées, pallesthésie et réflexes conservés — l'électrophysiologie ne les voit pas
+> - [ ] **2. Selon l'orientation — c'est la topographie qui commande**
+> 	- [ ] Douleur systématisée à un seul membre, dans un territoire radiculaire, Lasègue positif → **IRM lombaire** : hernie discale, canal lombaire étroit, tumeur ; CT-myélographie quand l'IRM est contre-indiquée, et EMG pour séparer la radiculopathie de la neuropathie distale
+> 	- [ ] 🚩 Anesthésie en selle, troubles sphinctériens, déficit moteur bilatéral, ou niveau sensitif net sur le tronc → **IRM médullaire et lombaire en urgence, sans attendre la biologie** : queue de cheval et compression médullaire se décompriment en heures
+> 	- [ ] Pieds froids, pouls abolis, plaie qui ne cicatrise, périmètre de marche limité → **écho-Doppler artériel des membres inférieurs** ; l'index de pression systolique se prend au lit, et au-dessus de 1,3 il devient ininterprétable chez le diabétique et l'insuffisant rénal (médiacalcose)
+> 	- [ ] Diabète confirmé → les autres cibles du même diabète : **microalbuminurie** (néphropathie, celle que trahissent aussi des urines mousseuses) et **ECG**, qui sert de référence chez le coronarien connu autant que de dépistage de l'ischémie silencieuse — que la neuropathie autonome rend indolore
+> 	- [ ] Exposition professionnelle aux solvants ou aux métaux lourds → **plombémie**
+> - [ ] **3. 🚩 Déficit moteur ascendant et aréflexie installés en heures ou en jours — le bilan ne retarde rien**
+> 	- [ ] **Spirométrie au lit du malade, capacité vitale répétée** : c'est elle qui décide du transfert aux soins intensifs, avant l'intubation et non après ; la gazométrie ne se dégrade qu'une fois les réserves épuisées, et une capnie normale ne rassure pas
+> 	- [ ] **Analyse du LCR** : dissociation albumino-cytologique — protéines élevées, cellules normales ; elle manque souvent la première semaine, une ponction précoce normale n'écarte pas le diagnostic. Contrôler la crase avant de ponctionner
+> 	- [ ] **ENG/EMG** : allongement des latences distales, blocs de conduction, onde F retardée ou abolie — la démyélinisation qui signe la forme AIDP
+> 	- [ ] **Sérologies infectieuses**, *Campylobacter jejuni* au premier rang (la diarrhée des semaines précédentes), et **anticorps anti-gangliosides**
+> 	- [ ] **Bilan de base avec CK et crase** ; **ECG** — la dysautonomie tue par le rythme autant que la paralysie par le diaphragme
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Une B12 basse-normale ne tranche pas : **homocystéine et acide méthylmalonique** sont les marqueurs sensibles de la carence tissulaire, à demander dans cette zone grise plutôt que de conclure sur le seul dosage
+> 	- [ ] **Électrophorèse des protéines sériques** quand le bilan de première intention ne rend rien : la gammapathie monoclonale est une cause courante de polyneuropathie, et rien d'autre ne la cherche
+> 	- [ ] **Sérologies VIH, hépatites et Lyme** selon le contexte — piqûre de tique et érythème migrant, conduites à risque
+> 	- [ ] **ECG avant d'introduire un tricyclique** : les contre-indications de l'amitriptyline sont cardiaques — trouble de conduction, QT long, cardiopathie ischémique récente

@@ -129,3 +129,61 @@ cssclasses:
 > 	- [ ] Nerf facial : lever les sourcils, fermer fortement les yeux, sourire,
 >         gonfler les joues — asymétrie **front compris**
 > 	- [ ] Raideur de nuque, photophobie, état de conscience
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Dans la forme simple, aucun examen — le diagnostic est clinique**
+> 	- [ ] Durée, qualité de la rhinorrhée, douleur qui s'aggrave en antéflexion et pus
+>         au méat moyen suffisent : la rhinosinusite aiguë ou post-virale se pose
+>         **sans un seul examen complémentaire**
+> 	- [ ] **Pas d'imagerie** en l'absence de drapeau rouge : épaississement muqueux et
+>         niveau hydro-aérique s'observent chez le simple enrhumé — le scanner
+>         confirmerait autant les rhumes que les sinusites ; la radiographie standard
+>         des sinus, ni sensible ni spécifique, est abandonnée
+> 	- [ ] **Ni FSC ni CRP ne séparent le viral du bactérien.** Ce qui oriente est
+>         **temporel** : plus de 10 jours sans amélioration, amélioration franche **puis**
+>         ré-aggravation, ou fièvre élevée avec douleur unilatérale d'emblée
+> - [ ] **2. 🚩 Devant un signe orbitaire, méningé ou neurologique — l'imagerie ne se discute pas**
+> 	- [ ] Œdème ou rougeur palpébrale, exophtalmie, douleur à la mobilisation du globe,
+>         diplopie, baisse d'acuité ou rouge délavé : **CT du massif facial et des orbites
+>         avec injection, en urgence** — il sépare la cellulite **préseptale** de
+>         l'atteinte **rétro-septale**, montre l'abcès sous-périosté et l'extension
+>         endocrânienne (stades de Chandler), et décide du drainage
+> 	- [ ] Céphalée inhabituelle, raideur de nuque, vomissements, déficit focal ou
+>         confusion : **IRM cérébrale injectée, séquences veineuses comprises** — le CT
+>         manque l'empyème sous-dural débutant et la thrombose du sinus caverneux
+> 	- [ ] **Hémocultures, deux paires, avant la première dose d'antibiotique**, avec FSC
+>         et CRP : ici le laboratoire ne fait plus le diagnostic, il documente le sepsis
+>         et sert de référence au suivi
+> 	- [ ] **Ponction lombaire uniquement après l'imagerie** quand le méningisme domine —
+>         jamais avant : une collection endocrânienne se cherche d'abord
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] **Rhinorrhée aqueuse avec éternuements et prurit, muqueuse pâle-bleutée** :
+>         tests cutanés (prick) et **IgE spécifiques** — à ne demander que si le résultat
+>         change la conduite
+> 	- [ ] **Obstruction de plus de 12 semaines, polypes, échecs répétés ou chirurgie
+>         envisagée** : **CT des sinus en coupes fines, sans injection, à distance de la
+>         poussée** — c'est un bilan anatomique et préopératoire, jamais un examen de crise
+> 	- [ ] **Douleur maxillaire unilatérale fétide, dent cariée ou soin dentaire récent** :
+>         orthopantomogramme ou CT dentaire — la sinusite maxillaire d'origine dentaire
+>         récidive tant que la dent n'est pas traitée
+> 	- [ ] **Polypose avec asthme et intolérance à l'aspirine** : spirométrie — nez et
+>         bronches sont la même muqueuse, un asthme mal contrôlé entretient la plainte
+>         nasale
+> 	- [ ] **Prélèvement bactériologique dirigé au méat moyen sous endoscopie** — l'écouvillon
+>         de narine ne rend que la flore : à réserver aux échecs de traitement, à
+>         l'immunosuppression et aux formes compliquées
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 **Rhinorrhée claire unilatérale après un traumatisme** : recueillir le liquide
+>         et doser la **bêta-2-transferrine**, qui affirme la brèche ostéoméningée, puis
+>         **CT haute résolution de la base du crâne** — la glycémie du liquide et le halo
+>         sur la compresse ne prouvent rien
+> 	- [ ] 🚩 **Obstruction unilatérale, épistaxis répétées, masse qui saigne au contact** :
+>         **imagerie avant tout geste**, puis biopsie sous contrôle endoscopique — biopsier
+>         à l'aveugle un méningo-encéphalocèle ou un angiofibrome se paie très cher
+> 	- [ ] 🚩 **Diabète déséquilibré ou immunosuppression, croûtes noirâtres, cornet
+>         insensible ou nécrosé** : glycémie et recherche d'acidocétose, imagerie et
+>         **prélèvement mycologique en urgence** — la mucormycose se compte en heures et
+>         l'imagerie sous-estime toujours l'extension
+> 	- [ ] **Un scanner rassurant n'annule pas un œil qui se dégrade** : acuité et
+>         oculomotricité réévaluées priment sur l'image, et l'aggravation sous antibiotique
+>         fait refaire l'imagerie, pas attendre

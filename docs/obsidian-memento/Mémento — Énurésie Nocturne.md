@@ -115,3 +115,23 @@ cssclasses:
 > 	- [ ] Méat ou vulve anormaux, sous-vêtement humide en permanence : incontinence continue par malformation, tableau qui n'est plus celui d'une énurésie
 > 	- [ ] Asymétrie des membres inférieurs, réflexe achilléen aboli, pied creux : atteinte médullaire basse
 > 	- [ ] Fièvre le jour de la consultation : l'infection urinaire passe devant tout le reste
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention — un bilan volontairement minimal**
+> 	- [ ] Bandelette urinaire chez tout enfant énurétique, sans exception : leucocytes et nitrites (infection urinaire), glucose (diabète), protéines et sang (atteinte rénale), densité — les deux causes organiques à ne pas manquer sont écartées en une minute
+> 	- [ ] Densité sur le premier jet du matin : basse après une nuit entière sans boire, elle signe un défaut de concentration des urines, et aucune énurésie de maturation ne l'explique
+> 	- [ ] Protéinurie ou hématurie persistantes, a fortiori si la tension dépasse les normes d'âge : la question devient rénale et non plus mictionnelle
+> 	- [ ] Culture d'urine selon la bandelette, et d'emblée devant fièvre, dysurie, urines troubles ou antécédent d'infection urinaire — la bandelette oriente, seule la culture documente
+> 	- [ ] Devant une énurésie primaire strictement nocturne, chez un enfant qui grandit bien et dont l'examen est normal, la bandelette et le calendrier suffisent : il n'y a rien d'autre à demander
+> - [ ] **2. Le calendrier mictionnel — la mesure que seule la famille peut faire**
+> 	- [ ] Calendrier des mictions et des boissons sur au moins 48 heures : heure et volume de chaque miction, nature et horaire des boissons, en particulier celles d'après le repas du soir
+> 	- [ ] Journal des nuits sur environ 14 jours : nuits sèches et nuits mouillées, nombre et horaire des accidents, quantité perdue
+> 	- [ ] Gros volumes en début de nuit alors que les mictions du jour sont de volume normal : polyurie nocturne, faute du pic nocturne d'hormone antidiurétique
+> 	- [ ] Mictions fréquentes et de petit volume, la nuit comme le jour : petite capacité vésicale fonctionnelle — ce sont les deux mécanismes que le calendrier sépare, et aucun examen de laboratoire ne les distingue
+> - [ ] **3. Selon l'orientation — ce qui élargit le bilan**
+> 	- [ ] Échographie réno-vésicale et abdominale devant des symptômes diurnes, une énurésie secondaire, une infection urinaire documentée, une anomalie de l'examen clinique ou une cassure de la croissance — une énurésie strictement nocturne, elle, ne justifie aucune imagerie
+> 	- [ ] Ce qu'on lui demande : reins (taille, différenciation cortico-médullaire, dilatation des cavités), épaisseur de la paroi vésicale, et **résidu post-mictionnel** mesuré juste après une miction — une vessie qui ne se vide pas n'est plus un simple retard de maturation
+> 	- [ ] Elle montre aussi l'ampoule rectale distendue par les selles : c'est la confirmation de la constipation soupçonnée à l'anamnèse et palpée en fosse iliaque gauche, que le seul examen clinique sous-estime souvent
+> - [ ] **4. 🚩 À ne pas oublier**
+> 	- [ ] Glycémie devant une soif inhabituelle avec urines abondantes et claires, surtout si l'énurésie est secondaire ou si l'enfant a maigri : une glucosurie à la bandelette se confirme le jour même — un diabète de type 1 se révèle ainsi
+> 	- [ ] Imagerie médullaire — échographie du rachis chez le nourrisson, IRM ensuite — devant une anomalie cutanée de la ligne médiane lombo-sacrée associée à un signe neurologique des membres inférieurs : le dysraphisme spinal occulte ne s'affirme ni ne s'écarte à l'examen clinique

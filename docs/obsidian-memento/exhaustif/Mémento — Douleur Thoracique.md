@@ -232,31 +232,26 @@ cssclasses:
 > - [ ] **49. Environnement social / Circonstances *(1 grille sur 12)***
 > - [ ] **50. Présentation avec nom, fonction et tâche *(4 grilles sur 12)***
 > - [ ] **51. Localisation de la douleur *(4 grilles sur 12)***
-> - [ ] **52. Intensité de la douleur *(4 grilles sur 12)***
-> - [ ] **53. Irradiation de la douleur *(4 grilles sur 12)***
+> - [ ] **52. Qualité de la douleur *(Contusion costale)***
+> - [ ] **53. Début de la douleur *(Contusion costale)***
 > - [ ] **54. Intensité sur une échelle de 1 à 10 *(Contusion costale)***
 > - [ ] **55. Facteurs d'amélioration *(Contusion costale)***
 > - [ ] **56. Autres douleurs (jambes, bras, tête...) *(Contusion costale)***
-> - [ ] **57. Circonstances déclenchantes *(3 grilles sur 12)***
-> 	- [ ] Circonstances *(Péricardite / Myopéricardite)*
-> 	- [ ] Effort physique *(1 grille sur 12)*
-> 	- [ ] Stress émotionnel *(1 grille sur 12)*
-> 	- [ ] Froid *(1 grille sur 12)*
-> 	- [ ] Repas copieux *(1 grille sur 12)*
-> 	- [ ] Jamais au repos *(1 grille sur 12)*
-> 	- [ ] Pas la nuit *(1 grille sur 12)*
+> - [ ] **57. Circonstances de la chute *(Contusion costale)***
 > - [ ] **58. Perte de connaissance, vertiges, céphalées *(Contusion costale)***
 > - [ ] **59. Activités sportives, loisirs *(Contusion costale)***
 > - [ ] **60. Anamnèse sociale *(4 grilles sur 12)***
 > - [ ] **61. Identification des symptômes *(3 grilles sur 12)***
 > - [ ] **62. Début et évolution des symptômes *(1 grille sur 12)***
-> - [ ] **63. Caractère de la douleur *(3 grilles sur 12)***
-> - [ ] **64. Douleur liée à la respiration *(3 grilles sur 12)***
-> - [ ] **65. Facteurs modulateurs *(3 grilles sur 12)***
+> - [ ] **63. Intensité de la douleur *(3 grilles sur 12)***
+> - [ ] **64. Caractère de la douleur *(3 grilles sur 12)***
+> - [ ] **65. Douleur liée à la respiration *(3 grilles sur 12)***
+> - [ ] **66. Irradiation de la douleur *(3 grilles sur 12)***
+> - [ ] **67. Facteurs modulateurs *(3 grilles sur 12)***
 > 	- [ ] Facteur atténuant *(Péricardite / Myopéricardite)*
 > 	- [ ] Facteur aggravant *(Péricardite / Myopéricardite)*
-> - [ ] **66. Traumatisme thoracique *(3 grilles sur 12)***
-> - [ ] **67. Facteurs de risque cardiovasculaire *(4 grilles sur 12)***
+> - [ ] **68. Traumatisme thoracique *(3 grilles sur 12)***
+> - [ ] **69. Facteurs de risque cardiovasculaire *(4 grilles sur 12)***
 > 	- [ ] Hypertension *(2 grilles sur 12)*
 > 	- [ ] Diabète *(2 grilles sur 12)*
 > 	- [ ] Dyslipidémie *(3 grilles sur 12)*
@@ -270,79 +265,87 @@ cssclasses:
 > 	- [ ] Poids/IMC *(1 grille sur 12)*
 > 	- [ ] Médicaments actuels *(1 grille sur 12)*
 > 	- [ ] Alcool *(1 grille sur 12)*
-> - [ ] **68. Signes généraux *(3 grilles sur 12)***
-> - [ ] **69. Début et évolution *(1 grille sur 12)***
-> - [ ] **70. Événement déclenchant *(1 grille sur 12)***
-> - [ ] **71. Antécédents cardiaques *(1 grille sur 12)***
-> - [ ] **72. Asthme *(1 grille sur 12)***
-> - [ ] **73. Antécédents de TVP/EP *(1 grille sur 12)***
-> - [ ] **74. Durée des symptômes *(Reflux gastro-œsophagien)***
-> - [ ] **75. Facteurs déclenchants et modulateurs *(Reflux gastro-œsophagien)***
-> - [ ] **76. Lien avec l'effort physique *(Reflux gastro-œsophagien)***
-> - [ ] **77. Raison de la visite *(Péricardite / Myopéricardite)***
+> - [ ] **70. Signes généraux *(3 grilles sur 12)***
+> - [ ] **71. Début et évolution *(1 grille sur 12)***
+> - [ ] **72. Événement déclenchant *(1 grille sur 12)***
+> - [ ] **73. Antécédents cardiaques *(1 grille sur 12)***
+> - [ ] **74. Asthme *(1 grille sur 12)***
+> - [ ] **75. Antécédents de TVP/EP *(1 grille sur 12)***
+> - [ ] **76. Durée des symptômes *(Reflux gastro-œsophagien)***
+> - [ ] **77. Facteurs déclenchants et modulateurs *(Reflux gastro-œsophagien)***
+> - [ ] **78. Lien avec l'effort physique *(Reflux gastro-œsophagien)***
+> - [ ] **79. Raison de la visite *(Péricardite / Myopéricardite)***
 > 	- [ ] Douleur à la poitrine
-> - [ ] **78. Voyages récents *(Péricardite / Myopéricardite)***
+> - [ ] **80. Circonstances déclenchantes *(2 grilles sur 12)***
+> 	- [ ] Circonstances *(Péricardite / Myopéricardite)*
+> 	- [ ] Effort physique *(1 grille sur 12)*
+> 	- [ ] Stress émotionnel *(1 grille sur 12)*
+> 	- [ ] Froid *(1 grille sur 12)*
+> 	- [ ] Repas copieux *(1 grille sur 12)*
+> 	- [ ] Jamais au repos *(1 grille sur 12)*
+> 	- [ ] Pas la nuit *(1 grille sur 12)*
+> - [ ] **81. Voyages récents *(Péricardite / Myopéricardite)***
 > 	- [ ] Voyages récents
-> - [ ] **79. Douleur thoracique - évolution temporelle *(1 grille sur 12)***
+> - [ ] **82. Douleur thoracique - évolution temporelle *(1 grille sur 12)***
 > 	- [ ] Chronologie
 > 	- [ ] Évolution
-> - [ ] **80. Antécédents et comorbidités *(1 grille sur 12)***
+> - [ ] **83. Antécédents et comorbidités *(1 grille sur 12)***
 > 	- [ ] Maladies
 > 	- [ ] Hospitalisations
 > 	- [ ] Médicaments actuels
 > 	- [ ] Allergies
-> - [ ] **81. Facteurs de risque *(1 grille sur 12)***
+> - [ ] **84. Facteurs de risque *(1 grille sur 12)***
 > 	- [ ] Tabagisme
 > 	- [ ] Voyages récents
 > 	- [ ] Chirurgie/immobilisation récente
 > 	- [ ] Médicaments actuels
 > 	- [ ] Antécédents d'embolie pulmonaire/angine de poitrine/AVC
-> - [ ] **82. Représentation de la maladie *(1 grille sur 12)***
+> - [ ] **85. Représentation de la maladie *(1 grille sur 12)***
 > 	- [ ] Peur d'un cancer pulmonaire comme son mari
-> - [ ] **83. Évolution dans le temps *(1 grille sur 12)***
+> - [ ] **86. Évolution dans le temps *(1 grille sur 12)***
 > 	- [ ] Début
 > 	- [ ] Fréquence croissante
 > 	- [ ] Seuil d'effort diminué
 > 	- [ ] Caractéristiques stables
-> - [ ] **84. Classification CCS de l'angor *(1 grille sur 12)***
+> - [ ] **87. Classification CCS de l'angor *(1 grille sur 12)***
 > 	- [ ] Classe I: Activités quotidiennes normales
 > 	- [ ] Classe II: Limitation légère
 > 	- [ ] Classe III: Limitation marquée
 > 	- [ ] Classe IV: Angor au moindre effort ou repos
-> - [ ] **85. Antécédents et traitements *(1 grille sur 12)***
+> - [ ] **88. Antécédents et traitements *(1 grille sur 12)***
 > 	- [ ] Cholestérol élevé
 > 	- [ ] Automédication aspirine
-> - [ ] **86. Facteurs déclenchants et circonstances d'apparition *(1 grille sur 12)***
+> - [ ] **89. Facteurs déclenchants et circonstances d'apparition *(1 grille sur 12)***
 > 	- [ ] Facteur déclenchant 1er épisode
 > 	- [ ] Facteur déclenchant 2ème épisode
 > 	- [ ] Relation à l'effort
 > 	- [ ] Facteurs soulageants
 > 	- [ ] Évolution des crises
-> - [ ] **87. Symptômes associés et recherche d'insuffisance cardiaque *(1 grille sur 12)***
+> - [ ] **90. Symptômes associés et recherche d'insuffisance cardiaque *(1 grille sur 12)***
 > 	- [ ] Dyspnée d'effort
 > 	- [ ] Dyspnée à la fin des escaliers
 > 	- [ ] Orthopnée
 > 	- [ ] Dyspnée paroxystique nocturne
 > 	- [ ] Œdèmes membres inférieurs
 > 	- [ ] Palpitations
-> - [ ] **88. Classification de la sévérité (classes d'angine) *(1 grille sur 12)***
+> - [ ] **91. Classification de la sévérité (classes d'angine) *(1 grille sur 12)***
 > 	- [ ] Impact fonctionnel
 > 	- [ ] Limitation des activités
 > 	- [ ] Angor au repos
 > 	- [ ] Classification probable
-> - [ ] **89. Antécédents personnels cardiovasculaires *(1 grille sur 12)***
+> - [ ] **92. Antécédents personnels cardiovasculaires *(1 grille sur 12)***
 > 	- [ ] Diabète
 > 	- [ ] Hypertension artérielle
 > 	- [ ] Hypercholestérolémie
 > 	- [ ] Affections cardiaques
 > 	- [ ] Hospitalisations
-> - [ ] **90. Antécédents familiaux cardiovasculaires *(1 grille sur 12)***
+> - [ ] **93. Antécédents familiaux cardiovasculaires *(1 grille sur 12)***
 > 	- [ ] Mère
 > 	- [ ] Père
 > 	- [ ] Frère
 > 	- [ ] Oncle maternel
 > 	- [ ] Recherche mort subite
-> - [ ] **91. Anamnèse socioprofessionnelle et impact *(1 grille sur 12)***
+> - [ ] **94. Anamnèse socioprofessionnelle et impact *(1 grille sur 12)***
 > 	- [ ] Profession
 > 	- [ ] Entourage familial
 > 	- [ ] Impact sur activités
@@ -355,9 +358,9 @@ cssclasses:
 > - [ ] **2. Examen du cou *(3 grilles sur 12)***
 > 	- [ ] Évaluation de la distension jugulaire
 > 	- [ ] Auscultation des artères carotides *(Infarctus du myocarde / SCA)*
-> - [ ] **3. Examen vasculaire périphérique *(7 grilles sur 12)***
+> - [ ] **3. Examen cardiovasculaire *(4 grilles sur 12)***
 > 	- [ ] Palpation du pouls radial *(3 grilles sur 12)*
-> 	- [ ] Auscultation cardiaque *(4 grilles sur 12)*
+> 	- [ ] Auscultation cardiaque
 > 	- [ ] Inspection du thorax *(Infarctus du myocarde / SCA)*
 > 	- [ ] Palpation du thorax *(Infarctus du myocarde / SCA)*
 > 	- [ ] Palpation du choc de pointe *(Infarctus du myocarde / SCA · Péricardite / Myopéricardite)*
@@ -368,16 +371,6 @@ cssclasses:
 > 	- [ ] Observation d'une turgescence jugulaire *(Péricardite / Myopéricardite)*
 > 	- [ ] Recherche d'œdème *(Péricardite / Myopéricardite)*
 > 	- [ ] Recherche d'un reflux hépato-jugulaire *(Péricardite / Myopéricardite)*
-> 	- [ ] Pouls périphériques aux 4 extrémités *(1 grille sur 12)*
-> 	- [ ] Temps de recoloration des extrémités *(1 grille sur 12)*
-> 	- [ ] Recherche de souffle carotidien *(1 grille sur 12)*
-> 	- [ ] Recherche de souffles fémoraux *(1 grille sur 12)*
-> 	- [ ] Recherche de souffle abdominal *(1 grille sur 12)*
-> 	- [ ] Pouls artériels *(1 grille sur 12)*
-> 	- [ ] Choc de pointe *(1 grille sur 12)*
-> 	- [ ] Aire précordiale *(1 grille sur 12)*
-> 	- [ ] 2ème espace intercostal droit *(1 grille sur 12)*
-> 	- [ ] Creux épigastrique *(1 grille sur 12)*
 > - [ ] **4. Examen thoracique *(3 grilles sur 12)***
 > 	- [ ] Inspection du thorax *(2 grilles sur 12)*
 > 	- [ ] Palpation du thorax *(2 grilles sur 12)*
@@ -460,26 +453,32 @@ cssclasses:
 > 	- [ ] Asymétrie thoracique
 > 	- [ ] Diminution de l'ampliation thoracique du côté atteint
 > 	- [ ] Déviation trachéale (si pneumothorax sous tension)
-> - [ ] **33. Examen abdominal *(Reflux gastro-œsophagien)***
-> - [ ] **34. Recherche de signes d'alarme *(Reflux gastro-œsophagien)***
+> - [ ] **33. Examen vasculaire périphérique *(2 grilles sur 12)***
+> 	- [ ] Pouls périphériques aux 4 extrémités *(1 grille sur 12)*
+> 	- [ ] Temps de recoloration des extrémités *(1 grille sur 12)*
+> 	- [ ] Recherche de souffle carotidien *(1 grille sur 12)*
+> 	- [ ] Recherche de souffles fémoraux *(1 grille sur 12)*
+> 	- [ ] Recherche de souffle abdominal *(1 grille sur 12)*
+> - [ ] **34. Examen abdominal *(Reflux gastro-œsophagien)***
+> - [ ] **35. Recherche de signes d'alarme *(Reflux gastro-œsophagien)***
 > 	- [ ] Dysphagie
 > 	- [ ] Amaigrissement
 > 	- [ ] Anémie
 > 	- [ ] Hémorragie digestive
-> - [ ] **35. Désinfection des mains *(Péricardite / Myopéricardite)***
-> - [ ] **36. Examen pulmonaire *(Péricardite / Myopéricardite)***
+> - [ ] **36. Désinfection des mains *(Péricardite / Myopéricardite)***
+> - [ ] **37. Examen pulmonaire *(Péricardite / Myopéricardite)***
 > 	- [ ] Auscultation plages antérieures, postérieures et latérales
 > 	- [ ] Percussion
-> - [ ] **37. Position du patient pendant l'examen *(Péricardite / Myopéricardite)***
+> - [ ] **38. Position du patient pendant l'examen *(Péricardite / Myopéricardite)***
 > 	- [ ] A fait coucher le patient à un moment du status
-> - [ ] **38. Examen pulmonaire - inspection et percussion *(1 grille sur 12)***
+> - [ ] **39. Examen pulmonaire - inspection et percussion *(1 grille sur 12)***
 > 	- [ ] Percussion
 > 	- [ ] Ampliation thoracique
-> - [ ] **39. Examen pulmonaire - auscultation *(1 grille sur 12)***
+> - [ ] **40. Examen pulmonaire - auscultation *(1 grille sur 12)***
 > 	- [ ] Plages postérieures (min 4)
 > 	- [ ] Plages latérales des deux côtés
 > 	- [ ] Réalise l'examen en comparant systématiquement les deux côtés
-> - [ ] **40. Recherche de signes d'insuffisance cardiaque *(3 grilles sur 12)***
+> - [ ] **41. Recherche de signes d'insuffisance cardiaque *(3 grilles sur 12)***
 > 	- [ ] Œdèmes des membres inférieurs (signe du godet) *(1 grille sur 12)*
 > 	- [ ] Turgescence jugulaire *(2 grilles sur 12)*
 > 	- [ ] Reflux hépato-jugulaire
@@ -488,27 +487,33 @@ cssclasses:
 > 	- [ ] Pas d'ascite *(1 grille sur 12)*
 > 	- [ ] Œdèmes prétibiaux *(1 grille sur 12)*
 > 	- [ ] Auscultation pulmonaire *(1 grille sur 12)*
-> - [ ] **41. Auscultation pulmonaire *(1 grille sur 12)***
+> - [ ] **42. Auscultation pulmonaire *(1 grille sur 12)***
 > 	- [ ] Pas de râles
 > 	- [ ] Pas de sibilants
 > 	- [ ] Symétrique bilatéralement
-> - [ ] **42. Signes vitaux et mesures anthropométriques *(1 grille sur 12)***
+> - [ ] **43. Signes vitaux et mesures anthropométriques *(1 grille sur 12)***
 > 	- [ ] Fréquence cardiaque
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Poids et taille
-> - [ ] **43. Inspection générale et recherche de signes cardiovasculaires *(1 grille sur 12)***
+> - [ ] **44. Inspection générale et recherche de signes cardiovasculaires *(1 grille sur 12)***
 > 	- [ ] Cyanose centrale
 > 	- [ ] Cyanose périphérique
 > 	- [ ] Signes cutanés
 > 	- [ ] Inspection thoracique
 > 	- [ ] Température des extrémités
-> - [ ] **44. Évaluation du pouls veineux jugulaire *(1 grille sur 12)***
+> - [ ] **45. Évaluation du pouls veineux jugulaire *(1 grille sur 12)***
 > 	- [ ] Positionnement du patient
 > 	- [ ] Respiration par la bouche
 > 	- [ ] Niveau du collapsus veineux
 > 	- [ ] Réflux hépato-jugulaire
-> - [ ] **45. Auscultation des carotides *(1 grille sur 12)***
+> - [ ] **46. Palpation cardiovasculaire *(1 grille sur 12)***
+> 	- [ ] Pouls artériels
+> 	- [ ] Choc de pointe
+> 	- [ ] Aire précordiale
+> 	- [ ] 2ème espace intercostal droit
+> 	- [ ] Creux épigastrique
+> - [ ] **47. Auscultation des carotides *(1 grille sur 12)***
 > 	- [ ] Auscultation bilatérale des carotides
 > 	- [ ] Recherche de souffles carotidiens
 > 	- [ ] Corrélation avec examen cardiaque
@@ -523,17 +528,17 @@ cssclasses:
 > - [ ] **2. Énonce le diagnostic de suspicion principal *(4 grilles sur 12)* — 4 diagnostics : *Contusion costale · Embolie pulmonaire · Pneumothorax · Reflux gastro-œsophagien***
 
 > [!success] 💊 Management — si Angor stable / Maladie coronarienne
-> - [ ] **1. Examens complémentaires demandés *(1 grille sur 2)***
-> 	- [ ] Échocardiographie
+> - [ ] **1. Diagnostics différentiels *(1 grille sur 2)***
+> - [ ] **2. Examens complémentaires demandés *(1 grille sur 2)***
 > 	- [ ] ECG de repos 12 dérivations
 > 	- [ ] Test d'effort sur tapis ou vélo
+> 	- [ ] Échocardiographie de repos
 > 	- [ ] Score calcique coronaire si doute
 > 	- [ ] Coroscanner si test d'effort non concluant
 > 	- [ ] Coronarographie si test positif
 > 	- [ ] Bilan lipidique complet
 > 	- [ ] Glycémie à jeun, HbA1c
 > 	- [ ] Créatinine, microalbuminurie
-> - [ ] **2. Diagnostics différentiels *(1 grille sur 2)***
 > - [ ] **3. Stratification du risque cardiovasculaire**
 > 	- [ ] Score de risque SCORE2 ou Framingham *(1 grille sur 2)*
 > 	- [ ] Évaluation du risque à 10 ans
@@ -573,7 +578,7 @@ cssclasses:
 > 	- [ ] ECG de repos 12 dérivations
 > 	- [ ] Test d'effort ou imagerie de stress
 > 	- [ ] Bilan biologique
-> 	- [ ] Échocardiographie
+> 	- [ ] Échocardiographie de repos
 > 	- [ ] Radiographie thoracique
 > - [ ] **10. Initiation du traitement médical optimal *(1 grille sur 2)***
 > 	- [ ] Antiagrégation plaquettaire
@@ -595,11 +600,11 @@ cssclasses:
 > 	- [ ] Suivi cardiologique régulier programmé
 
 > [!success] 💊 Management — si Contusion costale
-> - [ ] **1. Nomme les examens diagnostiques**
-> - [ ] **2. Diagnostics différentiels**
+> - [ ] **1. Diagnostics différentiels**
 > 	- [ ] Contusion costale
 > 	- [ ] Fracture de côte
 > 	- [ ] Pneumothorax
+> - [ ] **2. Nomme les examens diagnostiques**
 > - [ ] **3. Thérapie**
 > 	- [ ] Analgésie adaptée (paracétamol, AINS, opioïdes si nécessaire)
 > 	- [ ] Immobilisation relative
@@ -618,7 +623,7 @@ cssclasses:
 
 > [!success] 💊 Management — si Embolie pulmonaire
 > - [ ] **1. Hypothèses diagnostiques *(1 grille sur 3)***
-> - [ ] **2. Examens complémentaires demandés *(1 grille sur 3)***
+> - [ ] **2. Examens complémentaires urgents *(1 grille sur 3)***
 > 	- [ ] ECG
 > 	- [ ] Troponine T, CK-MB
 > - [ ] **3. Examens d'imagerie *(1 grille sur 3)***
@@ -626,15 +631,9 @@ cssclasses:
 > 	- [ ] Échocardiographie transthoracique
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Angiographie pulmonaire par CT
-> - [ ] **4. Nomme les examens diagnostiques *(2 grilles sur 3)***
-> 	- [ ] FSC, VS, hémocultures *(1 grille sur 3)*
-> 	- [ ] Gaz du sang artériel *(1 grille sur 3)*
-> 	- [ ] ECG (éliminer SCA) *(1 grille sur 3)*
-> 	- [ ] Radiographie thoracique *(1 grille sur 3)*
-> 	- [ ] D-dimères (si probabilité faible/intermédiaire) *(1 grille sur 3)*
-> 	- [ ] Gazométrie artérielle *(1 grille sur 3)*
-> 	- [ ] FSC, CRP, troponine *(1 grille sur 3)*
-> 	- [ ] Angio-CT thoracique si D-dimères positifs ou haute probabilité *(1 grille sur 3)*
+> - [ ] **4. Examens biologiques *(1 grille sur 3)***
+> 	- [ ] FSC, VS, hémocultures
+> 	- [ ] Gaz du sang artériel
 > - [ ] **5. Conseil et soutien *(1 grille sur 3)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Réaction appropriée au défi concernant l'anxiété
@@ -650,27 +649,34 @@ cssclasses:
 > 	- [ ] Infarctus du myocarde *(1 grille sur 3)*
 > 	- [ ] Œdème aigu pulmonaire *(1 grille sur 3)*
 > 	- [ ] Pneumonie/bronchite *(1 grille sur 3)*
-> - [ ] **7. Prise en charge thérapeutique initiale *(1 grille sur 3)***
+> - [ ] **7. Nomme les examens diagnostiques *(1 grille sur 3)***
+> 	- [ ] ECG (éliminer SCA)
+> 	- [ ] Radiographie thoracique
+> 	- [ ] D-dimères (si probabilité faible/intermédiaire)
+> 	- [ ] Gazométrie artérielle
+> 	- [ ] FSC, CRP, troponine
+> 	- [ ] Angio-CT thoracique si D-dimères positifs ou haute probabilité
+> - [ ] **8. Prise en charge thérapeutique initiale *(1 grille sur 3)***
 > 	- [ ] Oxygénothérapie si SpO2 < 94%
 > 	- [ ] Analgésie adaptée
 > 	- [ ] Anticoagulation si forte suspicion d'EP
 > 	- [ ] Surveillance monitoring
-> - [ ] **8. Information et suivi *(1 grille sur 3)***
+> - [ ] **9. Information et suivi *(1 grille sur 3)***
 > 	- [ ] Expliquer la gravité potentielle
 > 	- [ ] Nécessité d'hospitalisation pour surveillance
 > 	- [ ] Importance de l'observance thérapeutique
 > 	- [ ] Contrôle INR si AVK, surveillance hémorragique
-> - [ ] **9. Prévention secondaire *(1 grille sur 3)***
+> - [ ] **10. Prévention secondaire *(1 grille sur 3)***
 > 	- [ ] Arrêt du tabac impératif
 > 	- [ ] Contrôle des facteurs de risque cardiovasculaire
 > 	- [ ] Éviter immobilisation prolongée
 > 	- [ ] Prophylaxie lors de voyages prolongés
-> - [ ] **10. Indique à la patiente qu'elle devrait se rendre rapidement à l'hôpital *(1 grille sur 3)***
-> - [ ] **11. Évoque le diagnostic d'embolie pulmonaire *(1 grille sur 3)***
+> - [ ] **11. Indique à la patiente qu'elle devrait se rendre rapidement à l'hôpital *(1 grille sur 3)***
+> - [ ] **12. Évoque le diagnostic d'embolie pulmonaire *(1 grille sur 3)***
 
 > [!success] 💊 Management — si Infarctus du myocarde / SCA
 > - [ ] **1. Hypothèses diagnostiques**
-> - [ ] **2. Examens complémentaires demandés**
+> - [ ] **2. Examens complémentaires urgents**
 > 	- [ ] ECG
 > 	- [ ] FSC
 > 	- [ ] Échocardiographie
@@ -689,56 +695,56 @@ cssclasses:
 > - [ ] **1. Hypothèses diagnostiques**
 > 	- [ ] Péricardite aiguë
 > - [ ] **2. Examens complémentaires demandés**
-> 	- [ ] ECG
 > 	- [ ] Laboratoires
+> 	- [ ] ECG
 > 	- [ ] Radiographie du thorax
 > - [ ] **3. Réponse à la demande d'hospitalisation**
 > 	- [ ] A répondu positivement à la demande du patient concernant l'hospitalisation
 
 > [!success] 💊 Management — si Pneumothorax
 > - [ ] **1. Hypothèses diagnostiques *(1 grille sur 3)***
-> - [ ] **2. Examens complémentaires demandés *(1 grille sur 3)***
+> - [ ] **2. Examens complémentaires urgents *(1 grille sur 3)***
 > 	- [ ] ECG
 > 	- [ ] Gaz du sang artériel, oxymétrie de pouls
 > - [ ] **3. Examens d'imagerie *(1 grille sur 3)***
 > 	- [ ] CT thoracique
-> - [ ] **4. Nomme les examens diagnostiques *(1 grille sur 3)***
-> 	- [ ] Gazométrie artérielle
-> 	- [ ] Radiographie thoracique (image typique de pneumothorax)
-> 	- [ ] Biologie : FSC, CRP, troponine, CK
-> 	- [ ] ECG
-> 	- [ ] US thoracique si doute diagnostique
-> - [ ] **5. Conseil et soutien *(1 grille sur 3)***
+> - [ ] **4. Conseil et soutien *(1 grille sur 3)***
 > 	- [ ] Conseil sur l'arrêt du tabac
 > 	- [ ] Rassurer la patiente sur la prise en charge
 > 	- [ ] Réaction appropriée au défi de la radiographie
 > 	- [ ] Expliquer les prochaines étapes du traitement
-> - [ ] **6. Laboratoire de base *(1 grille sur 3)***
-> - [ ] **7. Gazométrie artérielle *(1 grille sur 3)***
-> - [ ] **8. Radiographie thoracique (2 incidences) *(1 grille sur 3)***
-> - [ ] **9. Échographie thoracique *(1 grille sur 3)***
-> - [ ] **10. ECG *(1 grille sur 3)***
-> - [ ] **11. Diagnostic de travail *(1 grille sur 3)***
-> - [ ] **12. Oxygénothérapie *(1 grille sur 3)***
-> - [ ] **13. Drainage thoracique *(1 grille sur 3)***
-> - [ ] **14. Analgésie *(1 grille sur 3)***
-> - [ ] **15. Position semi-assise *(1 grille sur 3)***
-> - [ ] **16. Monitoring *(1 grille sur 3)***
-> - [ ] **17. Critères d'hospitalisation *(2 grilles sur 3)***
+> - [ ] **5. Laboratoire de base *(1 grille sur 3)***
+> - [ ] **6. Gazométrie artérielle *(1 grille sur 3)***
+> - [ ] **7. Radiographie thoracique (2 incidences) *(1 grille sur 3)***
+> - [ ] **8. Échographie thoracique *(1 grille sur 3)***
+> - [ ] **9. ECG *(1 grille sur 3)***
+> - [ ] **10. Diagnostic de travail *(1 grille sur 3)***
+> - [ ] **11. Oxygénothérapie *(1 grille sur 3)***
+> - [ ] **12. Drainage thoracique *(1 grille sur 3)***
+> - [ ] **13. Analgésie *(1 grille sur 3)***
+> - [ ] **14. Position semi-assise *(1 grille sur 3)***
+> - [ ] **15. Monitoring *(1 grille sur 3)***
+> - [ ] **16. Critères d'hospitalisation *(2 grilles sur 3)***
 > 	- [ ] Pneumothorax > 20% *(1 grille sur 3)*
 > 	- [ ] Pneumothorax symptomatique *(1 grille sur 3)*
 > 	- [ ] Pneumothorax bilatéral *(1 grille sur 3)*
 > 	- [ ] Pneumothorax sous tension *(1 grille sur 3)*
 > 	- [ ] Comorbidités pulmonaires *(1 grille sur 3)*
-> - [ ] **18. Arrêt du tabac *(1 grille sur 3)***
-> - [ ] **19. Radiographie de contrôle *(1 grille sur 3)***
-> - [ ] **20. Prophylaxie des récidives *(1 grille sur 3)***
-> - [ ] **21. Diagnostics différentiels *(1 grille sur 3)***
+> - [ ] **17. Arrêt du tabac *(1 grille sur 3)***
+> - [ ] **18. Radiographie de contrôle *(1 grille sur 3)***
+> - [ ] **19. Prophylaxie des récidives *(1 grille sur 3)***
+> - [ ] **20. Diagnostics différentiels *(1 grille sur 3)***
 > 	- [ ] Embolie pulmonaire
 > 	- [ ] Douleur musculosquelettique
 > 	- [ ] Pneumothorax spontané primaire
 > 	- [ ] Crise d'asthme
 > 	- [ ] Cardiomyopathie/myocardite
+> - [ ] **21. Nomme les examens diagnostiques *(1 grille sur 3)***
+> 	- [ ] Gazométrie artérielle
+> 	- [ ] Radiographie thoracique (image typique de pneumothorax)
+> 	- [ ] Biologie : FSC, CRP, troponine, CK
+> 	- [ ] ECG
+> 	- [ ] US thoracique si doute diagnostique
 > - [ ] **22. Prise en charge thérapeutique initiale *(1 grille sur 3)***
 > 	- [ ] Analgésie adaptée
 > 	- [ ] Oxygénothérapie haut débit
@@ -752,17 +758,17 @@ cssclasses:
 > 	- [ ] Signes d'alarme nécessitant une reconsultation urgente
 
 > [!success] 💊 Management — si Reflux gastro-œsophagien
-> - [ ] **1. Nomme les examens diagnostiques**
+> - [ ] **1. Diagnostics différentiels**
+> 	- [ ] Œsophagite peptique
+> 	- [ ] Hernie hiatale
+> 	- [ ] Angor stable
+> 	- [ ] Pathologie œsophagienne (sténose, cancer)
+> - [ ] **2. Nomme les examens diagnostiques**
 > 	- [ ] Radiographie thoracique
 > 	- [ ] Biologie : FSC, CRP, troponine, CK
 > 	- [ ] ECG (éliminer cause cardiaque)
 > 	- [ ] PH-métrie des 24 heures
 > 	- [ ] Endoscopie digestive haute (si signes d'alarme ou échec du traitement)
-> - [ ] **2. Diagnostics différentiels**
-> 	- [ ] Œsophagite peptique
-> 	- [ ] Hernie hiatale
-> 	- [ ] Angor stable
-> 	- [ ] Pathologie œsophagienne (sténose, cancer)
 > - [ ] **3. Prise en charge thérapeutique initiale**
 > 	- [ ] Mesures hygiéno-diététiques
 > 	- [ ] Inhibiteurs de la pompe à protons (IPP)

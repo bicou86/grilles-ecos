@@ -120,3 +120,64 @@ cssclasses:
 > 	- [ ] Articulations : rougeur, chaleur, épanchement, mobilisation douloureuse —
 >         une articulation prothésée et fébrile est une urgence 🚩
 > 	- [ ] Mollets : douleur, œdème d'un seul côté
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant toute fièvre**
+> 	- [ ] FSC avec formule : hyperleucocytose à neutrophiles d'une infection bactérienne —
+>         chez le patient sous chimiothérapie, c'est le compte des neutrophiles qui décide,
+>         moins de 0,5 G/L fait la neutropénie fébrile 🚩, résultat à obtenir sans délai
+> 	- [ ] CRP et VS, procalcitonine si le doute bactérien persiste : CRP > 100 mg/L et
+>         PCT > 0,5 µg/L orientent vers une infection bactérienne — mais une CRP normale dans
+>         les 12 premières heures n'écarte rien, elle met du temps à monter
+> 	- [ ] Chimie : créatinine et urée, électrolytes, tests hépatiques — la fonction rénale se
+>         connaît avant tout produit de contraste et avant d'adapter la dose d'antibiotique
+> 	- [ ] Lactate devant un qSOFA positif, des marbrures ou une hypotension : au-dessus de
+>         2 mmol/L il signe l'hypoperfusion et fait basculer l'infection dans le sepsis
+> 	- [ ] Bandelette urinaire, complétée du sédiment : nitrites, leucocytes — à faire même
+>         sans plainte urinaire, c'est le foyer le plus souvent retrouvé chez le fébrile
+> 	- [ ] Radiographie thoracique face et profil : foyer alvéolaire, épanchement — normale,
+>         elle n'exclut ni une pneumonie débutante ni un foyer rétrocardiaque
+> 	- [ ] ECG : un bloc auriculo-ventriculaire nouveau chez un fébrile fait craindre un abcès
+>         périvalvulaire ; sert aussi de tracé de référence avant un antibiotique qui allonge le QT
+> - [ ] **2. Prélèvements microbiologiques — ce qui ne se rattrape plus après la première dose**
+> 	- [ ] Hémocultures : 3 paires sur 24 h, 8 à 10 mL par flacon, sur deux sites de ponction
+>         différents — **avant** la première dose d'antibiotique, qui les stérilise ; la
+>         bactériémie étant continue, inutile d'attendre le pic fébrile ou le frisson, les
+>         trois paires se prélèvent d'affilée
+> 	- [ ] Uroculture sur urines du milieu du jet, avant l'antibiotique ; chez le porteur de
+>         sonde, sur une sonde fraîchement changée, jamais dans le sac collecteur
+> 	- [ ] Sérologies ciblées (Coxiella, Bartonella) quand la suspicion d'endocardite tient et
+>         que les hémocultures restent négatives — un antibiotique déjà reçu est la première
+>         cause de ce silence
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] Brûlures mictionnelles, douleur lombaire, Giordano positif : échographie des voies
+>         urinaires si la fièvre persiste au-delà de 48 à 72 h d'antibiotique, si la douleur
+>         résiste ou sur rein unique — elle cherche l'obstacle et la pyonéphrose, qui se
+>         drainent et ne guérissent pas sous antibiotique seul
+> 	- [ ] Fièvre après une chirurgie abdominale, défense ou détente, drain devenu trouble :
+>         CT abdomino-pelvien avec produit de contraste 🚩 et laboratoire avec lactate — la
+>         fuite anastomotique se voit au scanner, la biologie ne la dit pas
+> 	- [ ] Souffle nouveau ou modifié, soins dentaires récents, toxicomanie intraveineuse,
+>         prothèse valvulaire : échocardiographie transthoracique d'abord, transœsophagienne
+>         si la suspicion persiste — une ETT normale n'exclut rien (sensibilité 60 à 70 %) ;
+>         le diagnostic se pose sur les critères de Duke, hémocultures comprises
+> 	- [ ] Céphalée, photophobie, raideur de nuque, confusion : ponction lombaire sans délai 🚩,
+>         après les hémocultures — le CT cérébral ne la précède qu'en cas de focalisation, de
+>         crise convulsive ou de trouble de la vigilance, et ne retarde jamais l'antibiotique
+> 	- [ ] Toux, expectorations, dyspnée, foyer auscultatoire : CT thoracique si la radiographie
+>         est normale et que la suspicion tient ; CT thoraco-abdominal et IRM cérébrale devant
+>         des emboles septiques ou un signe neurologique focal
+> 	- [ ] Articulation chaude, gonflée, impotente — a fortiori prothésée 🚩 : ponction
+>         articulaire avant toute antibiothérapie, avec cytologie, Gram et culture
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Test de grossesse chez toute femme en âge de procréer, avant l'imagerie irradiante
+>         et avant l'antibiotique
+> 	- [ ] Glycémie capillaire devant une confusion ou une somnolence
+> 	- [ ] Sérologie VIH, avec l'accord du patient, devant une fièvre inexpliquée, une
+>         toxicomanie intraveineuse ou une immunodépression sans cause connue
+> 	- [ ] Chez le nourrisson, après une première pyélonéphrite : échographie des voies
+>         urinaires, puis à distance cystographie mictionnelle (MCUG) et scintigraphie au DMSA —
+>         reflux vésico-urétéral, cicatrices rénales
+> 	- [ ] Fièvre > 38,3 °C depuis plus de 3 semaines avec un bilan négatif : c'est une fièvre
+>         d'origine indéterminée — on ne répète pas le même bilan, on le réoriente (sérologies,
+>         imagerie en coupes) ; 30 % restent sans diagnostic

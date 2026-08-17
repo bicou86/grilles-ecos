@@ -135,3 +135,51 @@ cssclasses:
 > 	- [ ] Paralysie faciale ou tout déficit neurologique focal
 > 	- [ ] Otorrhée, otorragie, ou otalgie fébrile avec douleur mastoïdienne
 > 	- [ ] Céphalée inhabituelle
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant tout acouphène**
+> 	- [ ] **Audiométrie tonale et vocale**, aux deux oreilles : confirme et
+>         chiffre l'hypoacousie et sépare transmission et perception — c'est
+>         elle qui commande tous les examens suivants
+> 	- [ ] **Tympanométrie** : état de l'oreille moyenne — épanchement,
+>         dysfonction tubaire, courbe plate ou peu compliante (blocage
+>         ossiculaire, otospongiose)
+> 	- [ ] **Acouphénométrie** : hauteur, intensité et seuil de masquage — elle
+>         met un chiffre sur un symptôme que personne d'autre n'entend
+> 	- [ ] **Laboratoire** : FSC (anémie), TSH ± T4 libre (dysthyroïdie),
+>         glycémie (diabète)
+> 	- [ ] **Tension artérielle** : une mesure isolée ne tranche pas — la
+>         répéter, MAPA au besoin, puis bilan d'HTA et bilan cardiovasculaire si
+>         elle se confirme ; c'est la cause la plus banale et la plus
+>         corrigeable
+> - [ ] **2. Selon l'orientation clinique**
+> 	- [ ] 🚩 **Acouphène pulsatile, ou souffle ausculté au cou, en
+>         péri-auriculaire ou sur l'orbite** : imagerie vasculaire — angio-IRM /
+>         ARM cérébrale et des vaisseaux du cou, angiographie si la suspicion
+>         persiste (malformation artério-veineuse, fistule durale)
+> 	- [ ] **Acouphène unilatéral, ou surdité de perception asymétrique** : IRM
+>         cérébrale injectée avec séquences du rocher, pour écarter un neurinome
+>         de l'acoustique ; les potentiels évoqués auditifs explorent la voie
+>         rétrocochléaire mais ne remplacent pas l'IRM
+> 	- [ ] 🚩 **Baisse d'audition d'installation brutale** : audiométrie le jour
+>         même — la surdité brusque est un diagnostic d'exclusion qui se joue en
+>         heures, elle n'attend pas le reste du bilan
+> 	- [ ] **Vertiges rotatoires et plénitude auriculaire fluctuants** :
+>         audiométrie répétée, si possible en crise, et vidéonystagmographie
+>         (maladie de Ménière) ; IRM pour écarter une cause rétrocochléaire
+> 	- [ ] **Surdité de transmission à tympan normal, otorrhée chronique fétide,
+>         ou acouphène apparu après un traumatisme crânien** : **CT des rochers**
+>         — otospongiose, cholestéatome et ses complications (mastoïdite,
+>         labyrinthite), fracture du rocher
+> 	- [ ] **Exposition à des ototoxiques** (aminosides, sels de platine,
+>         diurétiques de l'anse) : audiométrie de référence et dosage
+>         plasmatique du médicament quand il est dosable
+> - [ ] **3. À ne pas oublier**
+> 	- [ ] L'otoscopie a déjà tranché les deux causes les plus fréquentes —
+>         bouchon de cérumen, otite : aucune imagerie ne les cherchera à sa
+>         place
+> 	- [ ] Deux tympans normaux, un Weber centré et un Rinne normal n'écartent
+>         rien : ils orientent vers un acouphène subjectif et rendent
+>         l'audiométrie plus nécessaire, pas moins
+> 	- [ ] Une audition normale n'écarte pas un neurinome : c'est l'unilatéralité
+>         de l'acouphène qui indique l'IRM, pas le seuil audiométrique

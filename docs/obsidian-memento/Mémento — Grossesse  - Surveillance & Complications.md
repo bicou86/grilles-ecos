@@ -115,3 +115,34 @@ cssclasses:
 > 	- [ ] Contractions régulières avec col raccourci ou dilaté avant 37 SA : menace d'accouchement prématuré
 > 	- [ ] Douleur pelvienne latéralisée avec défense et instabilité au 1er trimestre : grossesse extra-utérine rompue, quel que soit le volume du saignement
 > 	- [ ] Dyspnée ou douleur thoracique d'apparition brutale : la grossesse et le post-partum sont le terrain de l'embolie pulmonaire
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan d'entrée, demandé à la première consultation**
+> 	- [ ] Confirmation et datation : test de grossesse urinaire, β-hCG plasmatique au moindre doute ; c'est l'**échographie de datation à 11-14 SA** qui fixe le terme, et elle corrige la DDR dès que l'écart dépasse 5 jours
+> 	- [ ] FSC : anémie et plaquettes ; l'hémodilution de la grossesse abaisse l'hémoglobine sans carence — seule la ferritine sépare l'anémie dilutionnelle physiologique de la carence martiale, à compléter de B12 et folates si elle est franche
+> 	- [ ] Groupe sanguin, Rhésus et recherche d'agglutinines irrégulières, en deux déterminations : ce résultat commande l'immunoglobuline anti-D de 28 SA chez la femme Rh négatif — le demander tard, c'est la manquer, et toute métrorragie, amniocentèse ou traumatisme abdominal impose de recontrôler les RAI
+> 	- [ ] Sérologies infectieuses : VIH (après information et accord), syphilis, hépatites B et C
+> 	- [ ] Sérologies immunitaires : rubéole, toxoplasmose, varicelle, CMV — c'est le statut immunitaire qu'on cherche, pas une infection ; une toxoplasmose non immune se recontrôle en cours de grossesse, et c'est la séroconversion entre deux prélèvements, jamais un titre isolé, qui affirme l'infection
+> 	- [ ] Statut urinaire : bandelette à chaque consultation — protéinurie, nitrites, leucocytes, glucose, cétones — puis uriculture, la bactériurie asymptomatique se traitant en grossesse ; la glycosurie y est physiologique (débit de filtration glomérulaire augmenté) et ne dépiste pas le diabète gestationnel
+> - [ ] **2. Les examens datés du calendrier de suivi**
+> 	- [ ] Les trois échographies : datation 11-14 SA, morphologique 20-22 SA, croissance 30-32 SA — biométries et percentiles reportés sur les courbes, quantité de liquide amniotique, Doppler
+> 	- [ ] Dépistage prénatal, proposé et jamais imposé : clarté nucale et marqueurs sériques du test combiné à 11-14 SA, DPNI (ADN fœtal circulant, trisomies 13, 18, 21) — ce sont des dépistages, seul le caryotype conclut : choriocentèse 10-13 SA, amniocentèse 15-18 SA
+> 	- [ ] HGPO 75 g à 24-28 SA, systématique même sans facteur de risque : une seule valeur pathologique suffit — à jeun ≥ 5,1 · 1 h ≥ 10,0 · 2 h ≥ 8,5 mmol/L
+> 	- [ ] Frottis vaginal et anal pour le streptocoque B à 35-37 SA : il décide de l'antibioprophylaxie pendant le travail, pas d'un traitement le jour du résultat
+> 	- [ ] Cardiotocogramme dès 24 SA, sur indication : ligne de base 110-160/min, variabilité conservée, accélérations présentes, aucune décélération — c'est ce quatuor qu'on énonce pour dire qu'un tracé est rassurant
+> 	- [ ] Cytologie cervicale si elle n'est pas à jour : la grossesse ne la reporte pas
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] Saignement ou douleur pelvienne du 1er trimestre : β-hCG quantitative et échographie endovaginale — au-delà de 1500 UI/L (2000 selon le laboratoire) sans sac intra-utérin visible, c'est une grossesse extra-utérine jusqu'à preuve du contraire ; sous le seuil, c'est la cinétique à 48 h qui tranche — doublement = évolutive, plateau = extra-utérine, chute de plus de 50 % = fausse couche
+> 	- [ ] TA ≥ 140/90 avec céphalées, phosphènes, barre épigastrique ou œdèmes du visage : protéinurie chiffrée (≥ 300 mg/24 h, ou rapport protéines/créatinine ≥ 30 mg/mmol) puis bilan de pré-éclampsie — créatinine, urates, transaminases, plaquettes, crase ; thrombopénie, cytolyse et hémolyse font le HELLP
+> 	- [ ] Contractions régulières avant 37 SA : longueur du col à l'échographie endovaginale — sous 25 mm la menace est réelle — fibronectine fœtale, dont c'est la négativité qui rassure, et cardiotocogramme
+> 	- [ ] Écoulement liquidien franc et continu : test de rupture des membranes au spéculum (pH, cristallisation en feuille de fougère, PAMG-1/AmniSure ou IGFBP-1) ; une fois la rupture confirmée, chaque toucher vaginal ajoute du risque infectieux
+> 	- [ ] Fièvre, pertes ou lochies malodorantes, utérus douloureux : FSC, CRP, hémocultures **avant la première dose d'antibiotique**, prélèvement vaginal et uriculture ; en post-partum, l'échographie pelvienne cherche la rétention placentaire
+> 	- [ ] Saignement abondant avec tachycardie, hypotension ou pâleur : FSC, crase et fibrinogène, groupe et RAI si le résultat n'est pas déjà au dossier — ce sont les examens qu'on ne rattrape pas une fois au bloc
+> 	- [ ] Diminution des mouvements fœtaux, inquiétude maternelle, ou hauteur utérine décrochée de sa courbe : cardiotocogramme sans délai, puis échographie — biométries et percentiles, liquide amniotique, Doppler ombilical et utérin, et profil biophysique (score de Manning) si le tracé reste douteux
+> 	- [ ] 🚩 Prurit palmo-plantaire sans éruption, à recrudescence nocturne : acides biliaires totaux et transaminases — la cholestase gravidique se prouve au dosage, la peau ne montre que des lésions de grattage
+> 	- [ ] 🚩 Dyspnée, douleur thoracique ou mollet unilatéralement douloureux : échographie-doppler veineuse des membres inférieurs, puis angio-CT thoracique ou scintigraphie de ventilation-perfusion — les D-dimères s'élèvent physiologiquement en grossesse et n'écartent plus rien
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] La grossesse elle-même : chez toute femme en âge de procréer, le test de grossesse précède l'imagerie, la prescription et toute conclusion
+> 	- [ ] Aucune imagerie n'est interdite quand le pronostic vital maternel est en jeu : radiographie et angio-CT thoracique délivrent au fœtus des doses très inférieures au seuil tératogène — la peur du rayon fait plus de dégâts que le rayon
+> 	- [ ] Utérus dur et douloureux avec un saignement noirâtre peu abondant : le volume extériorisé sous-estime la perte, et une échographie normale n'exclut pas l'hématome rétroplacentaire — ce sont l'hémodynamique maternelle et le rythme cardiaque fœtal qui décident
+> 	- [ ] Un cardiotocogramme rassurant et une échographie normale ne valent que pour l'instant où on les a obtenus : devant une plainte qui persiste, on recontrôle plutôt qu'on ne conclut

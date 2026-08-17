@@ -165,3 +165,65 @@ cssclasses:
 >         attendre un rendez-vous
 > 	- [ ] Pâleur, tachycardie, hypotension chez une patiente qui saigne
 > 	- [ ] Masse pelvienne ou saignement après la ménopause
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le test de grossesse d'abord — il commande tout le reste**
+> 	- [ ] 🚩 Test de grossesse urinaire chez toute femme en âge de procréer, avant tout autre
+>         examen et avant tout traitement : il se positive dès 10-25 UI/L de β-hCG, et
+>         l'oublier est le piège éliminatoire de la station
+> 	- [ ] β-hCG plasmatique quantitative en urgence dès que le test urinaire est positif : seul
+>         le dosage chiffré ouvre la zone discriminatoire et la cinétique, le test qualitatif
+>         ne dit que oui ou non
+> 	- [ ] Zone discriminatoire, environ 1500-2000 UI/L selon le laboratoire : au-dessus de ce
+>         seuil, une grossesse intra-utérine évolutive doit être visible à l'échographie
+>         endovaginale — un utérus vide au-dessus du seuil est une grossesse extra-utérine
+>         jusqu'à preuve du contraire
+> 	- [ ] Sous le seuil avec un utérus vide, la grossesse est dite de localisation
+>         indéterminée : cinétique de la β-hCG à 48 h — doublement = grossesse évolutive,
+>         plateau ou faible montée = extra-utérine, chute de plus de 50 % = fausse couche
+> - [ ] **2. Le bilan de première intention, quelle que soit l'hypothèse**
+> 	- [ ] FSC et CRP : anémie devant des règles abondantes et une fatigue ; hyperleucocytose à
+>         polynucléose neutrophile et CRP élevée devant une fièvre — une hémoglobine normale à
+>         la consultation n'écarte pas un saignement en cours, c'est sa chute d'un contrôle à
+>         l'autre qui signe la déglobulisation
+> 	- [ ] Crase devant des règles abondantes ou un saignement important : c'est ce qui démasque
+>         un trouble de l'hémostase derrière des ménorragies anciennes
+> 	- [ ] Bandelette urinaire, complétée d'un ECBU si elle est positive : avec les signes
+>         vitaux et la β-hCG, elle forme le tri initial de toute douleur de la fosse iliaque
+>         chez la femme en âge de procréer
+> 	- [ ] Hémocultures, deux paires, devant une fièvre ou un sepsis — prélevées avant la
+>         première dose d'antibiotique, après quoi elles se négativent
+> - [ ] **3. Imagerie — l'échographie tranche, l'IRM précise**
+> 	- [ ] Échographie pelvienne par voie endovaginale : examen de première intention, non
+>         invasif et disponible tout de suite — elle vient après le test de grossesse, pas
+>         avant
+> 	- [ ] Ce qu'elle cherche, selon la piste : sac gestationnel intra-utérin ou vacuité
+>         utérine, masse annexielle, épanchement du cul-de-sac de Douglas, abcès tubo-ovarien,
+>         kyste, utérus myomateux
+> 	- [ ] 🚩 Une échographie sans image annexielle n'écarte pas une grossesse extra-utérine :
+>         elle n'est pas toujours visible au premier examen, et une échographie rassurante ne
+>         doit jamais faire relâcher la surveillance
+> 	- [ ] Doppler devant une suspicion de torsion d'annexe — un flux ovarien conservé ne
+>         l'écarte pas, et l'imagerie ne doit pas retarder l'avis chirurgical
+> 	- [ ] IRM pelvienne : plus précise que l'échographie, elle sépare fibrome et adénomyose et
+>         cherche l'endométriose profonde
+> 	- [ ] CT abdomino-pelvien quand l'échographie n'est pas concluante ou que le doute reste
+>         avec une cause digestive, appendicite en tête
+> - [ ] **4. Selon l'orientation clinique**
+> 	- [ ] Devant des leucorrhées purulentes, une fièvre, un partenaire récent ou une douleur
+>         vive à la mobilisation du col : prélèvements vaginaux et endocervicaux — PCR
+>         Chlamydia trachomatis et Neisseria gonorrhoeae, cultures aérobies et anaérobies,
+>         mycoplasmes ; ils se prennent spéculum en place, et avant l'antibiotique
+> 	- [ ] Dès qu'une IST est retenue, on dépiste les autres : sérologies VIH, syphilis,
+>         hépatites B et C
+> 	- [ ] Cytologie cervicale : dépistage du cancer du col, à faire à sa date même quand la
+>         consultation porte sur la douleur
+> 	- [ ] Devant une douleur cyclique avec dyspareunie profonde, dyschésie et infertilité :
+>         laparoscopie diagnostique avec biopsie quand l'IRM ne tranche pas — gold standard de
+>         l'endométriose, elle seule voit les lésions péritonéales qu'une imagerie normale
+>         n'exclut donc pas, et lève un doute persistant sur une infection génitale haute sévère
+> 	- [ ] Devant une infertilité — un an d'essais infructueux, six mois après 35 ans : bilan de
+>         couple avec spermogramme, réserve ovarienne (AMH) et hystérosalpingographie pour la
+>         perméabilité tubaire
+> 	- [ ] Après la ménopause, devant un saignement ou un épaississement de l'endomètre :
+>         biopsie endométriale

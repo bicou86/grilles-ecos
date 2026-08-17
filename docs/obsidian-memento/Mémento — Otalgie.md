@@ -132,3 +132,45 @@ cssclasses:
 > 	- [ ] Écoulement clair ou franchement sanglant après un traumatisme crânien
 > 	- [ ] Ces cinq signes ne se déduisent pas d'un examen « normal par ailleurs » : ils se
 >         cherchent un par un, avant de laisser repartir l'enfant
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention : aucun — le diagnostic est otoscopique**
+> 	- [ ] Devant une clinique claire — tympan bombé et hyperhémié, fièvre,
+>         rhinorrhée qui a précédé —, **aucun examen n'est nécessaire** : les deux
+>         grilles font de l'otoscopie le geste qui pose le diagnostic ; chacun des
+>         examens qui suivent est une porte que la clinique ouvre, pas la pièce
+>         d'un bilan
+> - [ ] **2. Ce que la clinique déclenche, examen par examen**
+> 	- [ ] **Doute sur l'aspect du tympan**, otoscopie qui n'a pas tranché :
+>         **tympanométrie** — elle objective l'épanchement rétro-tympanique que
+>         l'œil hésite à affirmer
+> 	- [ ] **Pharynx rouge, exsudat amygdalien** : **test rapide du streptocoque**
+>         — il cherche l'angine associée, il ne dit rien de l'oreille
+> 	- [ ] **Signes de gravité, état général altéré** : **bilan biologique** — FSC
+>         (hyperleucocytose) et CRP ; c'est le status qui l'indique, pas la fièvre
+>         à elle seule
+> 	- [ ] **Échec du traitement**, otorrhée qui persiste sous antibiotique :
+>         **prélèvement bactériologique de l'écoulement**, pour adapter à
+>         l'antibiogramme — recueilli après nettoyage du conduit, sinon il ramène
+>         la flore du méat
+> 	- [ ] **Hypoacousie associée, ou qui persiste après la guérison** :
+>         **audiométrie**
+> - [ ] **3. 🚩 Devant un signe d'alarme — l'imagerie, sans attendre**
+> 	- [ ] Tuméfaction et rougeur rétro-auriculaires, décollement du pavillon,
+>         ou écoulement fétide chronique : **CT du rocher** — mastoïdite,
+>         cholestéatome, otite externe nécrosante
+> 	- [ ] Raideur de nuque, céphalées, altération de la conscience : **CT
+>         cérébral puis ponction lombaire**, dans cet ordre — le scanner ne fait
+>         pas le diagnostic de méningite otogène, il autorise la ponction
+> 	- [ ] Écoulement clair ou franchement sanglant après un traumatisme
+>         crânien : **CT du rocher** — fracture du rocher, fuite de liquide
+>         céphalo-rachidien ; l'otoscopie seule ne les écarte pas
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] **Un tympan perforé rend la tympanométrie ininterprétable** : la courbe
+>         est plate quel que soit l'état de la caisse — devant une perforation vue
+>         à l'otoscope, l'examen n'ajoute rien
+> 	- [ ] Une audiométrie faite en pleine otite mesure l'épanchement, pas
+>         l'audition définitive : c'est le contrôle à distance, après cicatrisation,
+>         qui répond à la question des parents
+> 	- [ ] Aucun examen ne rattrape une otoscopie incomplète : bouchon de cérumen et
+>         corps étranger se voient dans le conduit, ou ne se voient nulle part

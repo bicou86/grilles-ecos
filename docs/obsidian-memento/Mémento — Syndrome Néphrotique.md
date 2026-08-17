@@ -137,3 +137,55 @@ cssclasses:
 >         malgré les œdèmes — un diurétique aggraverait la situation
 > 	- [ ] Abdomen distendu, tendu et douloureux avec fièvre chez un patient qui a de l'ascite
 > 	- [ ] Purpura infiltré extensif ou arthrite fébrile : la maladie causale est en poussée
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Ce qui affirme le syndrome — la bandelette d'abord, la tétrade ensuite**
+> 	- [ ] **Bandelette urinaire**, au lit du malade en une minute : protéinurie massive (+++ à ++++), sang —
+>         seul examen dont on n'attend pas le résultat, il oriente avant que le laboratoire ne réponde
+> 	- [ ] **Sédiment urinaire** : cylindres hyalins et graisseux ; hématies déformées et cylindres hématiques
+>         signent l'origine glomérulaire de la protéinurie
+> 	- [ ] **Quantifier la fuite** : protéinurie des 24 h, ou **rapport protéine/créatinine** sur échantillon
+>         qui l'estime aussi bien sans imposer le recueil — **> 3.5 g/24 h** définit le syndrome
+> 	- [ ] **Albuminémie et protidémie** : **hypoalbuminémie < 30 g/L**, deuxième pied de la tétrade — c'est
+>         aussi ce chiffre qui mesure le risque thrombotique
+> 	- [ ] **Bilan lipidique** : l'hyperlipidémie n'est pas un hasard, le foie répond à la chute de pression
+>         oncotique en fabriquant des lipoprotéines — quatrième pied de la tétrade avec les œdèmes
+> 	- [ ] **Créatinine, urée, DFG estimé et ionogramme** : fonction rénale de départ, natrémie souvent basse
+> 	- [ ] **FSC, VS et CRP** : anémie, cytopénies d'une maladie systémique, syndrome inflammatoire
+> - [ ] **2. Chercher la cause — chaque piste clinique appelle son dosage**
+> 	- [ ] Devant un lupus connu, des arthralgies, une éruption photosensible, des aphtes ou un purpura :
+>         **anticorps antinucléaires, anti-ADN natif, C3 et C4, anti-C1q** — un complément consommé avec des
+>         anti-ADN élevés signe la poussée rénale
+> 	- [ ] Devant une exposition, une origine ou un parcours à risque — ou simplement parce que rien n'est
+>         documenté : sérologies **hépatite B, hépatite C, VIH** et syphilis, le VIH après information du
+>         patient
+> 	- [ ] **Électrophorèse des protéines sériques**, complétée des **chaînes légères** sériques et urinaires
+>         après 50 ans : gammapathie monoclonale, et hypoprotidémie d'autre origine
+> 	- [ ] **TSH** : l'hypothyroïdie figure au différentiel des œdèmes et ne se récuse que par un dosage
+> 	- [ ] Devant une dyspnée, une orthopnée, une turgescence jugulaire ou des crépitants : **NT-proBNP et
+>         échocardiographie** — c'est leur normalité qui écarte l'origine cardiaque d'un œdème
+> 	- [ ] **Échographie rénale** : taille et différenciation des reins, obstacle, deux reins présents
+>         avant toute biopsie
+> - [ ] **3. La biopsie rénale — l'examen qui nomme la glomérulopathie**
+> 	- [ ] Chez l'adulte c'est la règle et non une option : elle seule nomme la lésion, et aucun
+>         immunosuppresseur ne se prescrit sans diagnostic histologique
+> 	- [ ] Sur la pièce : microscopie optique, **immunofluorescence** et microscopie électronique — ce sont
+>         les dépôts vus en immunofluorescence qui séparent une néphrite lupique d'une glomérulosclérose
+>         segmentaire et focale
+> 	- [ ] 🚩 Œdèmes et fatigue qui s'aggravent avec une créatinine qui monte sur quelques semaines :
+>         glomérulonéphrite rapidement progressive — la biopsie ne se discute plus, le pronostic rénal se
+>         joue en jours
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] **INR chez tout patient sous antivitamine K**, pour trois raisons qui se cumulent : le syndrome
+>         majore lui-même le risque thrombotique, l'antivitamine K circule liée à des protéines dont le taux
+>         s'effondre — l'anticoagulation se déséquilibre dans les deux sens —, et la biopsie exige une
+>         hémostase connue
+> 	- [ ] 🚩 Douleur lombaire brutale avec urines rouges : **doppler de la veine rénale** sans attendre ;
+>         mollet gonflé, dyspnée ou douleur thoracique : écho-doppler veineux des membres inférieurs,
+>         angio-CT thoracique — les anticoagulants naturels fuient avec l'albumine
+> 	- [ ] 🚩 Fièvre et douleur abdominale sur un abdomen d'ascite : **ponction d'ascite** avec cytologie,
+>         Gram et cultures, avant toute antibiothérapie
+> 	- [ ] 🚩 **Test de grossesse** chez une femme en âge de procréer : œdèmes et protéinurie, c'est aussi la
+>         définition de la pré-éclampsie
+> 	- [ ] Une bandelette faiblement positive n'écarte pas une protéinurie massive : elle ne détecte que
+>         l'albumine, pas les chaînes légères — c'est le rapport protéine/créatinine qui les rattrape

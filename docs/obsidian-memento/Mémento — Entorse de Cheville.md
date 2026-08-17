@@ -104,3 +104,27 @@ cssclasses:
 > 	- [ ] Loges de jambe : tension, douleur à l'étirement passif des orteils → syndrome des loges
 > 	- [ ] Examen sommaire des autres zones heurtées lors de la chute : genou, hanche, poignets, crâne
 > 	- [ ] Ne pas répéter les manœuvres douloureuses ; remettre le bandage ou annoncer qui le refera, puis rhabiller le patient
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. C'est la règle d'Ottawa qui décide de la radiographie, et elle s'énonce avant de la demander**
+> 	- [ ] **Radiographie de cheville** (face, profil, incidence de mortaise) si douleur de la zone malléolaire **et** au moins un critère : douleur osseuse du bord postérieur ou de la pointe d'une malléole sur les 6 cm distaux, ou incapacité de faire quatre pas — immédiatement après le traumatisme **et** à la consultation
+> 	- [ ] **Radiographie du pied** si douleur du médio-pied **et** au moins un critère : douleur osseuse de la base du 5e métatarsien ou du naviculaire, ou cette même incapacité de faire quatre pas
+> 	- [ ] C'est une règle d'**exclusion** : sensibilité 98-100 %, spécificité 40-50 % — elle évite 30 à 40 % des clichés sans manquer de fracture, mais un critère positif ne fait aucun diagnostic
+> 	- [ ] Non applicable avant 18 ans, ni en cas d'intoxication, de polytraumatisme, de déficit sensitif ou de traumatisme de plus de 10 jours
+> 	- [ ] **Ottawa négatif = pas d'imagerie**, et c'est une réponse à part entière, cotée comme telle : l'annoncer et la justifier vaut mieux qu'une radiographie de confort
+> - [ ] **2. Ce que les clichés doivent couvrir — et ce qu'ils ne couvriront pas**
+> 	- [ ] **Cheville et pied du côté douloureux sont deux demandes distinctes** : deux zones, deux critères, deux clichés — une douleur du médio-pied ne se lit pas sur une radiographie de cheville
+> 	- [ ] **Radiographie de la fibula jusqu'au col** dès que la palpation proximale réveille une douleur : la fracture de Maisonneuve siège très à distance, et une radiographie de cheville normale ne l'exclut pas
+> 	- [ ] Lire le niveau du trait par rapport à la syndesmose (Weber) : A sous la syndesmose, stable ; B au niveau, stabilité variable ; C au-dessus, syndesmose toujours lésée — c'est ce niveau qui sépare le plâtre de la chirurgie
+> 	- [ ] Clichés comparatifs du pied si le doute porte sur une lésion de Lisfranc : c'est l'écart entre 1er et 2e métatarsien qui se compare au côté sain
+> - [ ] **3. Radiographie normale et douleur qui persiste : le deuxième temps**
+> 	- [ ] **IRM du pied** : examen de référence de la **fracture de stress** — les radiographies restent normales les 2 à 3 premières semaines, le temps que la résorption ouvre le trait, si bien qu'un cliché normal précoce n'écarte rien
+> 	- [ ] Y penser d'emblée sur le terrain qui la fabrique : augmentation récente de la charge d'entraînement, restriction calorique, aménorrhée — la clinique décide de l'IRM, pas l'image de la clinique
+> 	- [ ] Scintigraphie osseuse quand l'IRM est contre-indiquée ou indisponible, et devant une douleur qui persiste au-delà de trois mois avec allodynie, œdème et troubles vasomoteurs — algodystrophie, dont le diagnostic reste clinique
+> 	- [ ] **Échographie pour les parties molles** : ligaments, tendons fibulaires, tendon d'Achille — elle ne cherche pas la fracture ; IRM ou échographie devant un doute diagnostique persistant ou des entorses à répétition
+> 	- [ ] CT pour les fractures complexes et le planning chirurgical ; clichés dynamiques en stress pour une instabilité chronique, à distance de l'épisode aigu
+> - [ ] **4. 🚩 Ce qui fait sortir de l'entorse et changer d'examen**
+> 	- [ ] Cheville chaude, rouge, fébrile : FSC, CRP et **ponction articulaire avant la première dose d'antibiotique** (Gram, culture, recherche de cristaux) — une entorse n'est ni fébrile ni chaude, et la goutte ne se tranche pas sur l'uricémie, souvent normale en crise
+> 	- [ ] Mollet douloureux et gonflé, surtout sous immobilisation : score de Wells, puis **écho-doppler veineux** — les D-dimères ne trient qu'en probabilité faible ; dyspnée ou douleur thoracique associées → angio-CT thoracique
+> 	- [ ] Douleur en étau disproportionnée, paresthésies, douleur à l'étirement passif des orteils, pied froid ou insensible : **aucun examen ne doit retarder l'avis chirurgical** — syndrome des loges et lésion vasculo-nerveuse sont des diagnostics cliniques, la mesure des pressions intra-loges ne sert qu'au doute
+> 	- [ ] 🚩 Chute précédée d'un malaise ou d'une syncope : ECG et glycémie capillaire — c'est la chute qu'on explore, pas seulement la cheville ; impact crânien avec perte de connaissance, vomissements répétés ou anticoagulant : CT cérébral

@@ -131,3 +131,61 @@ cssclasses:
 > 	- [ ] Auscultation pulmonaire antérieure et postérieure : sibilants
 > 	- [ ] Peau : lésions eczémateuses, dermatite atopique, dermographisme
 > 	- [ ] Signes vitaux, état général
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Devant tout œil rouge douloureux — d'abord le tonus, pas le laboratoire**
+> 	- [ ] **Chiffrer la pression intraoculaire** : la palpation bidigitale dépiste, elle
+>         ne mesure pas — **tonométrie de Goldmann** dès l'accès au spécialiste ; une
+>         pression normale écarte la fermeture aiguë de l'angle
+> 	- [ ] **Ni laboratoire ni imagerie en routine** : l'œil rouge se tranche au lit du
+>         malade — acuité chiffrée, tonus, fluorescéine à la lampe à fente. Aucun examen
+>         complémentaire ne rattrape une acuité visuelle non mesurée
+> - [ ] **2. Selon l'orientation clinique**
+> 	- [ ] 🚩 **Globe dur, semi-mydriase aréflexique, halos colorés, nausées —
+>         fermeture aiguë de l'angle**
+> 		- [ ] **Gonioscopie** : seul examen qui voit l'angle iridocornéen et affirme
+>             sa fermeture ; elle pose l'indication d'iridotomie et fait examiner
+>             **l'œil adelphe**, menacé du même mécanisme
+> 		- [ ] **Répéter le fond d'œil** : il est ininterprétable à travers une cornée
+>             œdématiée — on y revient une fois la pression baissée, pour juger
+>             l'excavation papillaire et la souffrance du nerf optique
+> 		- [ ] **Laboratoire de routine** — FSC, électrolytes, fonction rénale : il ne
+>             fait pas le diagnostic, il autorise l'acétazolamide et le mannitol
+>             (insuffisance rénale, hypokaliémie) et prépare le geste
+> 	- [ ] **Prurit bilatéral, papilles tarsales, terrain atopique — piste allergique**
+> 		- [ ] **Tests cutanés (prick tests)** et **IgE spécifiques** : ils nomment
+>             l'allergène, et c'est l'éviction qui en dépend — pas le traitement, qui
+>             se donne sans les attendre
+> 		- [ ] **Frottis conjonctival** à la recherche d'**éosinophiles**
+> 	- [ ] **Sécrétions purulentes, ou doute sur une conjonctivite infectieuse**
+> 		- [ ] **Prélèvement conjonctival pour bactériologie** — négatif, il conforte
+>             l'origine allergique
+> 		- [ ] **Recherche de Chlamydia** devant une conjonctivite traînante, des
+>             rapports non protégés ou un antécédent d'IST — et alors **proposer un
+>             dépistage IST complet** : l'œil n'est que la porte d'entrée
+> 	- [ ] **Brûlure, sable, gêne au vent et aux écrans — sécheresse oculaire**
+> 		- [ ] **Test de Schirmer** : il quantifie la sécrétion aqueuse et reste
+>             **souvent normal dans la sécheresse évaporative** par dysfonction des
+>             glandes de Meibom — c'est là le temps de rupture du film lacrymal qui
+>             est raccourci
+> 		- [ ] **Laboratoire seulement en cas de suspicion systémique** — xérostomie,
+>             arthralgies, sécheresse cutanée : VS, ANA, anti-SSA/SSB pour un
+>             Sjögren. **Pas d'imagerie**
+> 		- [ ] Gêne qui résiste à un traitement bien conduit : rouvrir les **examens
+>             complémentaires en milieu ophtalmologique** plutôt que renouveler les
+>             larmes artificielles
+> 	- [ ] **Ulcération dendritique à la fluorescéine — kératite herpétique** : le
+>         diagnostic est clinique et n'attend aucun laboratoire. **PCR HSV sur
+>         prélèvement cornéen ou sur larmes uniquement si la forme est atypique**,
+>         bilatérale ou récidivante — et alors chercher une immunodépression
+> 	- [ ] **Céphalée brutale, méningisme ou déficit neurologique focal** : l'œil n'est
+>         plus le sujet — **imagerie cérébrale en urgence**, CT sans contraste d'abord
+> - [ ] **3. À ne pas oublier**
+> 	- [ ] 🚩 **Après 50 ans — céphalée temporale nouvelle, douleur à la mastication,
+>         amaurose fugace : VS et CRP en urgence**, puis biopsie de l'artère temporale.
+>         Les grilles de la SSP en font l'anamnèse sans jamais en demander le bilan, et
+>         la corticothérapie ne l'attend pas
+> 	- [ ] 🚩 **Œil rouge douloureux chez un porteur de lentilles = abcès cornéen jusqu'à
+>         preuve du contraire** — **prélèvement cornéen pour culture avant tout collyre**,
+>         la culture n'est plus interprétable après ; évoquer l'amibe si baignade ou
+>         douche avec les lentilles

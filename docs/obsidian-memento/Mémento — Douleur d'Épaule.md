@@ -119,3 +119,23 @@ cssclasses:
 > 	- [ ] Recherche d'autres lésions cutanées, sur tout le corps
 > 	- [ ] Envisager de documenter les lésions par des photographies
 > 	- [ ] Devant une épaule indolore à la mobilisation et sans point d'appel local : constantes, auscultation cardiaque et pulmonaire, palpation de l'hypocondre droit
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Après un traumatisme — l'imagerie d'abord**
+> 	- [ ] **Radiographies du membre atteint, deux incidences (face + profil)**, englobant l'articulation sus- et sous-jacente (épaule et coude) : une incidence unique méconnaît le déplacement
+> 	- [ ] **CT** du membre si la fracture est complexe ou multifragmentaire, en cas de polytraumatisme, ou si le doute persiste sur les clichés standard
+> 	- [ ] **Décrire la fracture sur le cliché** : siège (diaphysaire, distale), trait (spiroïde, transverse), déplacement, comminution — la description est cotée, pas seulement le fait d'avoir demandé la radio
+> 	- [ ] Bilan biologique selon le contexte (FSC, crase, fonction rénale) dès qu'une prise en charge chirurgicale se dessine
+> 	- [ ] Doppler ou angio-CT devant un pouls aboli, une main froide ou pâle — suspicion de lésion artérielle
+> - [ ] **2. Sans traumatisme — le diagnostic est clinique, l'imagerie ne vient qu'après**
+> 	- [ ] **Radiographie de l'épaule face + profil, de première intention** : calcifications tendineuses, arthrose gléno-humérale ou acromio-claviculaire, lésion osseuse, luxation, morphologie de l'acromion
+> 	- [ ] **Échographie** quand la coiffe est en cause : tendinopathie, rupture partielle ou transfixiante et son étendue, bursite sous-acromiale, tendon du long biceps
+> 	- [ ] **IRM : savoir y renoncer** — le conflit sous-acromial et la tendinopathie de la coiffe se diagnostiquent cliniquement, et le refus argumenté de l'imagerie en coupes est coté ; IRM ou arthro-IRM seulement en cas de doute diagnostique, d'échec du traitement conservateur, ou si une réparation chirurgicale est envisagée
+> 	- [ ] **Test d'injection de lidocaïne sous-acromiale** : douleur et force restaurées = conflit sous-acromial ; faiblesse qui persiste sous anesthésie = rupture de la coiffe — à ne pas confondre avec l'infiltration de corticoïdes, qui est un traitement
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] Raideur matinale prolongée, autres articulations douloureuses, signes inflammatoires locaux : **bilan biologique — VS, CRP, facteur rhumatoïde, anti-CCP**
+> 	- [ ] Douleur de trajet radiculaire, paresthésies, test de Spurling positif : **radiographie ou IRM cervicale** ; EMG si déficit installé ou suspicion de défilé thoracique
+> - [ ] **4. 🚩 Quand la douleur n'est pas dans l'épaule**
+> 	- [ ] **ECG et troponines devant toute épaule gauche douloureuse après 50 ans**, même sans douleur thoracique ni signe végétatif : le syndrome coronarien s'y projette sans donner le moindre signe local, et sa mention est attendue avant toute conclusion locale
+> 	- [ ] Épaule droite avec hypochondre droit sensible : **ultrason abdominal** — douleur projetée d'origine biliaire ou hépatique, ou toute irritation diaphragmatique
+> 	- [ ] Épaule chaude, rouge, tendue et fébrile avec impotence complète : **FSC, CRP, hémocultures et ponction articulaire avant toute antibiothérapie** — l'arthrite septique se tranche au laboratoire, pas à l'imagerie

@@ -110,3 +110,24 @@ cssclasses:
 > 	- [ ] Souffle cardiaque, tachypnée, sueurs ou cyanose survenant pendant la tétée
 > 	- [ ] Distension abdominale, masse palpable, hernie irréductible
 > 	- [ ] Ecchymoses chez un enfant qui ne se déplace pas encore, lésion sans explication, récit incohérent ; ou mère épuisée, absente au contact de son enfant
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Devant une prise insuffisante — ce que le laboratoire cherche, et quand il ne cherche rien**
+> 	- [ ] Aucun examen n'est systématique : ce sont l'anthropométrie reportée sur les courbes et la tétée observée qui font le diagnostic — le bilan ne se justifie que si la courbe casse, si l'état général inquiète, ou devant un signe d'alarme
+> 	- [ ] FSC : anémie ferriprive, hyperleucocytose d'une infection sans foyer — attention au nadir physiologique de l'hémoglobine entre 6 et 9 semaines, une anémie modérée à cet âge peut n'être que cela
+> 	- [ ] Ionogramme, urée et créatinine : retentissement de l'insuffisance d'apport, et surtout hypernatrémie — la déshydratation hypernatrémique du nourrisson insuffisamment allaité a une clinique trompeusement pauvre, le pli cutané y manque
+> 	- [ ] Analyse d'urine avec ECBU : chez le nourrisson, l'infection urinaire n'a souvent d'autre expression que la stagnation pondérale, sans fièvre ni signe d'appel ; prélever par sondage ou ponction sus-pubienne — l'urine de sachet ne vaut que négative
+> - [ ] **2. Selon l'orientation — un examen par piste clinique, aucun en batterie**
+> 	- [ ] Devant des régurgitations douloureuses avec refus du sein et retentissement pondéral, après échec des mesures de position : pH-métrie ou pH-impédancemétrie — réservée au reflux présumé sévère ; une régurgitation sans douleur ni cassure de courbe ne s'explore pas
+> 	- [ ] Devant des selles glaireuses ou sanglantes, un eczéma, une amélioration franche sous éviction : éviction des protéines de lait de vache 2 à 4 semaines **puis réintroduction** — c'est la réintroduction qui fait le diagnostic ; les tests allergologiques (IgE spécifiques, prick-tests) sont souvent négatifs, l'allergie du nourrisson étant le plus souvent non IgE-médiée
+> 	- [ ] Devant des vomissements, une distension ou une masse abdominale : échographie abdominale — chez le garçon de 3 à 6 semaines qui vomit en jet et redemande à boire, elle cherche l'olive pylorique
+> 	- [ ] Devant une hypotonie, une constipation, un ictère qui traîne, une grande fontanelle : TSH et T4 libre — un dépistage néonatal normal n'interdit pas de doser quand la clinique parle
+> 	- [ ] Devant un ictère au-delà de 14 jours, une hépatomégalie ou des selles décolorées : bilan hépatique avec bilirubine totale **et** conjuguée — une bilirubine conjuguée élevée est une cholestase, jamais un ictère du lait maternel
+> 	- [ ] Devant une fièvre sans foyer ou un état général altéré : CRP et hémocultures, prélevées avant la première dose d'antibiotique
+> - [ ] **3. Les dépistages systématiques — vérifier le carnet avant de prescrire**
+> 	- [ ] Dépistage néonatal au talon (carte de Guthrie), entre J3 et J5 et jamais avant 72 h : phénylcétonurie, hypothyroïdie congénitale, mucoviscidose, déficit en MCAD — s'assurer qu'il a été fait **et** que le résultat est revenu passe avant tout dosage
+> 	- [ ] Hémoglobine vers 12 mois chez l'enfant à risque : prématurité, allaitement prolongé sans apport de fer, diversification tardive
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 Devant des vomissements bilieux, verts : transit œso-gastro-duodénal en urgence — la malrotation avec volvulus se compte en heures, et une échographie normale ne l'écarte pas
+> 	- [ ] 🚩 Devant un souffle, une tachypnée, des sueurs ou une cyanose survenant pendant la tétée : échocardiographie, avec ECG et saturation — chez le nourrisson la tétée est l'épreuve d'effort, c'est là que la cardiopathie se démasque
+> 	- [ ] Glycémie capillaire immédiate devant un nourrisson léthargique ou qui refuse toute prise : hypoglycémie et déficits d'oxydation des acides gras se révèlent au jeûne, et le résultat s'obtient en trente secondes

@@ -125,3 +125,28 @@ cssclasses:
 > 	- [ ] Œdèmes de dénutrition, déshydratation clinique
 > 	- [ ] Trouble de la vigilance, confusion, convulsion
 > 	- [ ] Idées suicidaires actives ou automutilations récentes
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le laboratoire de base — devant toute perte de poids involontaire**
+> 	- [ ] FSC : anémie, leucopénie et thrombopénie de la dénutrition sévère (transformation gélatineuse de la moelle, réversible à la renutrition) ; ailleurs, anémie inflammatoire, hyperleucocytose ou frottis anormal font chercher une cause somatique
+> 	- [ ] 🚩 Électrolytes complets, **phosphate et magnésium compris** : hypokaliémie et alcalose métabolique des vomissements et des laxatifs, hyponatrémie d'une potomanie — la phosphatémie prélevée avant toute reprise alimentaire est le chiffre qui annonce le syndrome de renutrition, et elle peut être normale à jeun puis s'effondrer dès les premiers apports
+> 	- [ ] Glycémie veineuse : hypoglycémie quand les réserves de glycogène sont épuisées ; à l'inverse une hyperglycémie découvre le diabète devant une polyurie-polydipsie
+> 	- [ ] Tests hépatiques (ASAT, ALAT) : les transaminases de l'hépatite de jeûne montent avec la sévérité de la dénutrition — elles ne signent pas une hépatopathie
+> 	- [ ] Créatinine, urée, albumine, CRP et VS : une créatinine « normale » chez un patient sans masse musculaire est déjà une insuffisance rénale, et une CRP élevée ne s'explique jamais par la dénutrition seule — elle fait chercher ailleurs
+> - [ ] **2. Bilan endocrinien et hormonal**
+> 	- [ ] TSH avec T4 libre : TSH freinée et T4 libre élevée = hyperthyroïdie, la cause somatique classique d'un amaigrissement à appétit conservé
+> 	- [ ] fT3 basse avec TSH normale ou basse : syndrome de basse T3, adaptation au jeûne et non une hypothyroïdie — elle se corrige par la renutrition, et un traitement thyroïdien y serait une faute
+> 	- [ ] LH, FSH et œstradiol (testostérone chez l'homme) : gonadotrophines basses et œstradiol effondré = hypogonadisme hypogonadotrope fonctionnel, l'explication de l'aménorrhée — une contraception hormonale masque l'aménorrhée et rend ces dosages ininterprétables
+> - [ ] **3. Le retentissement, à chercher le jour même**
+> 	- [ ] 🚩 ECG 12 dérivations : bradycardie sinusale, QTc allongé, aplatissement de l'onde T et onde U de l'hypokaliémie, extrasystoles — une fréquence sous 40/min et un QTc au-delà de 500 ms sont les deux chiffres qui font le risque vital
+> 	- [ ] Test de Schellong : TA et FC couché, puis debout à 1, 3, 5 et 10 minutes — chute de 20 mmHg systoliques ou de 10 mmHg diastoliques ; chez un patient bradycarde, l'absence de tachycardie compensatrice est aussi parlante que la chute elle-même
+> - [ ] **4. Selon l'orientation, quand la piste n'est pas alimentaire**
+> 	- [ ] 🚩 Symptômes B, sueurs nocturnes, adénopathie sus-claviculaire ou masse palpée : LDH et radiographie thoracique d'abord, puis CT thoraco-abdomino-pelvien et biopsie de la lésion — l'amaigrissement néoplasique est le diagnostic que rien d'autre ne rattrape, et aucune grille de cette SSP n'en documente le bilan
+> 	- [ ] Toux traînante, contage, voyage en zone d'endémie : radiographie thoracique, Quantiféron ou IDR, expectorations en recherche de BAAR (microscopie, PCR et culture)
+> 	- [ ] Rapports non protégés, drogues intraveineuses, amaigrissement inexpliqué : test VIH de 4e génération (Ag p24 + anticorps), après information et accord du patient
+> 	- [ ] Diarrhée chronique, sang ou glaires dans les selles, douleurs abdominales : calprotectine fécale, coproculture et parasitologie ; anticorps anti-transglutaminase **avec IgA totales**, prélevés avant toute éviction — sous régime sans gluten ils se négativent en quelques semaines
+> 	- [ ] Selles graisseuses et flottantes après les repas gras : élastase pancréatique fécale ; dysphagie, satiété précoce, vomissements répétés ou méléna : gastroscopie
+> - [ ] **5. À ne pas oublier**
+> 	- [ ] β-hCG chez toute femme en âge de procréer, quoi qu'elle rapporte de ses règles : l'aménorrhée de la dénutrition n'exclut pas la grossesse, et une ovulation persiste parfois
+> 	- [ ] Glycémie capillaire immédiate devant une somnolence, des sueurs ou un malaise, sans attendre le prélèvement veineux
+> 	- [ ] Un laboratoire entièrement normal ne rassure sur rien : les anomalies apparaissent tard dans la dénutrition, et ce sont le poids, la vitesse de la perte et l'ECG qui disent le risque

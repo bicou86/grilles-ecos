@@ -151,3 +151,39 @@ cssclasses:
 > 	- [ ] Peau et examen neurologique sommaire
 > 	- [ ] Par téléphone, l'examen passe par les yeux du parent : faire décrire le tirage,
 >         la coloration, la réactivité de l'enfant, faire mesurer la température
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant toute toux**
+> 	- [ ] **Radiographie thoracique**, face et profil, ou **échographie thoracique** au lit : condensation systématisée, épanchement, excavation, masse ou élargissement médiastinal, cardiomégalie, distension — elle se compare toujours au cliché antérieur quand il en existe un, et une opacité qui ne s'efface pas après une pneumonie fait chercher le cancer qu'elle masquait
+> 	- [ ] **Test de grossesse chez toute femme en âge de procréer**, avant d'irradier comme avant de commencer un antituberculeux
+> 	- [ ] **FSC avec formule** — hyperleucocytose à déviation gauche de l'infection bactérienne, **éosinophilie** de l'asthme, **lymphocytose** de la coqueluche, anémie — et **CRP** : elles mesurent l'intensité de la réponse, jamais la nature du germe
+> 	- [ ] **Saturation en oxygène** à l'air ambiant, puis **gazométrie artérielle** si elle est basse ou si la tolérance est en cause : la SpO2 ne dit rien de la capnie ni du pH, et une normocapnie chez un patient en crise franche signe l'épuisement et non la bonne santé (gravité : SpO2 < 92 %, FR > 30/min)
+> 	- [ ] **Fonction rénale et ionogramme** : l'**urée** ne s'y demande pas pour le rein mais parce qu'elle est l'item U du **CURB-65** — le seul des cinq qui ne s'obtienne pas au chevet
+> 	- [ ] **ECG** dès qu'un versant cardiaque s'ouvre (dyspnée, œdèmes, douleur thoracique, terrain) : trouble du rythme, hypertrophie ventriculaire, signes ischémiques
+> - [ ] **2. Toux fébrile, expectorations purulentes, foyer de crépitants**
+> 	- [ ] **Hémocultures prélevées avant la première dose d'antibiotique** — après, leur rendement s'effondre
+> 	- [ ] **Bandelette urinaire**, et **antigénuries pneumocoque et légionelle** si la pneumonie est sévère
+> 	- [ ] Selon la gravité : **PCT** (elle aide à décider de l'antibiothérapie), **PCR respiratoire** (Covid, influenza, germes atypiques), **ECBC** si les expectorations sont abondantes
+> 	- [ ] Douleur pleurale et matité d'une base → **échographie pleurale au lit** quand le cliché ne tranche pas : elle voit l'épanchement parapneumonique que la radiographie sous-estime
+> 	- [ ] Expectoration fétide, éthylisme, évolution traînante → chercher le **niveau hydro-aérique** de l'abcès sur le cliché, puis **CT thoracique**
+> - [ ] **3. Toux qui dure, hémoptysie ou symptômes B chez un fumeur**
+> 	- [ ] Devant un « crachat de sang », **écarter d'abord la fausse hémoptysie** : hématémèse (sang noir, non aéré, rejeté par un effort de vomissement) ou épistaxis postérieure déglutie — l'examen ORL et buccal est systématique, la gastroscopie ne vient qu'ensuite
+> 	- [ ] **CT thoracique injecté** — il explore parenchyme et arbre vasculaire d'un seul tenant : indiqué devant une lésion nouvelle, l'absence de cliché antérieur, ou une évolution qui n'est pas celle attendue ; **CT thoraco-abdomino-pelvien et PET scan** pour le bilan d'extension une fois la suspicion néoplasique posée
+> 	- [ ] **Fibroscopie bronchique avec lavage et biopsies**, seule à apporter la preuve histologique — **FSC avec plaquettes et bilan de coagulation (TP, TCA) avant le geste**
+> 	- [ ] **Expectorations : Gram, coloration acido-résistante (Ziehl), cytologie, culture de routine ET mycobactérienne** — un même prélèvement répond à trois questions
+> 	- [ ] Suspicion de tuberculose → **recherche de BK sur 3 prélèvements** (microscopie, PCR, culture) et **test immunologique — Mantoux ou IGRA/QuantiFERON** : un test tuberculinique ancien négatif n'écarte rien, il peut se positiver ; une fois la tuberculose retenue, **fonction hépatique et rénale avant la quadrithérapie** et **sérologie VIH** — elle fait chercher l'immunosuppression qui l'a permise
+> 	- [ ] Sur le cliché, la tuberculose de réactivation se loge **aux sommets, des deux côtés, et s'excave** (cavernes, infiltrats) — là où la pneumonie donne une condensation d'un seul lobe, volontiers inférieure, avec bronchogramme aérien
+> 	- [ ] Toux productive chronique avec infections répétées → **CT thoracique haute résolution** (bronchectasies) ; **spirométrie complète** à distance de l'épisode aigu chez le fumeur
+> - [ ] **4. Sifflements, dyspnée d'effort ou orthopnée**
+> 	- [ ] **Spirométrie avec test de réversibilité** : VEMS et VEMS/CV abaissés = obstruction ; **réversibilité du VEMS > 20 % après salbutamol = asthme**, obstruction fixée = BPCO ; volume résiduel et résistances augmentés = piégeage de l'air
+> 	- [ ] **Une spirométrie normale entre deux crises n'écarte pas l'asthme** — c'est même la règle dans les formes d'effort : **test de provocation à la méthacholine**, et **mesure du débit de pointe** répétée pour suivre la réponse au bronchodilatateur
+> 	- [ ] **Tests d'allergie** : ils ne confirment pas l'asthme, ils nomment les déclencheurs
+> 	- [ ] Orthopnée, œdèmes, crépitants des bases → **BNP ou NT-proBNP** (proportionnels à la surcharge ; un dosage normal rend l'insuffisance cardiaque très improbable), **échocardiographie transthoracique** — FEVG, valvulopathie : sténose aortique, et sténose mitrale qui fait saigner — et **troponine, CK**
+> 	- [ ] Sur le cliché, la surcharge se lit en cardiomégalie, redistribution vasculaire vers les sommets, **lignes de Kerley** et épanchement pleural
+> 	- [ ] Douleur pleurale, dyspnée brutale, mollet asymétrique → **score de Genève révisé ou de Wells d'abord**, puis **D-dimères** (ils excluent, ils ne prouvent jamais — un dosage sans probabilité pré-test est ininterprétable) et **angio-CT pulmonaire** si la probabilité est élevée
+> 	- [ ] Toux nocturne avec pyrosis et régurgitations → **pH-métrie des 24 heures et endoscopie digestive haute** ; l'essai d'IPP est un traitement d'épreuve, pas un examen
+> - [ ] **5. Chez le nourrisson et le jeune enfant**
+> 	- [ ] **PCR Bordetella pertussis sur prélèvement nasopharyngé profond**, le test qui tranche — **sa rentabilité chute passé trois semaines de toux**, et une négativité tardive n'écarte pas la coqueluche ; culture sur Bordet-Gengou moins sensible, sérologie utile tardivement ou chez l'adulte
+> 	- [ ] **FSC : l'hyperlymphocytose (> 10 G/L) est caractéristique, et son ampleur mesure la gravité** — 🚩 au-delà de 30 G/L, et plus encore de 50 G/L, elle annonce l'hypertension pulmonaire et la forme maligne du nourrisson
+> 	- [ ] **CRP** (peu élevée sauf surinfection) et **hémocultures si la fièvre est élevée** ; **radiographie thoracique devant une complication suspectée** (atélectasie, surinfection), **gazométrie si détresse respiratoire**, **ionogramme si déshydratation**
+> 	- [ ] 🚩 Faux-croup et bronchiolite sont des **diagnostics cliniques** : ni imagerie ni laboratoire en routine — les examens ne se demandent que devant une atypie, une asymétrie auscultatoire ou un début brutal évoquant un **corps étranger inhalé**

@@ -189,3 +189,58 @@ cssclasses:
 > 	- [ ] Hépatomégalie ou splénomégalie chez une femme qui « fait des flushes »
 > 	- [ ] Déjà sous traitement hormonal : douleur unilatérale du mollet, dyspnée brutale, déficit
 >         neurologique focal, nodule mammaire nouveau
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. La ménopause ne se dose pas — ce que la biologie sert vraiment**
+> 	- [ ] Après 45 ans, douze mois d'aménorrhée suffisent : le diagnostic est clinique et
+>         rétrospectif, aucun dosage ne l'établit ni ne l'écarte — les dosages qui suivent ne
+>         posent pas le diagnostic, ils documentent les situations où la clinique ne tranche pas
+>         et composent le bilan qui précède une prescription hormonale
+> 	- [ ] FSH (> 30 UI/L) et œstradiol (< 184 pmol/L) : réservés au tableau atypique, à la femme sous
+>         contraception hormonale qui masque l'arrêt des règles, et à la suspicion d'insuffisance
+>         ovarienne prématurée avant 40 ans — sur **deux dosages** à quelques semaines d'intervalle,
+>         la FSH fluctuant trop en périménopause pour qu'un chiffre isolé conclue
+> 	- [ ] TSH, complétée de la T4 libre si elle est perturbée : l'hyperthyroïdie reproduit tout le
+>         climatère et c'est le seul imitateur qu'un examen simple élimine — à demander dès que le
+>         tableau l'évoque, ce qui revient à presque toujours
+> 	- [ ] FSC avec plaquettes, VS et CRP, ionogramme et créatinine, tests hépatiques : le socle qui
+>         cherche l'anémie, le syndrome inflammatoire et le retentissement d'organe dès que la
+>         plainte déborde le climatère ou s'accompagne de symptômes B
+> 	- [ ] ECG devant des palpitations, une douleur thoracique ou une tension élevée : hypertrophie
+>         ventriculaire gauche, trouble du rythme
+> - [ ] **2. Selon l'orientation — l'imitateur, et le dosage qui le tranche**
+> 	- [ ] Céphalées, sueurs et palpitations par accès avec poussées tensionnelles paroxystiques :
+>         métanéphrines urinaires des 24 h ou plasmatiques libres, MAPA et bilan d'hypertension
+>         secondaire — l'IRM surrénalienne ne vient qu'**après** un dosage positif, jamais à sa
+>         place
+> 	- [ ] Bouffées avec amaigrissement malgré l'appétit, transit accéléré et tremblement fin : après
+>         une TSH abaissée, T4 libre et anticorps anti-récepteur de la TSH
+> 	- [ ] Flush avec diarrhée, crampes abdominales et sifflement respiratoire : acide
+>         5-hydroxyindolacétique (5-HIAA) urinaire des 24 h et chromogranine A
+> 	- [ ] Rougeur du visage avec prurit déclenché par la douche : FSC (hémoglobine, hématocrite) et
+>         érythropoïétine — effondrée dans la polyglobulie primitive, élevée dans les polyglobulies
+>         secondaires
+> 	- [ ] Obésité facio-tronculaire, vergetures pourpres, hypertension et diabète : cortisol libre
+>         urinaire des 24 h
+> 	- [ ] Polyurie et polydipsie : glycémie à jeun et HbA1c
+> 	- [ ] Hépatomégalie, splénomégalie ou masse abdominale palpée : échographie abdominale
+> - [ ] **3. 🚩 Le saignement après douze mois d'aménorrhée — le bilan qui ne se diffère pas**
+> 	- [ ] Échographie endovaginale d'abord : épaisseur de l'endomètre, seuil à 4 mm — en dessous, le
+>         cancer de l'endomètre devient très improbable
+> 	- [ ] Au-delà de 4 mm, endomètre non mesurable ou saignement qui récidive : biopsie endométriale
+>         (pipelle) ou hystéroscopie avec curetage — un endomètre fin ne dispense pas de prélever
+>         quand le saignement persiste
+> 	- [ ] Cette exploration précède toute prescription hormonale : un saignement non exploré en est
+>         une contre-indication formelle
+> - [ ] **4. Avant de prescrire, et les dépistages que la ménopause ouvre**
+> 	- [ ] Bilan lipidique, glycémie à jeun et tension artérielle : ils ne cherchent pas la ménopause,
+>         ils chiffrent le risque cardiovasculaire (SCORE2-OP) et le risque thromboembolique, dont
+>         dépendent l'opportunité et les modalités d'une prescription hormonale
+> 	- [ ] Mammographie : à jour avant l'ordonnance, jamais après, puis tous les deux ans dès 50 ans
+>         dans le programme de dépistage
+> 	- [ ] Frottis cervico-vaginal ou test HPV selon le calendrier, prélevé spéculum en place s'il est
+>         dû ; prélèvement vaginal devant des leucorrhées ou des brûlures, pour ne pas mettre sur le
+>         compte de l'atrophie une vaginite infectieuse
+> 	- [ ] Densitométrie osseuse : selon le risque estimé par le FRAX, systématique devant des
+>         facteurs de risque (fracture de fragilité, ménopause précoce, corticothérapie, IMC bas,
+>         tabac) — seul examen qui voit venir l'ostéoporose avant sa première fracture

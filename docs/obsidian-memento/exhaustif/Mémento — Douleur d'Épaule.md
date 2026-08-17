@@ -89,19 +89,18 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif principal *(Rupture de la coiffe des rotateurs)***
-> - [ ] **2. Caractérisation temporelle de la douleur *(Rupture de la coiffe des rotateurs · Syndrome de conflit sous-acromial)***
-> 	- [ ] Localisation *(Rupture de la coiffe des rotateurs)*
-> 	- [ ] Intensité (sur une échelle de 0-10) *(Rupture de la coiffe des rotateurs)*
-> 	- [ ] Qualité *(Rupture de la coiffe des rotateurs)*
+> - [ ] **2. Caractérisation de la douleur à l'épaule *(Rupture de la coiffe des rotateurs)***
+> 	- [ ] Localisation
+> 	- [ ] Intensité (sur une échelle de 0-10)
+> 	- [ ] Qualité
 > 	- [ ] Début
-> 	- [ ] Événements précipitants *(Rupture de la coiffe des rotateurs)*
-> 	- [ ] Progression/constante/intermittente *(Rupture de la coiffe des rotateurs)*
-> 	- [ ] Épisodes antérieurs *(Rupture de la coiffe des rotateurs)*
-> 	- [ ] Irradiation *(Rupture de la coiffe des rotateurs)*
-> 	- [ ] Facteurs améliorants *(Rupture de la coiffe des rotateurs)*
-> 	- [ ] Facteurs aggravants *(Rupture de la coiffe des rotateurs)*
-> 	- [ ] Symptômes associés *(Rupture de la coiffe des rotateurs)*
-> 	- [ ] Évolution *(Syndrome de conflit sous-acromial)*
+> 	- [ ] Événements précipitants
+> 	- [ ] Progression/constante/intermittente
+> 	- [ ] Épisodes antérieurs
+> 	- [ ] Irradiation
+> 	- [ ] Facteurs améliorants
+> 	- [ ] Facteurs aggravants
+> 	- [ ] Symptômes associés
 > - [ ] **3. Recherche de symptômes spécifiques pour douleur à l'épaule *(Rupture de la coiffe des rotateurs)***
 > 	- [ ] Traumatisme
 > 	- [ ] Fièvre/frissons
@@ -177,47 +176,50 @@ cssclasses:
 > - [ ] **49. Sport / loisir *(Syndrome sous-acromial droit (tendinopathie du sus-épineux))***
 > - [ ] **50. Présentation avec nom, fonction et objectif de la consultation *(Syndrome de conflit sous-acromial)***
 > - [ ] **51. Question ouverte pour identifier le motif de consultation *(Syndrome de conflit sous-acromial)***
-> - [ ] **52. Recherche de symptômes inflammatoires *(Syndrome de conflit sous-acromial)***
+> - [ ] **52. Caractérisation temporelle de la douleur *(Syndrome de conflit sous-acromial)***
+> 	- [ ] Début
+> 	- [ ] Évolution
+> - [ ] **53. Recherche de symptômes inflammatoires *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Raideur matinale
 > 	- [ ] Paresthésies associées
-> - [ ] **53. Impact sur le sommeil *(Syndrome de conflit sous-acromial)***
+> - [ ] **54. Impact sur le sommeil *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Réveils nocturnes
 > 	- [ ] Position de sommeil
-> - [ ] **54. Facteurs modulant la douleur *(Syndrome de conflit sous-acromial)***
+> - [ ] **55. Facteurs modulant la douleur *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Facteurs aggravants
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Repos vs mouvement
-> - [ ] **55. Recherche d'événements déclenchants *(Syndrome de conflit sous-acromial)***
+> - [ ] **56. Recherche d'événements déclenchants *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Traumatisme
 > 	- [ ] Infection récente
-> - [ ] **56. Symptômes généraux *(Syndrome de conflit sous-acromial)***
+> - [ ] **57. Symptômes généraux *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Symptômes B (fièvre, sueurs nocturnes, perte de poids)
 > 	- [ ] Fatigue
 > 	- [ ] État général
-> - [ ] **57. Automédication et traitements essayés *(Syndrome de conflit sous-acromial)***
-> - [ ] **58. Contexte social et professionnel *(Syndrome de conflit sous-acromial)***
+> - [ ] **58. Automédication et traitements essayés *(Syndrome de conflit sous-acromial)***
+> - [ ] **59. Contexte social et professionnel *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Enfants
-> - [ ] **59. Retentissement fonctionnel *(Syndrome de conflit sous-acromial)***
+> - [ ] **60. Retentissement fonctionnel *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Impact professionnel
 > 	- [ ] Gêne quotidienne
 > 	- [ ] Qualité de vie
-> - [ ] **60. Synthèse et questions de la patiente *(Syndrome de conflit sous-acromial)***
+> - [ ] **61. Synthèse et questions de la patiente *(Syndrome de conflit sous-acromial)***
 > 	- [ ] Résumé des points clés
 > 	- [ ] Questions de la patiente
-> - [ ] **61. Moment et le lieu *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **62. Moment et le lieu *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Les deux *(1 grille sur 5)*
-> - [ ] **62. Déroulement *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **63. Déroulement *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Personnes impliquées
 > 	- [ ] Mécanisme du traumatisme
 > 	- [ ] Les 2 *(1 grille sur 5)*
-> - [ ] **63. Demande concernant autre lésion traumatique (coup) *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **64. Demande concernant autre lésion traumatique (coup) *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Cérébrale
 > 	- [ ] Abdominale
 > 	- [ ] Thoracique
 > 	- [ ] Autre
-> - [ ] **64. Douleurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **65. Douleurs *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Localisation
 > 	- [ ] Intensité
 > 	- [ ] Évolution
@@ -225,14 +227,14 @@ cssclasses:
 > 	- [ ] Médicaments pris ou reçus
 > 	- [ ] Caractère
 > 	- [ ] Facteurs atténuant *(1 grille sur 5)*
-> - [ ] **65. Douleurs ailleurs *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **66. Propose une antalgie *(Fracture du membre supérieur (humérus, tête radiale))***
-> - [ ] **67. Prise d'alcool ou drogue ce soir là *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **66. Douleurs ailleurs *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **67. Propose une antalgie *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **68. Prise d'alcool ou drogue ce soir là *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Les deux *(1 grille sur 5)*
-> - [ ] **68. Antécédents médicaux/chirurgicaux/médicaments/allergie/vaccins *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **69. Antécédents médicaux/chirurgicaux/médicaments/allergie/vaccins *(Fracture du membre supérieur (humérus, tête radiale))***
 > 	- [ ] Au moins 3 *(1 grille sur 5)*
 > 	- [ ] Un *(1 grille sur 5)*
-> - [ ] **69. Contexte d'harcèlement de son équipier/-ère *(Fracture du membre supérieur (humérus, tête radiale))***
+> - [ ] **70. Contexte d'harcèlement de son équipier/-ère *(Fracture du membre supérieur (humérus, tête radiale))***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Rupture de la coiffe des rotateurs)***

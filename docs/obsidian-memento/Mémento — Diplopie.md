@@ -102,3 +102,18 @@ cssclasses:
 > 	- [ ] **Déglutition** : faire avaler une gorgée d'eau sous surveillance — toux, encombrement, voix mouillée après la déglutition
 > 	- [ ] **Nuque qui ne tient plus** : les fléchisseurs du cou lâchent en même temps que les muscles respiratoires
 > 	- [ ] **Refaire l'examen à quelques heures d'intervalle, en notant l'heure** : ce qui compte n'est pas la valeur d'un test isolé, c'est la pente
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. 🚩 D'abord la fonction respiratoire — avant même d'avoir confirmé le diagnostic**
+> 	- [ ] **Capacité vitale mesurée au lit du patient** (spiromètre portable), répétée à intervalles réguliers et notée avec l'heure — une valeur isolée ne décide de rien, c'est sa chute d'une mesure à l'autre qui compte ; **règle des 20-30-40**, les seuils qui annoncent la crise : capacité vitale < 20 ml/kg, pression inspiratoire maximale < 30 cmH₂O, pression expiratoire maximale < 40 cmH₂O
+> 	- [ ] **Gazométrie artérielle** devant toute dyspnée : elle reste longtemps normale et l'hypercapnie n'apparaît qu'à l'épuisement — une gazométrie rassurante ne dispense jamais de mesurer la capacité vitale
+> - [ ] **2. Confirmer l'atteinte de la jonction neuromusculaire**
+> 	- [ ] **Anticorps anti-récepteurs à l'acétylcholine (anti-RACh)**, examen de première intention : positifs dans 85 % des formes généralisées, mais dans la moitié seulement des formes purement oculaires ; très spécifiques, ils suffisent au diagnostic devant un tableau compatible
+> 	- [ ] **Anti-MuSK, puis anti-LRP4, si les anti-RACh reviennent négatifs** : les formes séronégatives existent et la clinique y est la même — un dosage négatif n'écarte rien
+> 	- [ ] **ENMG avec stimulation répétitive à 3 Hz** : on cherche un décrément de la réponse motrice au-delà de 10 % ; s'il est normal alors que la clinique parle, l'électromyographie de fibre unique (jitter augmenté) est plus sensible
+> - [ ] **3. Chercher ce qui s'associe à l'atteinte de la jonction**
+> 	- [ ] **CT thoracique** (IRM à défaut) à la recherche d'un **thymome** : présent dans 10 à 15 % des cas — c'est l'examen qu'on oublie, et c'est lui qui pose l'indication chirurgicale
+> 	- [ ] **TSH et T4 libre**, bilan auto-immun élargi selon le contexte : une dysthyroïdie décompense à elle seule la faiblesse, et les maladies auto-immunes s'associent volontiers (thyroïdite, lupus)
+> - [ ] **4. 🚩 Quand le tableau n'est pas celui d'une fatigabilité pure — l'imagerie, pas le laboratoire**
+> 	- [ ] Diplopie avec **pupille dilatée peu réactive**, céphalée brutale, ou déficit installé d'un coup : imagerie cérébrale avec étude vasculaire (angio-CT ou angio-IRM) **en urgence** — une compression du III ne se dose pas
+> 	- [ ] Signes qui ne sont ni musculaires ni jonctionnels — Babinski, déficit sensitif franc, ophtalmoplégie internucléaire : IRM cérébrale, à la recherche d'une atteinte du tronc cérébral ou d'une sclérose en plaques

@@ -125,3 +125,54 @@ cssclasses:
 > 	- [ ] Tachycardie irrégulière avec fièvre, agitation ou confusion
 > 	- [ ] Voix bitonale ou extinction de voix installée
 > 	- [ ] Trachée déviée de la ligne médiane
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant une thyroïde douloureuse ou tuméfiée**
+> 	- [ ] **TSH**, complétée par **T4 libre et T3 libre** dès qu'elle est anormale :
+>         TSH basse avec T4 libre élevée = thyrotoxicose, TSH élevée avec T4 libre
+>         basse = hypothyroïdie primaire ; une TSH normale rend la dysfonction
+>         improbable, sauf au moment où une thyroïdite bascule d'une phase à l'autre
+>         ou devant une atteinte hypophysaire — là c'est la T4 libre qui tranche
+> 	- [ ] **VS et CRP** : une VS très accélérée devant une glande exquisément
+>         douloureuse est l'argument le plus fort de la thyroïdite subaiguë ; fièvre
+>         élevée, glande fluctuante et franche hyperleucocytose feraient plutôt
+>         craindre une thyroïdite suppurée
+> 	- [ ] **FSC** : hyperleucocytose à polynucléaires (thyroïdite suppurée, foyer
+>         ORL de voisinage), anémie normocytaire de l'hypothyroïdie
+> 	- [ ] **Anticorps thyroïdiens** : anti-TPO et anti-thyroglobuline (thyroïdite
+>         auto-immune), anti-récepteur de la TSH — TRAK (maladie de Basedow) ; ils
+>         sont absents ou faiblement positifs dans la thyroïdite subaiguë, et des
+>         anti-TPO isolément positifs se voient chez des sujets sains
+> 	- [ ] **ECG** : fibrillation auriculaire ou tachycardie sinusale de la
+>         thyrotoxicose — à chercher chez qui palpite et chez la personne âgée ;
+>         bradycardie, microvoltage et QT allongé dans l'hypothyroïdie
+> 	- [ ] **Échographie thyroïdienne** : volume et symétrie, plages hypoéchogènes
+>         douloureuses au passage de la sonde (thyroïdite subaiguë), nodules et leurs
+>         critères de suspicion, vascularisation au Doppler, adénopathies cervicales —
+>         elle décrit la glande, elle ne dit rien de sa fonction
+> - [ ] **2. Selon l'orientation clinique**
+> 	- [ ] Goitre diffus, exophtalmie, souffle sur la glande : ce sont les **TRAK**
+>         qu'on demande en priorité ; goitre ferme et indolore avec hypothyroïdie :
+>         les **anti-TPO**
+> 	- [ ] 🚩 Nodule dur, fixé et indolore, ou adénopathie sus-claviculaire :
+>         **cytoponction à l'aiguille fine échoguidée** du nodule et du ganglion — le
+>         cancer thyroïdien est attendu de cette SSP et aucune grille du corpus ne
+>         l'explore
+> 	- [ ] 🚩 Stridor, trachée déviée, limite inférieure du goitre non atteinte :
+>         **CT cervico-thoracique** pour l'extension rétrosternale et le degré de
+>         sténose trachéale ; devant une voix bitonale, **nasofibroscopie laryngée**
+>         à la recherche d'une paralysie récurrentielle — le goitre compressif ou
+>         plongeant est attendu de cette SSP et aucune grille du corpus ne l'explore
+> - [ ] **3. À ne pas oublier**
+> 	- [ ] Test de grossesse chez toute femme en âge de procréer : l'hCG stimule la
+>         glande et abaisse physiologiquement la TSH au premier trimestre, et une
+>         grossesse interdit tout examen isotopique
+> 	- [ ] Amiodarone, lithium, produit de contraste iodé récent : la surcharge iodée
+>         fausse la lecture des dosages pendant des semaines — dater la prise avant
+>         d'interpréter
+> 	- [ ] 🚩 Tachyarythmie fébrile avec agitation ou confusion : les prélèvements
+>         partent, mais la crise thyrotoxique reste un diagnostic clinique — le taux
+>         d'hormones ne dit pas la gravité et un dosage banal ne l'écarte pas
+> 	- [ ] La thyroïdite subaiguë passe par trois phases — thyrotoxicose, puis
+>         hypothyroïdie, puis retour à la normale : un même dosage change de sens
+>         selon la semaine de la maladie où il est fait

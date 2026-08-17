@@ -109,21 +109,22 @@ cssclasses:
 
 > [!note] 📋 Anamnèse
 > - [ ] **1. Motif de consultation *(5 grilles sur 20)***
-> - [ ] **2. Caractérisation de la douleur abdominale *(17 grilles sur 20)***
-> 	- [ ] Localisation *(12 grilles sur 20)*
+> - [ ] **2. Caractérisation de la douleur abdominale *(12 grilles sur 20)***
+> 	- [ ] Localisation
 > 	- [ ] Intensité *(10 grilles sur 20)*
 > 	- [ ] Qualité *(8 grilles sur 20)*
 > 	- [ ] Début *(5 grilles sur 20)*
 > 	- [ ] Évolution temporelle *(3 grilles sur 20)*
 > 	- [ ] Irradiation *(11 grilles sur 20)*
 > 	- [ ] Facteurs améliorants *(4 grilles sur 20)*
-> 	- [ ] Facteurs aggravant/soulageant *(8 grilles sur 20)*
+> 	- [ ] Facteurs aggravants *(6 grilles sur 20)*
 > 	- [ ] Épisodes antérieurs *(4 grilles sur 20)*
 > 	- [ ] Événements précipitants *(Appendicite aiguë · Cancer de l'ovaire · Maladie cœliaque)*
 > 	- [ ] Intensité (échelle 0-10) *(Maladie cœliaque)*
 > 	- [ ] Symptômes associés à la consommation de certains aliments *(Maladie cœliaque)*
 > 	- [ ] Progression/constant/intermittent *(Maladie cœliaque)*
 > 	- [ ] Type/caractère *(3 grilles sur 20)*
+> 	- [ ] Facteurs aggravant/soulageant *(2 grilles sur 20)*
 > 	- [ ] Quantité *(1 grille sur 20)*
 > 	- [ ] Chronologie *(1 grille sur 20)*
 > 	- [ ] Facteurs soulageants *(Cholédocholithiase · Torsion ovarienne)*
@@ -131,9 +132,9 @@ cssclasses:
 > 	- [ ] Type *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Évolution *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Début et progression *(2 grilles sur 20)*
-> - [ ] **3. Symptômes associés - Souillures *(9 grilles sur 20)***
+> - [ ] **3. Symptômes associés - Souillures *(8 grilles sur 20)***
 > 	- [ ] Nausées *(4 grilles sur 20)*
-> 	- [ ] Nausées/Vomissements *(5 grilles sur 20)*
+> 	- [ ] Vomissements *(5 grilles sur 20)*
 > 	- [ ] Caractéristiques des vomissements *(1 grille sur 20)*
 > 	- [ ] Fièvre *(3 grilles sur 20)*
 > 	- [ ] Fièvre/frissons *(Appendicite aiguë)*
@@ -146,11 +147,6 @@ cssclasses:
 > 	- [ ] Diarrhée/Constipation *(Maladie cœliaque)*
 > 	- [ ] Couleur *(Maladie cœliaque)*
 > 	- [ ] Sang *(Maladie cœliaque)*
-> 	- [ ] Début/chronologie *(1 grille sur 20)*
-> 	- [ ] Intensité *(1 grille sur 20)*
-> 	- [ ] Fluctuation *(1 grille sur 20)*
-> 	- [ ] Présence de frissons *(1 grille sur 20)*
-> 	- [ ] Présence de transpiration *(1 grille sur 20)*
 > 	- [ ] Troubles du transit *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Frissons *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Arrêt des matières et des gaz *(Perforation d'ulcère gastro-duodénal)*
@@ -173,7 +169,7 @@ cssclasses:
 > 	- [ ] Sueurs nocturnes *(Cancer de l'ovaire)*
 > 	- [ ] Dyspnée *(Cancer de l'ovaire)*
 > 	- [ ] Fièvre *(Maladie cœliaque)*
-> 	- [ ] Nausées/Vomissements *(Maladie cœliaque)*
+> 	- [ ] Vomissements *(Maladie cœliaque)*
 > 	- [ ] Éruption/changements cutanés *(Maladie cœliaque)*
 > 	- [ ] Pleurs/irritabilité *(Maladie cœliaque)*
 > 	- [ ] Problèmes urinaires/énurésie *(Maladie cœliaque)*
@@ -288,7 +284,7 @@ cssclasses:
 > - [ ] **33. Fièvre aiguë *(1 grille sur 20)***
 > - [ ] **34. Anamnèse de l'entourage *(5 grilles sur 20)***
 > - [ ] **35. Nausées *(1 grille sur 20)***
-> - [ ] **36. Nausées/Vomissements *(2 grilles sur 20)***
+> - [ ] **36. Vomissements *(2 grilles sur 20)***
 > - [ ] **37. Qualité (bilieux/sanglant/en marc de café) *(1 grille sur 20)***
 > - [ ] **38. Selles *(2 grilles sur 20)***
 > - [ ] **39. Dernières selles *(1 grille sur 20)***
@@ -297,17 +293,13 @@ cssclasses:
 > - [ ] **42. Troubles de la miction *(1 grille sur 20)***
 > - [ ] **43. Dysurie *(2 grilles sur 20)***
 > - [ ] **44. Pollakiurie *(1 grille sur 20)***
-> - [ ] **45. Anamnèse gynécologique *(5 grilles sur 20)***
-> 	- [ ] Modifications mictionnelles *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Dysurie, pollakiurie *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Hématurie *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Pertes vaginales *(Diverticulite sigmoïdienne non compliquée · Endométriose pelvienne)*
-> 	- [ ] Métrorragies post-ménopausiques *(Diverticulite sigmoïdienne non compliquée)*
+> - [ ] **45. Anamnèse gynécologique *(4 grilles sur 20)***
 > 	- [ ] Dernières règles *(Endométriose pelvienne · Gastroentérite)*
 > 	- [ ] Durée du cycle *(Endométriose pelvienne)*
 > 	- [ ] Durée des menstruations *(Endométriose pelvienne)*
 > 	- [ ] Intensité des saignements *(Endométriose pelvienne)*
 > 	- [ ] Symptômes vaginaux *(Endométriose pelvienne · Infection génitale haute)*
+> 	- [ ] Pertes vaginales *(Endométriose pelvienne)*
 > 	- [ ] Partenaire stable *(Endométriose pelvienne)*
 > 	- [ ] Dyspareunie *(Endométriose pelvienne)*
 > 	- [ ] Contraception *(Endométriose pelvienne · Gastroentérite)*
@@ -373,142 +365,150 @@ cssclasses:
 > 	- [ ] Évolution
 > 	- [ ] Périodicité
 > - [ ] **93. Facteurs modulateurs *(Diverticulite sigmoïdienne non compliquée)***
-> 	- [ ] Facteurs aggravant/soulageant
+> 	- [ ] Facteurs aggravants
 > 	- [ ] Facteurs améliorants
 > 	- [ ] Position antalgique
 > 	- [ ] Relation avec l'alimentation
-> - [ ] **94. Symptômes généraux et signes de déshydratation *(7 diagnostics)***
-> 	- [ ] Nausées *(Diverticulite sigmoïdienne non compliquée · Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Nausées/Vomissements *(6 diagnostics)*
+> - [ ] **94. Symptômes digestifs associés *(4 grilles sur 20)***
+> 	- [ ] Nausées *(3 grilles sur 20)*
+> 	- [ ] Vomissements
 > 	- [ ] Transit intestinal - diarrhée *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Flatulences *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Diarrhée/Constipation *(5 diagnostics)*
-> 	- [ ] Transit intestinal et gaz *(4 diagnostics)*
-> 	- [ ] Gaz *(Endométriose pelvienne)*
-> 	- [ ] Sang dans les vomissements *(4 diagnostics)*
-> 	- [ ] Diarrhée *(Endométriose pelvienne · MICI (Crohn / RCUH))*
-> 	- [ ] Présence de sang dans les selles *(Endométriose pelvienne · Infection génitale haute · Ischémie mésentérique aiguë)*
-> 	- [ ] Aspect des selles *(MICI (Crohn / RCUH))*
-> 	- [ ] Fièvre *(Gastroentérite · Ischémie mésentérique aiguë)*
+> 	- [ ] Diarrhée/Constipation *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Habitudes intestinales *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Ictère *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Asthénie *(Gastroentérite)*
-> 	- [ ] Troubles du sommeil *(Gastroentérite)*
-> 	- [ ] Soif et apports hydriques *(Gastroentérite)*
-> 	- [ ] État général *(Gastroentérite)*
+> 	- [ ] Perte d'appétit *(2 grilles sur 20)*
+> 	- [ ] Perte de poids *(Gastroentérite)*
+> 	- [ ] Hoquet, éructations *(2 grilles sur 20)*
+> 	- [ ] Dégoût pour la nourriture *(1 grille sur 20)*
 > - [ ] **95. Recherche de signes d'alarme *(Diverticulite sigmoïdienne non compliquée)***
 > 	- [ ] Fièvre
 > 	- [ ] Perte de poids inexpliquée
 > 	- [ ] Symptômes B (sueurs nocturnes)
 > 	- [ ] Présence de sang dans les selles
 > 	- [ ] Masse palpable
-> - [ ] **96. Antécédents obstétricaux et gynécologiques *(Diverticulite sigmoïdienne non compliquée)***
+> - [ ] **96. Anamnèse urogynécologique *(Diverticulite sigmoïdienne non compliquée)***
+> 	- [ ] Modifications mictionnelles
+> 	- [ ] Dysurie, pollakiurie
+> 	- [ ] Hématurie
+> 	- [ ] Pertes vaginales anormales
+> 	- [ ] Métrorragies post-ménopausiques
+> - [ ] **97. Antécédents obstétricaux et gynécologiques *(Diverticulite sigmoïdienne non compliquée)***
 > 	- [ ] Parité
 > 	- [ ] Ménopause
 > 	- [ ] Antécédents gynécologiques
 > 	- [ ] Hystérectomie
-> - [ ] **97. Traitement actuel et allergies *(Diverticulite sigmoïdienne non compliquée)***
+> - [ ] **98. Traitement actuel et allergies *(Diverticulite sigmoïdienne non compliquée)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Allergies médicamenteuses
 > 	- [ ] Automédication récente
-> - [ ] **98. Antécédents personnels et facteurs de risque *(2 grilles sur 20)***
-> 	- [ ] Tabagisme *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Consommation d'alcool *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Toxicomanie *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Activité physique *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Régime alimentaire (fibres) *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Épisodes similaires antérieurs *(1 grille sur 20)*
-> 	- [ ] Surpoids *(1 grille sur 20)*
-> 	- [ ] Régime en cours *(1 grille sur 20)*
-> 	- [ ] Bonne santé habituelle *(1 grille sur 20)*
-> - [ ] **99. Contexte psychosocial *(Diverticulite sigmoïdienne non compliquée)***
+> - [ ] **99. Habitudes de vie et facteurs de risque *(Diverticulite sigmoïdienne non compliquée)***
+> 	- [ ] Tabagisme
+> 	- [ ] Consommation d'alcool
+> 	- [ ] Toxicomanie
+> 	- [ ] Activité physique
+> 	- [ ] Régime alimentaire (fibres)
+> - [ ] **100. Contexte psychosocial *(Diverticulite sigmoïdienne non compliquée)***
 > 	- [ ] Situation familiale
 > 	- [ ] Autonomie
 > 	- [ ] Stress récent
 > 	- [ ] Support social
-> - [ ] **100. Anamnèse par systèmes *(Diverticulite sigmoïdienne non compliquée · Reflux gastro-œsophagien (RGO))***
+> - [ ] **101. Anamnèse par systèmes *(Diverticulite sigmoïdienne non compliquée · Reflux gastro-œsophagien (RGO))***
 > 	- [ ] Symptômes cardiovasculaires *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Symptômes respiratoires *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Symptômes neurologiques *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Symptômes articulaires *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] De la tête aux pieds incluant fièvre et symptômes B *(Reflux gastro-œsophagien (RGO))*
-> - [ ] **101. Caractère de la douleur *(6 diagnostics)***
-> - [ ] **102. Sévérité (échelle 1-10) *(Douleurs abdominales non spécifiques)***
-> - [ ] **103. Facteurs d'amélioration ou d'aggravation *(Douleurs abdominales non spécifiques)***
-> - [ ] **104. Vertiges *(Douleurs abdominales non spécifiques)***
-> - [ ] **105. Menstruation *(Douleurs abdominales non spécifiques)***
-> - [ ] **106. Revue des systèmes *(Douleurs abdominales non spécifiques)***
+> - [ ] **102. Caractère de la douleur *(6 diagnostics)***
+> - [ ] **103. Sévérité (échelle 1-10) *(Douleurs abdominales non spécifiques)***
+> - [ ] **104. Facteurs d'amélioration ou d'aggravation *(Douleurs abdominales non spécifiques)***
+> - [ ] **105. Localisation et durée *(Douleurs abdominales non spécifiques)***
+> - [ ] **106. Vertiges *(Douleurs abdominales non spécifiques)***
+> - [ ] **107. Menstruation *(Douleurs abdominales non spécifiques)***
+> - [ ] **108. Revue des systèmes *(Douleurs abdominales non spécifiques)***
 > 	- [ ] Migraine
 > 	- [ ] Épilepsie
-> - [ ] **107. Anamnèse médicamenteuse *(Douleurs abdominales non spécifiques)***
-> - [ ] **108. Consommation de substances *(6 diagnostics)***
+> - [ ] **109. Anamnèse médicamenteuse *(Douleurs abdominales non spécifiques)***
+> - [ ] **110. Consommation de substances *(6 diagnostics)***
 > 	- [ ] Alcool *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Tabac *(Reflux gastro-œsophagien (RGO))*
-> - [ ] **109. Activités sportives et loisirs *(Douleurs abdominales non spécifiques · Reflux gastro-œsophagien (RGO))***
-> - [ ] **110. Début des symptômes *(4 diagnostics)***
-> - [ ] **111. Fréquence et périodicité *(4 diagnostics)***
-> - [ ] **112. Facteurs déclenchants, aggravants et calmants *(6 grilles sur 20)***
+> - [ ] **111. Activités sportives et loisirs *(Douleurs abdominales non spécifiques · Reflux gastro-œsophagien (RGO))***
+> - [ ] **112. Début des symptômes *(4 diagnostics)***
+> - [ ] **113. Fréquence et périodicité *(4 diagnostics)***
+> - [ ] **114. Facteurs déclenchants, aggravants et calmants *(6 grilles sur 20)***
 > 	- [ ] Facteurs déclenchants *(2 grilles sur 20)*
-> 	- [ ] Facteurs aggravant/soulageant *(2 grilles sur 20)*
+> 	- [ ] Facteurs aggravants *(2 grilles sur 20)*
 > 	- [ ] Facteurs calmants *(Gastroentérite)*
 > 	- [ ] Position antalgique *(2 grilles sur 20)*
 > 	- [ ] Évolution temporelle *(2 grilles sur 20)*
 > 	- [ ] Effet du traitement *(1 grille sur 20)*
-> - [ ] **113. Douleurs liées à l'alimentation *(Endométriose pelvienne · Ischémie mésentérique aiguë · MICI (Crohn / RCUH))***
-> - [ ] **114. Symptômes généraux *(Endométriose pelvienne · Infection génitale haute · MICI (Crohn / RCUH))***
+> - [ ] **115. Douleurs liées à l'alimentation *(Endométriose pelvienne · Ischémie mésentérique aiguë · MICI (Crohn / RCUH))***
+> - [ ] **116. Symptômes généraux *(Endométriose pelvienne · Infection génitale haute · MICI (Crohn / RCUH))***
 > 	- [ ] Fièvre *(Endométriose pelvienne · MICI (Crohn / RCUH))*
 > 	- [ ] Perte de poids
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Fièvre prolongée *(Infection génitale haute)*
-> - [ ] **115. Antécédent de chirurgie abdominale *(4 diagnostics)***
-> - [ ] **116. Anamnèse personnelle *(4 diagnostics)***
-> - [ ] **117. Mode de début *(Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH))***
-> - [ ] **118. Fièvre *(Infection génitale haute)***
-> - [ ] **119. Symptômes extra-intestinaux *(MICI (Crohn / RCUH))***
+> - [ ] **117. Symptômes digestifs *(Endométriose pelvienne · Infection génitale haute · MICI (Crohn / RCUH))***
+> 	- [ ] Transit intestinal et gaz
+> 	- [ ] Gaz *(Endométriose pelvienne)*
+> 	- [ ] Nausées/Vomissements
+> 	- [ ] Sang dans les vomissements
+> 	- [ ] Diarrhée/Constipation
+> 	- [ ] Diarrhée *(Endométriose pelvienne · MICI (Crohn / RCUH))*
+> 	- [ ] Présence de sang dans les selles *(Endométriose pelvienne · Infection génitale haute)*
+> 	- [ ] Aspect des selles *(MICI (Crohn / RCUH))*
+> - [ ] **118. Antécédent de chirurgie abdominale *(4 diagnostics)***
+> - [ ] **119. Anamnèse personnelle *(4 diagnostics)***
+> - [ ] **120. Migration de la douleur *(Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH))***
+> - [ ] **121. Mode de début *(Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH))***
+> - [ ] **122. Fièvre *(Infection génitale haute)***
+> - [ ] **123. Symptômes extra-intestinaux *(MICI (Crohn / RCUH))***
 > 	- [ ] Aphtes
 > 	- [ ] Inflammation oculaire
 > 	- [ ] Troubles articulaires
-> - [ ] **120. Antécédents de douleurs similaires *(Ischémie mésentérique aiguë)***
-> - [ ] **121. Symptômes constitutionnels *(Ischémie mésentérique aiguë)***
+> - [ ] **124. Antécédents de douleurs similaires *(Ischémie mésentérique aiguë)***
+> - [ ] **125. Symptômes généraux et digestifs *(Ischémie mésentérique aiguë)***
+> 	- [ ] Fièvre
+> 	- [ ] Transit intestinal et gaz
+> 	- [ ] Nausées/Vomissements
+> 	- [ ] Sang dans les vomissements
+> 	- [ ] Diarrhée/Constipation
+> 	- [ ] Présence de sang dans les selles
+> - [ ] **126. Symptômes constitutionnels *(Ischémie mésentérique aiguë)***
 > 	- [ ] Perte de poids
 > 	- [ ] Sueurs nocturnes
 > 	- [ ] Fièvre prolongée
-> - [ ] **122. Facteurs de risque cardiovasculaire *(Ischémie mésentérique aiguë · Perforation d'ulcère gastro-duodénal)***
-> 	- [ ] Hypertension artérielle *(Ischémie mésentérique aiguë)*
-> 	- [ ] Dyslipidémie *(Ischémie mésentérique aiguë)*
-> 	- [ ] Diabète *(Ischémie mésentérique aiguë)*
+> - [ ] **127. Facteurs de risque cardiovasculaire *(Ischémie mésentérique aiguë)***
+> 	- [ ] Hypertension artérielle
+> 	- [ ] Dyslipidémie
+> 	- [ ] Diabète
 > 	- [ ] Tabagisme
-> 	- [ ] Antécédent familial de maladie coronarienne < 55 ans *(Ischémie mésentérique aiguë)*
-> 	- [ ] Calculs biliaires ou urinaires *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Ulcère gastro-duodénal connu *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Stress professionnel *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Consommation d'AINS *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Consommation d'alcool *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Antécédents familiaux d'ulcère *(Perforation d'ulcère gastro-duodénal)*
-> - [ ] **123. Fréquence *(Reflux gastro-œsophagien (RGO))***
-> - [ ] **124. Durée et évolution *(Reflux gastro-œsophagien (RGO))***
+> 	- [ ] Antécédent familial de maladie coronarienne < 55 ans
+> - [ ] **128. Localisation de la douleur *(Reflux gastro-œsophagien (RGO))***
+> - [ ] **129. Fréquence *(Reflux gastro-œsophagien (RGO))***
+> - [ ] **130. Durée et évolution *(Reflux gastro-œsophagien (RGO))***
 > 	- [ ] Durée totale
 > 	- [ ] Durée des épisodes
 > 	- [ ] Évolution
-> - [ ] **125. Événements récents *(Reflux gastro-œsophagien (RGO))***
-> - [ ] **126. Facteurs d'influence et dépendance alimentaire *(Reflux gastro-œsophagien (RGO))***
+> - [ ] **131. Événements récents *(Reflux gastro-œsophagien (RGO))***
+> - [ ] **132. Facteurs d'influence et dépendance alimentaire *(Reflux gastro-œsophagien (RGO))***
 > 	- [ ] Facteurs soulageants
 > 	- [ ] Facteurs déclenchants
 > 	- [ ] Relation temporelle avec les repas
-> - [ ] **127. Réveil matinal avec goût acide *(Reflux gastro-œsophagien (RGO))***
-> - [ ] **128. Dysphagie ou odynophagie *(Reflux gastro-œsophagien (RGO))***
-> - [ ] **129. Appétit *(Reflux gastro-œsophagien (RGO))***
-> - [ ] **130. Changements de poids et symptômes B *(Reflux gastro-œsophagien (RGO))***
-> - [ ] **131. Chronologie de la douleur *(Cholédocholithiase · Colique néphrétique droite · Torsion ovarienne)***
+> - [ ] **133. Réveil matinal avec goût acide *(Reflux gastro-œsophagien (RGO))***
+> - [ ] **134. Dysphagie ou odynophagie *(Reflux gastro-œsophagien (RGO))***
+> - [ ] **135. Appétit *(Reflux gastro-œsophagien (RGO))***
+> - [ ] **136. Changements de poids et symptômes B *(Reflux gastro-œsophagien (RGO))***
+> - [ ] **137. Chronologie de la douleur *(Cholédocholithiase · Colique néphrétique droite · Torsion ovarienne)***
 > 	- [ ] Début/durée *(Colique néphrétique droite)*
 > 	- [ ] Fluctuation *(Colique néphrétique droite)*
 > 	- [ ] Circonstances de survenue
 > 	- [ ] Début *(Cholédocholithiase · Torsion ovarienne)*
 > 	- [ ] Progression *(Cholédocholithiase · Torsion ovarienne)*
-> - [ ] **132. Anamnèse actuelle - présence de *(Colique néphrétique droite)***
+> - [ ] **138. Anamnèse actuelle - présence de *(Colique néphrétique droite)***
 > 	- [ ] Fièvre
 > 	- [ ] Frissons
-> - [ ] **133. Par système - urinaire *(Cholédocholithiase · Colique néphrétique droite)***
+> - [ ] **139. Par système - urinaire *(Cholédocholithiase · Colique néphrétique droite)***
 > 	- [ ] Quantité d'urine
 > 	- [ ] Fréquence mictionnelle *(Colique néphrétique droite)*
 > 	- [ ] Couleur de l'urine
@@ -518,67 +518,67 @@ cssclasses:
 > 	- [ ] Dysurie *(Cholédocholithiase)*
 > 	- [ ] Algurie *(Cholédocholithiase)*
 > 	- [ ] Pollakiurie *(Cholédocholithiase)*
-> - [ ] **134. Par système - digestif *(Cholédocholithiase · Colique néphrétique droite)***
+> - [ ] **140. Par système - digestif *(Cholédocholithiase · Colique néphrétique droite)***
 > 	- [ ] Nausées
-> 	- [ ] Nausées/Vomissements
+> 	- [ ] Vomissements
 > 	- [ ] Consistance des selles
 > 	- [ ] Fréquence du transit *(Colique néphrétique droite)*
 > 	- [ ] Couleur des selles
 > 	- [ ] Présence de sang dans les selles
 > 	- [ ] Dernier transit *(Cholédocholithiase)*
-> - [ ] **135. Symptômes associés digestifs *(3 grilles sur 20)***
-> 	- [ ] Présence de nausée *(1 grille sur 20)*
-> 	- [ ] Présence de vomissement *(1 grille sur 20)*
-> 	- [ ] Début/durée des nausées *(1 grille sur 20)*
-> 	- [ ] Nausées/Vomissements *(2 grilles sur 20)*
-> 	- [ ] Perte d'appétit *(2 grilles sur 20)*
-> 	- [ ] Perte de poids *(Gastroentérite)*
-> 	- [ ] Hoquet, éructations *(2 grilles sur 20)*
-> 	- [ ] Nausées *(1 grille sur 20)*
-> 	- [ ] Dégoût pour la nourriture *(1 grille sur 20)*
-> - [ ] **136. Symptômes similaires par le passé *(1 grille sur 20)***
-> - [ ] **137. Anamnèse par système - digestives (selles) *(1 grille sur 20)***
+> - [ ] **141. Symptômes associés - fièvre *(1 grille sur 20)***
+> 	- [ ] Début/chronologie
+> 	- [ ] Intensité
+> 	- [ ] Fluctuation
+> 	- [ ] Présence de frissons
+> 	- [ ] Présence de transpiration
+> - [ ] **142. Symptômes associés - nausées *(1 grille sur 20)***
+> 	- [ ] Présence de nausée
+> 	- [ ] Présence de vomissement
+> 	- [ ] Début/durée des nausées
+> - [ ] **143. Symptômes similaires par le passé *(1 grille sur 20)***
+> - [ ] **144. Anamnèse par système - digestives (selles) *(1 grille sur 20)***
 > 	- [ ] Quantité
 > 	- [ ] Fréquence
 > 	- [ ] Couleur
 > 	- [ ] Présence de sang
-> - [ ] **138. État général *(Cholédocholithiase · Torsion ovarienne)***
+> - [ ] **145. État général *(Cholédocholithiase · Torsion ovarienne)***
 > 	- [ ] Fièvre et frissons *(Cholédocholithiase)*
 > 	- [ ] Fatigue
 > 	- [ ] Forme (perte de poids) *(Cholédocholithiase)*
 > 	- [ ] Fièvre *(Torsion ovarienne)*
 > 	- [ ] Perte/prise de poids récente *(Torsion ovarienne)*
-> - [ ] **139. Système reproducteur (DD: grossesse extra-utérine, torsion ovarienne) *(Torsion ovarienne)***
+> - [ ] **146. Système reproducteur (DD: grossesse extra-utérine, torsion ovarienne) *(Torsion ovarienne)***
 > 	- [ ] Test de grossesse (la patiente en a-t-elle fait un ?)
 > 	- [ ] Contraception
 > 	- [ ] Antécédent de césarienne/de grossesse
 > 	- [ ] Aménorrhée
 > 	- [ ] Métrorragie/ménorragie
 > 	- [ ] Pertes vaginales
-> - [ ] **140. Système digestif (DD: colite, appendicite, diverticulite) *(Torsion ovarienne)***
+> - [ ] **147. Système digestif (DD: colite, appendicite, diverticulite) *(Torsion ovarienne)***
 > 	- [ ] Nausées
-> 	- [ ] Nausées/Vomissements
+> 	- [ ] Vomissements
 > 	- [ ] Dernier transit
 > 	- [ ] Diarrhées
 > 	- [ ] Diarrhée/Constipation
 > 	- [ ] Présence de sang dans les selles
-> - [ ] **141. Système urinaire: (DD: lithiase rénale, cystite, pyélonéphrite) *(Torsion ovarienne)***
+> - [ ] **148. Système urinaire: (DD: lithiase rénale, cystite, pyélonéphrite) *(Torsion ovarienne)***
 > 	- [ ] Dysurie/algurie
 > 	- [ ] Urgenturie
 > 	- [ ] Couleur des urines
 > 	- [ ] Hématurie
-> - [ ] **142. Habitudes et antécédents personnels *(Torsion ovarienne)***
+> - [ ] **149. Habitudes et antécédents personnels *(Torsion ovarienne)***
 > 	- [ ] Médicaments actuels
 > 	- [ ] Maladies connues
 > 	- [ ] Antécédents chirurgicaux
-> - [ ] **143. Caractéristiques spécifiques de la douleur *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **150. Caractéristiques spécifiques de la douleur *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Coliques
 > 	- [ ] Continues
 > 	- [ ] Irradiation
 > 	- [ ] Sans irradiation actuellement
 > 	- [ ] Exacerbée par
 > 	- [ ] Non calmée par
-> - [ ] **144. Antécédents de maladie ulcéreuse *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **151. Antécédents de maladie ulcéreuse *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Maladie ulcéreuse connue
 > 	- [ ] Sensation de faim douloureuse
 > 	- [ ] Brûlure épigastrique
@@ -586,54 +586,73 @@ cssclasses:
 > 	- [ ] Réveils nocturnes à 02h
 > 	- [ ] Calmée par alimentation ou lait
 > 	- [ ] Printemps et automne
-> - [ ] **145. Traitement antérieur *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **152. Traitement antérieur *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Ranitidine prescrite
 > 	- [ ] Prise irrégulière
 > 	- [ ] Interruption du traitement antibiotique d'éradication
 > 	- [ ] Intolérance après 48 heures
 > 	- [ ] Automédication fréquente
-> - [ ] **146. Troubles urinaires associés *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **153. Facteurs de risque ulcéreux *(Perforation d'ulcère gastro-duodénal)***
+> 	- [ ] Calculs biliaires ou urinaires
+> 	- [ ] Ulcère gastro-duodénal connu
+> 	- [ ] Stress professionnel
+> 	- [ ] Tabagisme
+> 	- [ ] Consommation d'AINS
+> 	- [ ] Consommation d'alcool
+> 	- [ ] Antécédents familiaux d'ulcère
+> - [ ] **154. Troubles urinaires associés *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Dysurie
 > 	- [ ] Pollakiurie
 > 	- [ ] Hématurie
 > 	- [ ] Volume des urines
 > 	- [ ] Fréquence mictionnelle
 > 	- [ ] Odeur anormale
-> - [ ] **147. Anamnèse du transit intestinal et aspect des selles *(Gastroentérite)***
+> - [ ] **155. Anamnèse du transit intestinal et aspect des selles *(Gastroentérite)***
 > 	- [ ] Fréquence des selles
 > 	- [ ] Aspect des selles
 > 	- [ ] Odeur
 > 	- [ ] Présence de glaires, sang, pus
 > 	- [ ] Horaire
-> - [ ] **148. Recherche de complications et symptômes d'alarme *(Gastroentérite)***
+> - [ ] **156. Symptômes généraux et signes de déshydratation *(Gastroentérite)***
+> 	- [ ] Fièvre
+> 	- [ ] Asthénie
+> 	- [ ] Troubles du sommeil
+> 	- [ ] Soif et apports hydriques
+> 	- [ ] État général
+> - [ ] **157. Recherche de complications et symptômes d'alarme *(Gastroentérite)***
 > 	- [ ] Troubles urinaires
 > 	- [ ] Signes d'occlusion
 > 	- [ ] Douleur à la détente
 > 	- [ ] Signes de péritonisme
-> - [ ] **149. Antécédents et contexte épidémiologique *(Gastroentérite)***
+> - [ ] **158. Antécédents et contexte épidémiologique *(Gastroentérite)***
 > 	- [ ] Antécédents similaires
 > 	- [ ] Voyage récent
 > 	- [ ] Contage
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Médicaments et habitudes
-> - [ ] **150. Symptômes généraux et signes d'alarme *(1 grille sur 20)***
+> - [ ] **159. Symptômes généraux et signes d'alarme *(1 grille sur 20)***
 > 	- [ ] Fièvre
 > 	- [ ] Frissons
 > 	- [ ] Impact fonctionnel
 > 	- [ ] Ictère
 > 	- [ ] Altération état général
-> - [ ] **151. Transit et fonction digestive *(1 grille sur 20)***
+> - [ ] **160. Transit et fonction digestive *(1 grille sur 20)***
 > 	- [ ] Transit conservé
 > 	- [ ] Aspect des selles
 > 	- [ ] Troubles urinaires
 > 	- [ ] Dernière prise alimentaire
-> - [ ] **152. Antécédents familiaux et habitudes *(1 grille sur 20)***
+> - [ ] **161. Antécédents personnels et facteurs de risque *(1 grille sur 20)***
+> 	- [ ] Épisodes similaires antérieurs
+> 	- [ ] Surpoids
+> 	- [ ] Régime en cours
+> 	- [ ] Bonne santé habituelle
+> - [ ] **162. Antécédents familiaux et habitudes *(1 grille sur 20)***
 > 	- [ ] Antécédents familiaux
 > 	- [ ] Père avec cholestérol élevé
 > 	- [ ] Tabagisme
 > 	- [ ] Alcool
 > 	- [ ] Activité physique
-> - [ ] **153. Anamnèse socioprofessionnelle et impact *(1 grille sur 20)***
+> - [ ] **163. Anamnèse socioprofessionnelle et impact *(1 grille sur 20)***
 > 	- [ ] Profession
 > 	- [ ] Situation familiale
 > 	- [ ] Impact professionnel
@@ -644,7 +663,8 @@ cssclasses:
 > 	- [ ] Lavage des mains
 > 	- [ ] Respect de la pudeur avec drap
 > - [ ] **2. Examen de la tête et du cou *(2 grilles sur 20)***
-> 	- [ ] Inspection des sclérotiques
+> 	- [ ] Inspection des sclérotiques *(1 grille sur 20)*
+> 	- [ ] Inspection des conjonctives *(Cancer de l'ovaire)*
 > - [ ] **3. Examen cardiovasculaire *(3 grilles sur 20)***
 > - [ ] **4. Examen pulmonaire *(3 grilles sur 20)***
 > 	- [ ] Percussion des champs pulmonaires *(Cancer de l'ovaire)*
@@ -665,7 +685,7 @@ cssclasses:
 > - [ ] **11. Signe de Rovsing *(Appendicite aiguë)***
 > - [ ] **12. Éviter de répéter les manœuvres douloureuses *(Cancer de l'ovaire)***
 > - [ ] **13. Non disponible dans les cas téléphoniques *(Maladie cœliaque)***
-> - [ ] **14. Signes vitaux *(5 grilles sur 20)***
+> - [ ] **14. Signes vitaux *(2 grilles sur 20)***
 > 	- [ ] Pulsations *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Tension artérielle *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Rythme respiratoire *(Perforation d'ulcère gastro-duodénal)*
@@ -709,25 +729,11 @@ cssclasses:
 > - [ ] **29. Signes de péritonisme *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **30. McBurney *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **31. Douleur à la secousse *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **32. Palpation profonde *(Perforation d'ulcère gastro-duodénal · Purpura de Schönlein-Henoch (vascularite à IgA) · Reflux gastro-œsophagien (RGO))***
+> - [ ] **32. Palpation du foie *(Purpura de Schönlein-Henoch (vascularite à IgA) · Reflux gastro-œsophagien (RGO))***
 > 	- [ ] Taille et consistance du foie *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Impossible si contracture *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Recherche masse si possible *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Foie et rate *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Points douloureux spécifiques *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Douleur à l'ébranlement *(Perforation d'ulcère gastro-duodénal)*
-> - [ ] **33. Inspection générale - Ambiance *(4 diagnostics)***
-> 	- [ ] Recherche de signes d'œsophagite *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] État dentaire *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Agitation ou prostration *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Position antalgique *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Faciès douloureux, crispé *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Pâleur, sueurs froides *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] État de choc *(Perforation d'ulcère gastro-duodénal)*
+> - [ ] **33. Inspection cutanée *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **34. Endobuccal / muqueuses *(Purpura de Schönlein-Henoch (vascularite à IgA))***
-> - [ ] **35. Statut articulaire *(Ischémie mésentérique aiguë · Purpura de Schönlein-Henoch (vascularite à IgA))***
-> 	- [ ] Recherche de pouls périphériques *(Ischémie mésentérique aiguë)*
-> 	- [ ] Recherche d'anévrisme de l'aorte abdominale *(Ischémie mésentérique aiguë)*
+> - [ ] **35. Statut articulaire *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **36. Douleur à la percussion rénale *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **37. Méningisme *(Purpura de Schönlein-Henoch (vascularite à IgA))***
 > - [ ] **38. Examen neurologique *(Purpura de Schönlein-Henoch (vascularite à IgA))***
@@ -738,19 +744,17 @@ cssclasses:
 > 	- [ ] Signes vitaux
 > 	- [ ] Signes de déshydratation *(Gastroentérite)*
 > 	- [ ] Recherche d'ictère *(Gastroentérite)*
-> - [ ] **40. Inspection abdominale systématique *(7 diagnostics)***
-> 	- [ ] Respiration abdominale *(Diverticulite sigmoïdienne non compliquée · Perforation d'ulcère gastro-duodénal)*
+> - [ ] **40. Inspection abdominale systématique *(Diverticulite sigmoïdienne non compliquée · Gastroentérite · Perforation d'ulcère gastro-duodénal)***
+> 	- [ ] Distension abdominale *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Asymétrie *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Cicatrices *(Diverticulite sigmoïdienne non compliquée · Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Péristaltisme visible *(Diverticulite sigmoïdienne non compliquée)*
 > 	- [ ] Circulation collatérale *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Palpation superficielle de l'abdomen *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Recherche de masse *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Recherche de douleur épigastrique *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Morphologie *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Symétrie vs asymétrie *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Hernies *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Veines superficielles *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Respiration abdominale *(Perforation d'ulcère gastro-duodénal)*
 > 	- [ ] Identification des 4 quadrants et 9 régions *(Gastroentérite)*
 > 	- [ ] Abdomen plat vs distendu, symétrique vs asymétrique *(Gastroentérite)*
 > 	- [ ] Recherche de cicatrices chirurgicales *(Gastroentérite)*
@@ -782,36 +786,22 @@ cssclasses:
 > 	- [ ] Technique correcte *(Gastroentérite)*
 > 	- [ ] Matité *(Gastroentérite)*
 > 	- [ ] Flèche hépatique *(Gastroentérite)*
-> - [ ] **43. Palpation superficielle de l'abdomen *(Diverticulite sigmoïdienne non compliquée · Gastroentérite · Perforation d'ulcère gastro-duodénal)***
-> 	- [ ] Douleur à la pression *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Résistance/masse palpable *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Défense musculaire *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Contracture abdominale *(Diverticulite sigmoïdienne non compliquée · Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Défense généralisée *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Hyperesthésie cutanée *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Douleur maximale épigastrique *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Extension de la contracture *(Perforation d'ulcère gastro-duodénal)*
-> 	- [ ] Commencer à l'opposé de la zone douloureuse *(Gastroentérite)*
-> 	- [ ] Palpation avec main à plat dans chaque région *(Gastroentérite)*
-> 	- [ ] Évaluation du tonus pariétal spontané *(Gastroentérite)*
-> 	- [ ] Recherche de douleur localisée *(Gastroentérite)*
-> 	- [ ] Recherche de défense ou contracture *(Gastroentérite)*
-> - [ ] **44. Recherche de signes hémorragiques *(Diverticulite sigmoïdienne non compliquée · Infection génitale haute)***
-> 	- [ ] Douleur à la décompression (Blumberg) *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Signe de Murphy *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Signe du psoas *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Signe de l'obturateur *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Signe de Rovsing *(Diverticulite sigmoïdienne non compliquée)*
-> - [ ] **45. Palpation des organes *(3 grilles sur 20)***
-> 	- [ ] Foie *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Rate *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Reins *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Vessie *(Diverticulite sigmoïdienne non compliquée)*
-> 	- [ ] Recherche de douleur rénale *(Reflux gastro-œsophagien (RGO))*
-> 	- [ ] Palpation bimanuelle *(1 grille sur 20)*
-> 	- [ ] Main antérieure sous rebord costal *(1 grille sur 20)*
-> 	- [ ] Palpation lors inspiration profonde *(1 grille sur 20)*
-> 	- [ ] Évaluation pôle inférieur rein droit *(1 grille sur 20)*
+> - [ ] **43. Palpation superficielle et profonde *(Diverticulite sigmoïdienne non compliquée)***
+> 	- [ ] Douleur à la pression
+> 	- [ ] Résistance/masse palpable
+> 	- [ ] Défense musculaire
+> 	- [ ] Contracture abdominale
+> - [ ] **44. Recherche de signes péritonéaux *(Diverticulite sigmoïdienne non compliquée)***
+> 	- [ ] Douleur à la décompression (Blumberg)
+> 	- [ ] Signe de Murphy
+> 	- [ ] Signe du psoas
+> 	- [ ] Signe de l'obturateur
+> 	- [ ] Signe de Rovsing
+> - [ ] **45. Palpation des organes *(Diverticulite sigmoïdienne non compliquée)***
+> 	- [ ] Foie
+> 	- [ ] Rate
+> 	- [ ] Reins
+> 	- [ ] Vessie
 > - [ ] **46. Examen des orifices herniaires *(Diverticulite sigmoïdienne non compliquée)***
 > 	- [ ] Hernies inguinales
 > 	- [ ] Hernie crurale
@@ -827,39 +817,63 @@ cssclasses:
 > 	- [ ] Masses annexielles
 > - [ ] **49. Désinfection des mains *(Douleurs abdominales non spécifiques)***
 > - [ ] **50. Prise de la tension artérielle *(Douleurs abdominales non spécifiques)***
-> - [ ] **51. Auscultation cardiaque et prise du pouls *(Douleurs abdominales non spécifiques)***
-> - [ ] **52. Auscultation pulmonaire *(Douleurs abdominales non spécifiques)***
-> - [ ] **53. Évaluation de la capacité de discernement *(Douleurs abdominales non spécifiques)***
+> - [ ] **51. Inspection générale - Ambiance *(Douleurs abdominales non spécifiques · Perforation d'ulcère gastro-duodénal)***
+> 	- [ ] Agitation ou prostration *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Position antalgique *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Faciès douloureux, crispé *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Pâleur, sueurs froides *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] État de choc *(Perforation d'ulcère gastro-duodénal)*
+> - [ ] **52. Auscultation cardiaque et prise du pouls *(Douleurs abdominales non spécifiques)***
+> - [ ] **53. Auscultation pulmonaire *(Douleurs abdominales non spécifiques)***
+> - [ ] **54. Évaluation de la capacité de discernement *(Douleurs abdominales non spécifiques)***
 > 	- [ ] Évaluation pendant l'entretien
-> - [ ] **54. Inspection de la vulve, du vagin et du col *(Endométriose pelvienne)***
-> - [ ] **55. Examen bimanuel recto-vaginal *(Endométriose pelvienne)***
+> - [ ] **55. Inspection de la vulve, du vagin et du col *(Endométriose pelvienne)***
+> - [ ] **56. Examen bimanuel recto-vaginal *(Endométriose pelvienne)***
 > 	- [ ] Utérus
 > 	- [ ] Cul-de-sac de Douglas
-> - [ ] **56. Palpation des ganglions lymphatiques *(4 diagnostics)***
-> - [ ] **57. Toucher rectal avec inspection de l'anus *(MICI (Crohn / RCUH))***
-> - [ ] **58. Inspection de l'abdomen et de la peau *(Ischémie mésentérique aiguë)***
+> - [ ] **57. Palpation des ganglions lymphatiques *(4 diagnostics)***
+> - [ ] **58. Palpation abdominale *(4 diagnostics)***
+> 	- [ ] Palpation superficielle et profonde *(Reflux gastro-œsophagien (RGO))*
+> 	- [ ] Recherche de masse *(Reflux gastro-œsophagien (RGO))*
+> 	- [ ] Recherche de douleur épigastrique *(Reflux gastro-œsophagien (RGO))*
+> - [ ] **59. Signes péritonéaux *(Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH))***
+> - [ ] **60. Recherche de signes hémorragiques *(Infection génitale haute)***
+> - [ ] **61. Toucher rectal avec inspection de l'anus *(MICI (Crohn / RCUH))***
+> - [ ] **62. Inspection de l'abdomen et de la peau *(Ischémie mésentérique aiguë)***
 > 	- [ ] État général
-> - [ ] **59. Status cardio-pulmonaire *(Ischémie mésentérique aiguë)***
+> - [ ] **63. Status cardio-pulmonaire *(Ischémie mésentérique aiguë)***
 > 	- [ ] Examen cardiovasculaire
 > 	- [ ] Examen pulmonaire
-> - [ ] **60. Palpation de la rate *(2 grilles sur 20)***
+> - [ ] **64. Status vasculaire *(Ischémie mésentérique aiguë)***
+> 	- [ ] Recherche de pouls périphériques
+> 	- [ ] Recherche d'anévrisme de l'aorte abdominale
+> - [ ] **65. Palpation de la rate *(2 grilles sur 20)***
 > 	- [ ] Recherche de splénomégalie *(Reflux gastro-œsophagien (RGO))*
 > 	- [ ] Décubitus dorsal *(1 grille sur 20)*
 > 	- [ ] Décubitus latéral droit *(1 grille sur 20)*
 > 	- [ ] Technique bimanuelle correcte *(1 grille sur 20)*
 > 	- [ ] Évaluation taille et consistance si palpable *(1 grille sur 20)*
-> - [ ] **61. Status abdominal - installation *(Cholédocholithiase · Colique néphrétique droite)***
+> - [ ] **66. Palpation des reins *(2 grilles sur 20)***
+> 	- [ ] Recherche de douleur rénale *(Reflux gastro-œsophagien (RGO))*
+> 	- [ ] Palpation bimanuelle *(1 grille sur 20)*
+> 	- [ ] Main antérieure sous rebord costal *(1 grille sur 20)*
+> 	- [ ] Palpation lors inspiration profonde *(1 grille sur 20)*
+> 	- [ ] Évaluation pôle inférieur rein droit *(1 grille sur 20)*
+> - [ ] **67. Inspection buccale *(Reflux gastro-œsophagien (RGO))***
+> 	- [ ] Recherche de signes d'œsophagite
+> 	- [ ] État dentaire
+> - [ ] **68. Status abdominal - installation *(Cholédocholithiase · Colique néphrétique droite)***
 > 	- [ ] Bras & jambes décroisées
 > 	- [ ] Tête légèrement surélevée
 > 	- [ ] Abdomen entièrement visible (premier bouton du pantalon déboutonné ou patient en sous-vêtements)
 > 	- [ ] Se place à droite du patient
-> - [ ] **62. Status abdominal - auscultation *(Colique néphrétique droite)***
+> - [ ] **69. Status abdominal - auscultation *(Colique néphrétique droite)***
 > 	- [ ] Les 4 quadrants
 > 	- [ ] Auscultation avant toute autre partie du status
-> - [ ] **63. Status abdominal - percussion *(Colique néphrétique droite)***
+> - [ ] **70. Status abdominal - percussion *(Colique néphrétique droite)***
 > 	- [ ] Les 4 quadrants
 > 	- [ ] Délimitation de la taille du foie à la percussion (ou autre technique appropriée)
-> - [ ] **64. Status abdominal - palpation *(Colique néphrétique droite · Torsion ovarienne)***
+> - [ ] **71. Status abdominal - palpation *(Colique néphrétique droite · Torsion ovarienne)***
 > 	- [ ] Superficielle *(Colique néphrétique droite)*
 > 	- [ ] Profonde *(Colique néphrétique droite)*
 > 	- [ ] Détente *(Colique néphrétique droite)*
@@ -868,94 +882,111 @@ cssclasses:
 > 	- [ ] Palpation superficielle de l'abdomen *(Torsion ovarienne)*
 > 	- [ ] Palpation profonde *(Torsion ovarienne)*
 > 	- [ ] Percussion foie et rate *(Torsion ovarienne)*
-> - [ ] **65. Status abdominal - tests spécifiques *(Colique néphrétique droite)***
+> - [ ] **72. Status abdominal - tests spécifiques *(Colique néphrétique droite)***
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
 > 	- [ ] Signe de Murphy
-> - [ ] **66. Installation du patient *(1 grille sur 20)***
+> - [ ] **73. Installation du patient *(1 grille sur 20)***
 > 	- [ ] Jambes décroisées
 > 	- [ ] Bras le long du corps
 > 	- [ ] Tête légèrement surélevée
 > 	- [ ] Abdomen visible en entier (si nécessaire, premier bouton du pantalon enlevé)
 > 	- [ ] Se positionne à droite de la patiente
-> - [ ] **67. Tests spécifiques *(1 grille sur 20)***
+> - [ ] **74. Tests spécifiques *(1 grille sur 20)***
 > 	- [ ] Signe de Murphy
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
-> - [ ] **68. DD : appendicite *(Cholédocholithiase)***
+> - [ ] **75. DD : appendicite *(Cholédocholithiase)***
 > 	- [ ] Palpation du point de McBurney
 > 	- [ ] Signe du Psoas
-> - [ ] **69. S'assure du confort d'installation de la patiente *(Torsion ovarienne)***
-> - [ ] **70. Status urinaire - percussion des loges rénales *(Torsion ovarienne)***
-> - [ ] **71. Status gynécologique - 1 *(Torsion ovarienne)***
+> - [ ] **76. S'assure du confort d'installation de la patiente *(Torsion ovarienne)***
+> - [ ] **77. Status urinaire - percussion des loges rénales *(Torsion ovarienne)***
+> - [ ] **78. Status gynécologique - 1 *(Torsion ovarienne)***
 > 	- [ ] Met des gants
 > 	- [ ] Observation du périnée, vestibule
 > 	- [ ] Lubrification correcte du spéculum
-> - [ ] **72. Status gynécologique - 2 *(Torsion ovarienne)***
+> - [ ] **79. Status gynécologique - 2 *(Torsion ovarienne)***
 > 	- [ ] Insertion du spéculum avec angle de 45°
 > 	- [ ] Observation du col
 > 	- [ ] Palpation bi-manuelle
 > 	- [ ] Mobilisation du col à une main
 > 	- [ ] Retire le spéculum sans le fermer
-> - [ ] **73. Examen cutané et muqueux *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **80. Examen cutané et muqueux *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Peau
 > 	- [ ] Langue
 > 	- [ ] Signes de dénutrition
 > 	- [ ] Signes de déshydratation
-> - [ ] **74. Signes péritonéaux spécifiques *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **81. Palpation superficielle de l'abdomen *(Gastroentérite · Perforation d'ulcère gastro-duodénal)***
+> 	- [ ] Défense généralisée *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Contracture abdominale *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Hyperesthésie cutanée *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Douleur maximale épigastrique *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Extension de la contracture *(Perforation d'ulcère gastro-duodénal)*
+> 	- [ ] Commencer à l'opposé de la zone douloureuse *(Gastroentérite)*
+> 	- [ ] Palpation avec main à plat dans chaque région *(Gastroentérite)*
+> 	- [ ] Évaluation du tonus pariétal spontané *(Gastroentérite)*
+> 	- [ ] Recherche de douleur localisée *(Gastroentérite)*
+> 	- [ ] Recherche de défense ou contracture *(Gastroentérite)*
+> - [ ] **82. Palpation profonde *(Perforation d'ulcère gastro-duodénal)***
+> 	- [ ] Impossible si contracture
+> 	- [ ] Recherche masse si possible
+> 	- [ ] Foie et rate
+> 	- [ ] Points douloureux spécifiques
+> 	- [ ] Douleur à l'ébranlement
+> - [ ] **83. Signes péritonéaux spécifiques *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Contracture abdominale généralisée
 > 	- [ ] Signe du rebond positif
 > 	- [ ] Douleur à la décompression brutale
 > 	- [ ] Douleur à la toux
 > 	- [ ] Douleur à la percussion du talon
 > 	- [ ] Position antalgique en chien de fusil
-> - [ ] **75. Touchers pelviens *(Perforation d'ulcère gastro-duodénal)***
+> - [ ] **84. Touchers pelviens *(Perforation d'ulcère gastro-duodénal)***
 > 	- [ ] Toucher rectal
 > 	- [ ] Bombement douloureux
 > 	- [ ] Recherche de sang
 > 	- [ ] Toucher vaginal
-> - [ ] **76. Palpation profonde et recherche de masses *(Gastroentérite)***
+> - [ ] **85. Palpation profonde et recherche de masses *(Gastroentérite)***
 > 	- [ ] Recherche de masses
 > 	- [ ] Palpation de l'aorte abdominale
 > 	- [ ] Douleur à l'ébranlement et à la détente
 > 	- [ ] Évaluation de la douleur provoquée
-> - [ ] **77. Palpation des organes (foie, rate, reins) *(Gastroentérite)***
+> - [ ] **86. Palpation des organes (foie, rate, reins) *(Gastroentérite)***
 > 	- [ ] Palpation du bord inférieur du foie
 > 	- [ ] Palpation de la rate
 > 	- [ ] Palpation bimanuelle des loges rénales
 > 	- [ ] Mention du toucher rectal si indiqué
-> - [ ] **78. Inspection générale et recherche d'ictère *(1 grille sur 20)***
+> - [ ] **87. Inspection générale et recherche d'ictère *(1 grille sur 20)***
 > 	- [ ] Inspection de la peau
 > 	- [ ] Examen des sclères
 > 	- [ ] État général
 > 	- [ ] Signes vitaux
-> - [ ] **79. Recherche des signes d'insuffisance hépatocellulaire *(1 grille sur 20)***
+> - [ ] **88. Recherche des signes d'insuffisance hépatocellulaire *(1 grille sur 20)***
 > 	- [ ] Angiomes stellaires
 > 	- [ ] Erythrose palmaire
 > 	- [ ] Gynécomastie
 > 	- [ ] Ongles blancs
 > 	- [ ] Ecchymoses
-> - [ ] **80. Recherche des signes d'hypertension portale *(1 grille sur 20)***
+> - [ ] **89. Recherche des signes d'hypertension portale *(1 grille sur 20)***
 > 	- [ ] Collatérales porto-systémiques
 > 	- [ ] Splénomégalie
 > 	- [ ] Ascite
-> - [ ] **81. Recherche des signes de cholestase chronique *(1 grille sur 20)***
+> - [ ] **90. Recherche des signes de cholestase chronique *(1 grille sur 20)***
 > 	- [ ] Lésions de grattage
 > 	- [ ] Xanthélasma
 > 	- [ ] Hyperpigmentation cutanée
-> - [ ] **82. Examen spécialisé du foie *(1 grille sur 20)***
+> - [ ] **91. Examen spécialisé du foie *(1 grille sur 20)***
 > 	- [ ] Flèche hépatique
 > 	- [ ] Palpation du bord inférieur du foie
 > 	- [ ] Signe de Murphy
 > 	- [ ] Caractéristiques du foie palpé
-> - [ ] **83. Recherche d'ascite *(1 grille sur 20)***
+> - [ ] **92. Recherche d'ascite *(1 grille sur 20)***
 > 	- [ ] Matité déclive à la percussion
 > 	- [ ] Patient couché : percussion ligne horizontale ombilic
 > 	- [ ] Patient tourné 30-45° : recherche déplacement limite
 > 	- [ ] Technique de matité déclive correcte
 
 > [!success] 💊 Management — partagé par plusieurs diagnostics
-> - [ ] **1. Hypothèse diagnostique principale *(5 grilles sur 20)* — 5 diagnostics : *Appendicite aiguë · Cancer de l'ovaire · Cholécystite aiguë · Colique néphrétique droite · Maladie cœliaque***
+> - [ ] **1. Hypothèses diagnostiques *(4 grilles sur 20)* — 4 diagnostics : *Appendicite aiguë · Cancer de l'ovaire · Cholécystite aiguë · Maladie cœliaque***
 > - [ ] **2. Échographie *(2 grilles sur 20)* — *Cholécystite aiguë · Purpura de Schönlein-Henoch (vascularite à IgA)***
 > - [ ] **3. Analgésie *(2 grilles sur 20)* — *Cholécystite aiguë · Purpura de Schönlein-Henoch (vascularite à IgA)***
 > - [ ] **4. Diagnostics différentiels de l'abdomen aigu *(9 grilles sur 20)* — 9 diagnostics : *Colique néphrétique droite · Diverticulite sigmoïdienne non compliquée · Douleurs abdominales non spécifiques · Endométriose pelvienne · Infection génitale haute · Ischémie mésentérique aiguë · MICI (Crohn / RCUH) · Perforation d'ulcère gastro-duodénal · Reflux gastro-œsophagien (RGO)***
@@ -967,17 +998,17 @@ cssclasses:
 > 	- [ ] VS, CRP
 > 	- [ ] Analyse d'urine et ECBU
 > 	- [ ] US abdominale et pelvienne
-> - [ ] **2. Examens complémentaires de première intention**
-> 	- [ ] CT abdominal
-> 	- [ ] Examen pelvien
-> 	- [ ] Prélèvements cervicaux et urétraux
-> - [ ] **3. Information et éducation de la patiente**
+> - [ ] **2. Information et éducation de la patiente**
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **4. Conseils diététiques et de prévention**
+> - [ ] **3. Examens complémentaires secondaires**
+> 	- [ ] Examen pelvien
+> 	- [ ] Prélèvements cervicaux et urétraux
+> 	- [ ] CT abdominal
+> - [ ] **4. Conseil et prévention**
 > 	- [ ] Conseil sur les pratiques sexuelles sûres
 > 	- [ ] Réaction appropriée au défi concernant la grossesse
 
@@ -986,19 +1017,19 @@ cssclasses:
 > 	- [ ] FSC
 > 	- [ ] Examen pelvien
 > 	- [ ] Β-hCG sérique
-> - [ ] **2. Examens complémentaires de première intention**
-> 	- [ ] CA-125
-> 	- [ ] Laparoscopie
-> 	- [ ] Test génétique BRCA
-> - [ ] **3. Information et éducation de la patiente**
+> - [ ] **2. Information et éducation de la patiente**
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
-> - [ ] **4. Conseils diététiques et de prévention**
-> 	- [ ] Réaction appropriée au défi concernant la grossesse
+> - [ ] **3. Examens complémentaires secondaires**
+> 	- [ ] CA-125
+> 	- [ ] Laparoscopie
+> 	- [ ] Test génétique BRCA
+> - [ ] **4. Conseil et prévention**
 > 	- [ ] Conseil sur les options de contraception
+> 	- [ ] Réaction appropriée au défi concernant la chirurgie
 > - [ ] **5. Examens d'imagerie**
 > 	- [ ] US transvaginale
 > 	- [ ] US transabdominale
@@ -1011,7 +1042,7 @@ cssclasses:
 > 	- [ ] Enzymes pancréatiques
 > 	- [ ] FSC
 > 	- [ ] Ionogramme et calcium
-> - [ ] **2. Examens complémentaires de première intention *(1 grille sur 4)***
+> - [ ] **2. Examens complémentaires de seconde ligne *(1 grille sur 4)***
 > 	- [ ] CT abdominal
 > 	- [ ] ERCP
 > - [ ] **3. Information et éducation de la patiente *(2 grilles sur 4)***
@@ -1027,59 +1058,59 @@ cssclasses:
 > - [ ] **4. Conseil et défis *(1 grille sur 4)***
 > 	- [ ] Conseil sur les options de soutien pour les changements de poids et d'alimentation
 > 	- [ ] Réaction appropriée au défi concernant le poids
-> - [ ] **5. Conseils diététiques et de prévention *(1 grille sur 4)***
-> 	- [ ] Régime pauvre en graisses
-> 	- [ ] Perte de poids progressive
-> 	- [ ] Repas fractionnés
-> 	- [ ] Éviter jeûne prolongé
-> - [ ] **6. Examens biologiques *(1 grille sur 4)***
-> - [ ] **7. Formule sanguine *(1 grille sur 4)***
-> - [ ] **8. Status urinaire *(1 grille sur 4)***
-> - [ ] **9. ECG *(1 grille sur 4)***
-> - [ ] **10. Diagnostic de travail *(1 grille sur 4)***
-> - [ ] **11. Cholécysectomie laparoscopique *(1 grille sur 4)***
-> - [ ] **12. Antibiothérapie i.v. *(1 grille sur 4)***
-> - [ ] **13. Réhydratation i.v. *(1 grille sur 4)***
-> - [ ] **14. Critères d'hospitalisation *(1 grille sur 4)***
-> - [ ] **15. Laisser à jeun *(1 grille sur 4)***
-> - [ ] **16. Prise en charge thérapeutique immédiate *(1 grille sur 4)***
+> - [ ] **5. Examens biologiques *(1 grille sur 4)***
+> - [ ] **6. Formule sanguine *(1 grille sur 4)***
+> - [ ] **7. Status urinaire *(1 grille sur 4)***
+> - [ ] **8. ECG *(1 grille sur 4)***
+> - [ ] **9. Diagnostic de travail *(1 grille sur 4)***
+> - [ ] **10. Cholécysectomie laparoscopique *(1 grille sur 4)***
+> - [ ] **11. Antibiothérapie i.v. *(1 grille sur 4)***
+> - [ ] **12. Réhydratation i.v. *(1 grille sur 4)***
+> - [ ] **13. Critères d'hospitalisation *(1 grille sur 4)***
+> - [ ] **14. Laisser à jeun *(1 grille sur 4)***
+> - [ ] **15. Prise en charge thérapeutique immédiate *(1 grille sur 4)***
 > 	- [ ] Analgésiques
 > 	- [ ] Antispasmodiques
 > 	- [ ] Antiémétiques si vomissements
 > 	- [ ] Mise à jeun initiale
-> - [ ] **17. Mentionne une cholécystite comme hypothèse diagnostique principale *(1 grille sur 4)***
-> - [ ] **18. Evoque un diagnostic différentiel plausible *(1 grille sur 4)***
+> - [ ] **16. Mentionne une cholécystite comme hypothèse diagnostique principale *(1 grille sur 4)***
+> - [ ] **17. Evoque un diagnostic différentiel plausible *(1 grille sur 4)***
 > 	- [ ] Cholangite
 > 	- [ ] Pancréatite
 > 	- [ ] Appendicite
 > 	- [ ] Hépatite
 > 	- [ ] Pyélonéphrite
 > 	- [ ] Trouble gynécologique
-> - [ ] **19. Diagnostic principal et classification *(1 grille sur 4)***
-> 	- [ ] Évoque colique hépatique/cholécystite
-> 	- [ ] Classification selon durée
-> 	- [ ] Différenciation avec angiocholite
-> 	- [ ] Facteurs de risque
-> - [ ] **20. Évaluation de la sévérité et des complications *(1 grille sur 4)***
+> - [ ] **18. Évaluation de la sévérité et des complications *(1 grille sur 4)***
 > 	- [ ] Recherche signes de cholécystite
 > 	- [ ] Exclusion angiocholite
 > 	- [ ] Évaluation retentissement général
 > 	- [ ] Recherche signes de péritonite
-> - [ ] **21. Proposition d'examens complémentaires *(1 grille sur 4)***
+> - [ ] **19. Proposition d'examens complémentaires *(1 grille sur 4)***
 > 	- [ ] Bilan biologique
 > 	- [ ] Échographie abdominale/vaginale
 > 	- [ ] FSC, CRP
 > 	- [ ] Lipasémie
-> - [ ] **22. Traitement spécifique selon diagnostic *(1 grille sur 4)***
+> - [ ] **20. Traitement spécifique selon diagnostic *(1 grille sur 4)***
 > 	- [ ] Cholécystectomie
 > 	- [ ] Timing chirurgical
 > 	- [ ] Antibiothérapie si cholécystite
 > 	- [ ] CPRE si angiocholite
-> - [ ] **23. Surveillance et critères d'hospitalisation *(1 grille sur 4)***
+> - [ ] **21. Conseils diététiques et de prévention *(1 grille sur 4)***
+> 	- [ ] Régime pauvre en graisses
+> 	- [ ] Perte de poids progressive
+> 	- [ ] Repas fractionnés
+> 	- [ ] Éviter jeûne prolongé
+> - [ ] **22. Surveillance et critères d'hospitalisation *(1 grille sur 4)***
 > 	- [ ] Critères d'hospitalisation
 > 	- [ ] Surveillance clinique
 > 	- [ ] Signes d'alarme
 > 	- [ ] Suivi ambulatoire programmé
+> - [ ] **23. Diagnostic principal et classification *(1 grille sur 4)***
+> 	- [ ] Évoque colique hépatique/cholécystite
+> 	- [ ] Classification selon durée
+> 	- [ ] Différenciation avec angiocholite
+> 	- [ ] Facteurs de risque
 
 > [!success] 💊 Management — si Cholédocholithiase
 > - [ ] **1. Evoque un diagnostic différentiel plausible**
@@ -1096,7 +1127,8 @@ cssclasses:
 > 	- [ ] Imagerie (US/CT) pour déterminer la meilleure prise en charge
 > 	- [ ] Bandelette urinaire / analyse d'urine
 > 	- [ ] Bilan sanguin (formule sanguine, fonction rénale, CRP)
-> - [ ] **2. Antalgie proposée**
+> - [ ] **2. Hypothèse diagnostique principale**
+> - [ ] **3. Antalgie proposée**
 
 > [!success] 💊 Management — si Diverticulite sigmoïdienne non compliquée
 > - [ ] **1. Examens d'imagerie**
@@ -1110,7 +1142,7 @@ cssclasses:
 > 	- [ ] VS si disponible
 > 	- [ ] Ionogramme, urée, créatinine
 > 	- [ ] Analyse d'urine (ECBU)
-> 	- [ ] Test de grossesse
+> 	- [ ] Test de grossesse si approprié
 > - [ ] **3. Critères d'hospitalisation**
 > 	- [ ] Signes de péritonite ou sepsis
 > 	- [ ] Échec du traitement ambulatoire à 72h
@@ -1144,42 +1176,42 @@ cssclasses:
 > 	- [ ] Prévention des récidives
 
 > [!success] 💊 Management — si Douleurs abdominales non spécifiques
-> - [ ] **1. Conseils diététiques et de prévention**
+> - [ ] **1. Diagnostic suspecté**
+> 	- [ ] Hidden agenda (demande cachée)
+> - [ ] **2. Prescription médicamenteuse**
+> 	- [ ] Pilule contraceptive combinée
+> 	- [ ] Explication sur la prise : 1ère pilule le 1er jour des règles
+> 	- [ ] Puis 3 semaines chaque jour
+> 	- [ ] Puis 1 semaine de pause
+> - [ ] **3. Information sur les effets secondaires**
+> 	- [ ] Effets secondaires bénins
+> 	- [ ] Situations d'urgence
+> - [ ] **4. Conseils et éducation**
 > 	- [ ] Protection contre les infections sexuellement transmissibles non assurée par la pilule
 > 	- [ ] Contraception post-coïtale mentionnée en cas de grossesse possible
 > 	- [ ] Recommandation de contrôle chez le gynécologue
 > 	- [ ] Promesse de secret médical, mais encouragement à parler avec les parents
 > 	- [ ] Si pilule oubliée 1x : préservatif pendant 7-14 jours
 > 	- [ ] Attention en cas de diarrhée/vomissements, antibiotiques, millepertuis, pamplemousse
-> - [ ] **2. Diagnostic suspecté**
-> 	- [ ] Hidden agenda (demande cachée)
-> - [ ] **3. Prescription médicamenteuse**
-> 	- [ ] Pilule contraceptive combinée
-> 	- [ ] Explication sur la prise : 1ère pilule le 1er jour des règles
-> 	- [ ] Puis 3 semaines chaque jour
-> 	- [ ] Puis 1 semaine de pause
-> - [ ] **4. Information sur les effets secondaires**
-> 	- [ ] Effets secondaires bénins
-> 	- [ ] Situations d'urgence
 
 > [!success] 💊 Management — si Endométriose pelvienne
 > - [ ] **1. Information et éducation de la patiente**
 > 	- [ ] Explication que les symptômes disparaissent souvent lors de l'aménorrhée ou de la grossesse
 > 	- [ ] Information sur les complications possibles
 > 	- [ ] Information sur les récidives possibles après traitement
-> - [ ] **2. Examens biologiques**
-> 	- [ ] Test de grossesse
-> 	- [ ] Analyses sanguines
-> 	- [ ] Prélèvement vaginal et cervical
-> 	- [ ] Échographie abdominale/vaginale
-> 	- [ ] Laparoscopie diagnostique
-> - [ ] **3. Diagnostic suspecté**
+> - [ ] **2. Diagnostic suspecté**
 > 	- [ ] Endométriose
-> - [ ] **4. Prise en charge thérapeutique immédiate**
+> - [ ] **3. Prise en charge thérapeutique immédiate**
 > 	- [ ] Analgésiques
 > 	- [ ] Contraceptifs oraux (inhibiteurs de l'ovulation)
 > 	- [ ] Thérapie endocrinienne
 > 	- [ ] Ablation chirurgicale en cas de complications ou stades très avancés
+> - [ ] **4. Examens diagnostiques**
+> 	- [ ] Analyses sanguines
+> 	- [ ] Test de grossesse
+> 	- [ ] Prélèvement vaginal et cervical
+> 	- [ ] Échographie abdominale/vaginale
+> 	- [ ] Laparoscopie diagnostique
 
 > [!success] 💊 Management — si Gastroentérite
 > - [ ] **1. Information et éducation de la patiente**
@@ -1187,36 +1219,36 @@ cssclasses:
 > 	- [ ] Signes d'alarme nécessitant reconsultation
 > 	- [ ] Importance de la compliance thérapeutique
 > 	- [ ] Conseils pour la reprise du travail
-> - [ ] **2. Conseils diététiques et de prévention**
-> 	- [ ] Réalimentation progressive
-> 	- [ ] Conseils d'hygiène
-> 	- [ ] Éviction professionnelle si nécessaire
-> 	- [ ] Prévention pour futurs voyages
-> - [ ] **3. Prise en charge thérapeutique immédiate**
+> - [ ] **2. Prise en charge thérapeutique immédiate**
 > 	- [ ] Réhydratation
 > 	- [ ] Correction des pertes électrolytiques
 > 	- [ ] Traitement symptomatique
 > 	- [ ] Repos digestif initial puis réalimentation progressive
-> - [ ] **4. Diagnostic principal et classification**
+> - [ ] **3. Diagnostic principal et différentiel**
 > 	- [ ] Évoque gastro-entérite aiguë
 > 	- [ ] Probablement d'origine infectieuse
 > 	- [ ] Contexte de voyage en zone tropicale
 > 	- [ ] Diagnostic différentiel
-> - [ ] **5. Évaluation de la sévérité et des complications**
+> - [ ] **4. Évaluation de la sévérité et des complications**
 > 	- [ ] Évaluation du degré de déshydratation
 > 	- [ ] Recherche de signes de choc
 > 	- [ ] Évaluation de la perte pondérale
 > 	- [ ] Exclusion de complications
-> - [ ] **6. Proposition d'examens complémentaires**
+> - [ ] **5. Proposition d'examens complémentaires**
 > 	- [ ] Bilan biologique
 > 	- [ ] Coproculture et recherche de parasites
 > 	- [ ] Bandelette urinaire
 > 	- [ ] Imagerie abdominale si doute diagnostique
-> - [ ] **7. Traitement spécifique selon diagnostic**
+> - [ ] **6. Traitement spécifique selon diagnostic**
 > 	- [ ] Indication d'antibiothérapie
 > 	- [ ] Choix antibiotique adapté
 > 	- [ ] Traitement antiparasitaire si indiqué
 > 	- [ ] Probiotiques pour restaurer flore intestinale
+> - [ ] **7. Conseils diététiques et de prévention**
+> 	- [ ] Réalimentation progressive
+> 	- [ ] Conseils d'hygiène
+> 	- [ ] Éviction professionnelle si nécessaire
+> 	- [ ] Prévention pour futurs voyages
 > - [ ] **8. Surveillance et critères d'hospitalisation**
 > 	- [ ] Critères d'hospitalisation
 > 	- [ ] Surveillance clinique
@@ -1234,22 +1266,30 @@ cssclasses:
 > 	- [ ] Information sur les complications possibles
 > 	- [ ] Douleurs pelviennes chroniques possibles
 > 	- [ ] Risque accru de grossesse extra-utérine
-> - [ ] **2. Examens biologiques**
-> 	- [ ] Test de grossesse
+> - [ ] **2. Diagnostic suspecté**
+> 	- [ ] Annexite aiguë (salpingite)
+> - [ ] **3. Prise en charge thérapeutique immédiate**
+> 	- [ ] Doxycycline / Azithromycine
+> 	- [ ] Traitement du partenaire
+> 	- [ ] Chirurgie en cas d'abcès ou autres complications
+> - [ ] **4. Examens diagnostiques**
 > 	- [ ] Analyses sanguines
+> 	- [ ] Test de grossesse
 > 	- [ ] Échographie abdominale/vaginale
 > 	- [ ] Consultation gynécologique pour examen au spéculum avec prélèvement
 > 	- [ ] Recherche de Chlamydia/Gonocoque
 > 	- [ ] Examen bimanuel
-> - [ ] **3. Diagnostic suspecté**
-> 	- [ ] Annexite aiguë (salpingite)
-> - [ ] **4. Prise en charge thérapeutique immédiate**
-> 	- [ ] Doxycycline / Azithromycine
-> 	- [ ] Traitement du partenaire
-> 	- [ ] Chirurgie en cas d'abcès ou autres complications
 
 > [!success] 💊 Management — si Ischémie mésentérique aiguë
-> - [ ] **1. Examens biologiques**
+> - [ ] **1. Diagnostic suspecté**
+> 	- [ ] Infarctus mésentérique aigu
+> - [ ] **2. Prise en charge thérapeutique immédiate**
+> 	- [ ] Tolérance à l'ischémie intestinale maximale 6 heures !
+> 	- [ ] Dès la suspicion clinique
+> 	- [ ] Angiographie et laparotomie exploratrice
+> 	- [ ] Selon les constatations : embolectomie, désobstruction, pontage
+> 	- [ ] Traitement médicamenteux
+> - [ ] **3. Examens diagnostiques**
 > 	- [ ] Analyses sanguines
 > 	- [ ] Échographie abdominale/vaginale
 > 	- [ ] Radiographie thoracique
@@ -1257,26 +1297,18 @@ cssclasses:
 > 	- [ ] Radiographie abdominale
 > 	- [ ] Doppler couleur, angio-IRM
 > 	- [ ] Coloscopie
-> - [ ] **2. Diagnostic suspecté**
-> 	- [ ] Infarctus mésentérique aigu
-> - [ ] **3. Prise en charge thérapeutique immédiate**
-> 	- [ ] Tolérance à l'ischémie intestinale maximale 6 heures !
-> 	- [ ] Dès la suspicion clinique
-> 	- [ ] Angiographie et laparotomie exploratrice
-> 	- [ ] Selon les constatations : embolectomie, désobstruction, pontage
-> 	- [ ] Traitement médicamenteux
 
 > [!success] 💊 Management — si Maladie cœliaque
-> - [ ] **1. Examens complémentaires de première intention**
-> 	- [ ] Examen physique
-> 	- [ ] Anticorps anti-transglutaminase tissulaire IgA (tTG)
-> 	- [ ] IgA quantitatives
-> - [ ] **2. Information et éducation de la patiente**
+> - [ ] **1. Information et éducation de la patiente**
 > 	- [ ] Explications au patient des impressions diagnostiques préliminaires
 > 	- [ ] Explication du plan de prise en charge
 > 	- [ ] Utilisation d'un langage non médical et clarification des termes médicaux
 > 	- [ ] Évaluation de l'accord du patient avec le plan diagnostique
 > 	- [ ] Recherche des préoccupations et questions du patient
+> - [ ] **2. Examens complémentaires de première intention**
+> 	- [ ] Examen physique
+> 	- [ ] Anticorps anti-transglutaminase tissulaire IgA (tTG)
+> 	- [ ] IgA quantitatives
 > - [ ] **3. Examens biologiques**
 > 	- [ ] FSC, VGM, TCMH
 > 	- [ ] Panel IgE allergies pédiatriques
@@ -1288,18 +1320,18 @@ cssclasses:
 > 	- [ ] Rassurer sur la démarche diagnostique
 
 > [!success] 💊 Management — si MICI (Crohn / RCUH)
-> - [ ] **1. Examens biologiques**
-> 	- [ ] Analyses sanguines
-> 	- [ ] Échographie abdominale/vaginale
-> 	- [ ] Examen bactériologique des selles
-> 	- [ ] Iléo-coloscopie avec biopsies
-> - [ ] **2. Diagnostic suspecté**
+> - [ ] **1. Diagnostic suspecté**
 > 	- [ ] Colite ulcéreuse (diagnostic primaire)
-> - [ ] **3. Prise en charge thérapeutique immédiate**
+> - [ ] **2. Prise en charge thérapeutique immédiate**
 > 	- [ ] Conseils nutritionnels pour prévenir les carences
 > 	- [ ] Induction de rémission
 > 	- [ ] Maintien de rémission
 > 	- [ ] Coloscopies de contrôle régulières
+> - [ ] **3. Examens diagnostiques**
+> 	- [ ] Analyses sanguines
+> 	- [ ] Échographie abdominale/vaginale
+> 	- [ ] Examen bactériologique des selles
+> 	- [ ] Iléo-coloscopie avec biopsies
 > - [ ] **4. Information sur les complications**
 > 	- [ ] Mégacôlon toxique
 > 	- [ ] Perforation
@@ -1367,15 +1399,9 @@ cssclasses:
 > - [ ] **12. Avis néphrologique**
 
 > [!success] 💊 Management — si Reflux gastro-œsophagien (RGO)
-> - [ ] **1. Examens biologiques**
-> 	- [ ] Analyses sanguines
-> 	- [ ] Gastroscopie
-> 	- [ ] PH-métrie œsophagienne
-> 	- [ ] Test à l'uréase avec biopsie
-> 	- [ ] Radiographie ou CT
-> - [ ] **2. Diagnostic principal**
+> - [ ] **1. Diagnostic principal**
 > 	- [ ] Reflux gastro-œsophagien (RGO)
-> - [ ] **3. Prise en charge thérapeutique immédiate**
+> - [ ] **2. Prise en charge thérapeutique immédiate**
 > 	- [ ] Traitement médicamenteux
 > 	- [ ] Mesures hygiéno-diététiques
 > 	- [ ] Lit : surélévation de la tête de lit
@@ -1390,6 +1416,12 @@ cssclasses:
 > 	- [ ] Fundoplicature
 > 	- [ ] En cas d'œsophage de Barrett
 > 	- [ ] Contrôles endoscopiques réguliers
+> - [ ] **3. Examens diagnostiques**
+> 	- [ ] Analyses sanguines
+> 	- [ ] Gastroscopie
+> 	- [ ] PH-métrie œsophagienne
+> 	- [ ] Test à l'uréase avec biopsie
+> 	- [ ] Radiographie ou CT
 
 > [!success] 💊 Management — si Torsion ovarienne
 > - [ ] **1. Demande un test de grossesse**

@@ -139,3 +139,58 @@ cssclasses:
 > 	- [ ] Pâleur conjonctivale, tachycardie, hypotension chez une patiente qui saigne
 > 	- [ ] Masse fixée, dure, irrégulière, avec matité déclive des flancs
 > 	- [ ] Chez toute femme en âge de procréer, rien ne se conclut avant d'avoir écarté une grossesse
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant toute douleur pelvienne**
+> 	- [ ] Test de grossesse (bêta-hCG) : urinaire au cabinet, sérique quantitatif au moindre doute
+>         — chez toute femme en âge de procréer, il précède l'imagerie, les AINS et toute
+>         conclusion
+> 	- [ ] FSC : anémie ferriprive des règles abondantes, hyperleucocytose d'une infection haute ; y
+>         ajouter la ferritine, seule à montrer la carence martiale avant que l'hémoglobine ne
+>         baisse
+> 	- [ ] CRP et VS : normales, elles n'écartent ni l'infection génitale haute ni l'appendicite
+>         débutante ; élevées, elles ne disent pas laquelle des deux
+> 	- [ ] Status urinaire — bandelette, puis sédiment et culture urinaire si elle est anormale :
+>         leucocytes, nitrites, hématurie ; infection urinaire et colique néphrétique se déguisent
+>         en douleur pelvienne
+> 	- [ ] Hématurie microscopique sans germe, revenant avec les règles : c'est une endométriose
+>         vésicale qu'elle fait chercher, pas une cystite
+> - [ ] **2. L'échographie pelvienne — le premier examen d'imagerie**
+> 	- [ ] Voie transvaginale, vessie vidée ; voie sus-pubienne vessie pleine si la patiente n'a
+>         jamais eu de rapports ou refuse la sonde
+> 	- [ ] Ce qu'on lui demande : endométriome ovarien (kyste au contenu finement échogène, en verre
+>         dépoli), adénomyose (utérus globuleux, myomètre hétérogène, îlots kystiques), fibrome,
+>         hydrosalpinx, abcès tubo-ovarien, épanchement du Douglas
+> 	- [ ] Devant un bêta-hCG positif, c'est elle qui situe la grossesse : sac intra-utérin, masse
+>         latéro-utérine, épanchement du Douglas
+> 	- [ ] Normale, elle n'écarte pas l'endométriose : les lésions péritonéales superficielles et
+>         les adhérences n'y sont pas visibles — le diagnostic reste clinique
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] Dyspareunie profonde, dyschésie, nodule induré du cul-de-sac de Douglas ou des
+>         utéro-sacrés : IRM pelvienne — elle cartographie l'endométriose profonde (utéro-sacrés,
+>         rectum, vessie, uretères) avant toute décision chirurgicale
+> 	- [ ] Fièvre, leucorrhées purulentes, douleur à la mobilisation du col : PCR Chlamydia
+>         trachomatis et gonocoque sur prélèvement vaginal ou endocervical, examen direct et
+>         culture ; hémocultures si frissons ou fièvre élevée
+> 	- [ ] Partenaire récent ou multiples, anamnèse sexuelle à risque : dépistage complet des IST —
+>         VIH après information et accord, syphilis, hépatites B et C
+> 	- [ ] Saignement au contact ou post-coïtal, col d'aspect anormal, frottis non à jour :
+>         cytologie cervicale avec test HPV
+> 	- [ ] Douleur résistante à un traitement bien conduit, ou bilan avant chirurgie : laparoscopie
+>         diagnostique avec biopsies — référence histologique, seule à voir les lésions
+>         péritonéales superficielles ; elle n'est plus le passage obligé du diagnostic
+> 	- [ ] Un an d'essais sans grossesse, six mois après 35 ans : bilan d'infertilité de couple —
+>         spermogramme, réserve ovarienne, perméabilité tubaire
+> 	- [ ] 🚩 Sang dans les selles ou hématurie macroscopique rythmés par les règles : coloscopie ou
+>         cystoscopie, à programmer pendant les règles — seul moment où la lésion se voit
+> - [ ] **4. 🚩 À ne pas oublier**
+> 	- [ ] Bêta-hCG au-dessus de la zone discriminatoire (1500 à 3500 UI/L selon les centres) sans
+>         sac intra-utérin visible : grossesse extra-utérine jusqu'à preuve du contraire — un
+>         dosage isolé ne conclut pas, c'est la cinétique à 48 h qui tranche
+> 	- [ ] Douleur brutale avec vomissements et masse annexielle : un flux ovarien conservé au
+>         doppler n'exclut pas la torsion — la vascularisation ovarienne est double, et une
+>         échographie rassurante ne l'écarte pas
+> 	- [ ] Patiente pâle, tachycarde, hypotendue : groupe sanguin, rhésus, agglutinines irrégulières
+>         et crase — ce sont les examens qu'on ne rattrape pas une fois au bloc
+> 	- [ ] Le CA-125 ne fait pas le diagnostic d'endométriose : normal, il n'écarte rien ; élevé, il
+>         l'est aussi pendant les règles, dans l'infection haute et dans le cancer de l'ovaire

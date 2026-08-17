@@ -132,3 +132,66 @@ cssclasses:
 > 	- [ ] Asymétrie franche entre les deux oreilles sans cause d'oreille externe
 >         ou moyenne
 > 	- [ ] Paralysie faciale, nystagmus vertical, déficit neurologique focal associé
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant toute hypoacousie**
+> 	- [ ] **Audiométrie tonale**, oreille par oreille : elle chiffre ce que le
+>         diapason a seulement typé — un **écart entre conduction aérienne et
+>         osseuse** signe la transmission, son absence signe la perception. La
+>         forme de la courbe départage ensuite : **chute dans les aigus,
+>         symétrique** = presbyacousie ; **encoche à 4000 Hz** = traumatisme
+>         sonore chronique. Sévérité : légère 20-40 dB, modérée 40-70, sévère
+>         70-90, profonde au-delà de 90 dB
+> 	- [ ] **Audiométrie vocale** : entendre n'est pas comprendre — elle mesure
+>         la discrimination, que la tonale ne prédit pas ; une discrimination
+>         effondrée **hors de proportion** avec la perte tonale oriente vers
+>         une atteinte rétrocochléaire
+> 	- [ ] **Tympanométrie** : mobilité du système tympano-ossiculaire, elle
+>         objective ce que l'otoscopie a vu — type A normal, type B plat
+>         (épanchement), type C (dépression tubaire) ; **réflexes stapédiens**
+>         dans le même temps, à seuil élevé dans la presbyacousie, abolis quand
+>         l'étrier est bloqué
+> - [ ] **2. Selon l'orientation clinique**
+> 	- [ ] 🚩 **Perte de perception unilatérale installée en moins de 72 h**
+>         (plus de 30 dB sur 3 fréquences) : **audiométrie tonale et vocale le
+>         jour même** — la fenêtre utile se compte en heures, aucun examen ne
+>         doit retarder le traitement. Compléter par **FSC, CRP, VS, glycémie,
+>         tension artérielle, bilan lipidique** : ils documentent le terrain
+>         vasculaire, ils ne confirment ni n'infirment le diagnostic
+> 	- [ ] **Perte de perception unilatérale ou asymétrique** — asymétrie
+>         **supérieure à 15 dB** —, a fortiori avec acouphènes : **IRM
+>         cérébrale et des conduits auditifs internes, avec gadolinium**. Elle
+>         ne cherche pas la cause de la surdité mais ce qu'il ne faut pas
+>         manquer derrière elle, le **schwannome vestibulaire**, qu'un examen
+>         neurologique normal n'écarte pas. Chez la personne âgée, une
+>         asymétrie n'est **jamais banale**, même quand tout le reste plaide la
+>         presbyacousie : c'est elle, et non le seuil atteint, qui indique
+>         l'IRM ; sur une atteinte franchement symétrique, l'imagerie
+>         n'apporte rien. Ponction lombaire seulement si une piste
+>         démyélinisante s'ouvre
+> 	- [ ] **Surdité de transmission à tympan normal**, ou otorragie et
+>         écoulement clair après un traumatisme crânien : **CT des rochers** —
+>         otospongiose, fracture du rocher, complication d'otite chronique
+> 	- [ ] **Vertiges, instabilité ou nystagmus au premier plan** : bilan
+>         vestibulaire avec **épreuve calorique** — sa normalité est un
+>         argument contre la labyrinthite et contre la maladie de Ménière
+> 	- [ ] **Doute sur le siège de l'atteinte, cochléaire ou rétrocochléaire** :
+>         **potentiels évoqués auditifs** et otoémissions acoustiques — ils
+>         topographient, ils ne remplacent pas l'IRM
+> 	- [ ] **Plainte portant sur la compréhension chez la personne âgée** :
+>         bilan cognitif si le doute persiste — mais un déficit objectif à
+>         l'audiométrie explique la plainte à lui seul et se cherche d'abord
+> - [ ] **3. À ne pas oublier**
+> 	- [ ] **L'otoscopie a déjà tranché** les causes les plus fréquentes —
+>         bouchon de cérumen, épanchement, perforation : aucun examen
+>         complémentaire ne les cherchera à sa place
+> 	- [ ] **Un tympan normal n'exclut rien** : il déplace la question vers
+>         l'oreille interne et rend l'audiométrie plus nécessaire, pas moins ;
+>         un **Rinne positif** non plus — il l'est dans l'oreille saine comme
+>         dans une surdité de perception, c'est le **Weber** qui latéralise
+> 	- [ ] **La surdité brusque se diagnostique sans aucun examen** : otoscopie
+>         normale, Weber du côté sain, Rinne positif des deux côtés suffisent à
+>         l'affirmer — « idiopathique », lui, ne se dit qu'après l'IRM
+> 	- [ ] **L'ototoxicité n'a pas d'examen** — cisplatine, aminosides, aspirine
+>         à forte dose, diurétiques de l'anse se cherchent à l'anamnèse et à
+>         l'ordonnance ; l'audiométrie ne fait que constater la perte

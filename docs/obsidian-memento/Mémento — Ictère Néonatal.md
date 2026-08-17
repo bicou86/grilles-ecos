@@ -116,3 +116,29 @@ cssclasses:
 > 	- [ ] Perte de poids supérieure à 10 % du poids de naissance, muqueuses sèches, pli cutané persistant
 > 	- [ ] Fièvre ou hypothermie, mauvaise perfusion, geignement : sepsis néonatal
 > 	- [ ] Prématurité, hémolyse, sepsis, acidose, hypoalbuminémie : ces terrains abaissent le seuil de neurotoxicité — l'atteinte neurologique peut survenir à une bilirubine par ailleurs jugée rassurante
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Doser la bilirubine — et la lire à l'âge exact en heures de vie**
+> 	- [ ] Bilirubinémie transcutanée : dépistage immédiat, non invasif, bien corrélé — au-dessus du seuil du nomogramme elle impose le dosage sanguin, elle ne le remplace jamais
+> 	- [ ] Bilirubine sérique **totale et fractionnée** (libre et conjuguée) : la fraction conjuguée se demande d'emblée, c'est elle qui sépare l'hyperbilirubinémie bénigne de la cholestase
+> 	- [ ] Report de la bilirubine totale sur le **nomogramme de Bhutani, à l'âge en heures** : la lecture est en percentiles et jamais en valeur absolue — une même valeur est rassurante à 96 h et alarmante à 24 h ; au-delà du 95e percentile, l'enfant s'évalue comme un ictère pathologique
+> 	- [ ] Ce que le chiffre déclenche se lit sur le nomogramme, pas sur une valeur apprise par cœur : à titre d'ordre de grandeur chez un nouveau-né à terme sans facteur de risque, environ 170 µmol/L à J1, 260 à J2, 310 à J3 et 340 au-delà — prématurité, hémolyse, déficit en G6PD, sepsis, acidose et hypoalbuminémie abaissent tous ce seuil
+> 	- [ ] 🚩 Avant la 24e heure de vie, aucun seuil ne s'applique : le chiffre ne décide de rien, c'est un bilan d'hémolyse qui s'impose d'emblée
+> 	- [ ] Bilirubine conjuguée au-delà de 20 % du total ou de 17 µmol/L : pathologique quelle que soit la bilirubine totale — ce n'est plus une hyperbilirubinémie du nouveau-né, c'est une cholestase
+> - [ ] **2. Le bilan qui accompagne le dosage — hémolyse et infection, les deux causes qu'on ne peut pas rater**
+> 	- [ ] FSC avec **réticulocytes** : anémie et réticulocytose signent l'hémolyse ; une formule sans particularité et des réticulocytes normaux vont contre
+> 	- [ ] LDH, lue avec les réticulocytes : normale, elle éteint la piste hémolytique
+> 	- [ ] CRP : dans la norme chez un enfant apyrétique en bon état général, elle écarte la septicémie ; élevée, elle la rend probable
+> 	- [ ] Groupage ABO et Rhésus de la **mère et de l'enfant** : mère O avec enfant A ou B, mère Rhésus négatif — c'est la constellation à risque, et le groupe de l'enfant, souvent inconnu de la mère, se demande plutôt qu'il ne s'abandonne
+> 	- [ ] Test de **Coombs direct** chez l'enfant, indirect chez la mère : positif, il signe l'hémolyse allo-immune — mais il est souvent faiblement positif voire négatif dans l'incompatibilité ABO, et un Coombs négatif n'écarte donc pas une hémolyse réelle
+> 	- [ ] Albuminémie : c'est l'albumine qui lie la bilirubine — une hypoalbuminémie laisse circuler de la bilirubine libre et abaisse le seuil de neurotoxicité, à bilirubine totale par ailleurs jugée rassurante
+> 	- [ ] Frottis sanguin devant une hémolyse à Coombs négatif : sphérocytose et autres anomalies de membrane
+> - [ ] **3. Selon l'orientation**
+> 	- [ ] 🚩 **Selles pâles ou décolorées, urines foncées, ou bilirubine conjuguée élevée → échographie hépatobiliaire et bilan hépatique complet sans délai** (± scintigraphie biliaire) : l'atrésie des voies biliaires se corrige par un Kasai avant 60 jours de vie, la fibrose progresse vite et passé deux à trois mois seule la transplantation reste
+> 	- [ ] **Ictère qui dure au-delà de 14 jours, ou qui réapparaît après avoir régressé → TSH et T4** : l'hypothyroïdie congénitale ralentit la conjugaison et se demande même chez un enfant qui va bien ; reprendre au passage le résultat du dépistage néonatal, qui couvre aussi la galactosémie
+> 	- [ ] **Origine méditerranéenne, africaine ou asiatique, ictère sévère ou récidivant → dosage du G6PD**
+> 	- [ ] 🚩 **Fièvre, hypothermie, ou enfant qui se dégrade → bilan septique complet** : hémocultures, analyse et culture d'urine, ponction lombaire, prélevés **avant** la première dose d'antibiotique — chez le nouveau-né, une CRP normale isolée ne suffit pas à écarter un sepsis débutant
+> 	- [ ] **Léthargie, hypotonie, cri aigu, opisthotonos → IRM cérébrale** ; et après toute hyperbilirubinémie sévère, potentiels évoqués auditifs — la surdité est la séquelle la plus discrète du kernictère
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Pesée avant et après la tétée quand le transfert de lait est en doute : elle chiffre ce que l'enfant prend vraiment, là où le nombre de tétées ne dit rien de leur efficacité
+> 	- [ ] Au téléphone, aucun de ces examens ne se fait ni ne se décide sur une couleur rapportée : la mesure transcutanée est le premier geste dès que l'enfant est là

@@ -114,3 +114,30 @@ cssclasses:
 > 	- [ ] Sensibilité des trois territoires : radial (tabatière anatomique), médian (pulpe de l'index), ulnaire (pulpe de l'auriculaire)
 > 	- [ ] Motricité des trois territoires : extension du pouce et du poignet, opposition du pouce, écartement des doigts
 > 	- [ ] Documenter avant l'immobilisation, puis contrôler après — sans trace initiale, un déficit constaté ensuite est indatable
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Devant toute chute du sujet âgé — le bilan de base**
+> 	- [ ] Laboratoire : FSC (anémie), CRP et VS (chez le vieillard l'infection se dit par une chute, sans fièvre), électrolytes, fonction rénale, glycémie — capillaire d'emblée devant un malaise ou une confusion —, vitamine B12 (polyneuropathie, anémie) ; créatinine et CK si le patient est resté longtemps au sol
+> 	- [ ] ECG 12 dérivations : rythme, bloc de conduction, QT long, signes d'ischémie
+> 	- [ ] Bilan urinaire (bandelette, sédiment, urotube) — attention, chez le sujet âgé la bactériurie est banale et une bandelette positive n'explique pas à elle seule une chute
+> 	- [ ] Radiographie thoracique : foyer, décompensation cardiaque, et du côté lésionnel fractures de côtes, pneumothorax, épanchement
+> - [ ] **2. Ce que la chute a cassé — l'imagerie du traumatisme**
+> 	- [ ] Avant toute imagerie irradiante chez une femme en âge de procréer : évaluer le risque de grossesse — question cotée, à poser avant de prescrire
+> 	- [ ] Radiographie centrée sur le segment douloureux, en nommant les deux incidences — face ET profil, une seule incidence fait manquer le trait ; au coude, chercher la luxation, la fracture de la tête radiale, la fracture du processus coronoïde
+> 	- [ ] Radiographier aussi les articulations sus- et sous-jacentes : la réception sur la main tendue lèse l'épaule et le poignet en même temps que le coude ; incidences scaphoïde si la tabatière est douloureuse — une radiographie initiale normale n'écarte pas la fracture 🚩
+> 	- [ ] CT du segment : pour préciser une fracture articulaire, ou devant une radiographie non concluante alors que la clinique parle
+> 	- [ ] Radiographie du bassin, complétée par un CT devant une douleur du bassin, une jambe raccourcie et tournée en dehors, ou une instabilité hémodynamique 🚩
+> - [ ] **3. Devant un choc à la tête ou un déficit neurologique focal**
+> 	- [ ] CT cérébral natif en urgence si antithrombotique, perte de connaissance, amnésie de l'épisode, vomissements, céphalée, somnolence ou déficit — hémorragie, hémorragie sous-arachnoïdienne, hématome sous-dural ; celui du sujet âgé peut n'apparaître que des semaines plus tard 🚩
+> 	- [ ] IRM cérébrale quand le CT est normal et le déficit persiste : ischémie récente, tumeur, lésion de la fosse postérieure
+> 	- [ ] Échographie-doppler des carotides et des vaisseaux pré-cérébraux : sténose, dissection
+> - [ ] **4. Devant un malaise, une perte de connaissance ou une chute inexpliquée**
+> 	- [ ] Test d'orthostatisme (Schellong) refait au calme, tilt-test si la mesure reste normale malgré une histoire évocatrice
+> 	- [ ] Échocardiographie devant un souffle (sténose aortique) ; Holter si palpitations ou syncope à l'emporte-pièce, l'ECG d'une minute ne voit pas l'arythmie intermittente
+> 	- [ ] EEG si l'épisode évoque une crise : morsure de langue, perte d'urine, confusion post-critique
+> 	- [ ] Chute sans malaise, sur un trouble de la marche ou de l'équilibre : ENMG devant une polyneuropathie (diabète, alcool) ; IRM étendue à la moelle devant une ataxie, une hydrocéphalie à pression normale ou une compression médullaire
+> - [ ] **5. Devant des ecchymoses disproportionnées, d'âges différents, ou des saignements répétés**
+> 	- [ ] Numération plaquettaire sur la FSC du bilan de base : une thrombopénie ouvre sur le PTI, une leucémie, un lupus
+> 	- [ ] Frottis sanguin périphérique : agrégats plaquettaires (pseudothrombopénie), plaquettes anormales — il est normal dans le PTI comme dans la maladie de von Willebrand
+> 	- [ ] Crase : temps de saignement, TP (voie extrinsèque, allongé surtout par la carence en vitamine K), TCA (voie intrinsèque, allongé dans le von Willebrand par le déficit en facteur VIII) — une crase normale n'écarte pas une forme légère
+> 	- [ ] Tests spécifiques du von Willebrand : activité du facteur VIII, antigène vWF (la quantité), cofacteur de la ristocétine (l'activité)

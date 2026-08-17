@@ -364,13 +364,7 @@ cssclasses:
 > 	- [ ] Signes radiologiques: pincement articulaire, ostéophytes, géodes, condensation
 > 	- [ ] Biologie si doute inflammatoire: FSC, VS, CRP
 > 	- [ ] IRM si radiographie normale et forte suspicion clinique
-> - [ ] **2. Surveillance et pronostic**
-> 	- [ ] Évaluation régulière de la douleur (EVA)
-> 	- [ ] Évaluation fonctionnelle (périmètre de marche)
-> 	- [ ] Indices fonctionnels (WOMAC, Lequesne)
-> 	- [ ] Radiographie annuelle si évolutive
-> 	- [ ] Adaptation thérapeutique selon évolution
-> - [ ] **3. Classification de la coxarthrose**
+> - [ ] **2. Classification de la coxarthrose**
 > 	- [ ] Primitive: idiopathique, liée à l'âge
 > 	- [ ] Secondaire: dysplasie, traumatisme, nécrose
 > 	- [ ] Stades radiologiques (Kellgren-Lawrence)
@@ -378,6 +372,12 @@ cssclasses:
 > 	- [ ] Stade 2: pincement articulaire débutant
 > 	- [ ] Stade 3: pincement marqué, géodes
 > 	- [ ] Stade 4: disparition interligne, déformations
+> - [ ] **3. Surveillance et suivi**
+> 	- [ ] Évaluation régulière de la douleur (EVA)
+> 	- [ ] Évaluation fonctionnelle (périmètre de marche)
+> 	- [ ] Indices fonctionnels (WOMAC, Lequesne)
+> 	- [ ] Radiographie annuelle si évolutive
+> 	- [ ] Adaptation thérapeutique selon évolution
 > - [ ] **4. Complications et évolution**
 > 	- [ ] Évolution généralement lente sur plusieurs années
 > 	- [ ] Aggravation progressive de l'impotence fonctionnelle

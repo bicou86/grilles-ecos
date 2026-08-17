@@ -139,3 +139,56 @@ cssclasses:
 > 	- [ ] Splénomégalie chez un sportif : pas de sport de contact
 > 	- [ ] Amygdale unilatérale dure ou ulcérée avec adénopathie fixée chez un
 >          fumeur : ce n'est pas une angine
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant tout mal de gorge fébrile**
+> 	- [ ] Le **score de Centor** décide du prélèvement : fièvre > 38 °C, absence de
+>          toux, adénopathies cervicales antérieures sensibles, exsudat amygdalien —
+>          à 0 ou 1 critère, on ne prélève pas
+> 	- [ ] **Test rapide streptocoque** sur frottis des deux amygdales et de la paroi
+>          postérieure : très spécifique, mais sensible à 70-90 % seulement — il
+>          confirme l'angine à streptocoque A, un test négatif ne l'écarte pas
+> 	- [ ] **Culture de gorge** derrière un test rapide négatif dont la clinique reste
+>          évocatrice : c'est elle qui rattrape les faux négatifs
+> 	- [ ] **FSC** : hyperleucocytose à neutrophiles plutôt bactérienne, lymphocytose
+>          plutôt virale ou mononucléosique — elle oriente, elle ne tranche pas
+> 	- [ ] **Frottis sanguin** : lymphocytes atypiques, grands et hyperbasophiles, du
+>          syndrome mononucléosique
+> 	- [ ] **CRP et VS** : intensité de l'inflammation et valeur de référence — élevées,
+>          elles ne disent toujours pas si l'infection est virale ou suppurée
+> - [ ] **2. Devant des signes de suppuration ou d'obstruction**
+> 	- [ ] Trismus, voix étouffée, luette refoulée, douleur strictement unilatérale ou
+>          tuméfaction cervicale : **CT du cou avec produit de contraste**, étendu au
+>          thorax si le plancher buccal ou le cou sont empâtés — il sépare le phlegmon
+>          de l'abcès collecté, montre l'extension para-pharyngée et médiastinale, et
+>          guide le drainage
+> 	- [ ] **Hémocultures avant la première dose d'antibiotique**, deux paires, devant
+>          une fièvre élevée, des frissons ou des signes de sepsis
+> 	- [ ] **Bilan de base avant hospitalisation et geste** : hémogramme et CRP déjà
+>          demandés, plus **crase** — le drainage est un geste sanglant — et
+>          **électrolytes et créatinine** (jeûne, déshydratation, produit de contraste)
+> 	- [ ] 🚩 **Stridor, bave, refus de s'allonger, position en tripode** : aucun examen
+>          tant que la voie aérienne n'est pas assurée — ni abaisse-langue, ni prise de
+>          sang, ni transport au scanner ; la filière aérienne se regarde par
+>          **nasofibroscopie ORL en milieu équipé**, seul examen admis à ce stade
+> - [ ] **3. Devant une fatigue prolongée, des ganglions diffus ou une splénomégalie**
+> 	- [ ] **Sérologie EBV** (anti-VCA IgM et IgG, anti-EBNA) : l'examen le plus fiable
+>          de la mononucléose — l'IgM anti-VCA seule suffit à affirmer une infection
+>          aiguë
+> 	- [ ] **Test monospot** (anticorps hétérophiles) : rapide, mais faux négatifs
+>          nombreux la première semaine et faux positifs fréquents — négatif, il
+>          n'écarte rien, c'est la sérologie EBV qui tranche
+> 	- [ ] **Test VIH de 4e génération** (antigène p24 et anticorps) devant une anamnèse
+>          sexuelle à risque ou un tableau mononucléosique à sérologie EBV négative,
+>          **après information et accord** ; négatif avant six semaines d'exposition,
+>          il est à refaire passé la fenêtre
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Un test rapide streptocoque positif n'écarte pas une collection : l'abcès
+>          périamygdalien complique justement l'angine — ce sont le trismus et la voix
+>          étouffée qui décident du CT, pas le résultat du frottis
+> 	- [ ] **Dysphonie qui dure** au-delà de deux à trois semaines : **laryngoscopie** —
+>          la voix rauque n'est plus un symptôme d'angine passé ce délai
+> 	- [ ] 🚩 **Amygdale unilatérale dure ou ulcérée avec adénopathie fixée chez un
+>          fumeur** : **panendoscopie des voies aéro-digestives supérieures avec
+>          biopsies** sous anesthésie générale et CT cervico-thoracique injecté — le
+>          diagnostic est histologique, aucun frottis ni bilan sanguin ne l'écarte

@@ -128,3 +128,40 @@ cssclasses:
 >         profonde qu'elle n'en a l'air
 > 	- [ ] Une seule jambe récemment gonflée, chaude, avec un mollet douloureux
 > 	- [ ] Plaie qui ne cicatrise pas malgré des soins bien conduits, à bords bourgeonnants
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan de première intention devant toute plaie de jambe qui traîne**
+> 	- [ ] Formule sanguine complète : anémie — à elle seule, elle empêche une plaie de se fermer —
+>         et hyperleucocytose en faveur d'une infection
+> 	- [ ] CRP et VS : leur élévation appuie une infection des tissus mous ; normales, elles
+>         n'écartent rien, car toute plaie chronique est colonisée sans être infectée
+> 	- [ ] Glycémie et HbA1c : chercher le diabète méconnu ou chiffrer son déséquilibre — un ulcère
+>         du pied en est parfois le premier signe
+> - [ ] **2. Chiffrer la vascularisation, avant de traiter et non après**
+> 	- [ ] Index de pression systolique cheville-bras (IPS) au doppler de poche, **avant toute
+>         compression** : normal de 0,9 à 1,3 ; en dessous de 0,9 l'artériopathie est établie ; en
+>         dessous de 0,5 la compression est contre-indiquée
+> 	- [ ] IPS supérieur à 1,3 : artères incompressibles par médiacalcose du diabétique — le chiffre
+>         ne veut alors plus rien dire, mesurer la pression au gros orteil
+> 	- [ ] Écho-doppler veineux : reflux superficiel et profond, séquelles de thrombose — c'est lui
+>         qui confirme l'origine veineuse et cartographie avant une éventuelle intervention
+> 	- [ ] Écho-doppler artériel si l'IPS est anormal ou les pouls abolis ; en urgence devant un pied
+>         froid, sans pouls et douloureux au repos
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] Une jambe gonflée d'un seul côté depuis peu : écho-doppler veineux de compression. Les
+>         D-dimères ne servent qu'à écarter une probabilité clinique faible — chez un porteur de plaie
+>         inflammatoire ils sont élevés sans rien signifier
+> 	- [ ] Rougeur chaude extensive et fièvre : hémocultures et prélèvement **profond** du fond de
+>         plaie après nettoyage — l'écouvillon de surface ne ramène que la flore de colonisation et
+>         fait prescrire des antibiotiques pour rien
+> 	- [ ] 🚩 Douleur hors de proportion et état général qui s'effondre : la dermohypodermite
+>         nécrosante est un diagnostic clinique et chirurgical — aucun examen, imagerie comprise, ne
+>         doit retarder l'exploration au bloc
+> 	- [ ] 🚩 Ulcère plantaire chez un diabétique : sonde stérile au fond de la plaie — un contact
+>         osseux signe l'ostéite — et radiographie du pied, qui reste normale les deux à trois
+>         premières semaines et n'écarte donc rien
+> 	- [ ] 🚩 Plaie qui ne cicatrise pas après trois mois de soins bien conduits, à bords surélevés
+>         et bourgeonnants : biopsie cutanée des berges, plusieurs prélèvements — carcinome épidermoïde
+>         développé sur ulcère chronique
+> 	- [ ] 🚩 Morsure animale profonde, en regard d'une articulation ou d'un os : radiographie à la
+>         recherche d'un fragment de dent, d'une fracture ou d'une pénétration articulaire

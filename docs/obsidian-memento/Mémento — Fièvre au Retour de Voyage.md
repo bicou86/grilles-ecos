@@ -83,3 +83,12 @@ cssclasses:
 > 	- [ ] Diarrhée persistante, sanglante ou fébrile
 > 	- [ ] Accident d'exposition au sang, agression sexuelle : consulter sans attendre
 > 	- [ ] Tout symptôme, même tardif, justifie un bilan mentionnant le voyage
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Avant le départ**
+> 	- [ ] Sérologie VIH proposée avant un séjour long, comme valeur de référence : elle ne dépiste pas un risque à venir, elle datera l'infection si le test du retour revient positif — à proposer à tout voyageur, et non aux seuls « profils à risque »
+> 	- [ ] Chez un voyageur sans plainte, ni bilan sanguin ni imagerie de routine : ce sont le carnet de vaccination et le programme du séjour qui décident de tout, pas le laboratoire
+> - [ ] **2. Au retour**
+> 	- [ ] Sérologie VIH à 3 mois du retour : c'est le délai qui rend un résultat négatif interprétable — plus tôt, un test négatif n'écarte rien et devra être refait ; sans sérologie de départ, un test positif ne peut plus être daté
+> 	- [ ] 🚩 Toute fièvre au retour d'une zone impaludée impose une recherche de paludisme le jour même — goutte épaisse et frottis mince, ou test de diagnostic rapide antigénique : un premier examen négatif n'écarte pas le diagnostic et se répète à 12-24 h, et une chimioprophylaxie bien prise ne dispense jamais de le demander
+> 	- [ ] Tout autre symptôme du retour — diarrhée persistante, sanglante ou fébrile, lésion cutanée, asthénie — justifie un bilan orienté par la destination, les expositions du séjour et le délai d'incubation, et cela jusqu'à 3 mois après le retour

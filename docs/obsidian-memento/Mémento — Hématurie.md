@@ -117,3 +117,34 @@ cssclasses:
 > 	- [ ] Croûtes nasales ou cloison perforée avec crépitants pulmonaires : syndrome pneumo-rénal, à explorer sans délai
 > 	- [ ] Masse lombaire palpable, ou varicocèle d'apparition récente : tumeur rénale
 > 	- [ ] Adénopathie sus-claviculaire dure et fixée, prostate dure et nodulaire : extension tumorale
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant toute hématurie**
+> 	- [ ] Bandelette urinaire : sang, protéines, leucocytes, nitrites — elle dépiste, elle ne conclut pas ; positive au sang sans hématie au sédiment, il s'agit d'une hémoglobinurie ou d'une myoglobinurie, pas d'une hématurie
+> 	- [ ] Sédiment urinaire avec microscopie, l'examen qui tranche l'origine : hématies **déformées** et **cylindres hématiques** (pathognomoniques du glomérule) d'un côté ; hématies de morphologie normale et caillots, donc saignement en aval du glomérule, de l'autre
+> 	- [ ] Protéinurie associée, quantifiée par le **rapport protéinurie/créatininurie** sur échantillon : significative, elle désigne le glomérule et fait basculer tout le bilan
+> 	- [ ] Culture urinaire (ECBU), prélevée **avant la première dose d'antibiotique** — une infection retrouvée explique l'hématurie mais ne dispense pas du bilan chez le patient à risque
+> 	- [ ] FSC avec hémoglobine (anémie de déglobulisation ou de maladie de fond), CRP et VS — une VS franchement élevée oriente vers une vascularite plutôt que vers une infection banale
+> 	- [ ] Créatinine et urée : le retentissement rénal se chiffre avant de discuter l'étiologie, et avant tout produit de contraste
+> - [ ] **2. Sang rouge vif, caillots, hématurie indolore, douleur ou fièvre — chercher dans les voies urinaires**
+> 	- [ ] Échographie vésicale et rénale avec **mesure du résidu post-mictionnel** : masse vésicale, tumeur rénale, dilatation du haut appareil, globe et rétention chronique — non irradiante, elle passe en premier
+> 	- [ ] Cytologie urinaire : cellules tumorales exfoliées — bonne pour le haut grade et le carcinome in situ, elle manque les tumeurs bien différenciées ; négative, elle n'écarte rien
+> 	- [ ] **Cystoscopie**, seul examen qui voit la paroi vésicale et fait le diagnostic : après 40 ans, a fortiori chez un fumeur, cytologie et cystoscopie ne s'omettent pas — aucune explication bénigne plausible (marathon, manipulation urétrale) ne les remplace
+> 	- [ ] Uro-CT si nécessaire : voies excrétrices supérieures et bilan d'extension — c'est lui qui cherche la tumeur urothéliale haute, hors de portée de la cystoscopie
+> 	- [ ] PSA chez l'homme de plus de 50 ans, à distance du toucher rectal et hors épisode infectieux ou rétentionnel, qui l'élèvent faussement
+> 	- [ ] Douleur de colique du flanc : CT abdominal **sans injection** — le calcul est spontanément dense — et échographie des reins et des voies urinaires
+> 	- [ ] Fièvre, dysurie ou urines troubles : hémocultures (deux paires) avec l'ECBU, avant l'antibiotique ; si le Giordano est positif, échographie sans attendre — c'est elle qui montre l'obstacle à drainer
+> - [ ] **3. Urines brunes sans caillots, œdèmes et hypertension — chercher dans le glomérule**
+> 	- [ ] Titre d'antistreptolysines (ASLO) et anti-DNase B : la trace de l'infection streptococcique. L'ASLO culmine 3 à 5 semaines après l'angine (positif > 200 UI/mL) ; l'anti-DNase B est plus sensible après une infection cutanée
+> 	- [ ] Complément C3 et C4 (CH50) : **C3 abaissé, C4 normal** — consommation de la voie alterne, retrouvée dans 90 % des glomérulonéphrites post-streptococciques. Le C3 se normalise en 6 à 8 semaines ; au-delà, le tableau n'est plus post-infectieux
+> 	- [ ] Frottis de gorge avec culture, à la recherche d'un streptocoque encore présent
+> 	- [ ] IgA sériques (élevées dans la moitié des néphropathies à IgA), avec C3 et C4 normaux — mais c'est le **délai** qui sépare les deux : 1 à 5 jours après l'infection ORL pour l'IgA, 1 à 3 semaines après l'angine et 3 à 6 après l'impétigo pour la post-streptococcique
+> 	- [ ] c-ANCA / PR3, positifs dans 90 % des granulomatoses avec polyangéite généralisées, et **radiographie thoracique** : nodules bilatéraux, volontiers excavés — ORL, poumon et rein forment la triade
+> 	- [ ] Échographie rénale : reins de taille augmentée dans la glomérulonéphrite aiguë, mais son vrai rôle est d'écarter une cause urologique — elle ne fait pas le diagnostic positif
+> 	- [ ] **Biopsie rénale**, seul examen qui confirme : réservée aux formes atypiques, sévères ou rapidement progressives — C3 encore bas après 8 semaines, insuffisance rénale qui progresse. Elle ne se fait pas d'emblée sur un tableau typique
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Le bilan reste dû sur un épisode unique, déjà résolu, ou survenu sous anticoagulant — le traitement révèle la lésion, il ne l'explique pas. Une hématurie d'effort dure quelques jours et ne s'aggrave pas ; au-delà, l'explication commode ne tient plus
+> 	- [ ] 🚩 Hémoptysie avec l'hématurie : syndrome pneumo-rénal — chercher les anticorps **anti-membrane basale glomérulaire** en plus des ANCA, imager le thorax et faire la biopsie rénale sans attendre le reste du bilan
+> 	- [ ] Leucocyturie aseptique persistante, toux traînante, sueurs nocturnes : recherche de BK dans les urines trois jours de suite et test de libération d'interféron (Quantiféron) — la tuberculose urinaire laisse les cultures banales négatives
+> 	- [ ] 🚩 Séjour en zone d'endémie : recherche d'œufs de bilharzie (*Schistosoma haematobium*) sur urines de milieu de journée — hématurie terminale, et carcinome épidermoïde de la vessie à long terme
+> 	- [ ] Chez la femme, ne pas prendre les règles ou une contamination génitale pour une hématurie : refaire bandelette et sédiment à distance ; test de grossesse avant toute imagerie irradiante

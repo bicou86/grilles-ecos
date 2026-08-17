@@ -121,3 +121,24 @@ cssclasses:
 > 	- [ ] Méléna au toucher rectal ou hématémèse rapportée : varices œsophagiennes jusqu'à preuve du contraire
 > 	- [ ] Chez un patient qui chute, un traumatisme crânien passé inaperçu : l'hématome sous-dural se cache sous l'« ivresse »
 > 	- [ ] Idéation suicidaire exprimée pendant l'examen : la reprendre entièrement avant la fin de la consultation
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan de base — il se demande devant toute consommation chronique, avant même de parler de sevrage**
+> 	- [ ] Marqueurs de l'imprégnation : γ-GT, VGM, CDT (transferrine déficiente en carbohydrates) — ils objectivent la consommation, ils ne posent pas le diagnostic, qui reste clinique (critères CIM, CAGE)
+> 	- [ ] Bilan hépatique : ASAT, ALAT, phosphatases alcalines, bilirubine — un rapport ASAT/ALAT supérieur à 2 oriente vers l'origine alcoolique
+> 	- [ ] Fonction de synthèse : albumine, TP/INR, TCA — ce sont eux, et non les transaminases, qui disent si le foie fonctionne encore
+> 	- [ ] FSC : macrocytose et thrombopénie, les deux anomalies attendues, et l'anémie ; CRP
+> 	- [ ] Ionogramme complet (Na, K, Ca), magnésium et phosphate, glycémie, créatinine — hypokaliémie, hypomagnésémie et hypophosphatémie sont la règle chez le buveur dénutri, et se documentent avant le sevrage, pas pendant
+> 	- [ ] Lipase et amylase devant des douleurs en barre ; TSH au titre du diagnostic différentiel — tremblement, amaigrissement et anxiété ne sont pas tous alcooliques
+> 	- [ ] Vitamines B1 (thiamine), B12 et folates : carences fréquentes chez un patient qui ne mange presque plus
+> - [ ] **2. Ce que la clinique déclenche en plus**
+> 	- [ ] Devant une hépatomégalie, une ascite, un ictère ou une crase perturbée : échographie abdominale (stéatose, cirrhose, hypertension portale, dépistage du carcinome hépatocellulaire) ; CT abdominal si une complication est suspectée
+> 	- [ ] Devant des symptômes digestifs hauts — pyrosis, épigastralgies, nausées matinales : gastroscopie (gastrite, ulcère, œsophagite)
+> 	- [ ] 🚩 Devant une hématémèse ou un méléna : gastroscopie en urgence — ce sont des varices œsophagiennes jusqu'à preuve du contraire, et le délai fait le pronostic
+> 	- [ ] Devant une dysphagie ou une odynophagie chez un patient qui boit et qui fume : examen ORL avec nasofibroscopie — sur les voies aérodigestives supérieures, l'alcool et le tabac multiplient leurs risques au lieu de les additionner
+> 	- [ ] Devant un usage intraveineux : sérologies VIH, VHB, VHC ; toxicologie urinaire quand une polyconsommation est suspectée ou niée
+> 	- [ ] 🚩 Devant une chute avec traumatisme crânien, même ancienne et même non retrouvée : CT cérébral natif — chez le buveur chronique, l'hématome sous-dural se cache sous l'« ivresse »
+> - [ ] **3. À ne pas oublier**
+> 	- [ ] ECG : QT, troubles du rythme, cardiomyopathie alcoolique — et le retentissement de la kaliémie, qu'il montre avant que le laboratoire ne revienne
+> 	- [ ] Glycémie capillaire devant toute altération de la vigilance : elle se lit au lit du malade, sans attendre le laboratoire — mais devant la triade confusion, ataxie, ophtalmoplégie, aucun examen ne tranche à temps : le dosage de thiamine revient trop tard et sa normalité n'écarte pas l'encéphalopathie de Wernicke, qui reste un diagnostic clinique
+> 	- [ ] Un bilan entièrement normal n'écarte ni la dépendance ni le risque de sevrage : γ-GT et VGM restent souvent normaux chez le buveur jeune, et le delirium tremens survient 48 à 96 h après le dernier verre quel que soit le laboratoire

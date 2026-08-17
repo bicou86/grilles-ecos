@@ -119,7 +119,7 @@ cssclasses:
 > 	- [ ] Vertiges
 > 	- [ ] Chaleur du membre inférieur
 > 	- [ ] Faiblesse/engourdissement/picotements
-> - [ ] **4. Antécédents médicaux**
+> - [ ] **4. Antécédents médicaux *(2 grilles sur 3)***
 > 	- [ ] Antécédents médicaux *(Thrombose veineuse profonde (TVP))*
 > 	- [ ] Thrombose dans le passé *(Thrombose veineuse profonde (TVP))*
 > - [ ] **5. Allergies *(2 grilles sur 3)***
@@ -193,7 +193,8 @@ cssclasses:
 > - [ ] **63. Morsure de tique *(1 grille sur 3)***
 > - [ ] **64. Douleurs dans d'autres articulations *(1 grille sur 3)***
 > - [ ] **65. Antécédents de pathologie du genou *(1 grille sur 3)***
-> - [ ] **66. Anamnèse sociale et professionnelle *(1 grille sur 3)***
+> - [ ] **66. Antécédents personnels *(1 grille sur 3)***
+> - [ ] **67. Anamnèse sociale et professionnelle *(1 grille sur 3)***
 
 > [!tip] 🩺 Status
 > - [ ] **1. Mesures d'hygiène *(Thrombose veineuse profonde (TVP))***

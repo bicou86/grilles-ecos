@@ -124,3 +124,29 @@ cssclasses:
 > 	- [ ] Manifestations extra-articulaires : nodules, syndrome sec, Raynaud, purpura, auscultation pulmonaire
 > 	- [ ] Rachis cervical : douleur et mobilité testées prudemment — une atteinte C1-C2 interdit toute manipulation forcée
 > 	- [ ] 🚩 Une articulation unique, chaude, tendue, exquisément douloureuse à la moindre mobilisation chez un patient fébrile : ne pas la mobiliser davantage
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Bilan biologique de première intention — devant une douleur articulaire d'allure inflammatoire**
+> 	- [ ] VS et CRP : le syndrome inflammatoire est le pivot ; élevé, il compte pour 1 point dans les critères ACR/EULAR 2010 de polyarthrite rhumatoïde
+> 	- [ ] FSC : anémie inflammatoire, hyperleucocytose
+> 	- [ ] CK : elle reste **normale** dans une polymyalgia rheumatica comme dans une polyarthrite — c'est elle qui écarte la myopathie inflammatoire et la myopathie aux statines devant une douleur des ceintures
+> 	- [ ] TSH : l'hypothyroïdie mime les douleurs diffuses des ceintures et ne se voit pas à l'examen — elle se cherche au laboratoire
+> 	- [ ] Fonctions hépatique et rénale, radiographie du thorax : bilan pré-thérapeutique, avant un traitement de fond
+> 	- [ ] VS et CRP normales n'écartent rien devant une douleur mécanique localisée : ni la tendinopathie ni l'arthrose ne font de syndrome inflammatoire, et là la biologie n'a rien à dire
+> - [ ] **2. Devant une polyarthrite symétrique des petites articulations évoluant depuis plus de six semaines**
+> 	- [ ] Facteur rhumatoïde : sensible (≈ 70 %) mais peu spécifique — positif isolément, il ne conclut pas
+> 	- [ ] Anti-CCP : très spécifique (≈ 95 %) et de valeur pronostique ; fortement positif il pèse 3 points aux critères ACR/EULAR, faiblement positif 2 — un score ≥ 6/10 signe la polyarthrite rhumatoïde
+> 	- [ ] Radiographies des mains et poignets de face et des pieds de face : érosions, pincement articulaire, déminéralisation juxta-articulaire — normales au stade précoce, elles n'écartent pas le diagnostic
+> 	- [ ] Échographie ou IRM des mains : synovites infra-cliniques et érosions précoces, quand la radiographie est encore muette
+> - [ ] **3. Selon l'orientation — ce que la piste clinique ajoute**
+> 	- [ ] Douleur des deux ceintures après 50 ans, VS et CRP élevées, CK normale : échographie de l'épaule et de la hanche (bursite, ténosynovite)
+> 	- [ ] Rachialgie de rythme inflammatoire, talalgie, psoriasis cutané ou unguéal : HLA-B27 et IRM des sacro-iliaques — le HLA-B27 est un facteur de risque, pas un test diagnostique
+> 	- [ ] Sécheresse de la bouche et des yeux : anti-SSA / anti-SSB, test de Schirmer
+> 	- [ ] Éruption cutanée, photosensibilité, atteinte rénale : AAN en dépistage, puis anti-ADN natif et complément si les AAN reviennent positifs
+> 	- [ ] Accès aigus et récidivants d'une grosse articulation : uricémie — normale pendant la crise une fois sur trois — et radiographies des genoux et poignets à la recherche d'un liseré calcique
+> 	- [ ] Douleur d'insertion tendineuse localisée (talon, épicondyle) : radiographie de la région, face et profil, pour exclure fracture et calcifications ; elle est attendue normale — le diagnostic de tendinopathie reste clinique
+> 	- [ ] Puis échographie du tendon suspect ; IRM réservée à la suspicion de rupture partielle ou à l'échec du traitement conservateur ; CT si la fracture est complexe
+> 	- [ ] Douleur qui descend dans l'avant-bras avec paresthésies : ENMG, et seulement si le doute persiste après un examen neurologique normal
+> - [ ] **4. 🚩 Ce qu'on ne diffère pas**
+> 	- [ ] 🚩 **Une seule articulation chaude, tendue, chez un patient fébrile : ponction articulaire avant toute antibiothérapie** — cellularité, Gram, culture, recherche de cristaux ; c'est le seul geste qui tranche entre arthrite septique et arthrite microcristalline
+> 	- [ ] 🚩 **Douleur des ceintures après 50 ans avec céphalée temporale, claudication de la mâchoire ou trouble visuel : VS et CRP en urgence, puis écho-doppler des artères temporales (signe du halo) ou biopsie de l'artère temporale** — la biopsie reste contributive les premiers jours sous corticoïdes, elle n'a donc pas à les précéder ; négative, elle n'écarte pas le diagnostic (atteinte segmentaire)

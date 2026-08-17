@@ -131,3 +131,36 @@ cssclasses:
 > 	- [ ] Abolition unilatérale des pouls avec souffle fémoral homolatéral : la lésion est en amont
 > 	- [ ] Index de cheville supérieur à 1,3 chez un diabétique : il n'élimine rien, il rassure à tort
 > 	- [ ] Loge de jambe dure et tendue, douleur disproportionnée à l'étirement passif des orteils
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Devant un membre brutalement blanc, froid et sans pouls**
+> 	- [ ] 🚩 Aucun examen ne conditionne l'appel du chirurgien vasculaire : les six P suffisent à
+>         décider et la fenêtre est d'environ six heures — le bilan part **pendant** qu'on organise le geste
+> 	- [ ] ECG d'emblée : une fibrillation auriculaire désigne l'origine embolique et change le geste
+> 	- [ ] Biologie : FSC, CRP, créatinine, kaliémie, CPK et lactates — CPK et lactates chiffrent la
+>         souffrance musculaire déjà installée ; 🚩 kaliémie et créatinine se prélèvent **avant** de
+>         revasculariser, le syndrome de reperfusion tue par hyperkaliémie et la rhabdomyolyse emporte le rein
+> 	- [ ] Crase : TP, TCA, INR — préalables à la thrombolyse comme à la chirurgie
+> 	- [ ] D-dimères : ils servent la piste veineuse ; élevés ils ne tranchent rien, normaux ils
+>         n'écartent pas une occlusion artérielle
+> - [ ] **2. L'imagerie vasculaire, par ordre d'invasivité**
+> 	- [ ] Écho-Doppler artériel : première imagerie, elle localise l'obstacle et gradue les sténoses
+> 	- [ ] Angio-CT des membres inférieurs, à défaut angio-IRM : cartographie du lit d'aval et bilan
+>         préopératoire — regarder la créatinine avant d'injecter chez un diabétique
+> 	- [ ] Artériographie : examen de référence, d'autant plus qu'elle est couplée au geste endovasculaire
+> 	- [ ] Écho-Doppler veineux si la piste bascule vers une thrombose veineuse : mollet douloureux
+>         et gonflé, pouls conservés
+> - [ ] **3. Chiffrer la perfusion quand la plainte est une claudication d'effort**
+> 	- [ ] Index de pression systolique cheville-bras au Doppler de poche, mesuré au status : test de
+>         dépistage et examen de première intention de l'artériopathie chronique
+> 	- [ ] Pression d'orteil ou TcPO₂ dès que l'index dépasse 1,3 et devient ininterprétable — la
+>         médiacalcose du diabétique et de l'insuffisant rénal épargne les artères digitales
+> 	- [ ] Un index abaissé ne mesure pas que la jambe : c'est un marqueur de risque cardiovasculaire
+>         global, et c'est lui qui commande le bilan ci-dessous
+> - [ ] **4. Chercher la source de l'embole et le terrain artériel**
+> 	- [ ] Source embolique : ECG, puis échocardiographie transthoracique, transœsophagienne si elle ne montre rien
+> 	- [ ] Holter quand la fibrillation auriculaire est suspectée sans être documentée — un tracé
+>         sinusal n'écarte pas une FA paroxystique
+> 	- [ ] Bilan du terrain athéromateux : profil lipidique, glycémie et HbA1c, créatinine, hémogramme
+> 	- [ ] Écho-Doppler des troncs supra-aortiques, et dépistage échographique de l'anévrisme de
+>         l'aorte abdominale chez l'homme fumeur de plus de 65 ans

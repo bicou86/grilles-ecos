@@ -99,3 +99,21 @@ cssclasses:
 > 	- [ ] Sang dans les selles, vomissements incoercibles
 > 	- [ ] Refus ou impossibilité de boire, réhydratation orale inefficace
 > 	- [ ] Crise convulsive
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Ce qui se fait sur place — au téléphone, aucun laboratoire ne part cette nuit**
+> 	- [ ] 🚩 Glycémie capillaire, en tout premier : l'EMS l'a sous la main, et aucune altération aiguë de la vigilance ne se conclut sans l'avoir éliminée — en dessous de 3.9 mmol/L, l'hypoglycémie explique la confusion jusqu'à preuve du contraire
+> 	- [ ] Bandelette urinaire, mais **seulement s'il y a un point d'appel** — brûlures, pollakiurie nouvelle, douleur sus-pubienne : après 80 ans la bactériurie asymptomatique est banale, et une bandelette positive isolée n'explique jamais un état confusionnel ; sédiment et culture ne se justifient qu'avec ce point d'appel
+> - [ ] **2. Le bilan biologique — ce qui se demande au transfert, ou dès le lendemain**
+> 	- [ ] Ionogramme complet, natrémie, kaliémie et osmolalité : le diurétique thiazidique est la première cause médicamenteuse d'hyponatrémie du sujet âgé, et les pertes digestives s'y ajoutent — une natrémie sous 125 mmol/L, ou une chute rapide, suffit à expliquer la confusion
+> 	- [ ] Urée et créatinine : l'insuffisance rénale aiguë fonctionnelle est attendue dès que la volémie baisse sous diurétique et bloqueur du système rénine-angiotensine
+> 	- [ ] FSC : anémie, hyperleucocytose ; CRP, et PCT si une infection bactérienne est suspectée
+> 	- [ ] Glycémie veineuse, qui confirme la capillaire
+> - [ ] **3. Selon l'orientation — ce que la clinique déclenche**
+> 	- [ ] Devant des selles glairo-sanglantes, une fièvre élevée ou un épisode qui se prolonge : coproculture
+> 	- [ ] Devant une diarrhée survenue en institution ou au décours d'une antibiothérapie : toxines A et B de C. difficile dans les selles — l'exposition aux soins suffit à contaminer, une antibiothérapie récente n'est pas une condition
+> 	- [ ] Devant une douleur abdominale localisée ou des bruits intestinaux abolis : échographie abdominale
+> 	- [ ] 🚩 Devant un déficit focal nouveau, ou une chute même ancienne et même non retrouvée : CT cérébral natif — chez le sujet âgé, l'hématome sous-dural chronique se révèle souvent par la seule confusion
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] ECG dès qu'un trouble hydro-électrolytique est suspecté ou qu'un signe cardiaque apparaît : il montre la kaliémie avant que le chiffre ne revienne
+> 	- [ ] Un bilan normal n'innocente pas la nuit : rétention urinaire et fécalome, les deux causes réversibles les plus fréquentes chez le résident d'EMS, ne se voient sur aucun examen de laboratoire

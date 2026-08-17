@@ -180,3 +180,47 @@ cssclasses:
 > 	- [ ] Douleur vive à la mobilisation du col, avec fièvre et pertes purulentes
 > 	- [ ] Un examen gynécologique normal n'écarte rien : après la ménopause, un saignement
 >         s'explore même quand le col et l'utérus paraissent sains
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le bilan de première intention, devant tout saignement anormal**
+> 	- [ ] FSC : le degré de l'anémie — c'est le retentissement du saignement qu'elle
+>         mesure, jamais sa cause ; plaquettes, hyperleucocytose, et ferritine si les
+>         hématies sont microcytaires
+> 	- [ ] CRP et VS, les paramètres inflammatoires : ils orientent vers une infection
+>         génitale haute, mais élevés ils ne départagent pas l'infection de la tumeur
+> 	- [ ] Crase (TP, TCA) : d'autant plus impérative sous anticoagulant ou antiagrégant —
+>         une coagulopathie fait saigner un utérus sain, et le résultat est dû avant toute
+>         biopsie
+> 	- [ ] Frottis cervical et test HPV, prélevés spéculum en place : de 30 à 65 ans,
+>         frottis tous les 3 ans, ou frottis + HPV tous les 5 ans — chez une femme qui
+>         saigne, un dépistage vieux de plusieurs années ne se rattrape pas plus tard
+> - [ ] **2. L'échographie endovaginale, qui commande la suite**
+> 	- [ ] Échographie endovaginale de première ligne : épaisseur de l'endomètre, polype,
+>         myome, masse annexielle, épanchement du Douglas
+> 	- [ ] Le seuil qui décide : après la ménopause, un endomètre ≤ 4 mm rend le cancer de
+>         l'endomètre très improbable ; au-delà, l'histologie est due
+> 	- [ ] Sous tamoxifène ou sous œstrogènes sans progestatif, le seuil ne vaut plus : ces
+>         traitements épaississent l'endomètre sans qu'il soit tumoral, et le saignement
+>         impose l'hystéroscopie quel que soit le chiffre
+> - [ ] **3. L'histologie — le geste qui tranche**
+> 	- [ ] Biopsie endométriale à la pipelle, au cabinet : le prélèvement de première
+>         intention devant un saignement post-ménopausique ou un endomètre épaissi
+> 	- [ ] Hystéroscopie diagnostique avec curetage étagé, endocol puis cavité : elle voit
+>         la lésion et la prélève sous contrôle de la vue — c'est elle qui confirme ou
+>         exclut vite le cancer de l'endomètre
+> 	- [ ] Une biopsie négative n'écarte rien tant que le saignement continue : le
+>         prélèvement à l'aveugle manque les lésions focales, et l'hystéroscopie reprend
+>         la main
+> 	- [ ] 🚩 Col bourgeonnant, ulcéré ou friable : biopsie dirigée du col sans attendre le
+>         frottis — c'est elle, et non la cytologie, qui affirme le cancer ; colposcopie
+>         aussi devant un frottis anormal
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 β-hCG chez toute femme en âge de procréer, avant tout le reste : la grossesse
+>         extra-utérine se donne volontiers pour des règles — elle est attendue de cette
+>         SSP et aucune grille du corpus n'en documente le bilan
+> 	- [ ] 🚩 Fièvre, pertes fétides, douleur à la mobilisation du col : prélèvements
+>         cervicaux avec PCR chlamydia et gonocoque, hémocultures si fièvre — aucune
+>         grille ne cote le bilan d'une infection génitale haute
+> 	- [ ] Douze mois d'aménorrhée puis un saignement, même unique, même minime :
+>         échographie et histologie, pas un contrôle dans trois mois — et un bilan normal
+>         ne referme pas le dossier si le saignement récidive

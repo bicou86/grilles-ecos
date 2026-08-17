@@ -131,3 +131,44 @@ cssclasses:
 > 	- [ ] Testicules atrophiques avec gynécomastie et pilosité raréfiée
 > 	- [ ] Abolition du réflexe bulbo-caverneux, anesthésie en selle
 > 	- [ ] Plaie ou trouble trophique du pied chez un patient qui s'ignore diabétique
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention — un bilan de risque cardiovasculaire, pas sexologique**
+> 	- [ ] FSC : anémie, qui abaisse à elle seule la libido et la qualité des érections
+> 	- [ ] Glycémie à jeun **et HbA1c** : le diabète est la première cause organique — une
+>         glycémie isolée normale n'écarte rien, l'HbA1c chiffre les trois derniers mois
+> 	- [ ] Bilan lipidique à jeun : cholestérol total, LDL, HDL, triglycérides — une
+>         hypercholestérolémie relevée à une consultation ancienne n'a de valeur que recontrôlée
+> 	- [ ] Électrolytes : bilan métabolique de base, qui nourrit l'argumentaire écartant une cause
+>         générale
+> 	- [ ] Analyse d'urine, bandelette et sédiment : exclure l'infection urinaire devant des
+>         symptômes urogénitaux, et chercher la glycosurie et la protéinurie du diabétique qui
+>         s'ignore
+> - [ ] **2. Bilan cardiologique — il précède la prescription, car c'est lui qui l'autorise**
+> 	- [ ] ECG 12 dérivations : ischémie silencieuse, trouble du rythme, hypertrophie
+>         ventriculaire gauche de l'hypertension — chez l'homme de la cinquantaine, la plainte
+>         sexuelle est le premier symptôme d'une coronaropathie qui se déclarera dans trois à
+>         cinq ans
+> 	- [ ] Échocardiographie : fonction ventriculaire gauche et valvulopathie — d'autant plus
+>         qu'un souffle systolique aortique a été ausculté
+> 	- [ ] Radiographie thoracique si indiquée : cardiomégalie, signes de surcharge
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] PSA si indiqué — prostate augmentée de volume, nodule dur, ou symptômes du bas appareil
+>         urinaire : le prélever avant le toucher rectal, et à distance d'une infection, d'une
+>         éjaculation ou d'une longue sortie à vélo, qui l'élèvent faussement
+> 	- [ ] Libido effondrée, testicules de volume diminué, pilosité raréfiée, gynécomastie :
+>         testostérone totale prélevée le matin entre 8 et 10 h et confirmée sur un second
+>         dosage — un chiffre bas isolé ne fait pas l'hypogonadisme ; prolactine et TSH dans le
+>         même temps
+> 	- [ ] 🚩 Anesthésie en selle, abolition du réflexe bulbo-caverneux, troubles sphinctériens ou
+>         déficit des membres inférieurs : IRM médullaire sans attendre — c'est une compression
+>         de la queue de cheval, et non une dysfonction érectile
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Un trouble d'installation brutale, situationnel, avec érections matinales conservées,
+>         est psychogène : le bilan de risque cardiovasculaire reste dû, aucun examen de plus ne
+>         l'est
+> 	- [ ] Relire l'ordonnance avant de demander quoi que ce soit : bêta-bloquant, thiazidique,
+>         ISRS, finastéride, spironolactone — aucun dosage ne remplace la chronologie entre
+>         l'introduction du médicament et le début du trouble
+> 	- [ ] La tension artérielle et le BMI relevés au status sont déjà des résultats : élevés, ils
+>         font du bilan ci-dessus une confirmation et non un dépistage

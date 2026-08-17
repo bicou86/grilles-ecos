@@ -114,3 +114,25 @@ cssclasses:
 > 	- [ ] Signe de Kernig : hanche et genou fléchis à 90°, l'extension passive du genou est limitée et douloureuse
 > 	- [ ] Signe de Lasègue
 > 	- [ ] Une fois une manœuvre douloureuse positive, ne pas la répéter
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. D'abord décider s'il faut examiner**
+> 	- [ ] Migraine, céphalée de tension et algie vasculaire sont des **diagnostics cliniques** : devant une présentation typique et un examen neurologique normal, ni imagerie ni laboratoire
+> 	- [ ] N'investiguer que devant un drapeau rouge — coup de tonnerre, céphalée nouvelle après 50 ans, changement de caractère d'une céphalée connue, céphalée positionnelle, fièvre avec méningisme, déficit focal, crise convulsive, trouble de la conscience, œdème papillaire, immunosuppression ou cancer, traumatisme, grossesse ou post-partum
+> - [ ] **2. Le bilan de base, dès qu'on investigue**
+> 	- [ ] FSC : hyperleucocytose d'une infection ; plaquettes avant une ponction lombaire et devant toute cause hémorragique
+> 	- [ ] CRP et VS : syndrome inflammatoire, infectieux ou artéritique
+> 	- [ ] Crase : TP, TCA — d'autant plus sous anticoagulant, et avant tout geste
+> 	- [ ] Électrolytes, glycémie, fonction rénale
+> - [ ] **3. Selon l'orientation**
+> 	- [ ] **Coup de tonnerre, « la pire de ma vie », méningisme → CT cérébral sans contraste en urgence**, meilleur test initial de l'hémorragie sous-arachnoïdienne
+> 	- [ ] 🚩 **Un CT normal n'écarte pas l'hémorragie → ponction lombaire avec analyse du LCR** : GR, GB et protéines augmentés, xanthochromie ; prélever la glycémie au même moment pour la comparer à celle du LCR ; le CT passe toujours avant la PL si une hypertension intracrânienne est suspectée
+> 	- [ ] Hémorragie confirmée → angiographie cérébrale : siège de l'anévrisme ou de la malformation vasculaire
+> 	- [ ] **Fièvre, raideur de nuque, photophobie → ponction lombaire**, et hémocultures **prélevées avant la première dose d'antibiotique** ; LCR clair et lymphocytaire, glucose normal, protéines et lactate peu élevés = profil viral
+> 	- [ ] **Terrain procoagulant** (contraception œstroprogestative, grossesse ou post-partum, cancer, thrombophilie, infection ORL) **ou œdème papillaire → exiger un temps veineux** : angio-CT veineux, ou IRM avec veino-IRM qui est la référence — le CT simple est normal dans 70 % des thromboses veineuses cérébrales
+> 	- [ ] D-dimères : souvent élevés dans la thrombose veineuse cérébrale, mais non spécifiques et normaux ils ne l'excluent pas
+> 	- [ ] **Céphalée nouvelle après 50 ans, artère temporale indurée, claudication de la mâchoire, douleurs des ceintures → VS et CRP d'abord**, puis CT cérébral pour ce que la biologie ne voit pas ; une VS normale n'écarte pas l'artérite (sensibilité 85 % au seuil de 22 mm/h, 29 chez la femme) ; VS > 50 ou CRP > 27 avec une clinique forte suffisent à traiter sans attendre la biopsie de l'artère temporale
+> 	- [ ] Céphalée d'allure primaire mais atypique, ou qui résiste au traitement habituel → IRM cérébrale
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] Test de grossesse chez toute femme en âge de procréer, au moindre doute — il change l'hypothèse comme l'imagerie
+> 	- [ ] 🚩 Céphalée après 20 semaines de grossesse ou en post-partum : tension artérielle et **bandelette urinaire à la recherche d'une protéinurie** — la prééclampsie est attendue de cette SSP et aucune grille du corpus ne la documente

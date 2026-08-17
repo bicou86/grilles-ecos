@@ -122,3 +122,28 @@ cssclasses:
 > 	- [ ] Sang au doigtier ou méléna : hémorragie digestive
 > 	- [ ] Masse abdominale ou rectale palpable, adénopathie sus-claviculaire
 > 	- [ ] Pâleur cutanéo-muqueuse marquée : anémie sur saignement chronique
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Bilan sanguin de première intention**
+> 	- [ ] FSC : anémie ferriprive d'un saignement chronique ou d'une malabsorption, hyperleucocytose d'une colite — chez le patient déshydraté, l'hémoconcentration rend Hb et Ht faussement rassurants
+> 	- [ ] CRP et VS : syndrome inflammatoire des MICI et des colites infectieuses ; normales, elles n'écartent ni un cancer ni une diarrhée chronique
+> 	- [ ] Ionogramme (Na, K, Cl, Ca), créatinine et urée : hypokaliémie et hyponatrémie des pertes digestives, insuffisance rénale fonctionnelle de la déshydratation
+> 	- [ ] Bilan hépatique (transaminases, GGT, PAL), albumine et crase (TP/INR, TCA) : albumine basse et TP allongé disent ce que l'intestin n'absorbe plus
+> 	- [ ] TSH : une dysthyroïdie accélère ou ralentit le transit ; glycémie devant une polyurie-polydipsie ou un trouble de la vigilance
+> 	- [ ] Carences de malabsorption : ferritine, fer sérique et transferrine, vitamine B12, folates
+> - [ ] **2. Analyses de selles**
+> 	- [ ] Calprotectine fécale : sépare l'organique du fonctionnel — sous 50 µg/g elle rassure, au-delà de 150 à 250 µg/g elle oriente vers une inflammation intestinale
+> 	- [ ] Coproculture et parasitologie, répétée sur 3 jours consécutifs : diarrhée fébrile ou dysentérique, voyage, contage, aliment suspect
+> 	- [ ] GDH et toxines A/B de *Clostridioides difficile*, PCR de confirmation 🚩 : après toute antibiothérapie, hospitalisation ou séjour en EMS récents
+> 	- [ ] Élastase pancréatique fécale : effondrée quand les selles sont grasses, flottantes et très malodorantes après les repas gras (insuffisance pancréatique exocrine)
+> 	- [ ] Test immunologique fécal (recherche de sang occulte) : saignement que ni l'œil ni le toucher rectal ne voient
+> - [ ] **3. Endoscopie et imagerie**
+> 	- [ ] Iléo-coloscopie totale avec biopsies étagées : l'examen de référence, il tranche entre MICI et cancer colorectal — biopsies même en muqueuse d'aspect normal ; sans délai 🚩 devant une modification durable du transit après 50 ans, une anémie ferriprive, du sang dans les selles ou une perte de poids inexpliquée
+> 	- [ ] ASP debout, face et profil 🚩 : niveaux hydro-aériques d'une occlusion, dilatation colique d'un mégacôlon toxique, pneumopéritoine
+> 	- [ ] US abdominale : épaississement pariétal du grêle et du côlon ; CT abdomino-pelvien injecté pour le bilan d'extension d'une tumeur
+> 	- [ ] Gastroscopie devant un méléna ; entéro-IRM ou vidéocapsule quand le grêle est en cause et que la coloscopie est normale
+> - [ ] **4. Selon l'orientation clinique**
+> 	- [ ] Diarrhée chronique avec amaigrissement et carences, aggravée par le pain et les pâtes : anticorps anti-transglutaminase **avec IgA totales**, prélevés avant toute éviction — sous régime sans gluten les anticorps disparaissent en quelques semaines et le test ne veut plus rien dire
+> 	- [ ] Diarrhée post-prandiale après lait, fruits ou édulcorants : test respiratoire lactose / fructose
+> 	- [ ] Enfant ou personne âgée fébrile, diurèse effondrée : analyse d'urine — leucocytes et nitrites d'une infection, glycosurie et cétonurie qui découvriraient un diabète
+> 	- [ ] Tumeur colique confirmée à l'endoscopie : ACE et CA 19-9 — marqueurs de bilan et de suivi, jamais de diagnostic

@@ -124,7 +124,7 @@ cssclasses:
 > 	- [ ] Hypertension artérielle *(Fibrillation auriculaire)*
 > 	- [ ] Obésité (IMC) *(Fibrillation auriculaire)*
 > - [ ] **11. Résumé avec retour au patient *(Insuffisance cardiaque (décompensée))***
-> - [ ] **12. Antécédents médicaux personnels**
+> - [ ] **12. Antécédents médicaux personnels *(Insuffisance cardiaque (décompensée) · Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Maladies cardiaques (coronaropathie, infarctus du myocarde)/chirurgie cardiaque *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Maladies cérébrovasculaires (AIT, AVC) *(Insuffisance cardiaque (décompensée))*
 > 	- [ ] Artériopathie périphérique *(Insuffisance cardiaque (décompensée))*
@@ -133,10 +133,6 @@ cssclasses:
 > 	- [ ] Pathologies connues *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Hospitalisations *(Palpitations liées au stress et aux stimulants)*
 > 	- [ ] Interventions chirurgicales *(Palpitations liées au stress et aux stimulants)*
-> 	- [ ] Cardiopathie ischémique *(Fibrillation auriculaire)*
-> 	- [ ] Infarctus du myocarde *(Fibrillation auriculaire)*
-> 	- [ ] Troubles du rythme connus *(Fibrillation auriculaire)*
-> 	- [ ] Valvulopathies *(Fibrillation auriculaire)*
 > - [ ] **13. Allergies *(Insuffisance cardiaque (décompensée))***
 > - [ ] **14. Traitements actuels**
 > 	- [ ] Euthyrox 50 μg *(Insuffisance cardiaque (décompensée))*
@@ -291,40 +287,41 @@ cssclasses:
 > 	- [ ] Cancer actif
 > 	- [ ] Antécédent de TVP/EP
 > 	- [ ] Hémoptysie
-> - [ ] **42. Antécédents neurologiques *(Fibrillation auriculaire)***
+> - [ ] **42. Antécédents cardiovasculaires personnels *(Fibrillation auriculaire)***
+> 	- [ ] Cardiopathie ischémique
+> 	- [ ] Infarctus du myocarde
+> 	- [ ] Troubles du rythme connus
+> 	- [ ] Valvulopathies
+> - [ ] **43. Antécédents neurologiques *(Fibrillation auriculaire)***
 > 	- [ ] AVC/AIT
 > 	- [ ] Déficit neurologique
 > 	- [ ] Céphalées
 > 	- [ ] Épilepsie
-> - [ ] **43. Autres antécédents médicaux *(Fibrillation auriculaire)***
+> - [ ] **44. Autres antécédents médicaux *(Fibrillation auriculaire)***
 > 	- [ ] Pathologie thyroïdienne
 > 	- [ ] MVTE
 > 	- [ ] Pathologies psychiatriques/anxiété
 > 	- [ ] Autres maladies chroniques
-> - [ ] **44. Antécédents chirurgicaux *(Fibrillation auriculaire)***
+> - [ ] **45. Antécédents chirurgicaux *(Fibrillation auriculaire)***
 > 	- [ ] Interventions antérieures
 > 	- [ ] Complications
 > 	- [ ] Anesthésies
-> - [ ] **45. Allergies médicamenteuses *(Fibrillation auriculaire)***
+> - [ ] **46. Allergies médicamenteuses *(Fibrillation auriculaire)***
 > 	- [ ] Allergies connues
 > 	- [ ] Intolérances
 > 	- [ ] Réactions antérieures
-> - [ ] **46. Antécédents familiaux cardiovasculaires *(Fibrillation auriculaire)***
+> - [ ] **47. Antécédents familiaux cardiovasculaires *(Fibrillation auriculaire)***
 > 	- [ ] Infarctus du myocarde
 > 	- [ ] Mort subite
 > 	- [ ] Troubles du rythme
 > 	- [ ] AVC
 
 > [!tip] 🩺 Status
-> - [ ] **1. Auscultation cardiaque *(Fibrillation auriculaire · Insuffisance cardiaque (décompensée))***
-> 	- [ ] Inspection *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Palpation *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Percussion *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Auscultation *(Insuffisance cardiaque (décompensée))*
-> 	- [ ] Bruits cardiaques *(Fibrillation auriculaire)*
-> 	- [ ] Souffles *(Fibrillation auriculaire)*
-> 	- [ ] Galop (B3/B4) *(Fibrillation auriculaire)*
-> 	- [ ] Frottement péricardique *(Fibrillation auriculaire)*
+> - [ ] **1. Status cardiaque *(Insuffisance cardiaque (décompensée))***
+> 	- [ ] Inspection
+> 	- [ ] Palpation
+> 	- [ ] Percussion
+> 	- [ ] Auscultation
 > - [ ] **2. Status pulmonaire *(Insuffisance cardiaque (décompensée))***
 > 	- [ ] Inspection
 > 	- [ ] Palpation
@@ -346,16 +343,12 @@ cssclasses:
 > 	- [ ] Tension artérielle
 > 	- [ ] Fréquence respiratoire
 > 	- [ ] Température
-> - [ ] **6. Palpation cardiovasculaire *(Fibrillation auriculaire · Palpitations liées au stress et aux stimulants)***
-> 	- [ ] Palpation précordiale *(Palpitations liées au stress et aux stimulants)*
-> 	- [ ] Auscultation cardiaque en au moins 3 positions *(Palpitations liées au stress et aux stimulants)*
-> 	- [ ] Rythme *(Palpitations liées au stress et aux stimulants)*
-> 	- [ ] Souffles *(Palpitations liées au stress et aux stimulants)*
-> 	- [ ] Bruits surajoutés *(Palpitations liées au stress et aux stimulants)*
-> 	- [ ] Pouls périphérique *(Fibrillation auriculaire)*
-> 	- [ ] Intensité du pouls *(Fibrillation auriculaire)*
-> 	- [ ] Déficit de pouls *(Fibrillation auriculaire)*
-> 	- [ ] Choc de pointe *(Fibrillation auriculaire)*
+> - [ ] **6. Examen cardiovasculaire *(Palpitations liées au stress et aux stimulants)***
+> 	- [ ] Palpation précordiale
+> 	- [ ] Auscultation cardiaque en au moins 3 positions
+> 	- [ ] Rythme
+> 	- [ ] Souffles
+> 	- [ ] Bruits surajoutés
 > - [ ] **7. Examen du pouls *(Palpitations liées au stress et aux stimulants)***
 > 	- [ ] Pouls radial
 > 	- [ ] Régularité
@@ -381,19 +374,29 @@ cssclasses:
 > 	- [ ] Reflux hépato-jugulaire
 > 	- [ ] Cyanose
 > 	- [ ] Œdèmes périphériques
-> - [ ] **12. Percussion cardiaque *(Fibrillation auriculaire)***
+> - [ ] **12. Palpation cardiovasculaire *(Fibrillation auriculaire)***
+> 	- [ ] Pouls périphérique
+> 	- [ ] Intensité du pouls
+> 	- [ ] Déficit de pouls
+> 	- [ ] Choc de pointe
+> - [ ] **13. Percussion cardiaque *(Fibrillation auriculaire)***
 > 	- [ ] Matité cardiaque
 > 	- [ ] Cardiomégalie
 > 	- [ ] Épanchement péricardique
-> - [ ] **13. Palpation thyroïdienne *(Fibrillation auriculaire)***
+> - [ ] **14. Auscultation cardiaque *(Fibrillation auriculaire)***
+> 	- [ ] Bruits cardiaques
+> 	- [ ] Souffles
+> 	- [ ] Galop (B3/B4)
+> 	- [ ] Frottement péricardique
+> - [ ] **15. Palpation thyroïdienne *(Fibrillation auriculaire)***
 > 	- [ ] Volume thyroïdien
 > 	- [ ] Nodules
 > 	- [ ] Consistance
 > 	- [ ] Mobilité
-> - [ ] **14. Auscultation thyroïdienne *(Fibrillation auriculaire)***
+> - [ ] **16. Auscultation thyroïdienne *(Fibrillation auriculaire)***
 > 	- [ ] Souffle thyroïdien
 > 	- [ ] Thrill
-> - [ ] **15. Signes périphériques d'insuffisance cardiaque *(Fibrillation auriculaire)***
+> - [ ] **17. Signes périphériques d'insuffisance cardiaque *(Fibrillation auriculaire)***
 > 	- [ ] Œdèmes des membres inférieurs
 > 	- [ ] Hépatomégalie
 > 	- [ ] Ascite
@@ -412,8 +415,8 @@ cssclasses:
 > 	- [ ] Éléments en faveur
 > 	- [ ] Score CHA2DS2-VASc à calculer
 > - [ ] **4. Imagerie et examens complémentaires**
-> 	- [ ] Échocardiographie transthoracique
 > 	- [ ] Radiographie thoracique
+> 	- [ ] Échocardiographie transthoracique
 > 	- [ ] Holter ECG 24h si diagnostic incertain
 > 	- [ ] Angio-TDM thoracique si suspicion EP
 > - [ ] **5. ECG - Réalisation et interprétation**
@@ -484,7 +487,7 @@ cssclasses:
 > 	- [ ] Biologie : FSC (anémie), TSH (hyperthyroïdie), ionogramme
 > 	- [ ] ECG de repos
 > 	- [ ] Holter ECG 24h si récidive
-> 	- [ ] Échocardiographie transthoracique
+> 	- [ ] Échocardiographie si anomalie ECG
 > 	- [ ] Test toxicologique urinaire si besoin
 > - [ ] **5. Prise en charge non médicamenteuse**
 > - [ ] **6. Conseils spécifiques sur les substances**

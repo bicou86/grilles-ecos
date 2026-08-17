@@ -129,3 +129,32 @@ cssclasses:
 > 	- [ ] Fièvre élevée, altération de l'état général, éruption d'extension rapide
 > 	- [ ] Douleur cutanée disproportionnée par rapport aux lésions visibles
 > 	- [ ] Œdème du visage, des lèvres ou de la langue, stridor, dyspnée
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. D'abord décider s'il faut examiner — l'essentiel de la dermatologie est un diagnostic clinique**
+> 	- [ ] Psoriasis, dermatite périorale, zona typique, tinea d'aspect évocateur : la description de la lésion élémentaire suffit, et les grilles cotent explicitement la réponse « diagnostic clinique »
+> 	- [ ] Devant une éruption périorale monomorphe respectant la lisière des lèvres, **« aucun examen complémentaire » est la réponse attendue** — l'énoncer, ne pas la sous-entendre
+> 	- [ ] Dermatoscopie : prolonge l'inspection au fauteuil, sépare le psoriasis des autres plaques érythémato-squameuses
+> 	- [ ] Examen à l'état frais (grattage des squames + KOH) : filaments mycéliens au microscope — c'est lui qui écarte la mycose avant de conclure au psoriasis, et qui confirme le tinea
+> 	- [ ] N'aller plus loin que devant fièvre, altération de l'état général, atteinte muqueuse, immunosuppression, ou doute diagnostique persistant
+> - [ ] **2. Le bilan de base, dès qu'on sort du diagnostic clinique**
+> 	- [ ] FSC : hyperleucocytose de l'infection bactérienne, hémoglobine et cytopénies du lupus, éosinophilie d'une toxidermie
+> 	- [ ] VS et CRP : intensité de l'inflammation — élevées dans l'infection comme dans la maladie auto-immune, elles ne tranchent pas entre les deux
+> 	- [ ] Créatinine et urée : fonction rénale
+> 	- [ ] Analyse d'urine, bandelette d'abord : protéinurie et hématurie — c'est elle qui dépiste la néphrite lupique, et plus tard la glomérulonéphrite post-streptococcique
+> - [ ] **3. Selon l'orientation — nommer la piste par ce qu'on voit**
+> 	- [ ] Plaque annulaire à bordure active et centre clair, squameuse et prurigineuse, après piscine, vestiaire ou contact animal : **culture mycologique** après l'examen direct — elle identifie l'agent mais demande 2 à 6 semaines ; lampe de Wood en appoint (fluorescence bleu-vert du *Microsporum*)
+> 	- [ ] Vésicules groupées sur un seul dermatome, précédées de 48 h de brûlures : **frottis des lésions avec PCR virale** — c'est la PCR qui vaut le point entier, la bactériologie seule ne vaut qu'un demi-point dans la grille officielle
+> 	- [ ] Tout zona, même chez un sujet jeune en bonne santé : **dépistage immunologique, VIH en premier** — l'absence d'immunosuppression connue n'exonère pas d'en chercher une
+> 	- [ ] Fièvre élevée, angine, langue framboisée, éruption diffuse rugueuse « comme du papier de verre » : **test rapide streptocoque A** ; culture de gorge si le test rapide est négatif alors que la clinique reste évocatrice
+> 	- [ ] Éruption des zones photo-exposées ou en ailes de papillon, aggravée par le soleil, avec arthralgies ou asthénie : **anticorps antinucléaires (ANA)**, VS, CRP, hémoglobine ; anti-SSA/Ro dans les formes annulaires subaiguës ; biopsie cutanée si le doute persiste (dépôt en bande, interface dermatite) ; devant une photosensibilité isolée sans argument auto-immun, phototests et dosage des porphyrines
+> 	- [ ] Roséole du tronc avec **atteinte palmo-plantaire**, polyadénopathie, chancre ou anamnèse sexuelle à risque : sérologie syphilis en cascade — **TPPA/TPHA en dépistage, FTA-ABS en confirmation, VDRL ou RPR pour l'activité**, IgM comme indice d'infection récente ; et dépistage IST large dans le même temps
+> 	- [ ] Croûtes mélicériques, suintement, aucune systématisation nerveuse : prélèvement bactériologique
+> 	- [ ] Éruption qui épouse la forme de ce qui a touché la peau, ou qui récidive avec un produit : **tests épicutanés (patch tests)**, à distance de la poussée
+> 	- [ ] 🚩 Enfant fébrile depuis plus de 5 jours avec conjonctivite, atteinte des extrémités et adénopathie cervicale : **échocardiographie** — scarlatine et Kawasaki commencent de la même façon
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 Éruption médicamenteuse fébrile avec atteinte d'au moins deux muqueuses, cocardes atypiques ou Nikolsky positif : **biopsie cutanée en urgence** (nécrose épidermique sur toute la hauteur) et bilan de gravité — FSC, urée, créatinine, glycémie, bicarbonate — dont se calcule le SCORTEN ; aucune grille du corpus ne documente le Stevens-Johnson / Lyell, pourtant attendu de cette SSP
+> 	- [ ] Un examen direct ou une culture négatifs n'écartent pas la mycose : prélever **avant** tout antifongique, et au bon endroit — la bordure active, jamais le centre clair
+> 	- [ ] TPPA / TPHA reste positif à vie : ce sont le VDRL et le RPR, quantitatifs, qui disent l'activité et que l'on suivra sous traitement
+> 	- [ ] Une sérologie VIH négative dans les six semaines qui suivent une exposition n'écarte rien : elle est à refaire passé la fenêtre
+> 	- [ ] Mycoses étendues ou récidivantes, zona du sujet jeune : chercher le terrain — glycémie et HbA1c, sérologie VIH

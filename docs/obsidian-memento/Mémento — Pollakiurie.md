@@ -130,3 +130,57 @@ cssclasses:
 > 	- [ ] Anesthésie en selle, tonus sphinctérien effondré, déficit des membres inférieurs
 > 	- [ ] Plaie ou trouble trophique du pied que la personne n'avait pas remarqué
 > 	- [ ] Tension artérielle élevée découverte à cette consultation et jamais suivie
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. Le duo immédiat, au cabinet, avant toute hypothèse**
+> 	- [ ] **Bandelette urinaire complète** : une seule languette répond à quatre questions —
+>         leucocytes et nitrites pour l'**infection**, sang pour la **tumeur**, glucose pour le
+>         **diabète**, corps cétoniques pour la **décompensation**
+> 	- [ ] La lire pour ce qu'elle vaut : les **nitrites sont très spécifiques mais peu
+>         sensibles** — positifs ils affirment, négatifs ils n'écartent rien ; ce sont les deux
+>         items **négatifs ensemble** qui rendent l'infection improbable
+> 	- [ ] **Résidu post-mictionnel au bladder scan** : pathologique au-delà de **100 à 150 mL**
+>         — seul il démasque la vessie qui déborde, dont les fuites imitent trait pour trait une
+>         pollakiurie ordinaire ; le mesurer **avant tout anticholinergique**, qui précipiterait
+>         la rétention aiguë
+> 	- [ ] Le volume par miction commande la suite : **petits volumes = bilan urologique**,
+>         **grands volumes = bilan métabolique** — se tromper de piste, c'est demander le
+>         mauvais bilan
+> - [ ] **2. Devant de grands volumes — la piste métabolique**
+> 	- [ ] **Glycémie à jeun**, puis une **seconde un autre jour** : le diagnostic engage un
+>         traitement à vie et une valeur isolée ne suffit pas — une glycémie monte aussi sous
+>         l'effet d'une infection, d'un stress ou d'un écart alimentaire
+> 	- [ ] **HbA1c** dans le même temps : elle chiffre les trois derniers mois là où la glycémie
+>         ne dit que l'instant du prélèvement
+> 	- [ ] **Glucosurie et corps cétoniques**, à la bandelette ou en cétonémie capillaire : les
+>         cétones ne cherchent pas le diabète mais **son degré d'urgence**, et pèsent sur la
+>         décision d'hospitaliser
+> 	- [ ] **FSC et CRP** — non pour le diagnostic, mais pour le **foyer infectieux** qui
+>         décompense un diabète méconnu — et **créatinine**, point de départ rénal
+> 	- [ ] Grands volumes **sans glycosurie** : la piste change — **osmolarités plasmatique et
+>         urinaire**, puis **test de restriction hydrique**, qui départagent le diabète insipide
+>         de la polydipsie psychogène ; aucun des deux ne donne de polyphagie
+> - [ ] **3. Devant de petits volumes — la piste urologique**
+> 	- [ ] **ECBU avec antibiogramme** dès que la bandelette oriente, et d'emblée chez l'homme
+>         ou devant toute fièvre : la bandelette oriente, elle ne documente pas
+> 	- [ ] 🚩 Fièvre au-dessus de **38,5 °C** avec frissons, Giordano positif ou prostate très
+>         douloureuse : **hémocultures avant la première dose d'antibiotique**, avec FSC, CRP et
+>         créatinine — pyélonéphrite et prostatite se documentent avant d'être traitées
+> 	- [ ] **PSA** chez l'homme de plus de 50 ans, après information : le prélever **avant le
+>         toucher rectal** et à distance d'une infection ou d'une éjaculation, qui l'élèvent
+>         faussement
+> 	- [ ] **Cytologie urinaire et cystoscopie** devant une hématurie inexpliquée après 40 ans —
+>         et chez le fumeur, devant une hématurie macroscopique indolore **même unique et même
+>         régressive** : c'est un cancer de vessie jusqu'à preuve du contraire
+> 	- [ ] **Échographie rénale et pelvienne** : dilatation des cavités, lithiase, masse, paroi
+>         vésicale et volume prostatique
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 Anesthésie en selle, tonus sphinctérien effondré, déficit des membres inférieurs :
+>         **IRM médullaire sans attendre** — c'est un syndrome de la queue de cheval, et aucun
+>         bilan urinaire ne doit le retarder
+> 	- [ ] 🚩 Soif et amaigrissement rapides avec vomissements, somnolence ou respiration ample :
+>         **cétonémie, gazométrie et ionogramme** en urgence — ce sont l'**acidose** et la
+>         **kaliémie** qui chiffrent la gravité, jamais la glycémie seule
+> 	- [ ] Rouvrir l'ordonnance avant de demander quoi que ce soit : **diurétique, lithium**,
+>         café, thé et alcool font une polyurie que la chronologie explique et qu'aucun dosage
+>         ne montrera

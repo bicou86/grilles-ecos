@@ -175,17 +175,11 @@ cssclasses:
 > 	- [ ] Chaînes cervicales
 > 	- [ ] Ganglions sous-maxillaires et sous-mentonniers
 > 	- [ ] Éviter compression symétrique
-> - [ ] **3. Examen des ganglions sus-claviculaires**
-> 	- [ ] Patient en position assise *(Lymphome)*
-> 	- [ ] Palpation symétrique possible *(Lymphome)*
-> 	- [ ] Palpation profonde derrière clavicules *(Lymphome)*
-> 	- [ ] Faire inspirer le patient *(Lymphome)*
-> 	- [ ] Position du patient *(Cancer gastrique)*
-> 	- [ ] Palpation avec pulpe des doigts *(Cancer gastrique)*
-> 	- [ ] Recherche ganglions occipitaux *(Cancer gastrique)*
-> 	- [ ] Puis région auriculaire postérieure et inférieure *(Cancer gastrique)*
-> 	- [ ] Chaînes ganglionnaires cervicales *(Cancer gastrique)*
-> 	- [ ] Ganglions sous-mentonniers et sous-maxillaires *(Cancer gastrique)*
+> - [ ] **3. Palpation des aires sus-claviculaires *(Lymphome)***
+> 	- [ ] Patient en position assise
+> 	- [ ] Palpation symétrique possible
+> 	- [ ] Palpation profonde derrière clavicules
+> 	- [ ] Faire inspirer le patient
 > - [ ] **4. Examen des aires axillaires *(Lymphome)***
 > 	- [ ] Patient en position assise
 > 	- [ ] Porter le bras du patient
@@ -218,30 +212,37 @@ cssclasses:
 > 	- [ ] Auscultation cardiaque
 > 	- [ ] Examen cutané
 > 	- [ ] Palpation abdominale
-> - [ ] **9. Caractéristiques du ganglion sus-claviculaire gauche (ganglion de Troisier) *(Cancer gastrique)***
+> - [ ] **9. Examen des ganglions sus-claviculaires *(Cancer gastrique)***
+> 	- [ ] Position du patient
+> 	- [ ] Palpation avec pulpe des doigts
+> 	- [ ] Recherche ganglions occipitaux
+> 	- [ ] Puis région auriculaire postérieure et inférieure
+> 	- [ ] Chaînes ganglionnaires cervicales
+> 	- [ ] Ganglions sous-mentonniers et sous-maxillaires
+> - [ ] **10. Caractéristiques du ganglion sus-claviculaire gauche (ganglion de Troisier) *(Cancer gastrique)***
 > 	- [ ] Taille
 > 	- [ ] Consistance
 > 	- [ ] Mobilité
 > 	- [ ] Sensibilité
 > 	- [ ] Surface
 > 	- [ ] Adhérence aux plans profonds
-> - [ ] **10. Examen des autres aires ganglionnaires *(Cancer gastrique)***
+> - [ ] **11. Examen des autres aires ganglionnaires *(Cancer gastrique)***
 > 	- [ ] Aires sous-claviculaires
 > 	- [ ] Ganglions épitrochléens
 > 	- [ ] Ganglions axillaires
 > 	- [ ] Ganglions inguinaux
-> - [ ] **11. Recherche d'une splénomégalie *(Cancer gastrique)***
+> - [ ] **12. Recherche d'une splénomégalie *(Cancer gastrique)***
 > 	- [ ] Si palpable: mesurer débord sous-costal
 > 	- [ ] Percussion de la rate
 > 	- [ ] Recherche syndrome tumoral associé
-> - [ ] **12. Examen général *(Cancer gastrique)***
+> - [ ] **13. Examen général *(Cancer gastrique)***
 > 	- [ ] État général
 > 	- [ ] Pâleur cutanéo-muqueuse
 > 	- [ ] Ictère conjonctival
 > 	- [ ] Lésions cutanées
 > 	- [ ] Hépatomégalie
 > 	- [ ] Masse abdominale
-> - [ ] **13. Examen ORL et stomatologique *(Cancer gastrique)***
+> - [ ] **14. Examen ORL et stomatologique *(Cancer gastrique)***
 > 	- [ ] Cavité buccale
 > 	- [ ] Pharynx
 > 	- [ ] État dentaire

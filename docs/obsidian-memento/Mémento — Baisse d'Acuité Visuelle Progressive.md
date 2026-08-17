@@ -121,3 +121,47 @@ cssclasses:
 > 	- [ ] 🚩 **Palpation des artères temporales, des deux côtés**, si céphalée,
 >         douleur temporale ou claudication de la mâchoire : trajet induré, sensible,
 >         battements diminués ou abolis
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention, devant toute baisse de vision progressive**
+> 	- [ ] **Glycémie** — dépistage d'un diabète méconnu ; normale, elle rend une
+>         rétinopathie diabétique peu probable
+> 	- [ ] **Tonométrie — chiffrer la pression intraoculaire** : une pression
+>         normale écarte le glaucome, chronique comme aigu
+> 	- [ ] **Fond d'œil après dilatation pupillaire** : l'ophtalmoscopie au lit du
+>         malade ne le remplace pas — et dire ce qui a limité la visualisation,
+>         un fond d'œil qu'on n'arrive pas à voir est en soi une information
+> - [ ] **2. Selon l'orientation clinique**
+> 	- [ ] **Fond d'œil non visualisable derrière une opacité des milieux** →
+>         **échographie oculaire en mode B** : elle regarde derrière l'opacité et
+>         exclut un décollement de rétine, une hémorragie du vitré, une masse
+> 	- [ ] **Scotome central, métamorphopsies, vision de près la plus touchée** →
+>         **OCT maculaire**, ± **angiographie rétinienne**. À demander aussi
+>         **avant toute chirurgie de cataracte** : environ **un tiers** des
+>         opérés portent une pathologie oculaire associée que l'opacité masquait,
+>         et c'est elle qui fait échouer la récupération annoncée
+> 	- [ ] **Gêne périphérique, excavation papillaire, pression élevée** →
+>         **champ visuel (périmétrie)** et **gonioscopie** — le glaucome
+>         chronique ampute le champ bien avant le centre
+> 	- [ ] 🚩 **Phosphènes, myodésopsies en pluie, voile ou rideau périphérique** →
+>         **fond d'œil dilaté et échographie B en urgence** : ces signes font
+>         sortir du cadre progressif
+> 	- [ ] **Baisse unilatérale, douleur à la mobilisation du globe, déficit
+>         pupillaire afférent relatif** → **IRM cérébrale et orbitaire**
+> 	- [ ] **Éblouissement et halos disproportionnés à l'acuité chiffrée** →
+>         **test de sensibilité aux contrastes, glare test** : ils objectivent
+>         une gêne que l'échelle de Snellen sous-estime
+> - [ ] **3. Si une chirurgie est envisagée**
+> 	- [ ] **Biométrie oculaire** — mesure de l'œil pour calculer la puissance de
+>         l'implant ; elle n'a de sens qu'une fois l'indication opératoire posée
+> 	- [ ] **Bilan préopératoire** standard, comorbidités comprises (hypertension,
+>         diabète, cardiopathie)
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 **Après 50 ans, toute baisse de vision impose d'éliminer une artérite
+>         de Horton** : **VS et CRP en urgence** — VS souvent > 50 mm/h, parfois
+>         au-delà de 100 —, puis **biopsie d'artère temporale** pour confirmer.
+>         Elle reste contributive **jusqu'à 15 jours** après le début de la
+>         corticothérapie, et ne doit donc jamais la faire attendre
+> 	- [ ] 🚩 **Amputation bitemporale du champ visuel** → **champ visuel formel,
+>         IRM hypophysaire et prolactinémie** : une compression chiasmatique se
+>         révèle par le champ visuel, pas par l'acuité

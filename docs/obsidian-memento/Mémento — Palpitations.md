@@ -121,3 +121,27 @@ cssclasses:
 > 	- [ ] Frottement péricardique : réausculter penché en avant, en expiration bloquée, pour ne pas le manquer
 > 	- [ ] Goitre soufflant, exophtalmie, tremblement et tachycardie : thyrotoxicose
 > 	- [ ] Un seul mollet œdématié et douloureux chez un patient dyspnéique : embolie pulmonaire
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention — aucune palpitation ne se déclare bénigne sans ECG ni TSH**
+> 	- [ ] **ECG 12 dérivations**, pendant la crise si elle dure encore, sinon d'emblée : rythme et régularité, fréquence, largeur du QRS, **QT corrigé**, signes d'ischémie, **onde delta et PR court** (pré-excitation), hypertrophie ventriculaire gauche — un tracé intercritique normal **n'écarte rien**, il oblige seulement à documenter le rythme autrement
+> 	- [ ] **TSH**, T4 libre si elle est perturbée : à chercher devant toute fibrillation nouvelle, et devant tout pouls lent — elle appartient au bilan de départ, jamais à un deuxième temps
+> 	- [ ] **FSC** (anémie) et **CRP** ; **ionogramme avec Na, K, calcium corrigé et magnésium** — l'hypokaliémie et l'hypomagnésémie sont arythmogènes et se corrigent, ce sont les seules causes que le laboratoire répare ; **créatinine et DFG**, glycémie, ferritine et LDH (carence martiale, hémolyse)
+> 	- [ ] **Radiographie thoracique** : cardiomégalie, redistribution vasculaire, épanchement, foyer — le champ pulmonaire qu'aucune auscultation ne remplace
+> - [ ] **2. Documenter le rythme quand la crise est finie — le cœur du problème**
+> 	- [ ] **Holter ECG de 24 à 72 heures** dès que les palpitations ne sont pas documentées au repos ; le rendement suit la fréquence des accès — un Holter de 24 h posé devant des crises mensuelles ne prouvera rien, et son tracé normal ne referme pas le dossier
+> 	- [ ] **R-test** déclenché par le patient quand les épisodes sont espacés ; **enregistreur implantable** s'ils sont rares **et** accompagnés de syncope
+> 	- [ ] **Ergométrie** devant des palpitations d'effort ; **étude électrophysiologique** quand une tachycardie par réentrée reste à documenter — c'est aussi le geste qui traite
+> - [ ] **3. Selon l'orientation**
+> 	- [ ] **Douleur ou oppression thoracique → troponine sériée et CK-MB** : c'est la cinétique qui tranche, jamais le chiffre isolé — et une troponine élevée n'est pas synonyme de syndrome coronarien, toute tachyarythmie soutenue l'élève à elle seule
+> 	- [ ] **Dyspnée, orthopnée, œdèmes, prise de poids récente → NT-proBNP** (ou BNP) **et échocardiographie transthoracique** : fonction ventriculaire, taille de l'oreillette gauche, valvulopathie. L'échocardiographie est systématique devant une fibrillation nouvelle ou une insuffisance cardiaque ; devant des palpitations isolées elle attend un **souffle**, un **ECG anormal** ou des palpitations d'effort
+> 	- [ ] **Un seul mollet œdématié chez un patient dyspnéique → le score de Wells, déjà pris à l'anamnèse, choisit l'examen suivant** : probabilité faible ou intermédiaire → **D-dimères**, seuil ajusté à l'âge après 50 ans (âge × 10), négatifs ils n'écartent l'embolie que si la probabilité de départ était basse ; probabilité forte ou D-dimères positifs → **angio-CT thoracique** d'emblée
+> 	- [ ] **Pouls lent chez un patient sous bradycardisant → dosage médicamenteux du bêtabloquant** avant d'incriminer le nœud sinusal : l'accumulation, par insuffisance rénale ou interaction, est réversible en rouvrant l'ordonnance — et la TSH, dans le même mouvement, pour l'hypothyroïdie
+> 	- [ ] **Caféine, cocaïne ou amphétamines à l'anamnèse → toxicologie urinaire** — à demander largement plutôt qu'« si besoin » : celui qui consomme est justement celui qui ne le dira pas spontanément
+> 	- [ ] **Céphalées, sueurs et palpitations par accès avec poussée tensionnelle (triade de Ménard) → métanéphrines libres et totales** : le phéochromocytome est rare, mais aucun autre examen ne l'écarte
+> - [ ] **4. À ne pas oublier**
+> 	- [ ] 🚩 **Syncope vraie pendant la crise, ou mort subite familiale avant 40 ans** : un ECG de repos normal ne suffit pas — le rythme se documente jusqu'au bout (Holter, R-test, enregistreur implantable) **avant** toute conclusion de bénignité
+> 	- [ ] 🚩 **Pouls sous 40/min, lipothymies ou chutes à rythme lent → ECG immédiat**, sans attendre la fin du status : bloc auriculo-ventriculaire de haut degré jusqu'à preuve du contraire
+> 	- [ ] **Avant d'anticoaguler : transaminases, gamma-GT, phosphatases alcalines, albumine, TP/INR et TCA**, avec la créatinine et le DFG déjà demandés — le bilan hépatique et rénal n'est pas décoratif, il choisit l'anticoagulant et sa dose
+> 	- [ ] **β-hCG chez toute femme en âge de procréer**, avant d'irradier au scanner et avant de prescrire un antivitamine K
+> 	- [ ] Le **QT corrigé** se mesure sur le tout premier tracé, pas seulement sur le dernier : c'est lui qui autorise ou interdit l'antiarythmique, et tout autre médicament qui l'allonge

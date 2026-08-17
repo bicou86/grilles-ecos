@@ -132,3 +132,61 @@ cssclasses:
 > 	- [ ] Amaigrissement visible, fonte musculaire, pâleur franche
 > 	- [ ] Hépatomégalie nodulaire, masse épigastrique, douleur osseuse provoquée
 > 	- [ ] Crépitants d'une base chez un patient qui fait des fausses routes
+
+> [!question] 🔬 Examens complémentaires
+> - [ ] **1. De première intention : l'endoscopie d'abord, et l'ordre qui compte**
+> 	- [ ] **Fibroscopie œso-gastro-duodénale avec biopsies** — l'examen clé devant toute
+>         dysphagie : elle voit la lésion et la prélève. Biopsies multiples sur toute
+>         lésion suspecte ; la dysphagie seule suffit à l'indiquer
+> 	- [ ] Jamais de traitement d'épreuve par IPP avant d'avoir exploré : il soulage le
+>         reflux associé, fait croire à la guérison et retarde le diagnostic de plusieurs
+>         mois — un IPP déjà pris n'a aucune valeur rassurante
+> 	- [ ] Transit œsophagien baryté (TOGD) — de seconde intention, jamais avant
+>         l'endoscopie. Trois indications : suspicion de diverticule de Zenker (où
+>         l'endoscopie risque la perforation), trouble moteur, contre-indication
+>         endoscopique. Sténose irrégulière en « trognon de pomme » de la tumeur contre
+>         effilement régulier en « bec d'oiseau » de l'achalasie — la régularité du
+>         rétrécissement sépare le mécanique du moteur
+> 	- [ ] Manométrie œsophagienne haute résolution (classification de Chicago) : **après**
+>         une endoscopie normale, jamais avant — une tumeur du cardia mime une achalasie
+>         (pseudo-achalasie tumorale)
+> - [ ] **2. Le laboratoire et le débrouillage qui l'accompagnent**
+> 	- [ ] FSC : anémie ferriprive par saignement occulte, chez quelqu'un qui n'a jamais vu
+>         de sang — ferritine si microcytose
+> 	- [ ] Bilan hépatique et créatinine : métastases hépatiques, et valeur de référence
+>         avant produit de contraste ou chimiothérapie
+> 	- [ ] Albumine et préalbumine : chiffrer la dénutrition que le poids seul sous-estime
+> 	- [ ] ECG devant toute douleur thoracique, avant de la rattacher à la déglutition :
+>         écarter d'abord la cause cardiaque — l'oubli est un piège classique de la
+>         station
+> 	- [ ] Radiographie thoracique : corps étranger radio-opaque, foyer d'inhalation d'une
+>         base ; CT thoracique si l'on cherche une compression extrinsèque médiastinale
+> - [ ] **3. Selon l'orientation clinique**
+> 	- [ ] Voix rauque récente chez un fumeur-buveur : laryngoscopie indirecte ou
+>         nasofibroscopie **avec biopsies**, et CT cervico-facial — on y cherche une
+>         seconde tumeur ORL ou une corde vocale immobile par envahissement récurrentiel,
+>         pas une explication de rechange
+> 	- [ ] Gêne immédiate haute, fausses routes, régurgitations nasales : vidéofluoroscopie
+>         de déglutition et nasofibroscopie — l'autre branche, oropharyngée
+> 	- [ ] Installation brutale avec déficit neurologique : imagerie cérébrale ;
+>         fatigabilité qui s'aggrave en fin de repas : anticorps anti-récepteurs de
+>         l'acétylcholine et EMG
+> 	- [ ] Sujet jeune et atopique, dysphagie intermittente avec impactions : biopsies
+>         œsophagiennes étagées même en muqueuse normale — au moins 15 éosinophiles par
+>         champ signent l'œsophagite à éosinophiles
+> - [ ] **4. Une fois la lésion trouvée : le bilan d'extension**
+> 	- [ ] CT thoraco-abdominal injecté : extension loco-régionale et métastases
+> 	- [ ] Échoendoscopie avec ponction : stadification locale fine, T et N
+> 	- [ ] PET-CT au FDG pour les métastases à distance ; fibroscopie bronchique si la
+>         tumeur est proximale
+> 	- [ ] Ce bilan est complet **avant** toute décision thérapeutique : c'est lui qui
+>         sépare le résécable du palliatif
+> - [ ] **5. À ne pas oublier**
+> 	- [ ] 🚩 Impaction alimentaire — blocage complet, hypersialorrhée, salive impossible à
+>         avaler : endoscopie **en urgence**, avant tout autre examen
+> 	- [ ] Une endoscopie « normale » ne vaut que biopsiée : sans prélèvement elle n'écarte
+>         ni l'œsophagite à éosinophiles ni une lésion plane
+> 	- [ ] L'absence d'amaigrissement ne rassure pas : les drapeaux rouges rendent
+>         l'endoscopie urgente, ils ne la conditionnent pas
+> 	- [ ] Marqueurs tumoraux (CEA, CA 19-9) : bilan et suivi une fois le cancer prouvé,
+>         jamais pour poser le diagnostic ni pour l'écarter
